@@ -12,7 +12,8 @@
     "tabs": [
       {
         "tab": "База знаний",
-        "groups": [
+        "icon": "arrow-pointer",
+        "pages": [
           {
             "group": "Начало",
             "pages": [
@@ -25,9 +26,9 @@
               "rules/basic-terms",
               "rules/server-rules"
             ]
-          }
-        ],
-        "icon": "arrow-pointer"
+          },
+          "tsvatsyatsa"
+        ]
       },
       {
         "tab": "Техническая часть",
