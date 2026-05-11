@@ -26,7 +26,8 @@
               "rules/server-rules"
             ]
           }
-        ]
+        ],
+        "icon": "arrow-pointer"
       },
       {
         "tab": "Техническая часть",
