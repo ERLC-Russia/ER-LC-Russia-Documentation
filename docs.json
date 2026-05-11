@@ -1,0 +1,93 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Moscow RolePlay",
+  "colors": {
+    "primary": "#3b82f6",
+    "light": "#60a5fa",
+    "dark": "#1d4ed8"
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "База знаний",
+        "groups": [
+          {
+            "group": "Начало",
+            "pages": [
+              "introduction"
+            ]
+          },
+          {
+            "group": "РП Термины",
+            "pages": [
+              "rules/basic-terms",
+              "rules/server-rules"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Техническая часть",
+        "groups": [
+          {
+            "group": "Системы",
+            "pages": [
+              "tech/proxilink"
+            ]
+          },
+          {
+            "group": "API",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Сообщество",
+          "href": "https://discord.gg/your-link",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Поддержка",
+        "href": "https://discord.gg/your-link"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Личный кабинет",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/your-username"
+    }
+  }
+}
