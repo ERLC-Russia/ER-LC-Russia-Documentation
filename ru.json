@@ -2,136 +2,38 @@
   "language": "ru",
   "tabs": [
     {
-      "tab": "Информация и Правила",
-      "icon": "circle-info",
+      "tab": "История Изменений",
+      "icon": "clock-rotate-left",
       "pages": [
-        "ru/index",
-        "ru/our-discord",
         {
-          "group": "Начало",
-          "icon": "rocket",
-          "pages": [
-            "ru/introduction",
-            "ru/api-clients"
-          ]
-        },
-        {
-          "group": "Документация",
-          "icon": "book-open",
-          "pages": [
-            "ru/documentation/erlc-location-information",
-            "ru/documentation/rate-limits",
-            "ru/documentation/error-codes"
-          ]
-        },
-        {
-          "group": "Правила",
-          "icon": "scale-balanced",
-          "pages": [
-            "ru/policies/api-use-guidelines"
-          ]
-        }
-      ]
-    },
-    {
-      "tab": "Документация API",
-      "icon": "code",
-      "versions": [
-        {
-          "version": "API V1",
+          "group": "История Изменений MRP",
+          "icon": "list",
           "pages": [
             {
-              "group": "Документация API V1",
-              "icon": "file-code",
+              "group": "Обновление V0.3",
               "pages": [
-                {
-                  "group": "MRP ER:LC API V1",
-                  "icon": "gamepad",
-                  "pages": [
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-bans",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-players",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-joinlogs",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-queue",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-killlogs",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-commandlogs",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-modcalls",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-vehicles",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-staff",
-                    "ru/api-reference/api-v1/mrp-erlc-api-v1/post-moscowroleplay-erlc-server-command"
-                  ]
-                },
-                {
-                  "group": "MRP API Статистики V1",
-                  "icon": "chart-bar",
-                  "pages": [
-                    "ru/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-playercount",
-                    "ru/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-membercount",
-                    "ru/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-allmembercount",
-                    "ru/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-botcount"
-                  ]
-                }
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/index",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.1",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.2",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.3"
               ]
-            }
-          ]
-        },
-        {
-          "version": "API V2",
-          "default": true,
-          "pages": [
+            },
             {
-              "group": "Документация API V2",
-              "icon": "file-code",
+              "group": "Обновление V0.2",
               "pages": [
-                {
-                  "group": "MRP ER:LC API V2",
-                  "icon": "gamepad",
-                  "pages": [
-                    "ru/api-reference/api-v2/mrp-erlc-api-v2/get-moscowroleplay-erlc-server",
-                    "ru/api-reference/api-v2/mrp-erlc-api-v2/post-moscowroleplay-erlc-server-command"
-                  ]
-                },
-                {
-                  "group": "MRP API Экономики V2",
-                  "icon": "coins",
-                  "pages": [
-                    {
-                      "group": "GET-Эндпоинты API Экономики",
-                      "icon": "arrow-down",
-                      "pages": [
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-economy",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-users",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-businesses",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-mafias",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-government",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-store",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-ads",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-system",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-health"
-                      ]
-                    },
-                    {
-                      "group": "POST-Эндпоинты API Экономики",
-                      "icon": "arrow-up",
-                      "pages": [
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-economy",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-users",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-businesses",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-mafias",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-government",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-store",
-                        "ru/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-ads"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group": "MRP API Статистики V2",
-                  "icon": "chart-bar",
-                  "pages": [
-                    "ru/api-reference/api-v2/mrp-stats-api-v2/get-moscowroleplay-stats"
-                  ]
-                }
+                "ru/changelogs/changelogs-history-mrp/obnovleniya-v0.2/index",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.1",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.2",
+                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.3"
+              ]
+            },
+            {
+              "group": "Обновление V0.1",
+              "pages": [
+                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/index",
+                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.1",
+                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.2",
+                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.3"
               ]
             }
           ]
@@ -139,18 +41,57 @@
       ]
     },
     {
-      "tab": "Другие Варианты Интеграции",
-      "icon": "puzzle-piece",
-      "pages": [
-        "ru/other/websocket-gateway",
-        "ru/other/event-webhook"
-      ]
-    },
-    {
-      "tab": "Инструкции",
+      "tab": "Гайды",
       "icon": "book-open",
       "pages": [
-        "ru/tutorials/how-to-get-api-key"
+        "ru/guides/index"
+      ]
+    },
+    {
+      "tab": "Правила Персонала",
+      "icon": "user-shield",
+      "pages": [
+        {
+          "group": "Правила Персонала",
+          "icon": "scale-balanced",
+          "pages": [
+            "ru/moscow-roleplay-staff-rules/staff-rules/staff-regulations",
+            "ru/moscow-roleplay-staff-rules/staff-rules/personnel-code-of-ethics",
+            "ru/moscow-roleplay-staff-rules/staff-rules/rules-kuratori-fractions"
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Правила Сервера",
+      "icon": "shield-halved",
+      "pages": [
+        {
+          "group": "Основные Правила",
+          "icon": "book",
+          "pages": [
+            "ru/server-rules/general-rules/server-rules",
+            "ru/server-rules/general-rules/rp-terms",
+            "ru/server-rules/general-rules/discord-rules",
+            "ru/server-rules/general-rules/event-rules"
+          ]
+        },
+        {
+          "group": "Правила Фракций",
+          "icon": "users",
+          "pages": [
+            "ru/server-rules/fractions-rules/fractions-rules",
+            "ru/server-rules/fractions-rules/lider-rules"
+          ]
+        },
+        {
+          "group": "Гайды",
+          "icon": "lightbulb",
+          "pages": [
+            "ru/server-rules/guides/small-guide-for-beginners",
+            "ru/server-rules/guides/how-to-subscribe"
+          ]
+        }
       ]
     }
   ],
