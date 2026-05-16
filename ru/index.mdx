@@ -1,0 +1,59 @@
+---
+title: "Введение"
+hidden: true
+---
+
+<div id="no-header-here" />
+<img
+  src="/images/hero-banner.png"
+  alt="ER:LC Россия API"
+  style={{width: "100%", height: "215px", borderRadius: "12px", objectFit: "cover"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full">
+  <h1 className="text-3xl font-bold">ER:LC Россия API Документация</h1>
+</div>
+
+Добро пожаловать в официальную документацию ER:LC Россия API. Здесь вы найдете все необходимые инструменты, руководства и справочные материалы для интеграции вашего игрового сервера с внешними сервисами.
+
+<div className="flex justify-center items-center w-full">
+  <h2 className="text-2xl font-bold">Быстрое Начало</h2>
+</div>
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Правила Использования API" href="/api-use-guidelines" img="/images/api-rules.png">
+      Узнайте, как правильно работать с API, чтобы избежать блокировок и ошибок.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="Документация API V2" href="/for-developers/api-v2/introduction" img="/images/api-v2.png">
+      Отправка запросов, обработка ответов, новые возможности и миграция с V1.
+    </Card>
+  </Column>
+</Columns>
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Правила Использования API" href="/for-developers/api-v1/introduction" img="/images/api-v1.png">
+      Узнайте, как правильно работать с API, чтобы избежать блокировок и ошибок.
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+<div className="flex justify-center items-center w-full">
+  <h2 className="text-2xl font-bold">Справочные Материалы</h2>
+</div>
+
+<Columns cols={2}>
+  <Card title="Лимиты Запросов" icon="gauge" href="/for-developers/rate-limits">
+    Информация о глобальных лимитах, защите от спама и заголовках Rate Limit.
+  </Card>
+
+  <Card title="Коды Ошибок" icon="triangle-exclamation" href="/for-developers/error-codes">
+    Полный список кодов ошибок, их описание и рекомендации по обработке.
+  </Card>
+</Columns>

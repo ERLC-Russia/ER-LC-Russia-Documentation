@@ -1,86 +1,63 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Moscow RolePlay",
+  "name": "ER:LC Россия API",
   "colors": {
-    "primary": "#3b82f6",
-    "light": "#60a5fa",
-    "dark": "#1d4ed8"
+    "primary": "#02B1DA",
+    "light": "#02B1DA",
+    "dark": "#02B1DA"
   },
-  "favicon": "/favicon.png",
+  "icons": {
+    "library": "fontawesome"
+  },
+  "favicon": {
+    "light": "/favicon.png",
+    "dark": "/favicon.png"
+  },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "База знаний",
-        "icon": "arrow-pointer",
-        "pages": [
-          {
-            "group": "Начало",
-            "pages": [
-              "introduction"
-            ]
-          },
-          {
-            "group": "РП Термины",
-            "pages": [
-              "rules/basic-terms",
-              "rules/server-rules"
-            ]
-          },
-          "tsvatsyatsa"
-        ]
+        "$ref": "./ru.json"
       },
       {
-        "tab": "Техническая часть",
-        "groups": [
-          {
-            "group": "Системы",
-            "pages": [
-              "tech/proxilink"
-            ]
-          },
-          {
-            "group": "API",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          }
-        ]
+        "$ref": "./en.json"
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Сообщество",
-          "href": "https://discord.gg/your-link",
-          "icon": "discord"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Поддержка",
-        "href": "https://discord.gg/your-link"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Личный кабинет",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "light": "/icons/Banner-ERLC-Russia-Docs-System.svg",
+    "dark": "/icons/Banner-ERLC-Russia-Docs-System.svg"
   },
   "contextual": {
-    "options": []
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/your-username"
+  "background": {
+    "color": {
+      "dark": "#0A0A0A"
     }
-  }
+  },
+  "appearance": {
+    "default": "dark"
+  },
+  "redirects": [
+    {
+      "source": "/en/our-discord",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/ru/our-discord",
+      "destination": "/ru",
+      "permanent": false
+    }
+  ]
 }
