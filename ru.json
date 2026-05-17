@@ -27,6 +27,21 @@
       ]
     },
     {
+      "tab": "Правила Персонала",
+      "icon": "user-shield",
+      "pages": [
+        {
+          "group": "Правила Персонала",
+          "icon": "scale-balanced",
+          "pages": [
+            "ru/staff-rules/staff-regulations",
+            "ru/staff-rules/ethical-norms",
+            "ru/staff-rules/curator-rules"
+          ]
+        }
+      ]
+    },
+    {
       "tab": "История Изменений",
       "icon": "clock-rotate-left",
       "pages": [
@@ -70,21 +85,6 @@
       "icon": "book-open",
       "pages": [
         "ru/guides/index"
-      ]
-    },
-    {
-      "tab": "Правила Персонала",
-      "icon": "user-shield",
-      "pages": [
-        {
-          "group": "Правила Персонала",
-          "icon": "scale-balanced",
-          "pages": [
-            "ru/moscow-roleplay-staff-rules/staff-rules/staff-regulations",
-            "ru/moscow-roleplay-staff-rules/staff-rules/personnel-code-of-ethics",
-            "ru/moscow-roleplay-staff-rules/staff-rules/rules-kuratori-fractions"
-          ]
-        }
       ]
     }
   ],
