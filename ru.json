@@ -45,6 +45,7 @@
       "tab": "История Изменений",
       "icon": "clock-rotate-left",
       "pages": [
+        "ru/changelogs/index",
         {
           "group": "История Изменений MRP",
           "icon": "list",
@@ -52,28 +53,25 @@
             {
               "group": "Обновление V0.3",
               "pages": [
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/index",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.1",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.2",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.3/changelog-v0.3.3"
+                "ru/changelogs/changelog-v0.3/changelog-v0.3.3",
+                "ru/changelogs/changelog-v0.3/changelog-v0.3.2",
+                "ru/changelogs/changelog-v0.3/changelog-v0.3.1"
               ]
             },
             {
               "group": "Обновление V0.2",
               "pages": [
-                "ru/changelogs/changelogs-history-mrp/obnovleniya-v0.2/index",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.1",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.2",
-                "ru/changelogs/changelogs-history-mrp/changelog-v0.2/changelog-v0.2.3"
+                "ru/changelogs/changelog-v0.2/changelog-v0.2.3",
+                "ru/changelogs/changelog-v0.2/changelog-v0.2.2",
+                "ru/changelogs/changelog-v0.2/changelog-v0.2.1"
               ]
             },
             {
               "group": "Обновление V0.1",
               "pages": [
-                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/index",
-                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.1",
-                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.2",
-                "ru/changelogs/changelogs-history-mrp/changelogs-v0.1/changelog-v0.1.3"
+                "ru/changelogs/changelog-v0.1/changelog-v0.1.3",
+                "ru/changelogs/changelog-v0.1/changelog-v0.1.2",
+                "ru/changelogs/changelog-v0.1/changelog-v0.1.1"
               ]
             }
           ]
