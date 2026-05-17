@@ -2,6 +2,38 @@
   "language": "ru",
   "tabs": [
     {
+      "tab": "Правила Сервера",
+      "icon": "shield-halved",
+      "pages": [
+        {
+          "group": "Основные Правила",
+          "icon": "book",
+          "pages": [
+            "ru/server-rules/general-rules/server-rules",
+            "ru/server-rules/general-rules/rp-terms",
+            "ru/server-rules/general-rules/discord-rules",
+            "ru/server-rules/general-rules/event-rules"
+          ]
+        },
+        {
+          "group": "Правила Фракций",
+          "icon": "users",
+          "pages": [
+            "ru/server-rules/fractions-rules/fractions-rules",
+            "ru/server-rules/fractions-rules/lider-rules"
+          ]
+        },
+        {
+          "group": "Гайды",
+          "icon": "lightbulb",
+          "pages": [
+            "ru/server-rules/guides/small-guide-for-beginners",
+            "ru/server-rules/guides/how-to-subscribe"
+          ]
+        }
+      ]
+    },
+    {
       "tab": "История Изменений",
       "icon": "clock-rotate-left",
       "pages": [
@@ -58,38 +90,6 @@
             "ru/moscow-roleplay-staff-rules/staff-rules/staff-regulations",
             "ru/moscow-roleplay-staff-rules/staff-rules/personnel-code-of-ethics",
             "ru/moscow-roleplay-staff-rules/staff-rules/rules-kuratori-fractions"
-          ]
-        }
-      ]
-    },
-    {
-      "tab": "Правила Сервера",
-      "icon": "shield-halved",
-      "pages": [
-        {
-          "group": "Основные Правила",
-          "icon": "book",
-          "pages": [
-            "ru/server-rules/general-rules/server-rules",
-            "ru/server-rules/general-rules/rp-terms",
-            "ru/server-rules/general-rules/discord-rules",
-            "ru/server-rules/general-rules/event-rules"
-          ]
-        },
-        {
-          "group": "Правила Фракций",
-          "icon": "users",
-          "pages": [
-            "ru/server-rules/fractions-rules/fractions-rules",
-            "ru/server-rules/fractions-rules/lider-rules"
-          ]
-        },
-        {
-          "group": "Гайды",
-          "icon": "lightbulb",
-          "pages": [
-            "ru/server-rules/guides/small-guide-for-beginners",
-            "ru/server-rules/guides/how-to-subscribe"
           ]
         }
       ]
@@ -187,5 +187,14 @@
       "label": "Вход",
       "href": "https://erlcrussia.com/login"
     }
+  },
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Наш Discord",
+        "icon": "discord",
+        "href": "https://discord.gg/MoscowRus"
+      }
+    ]
   }
 }

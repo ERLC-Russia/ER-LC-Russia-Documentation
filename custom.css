@@ -180,7 +180,7 @@ footer a[href*="roblox.com"]:hover::before {
   }
 
   nav a[href*="discord.gg/MoscowRus"]:active {
-    transform: translateY(0) !important;
+    transform: translateX(10px) !important; 
     background: rgba(2, 177, 218, 0.2) !important;
   }
 }
@@ -230,14 +230,34 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
    ДИСКОРД ИКОНКА - НАСТРОЙКА РАЗМЕРОВ
    ============================================ */
 
-/* 1. Десктопная версия (#sidebar) */
+#sidebar a[href*="discord.gg/MoscowRus"] div:first-child {
+  background: transparent !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-right: 8px !important;
+}
+
 #sidebar a[href*="discord.gg/MoscowRus"] svg {
   width: 20px !important;
   height: 20px !important;
   margin-right: 8px !important;
 }
 
-/* 2. Мобильная версия (#mobile-nav) */
+/* 2. Стили для мобильной версии (#mobile-nav) */
+#mobile-nav a[href*="discord.gg/MoscowRus"] div:first-child {
+  background: transparent !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-right: 8px !important;
+  
+  --tw-ring-shadow: none !important;
+  box-shadow: none !important; 
+}
+
 #mobile-nav a[href*="discord.gg/MoscowRus"] svg {
   width: 20px !important;
   height: 20px !important;

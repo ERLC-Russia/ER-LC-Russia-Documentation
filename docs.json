@@ -47,17 +47,5 @@
   },
   "appearance": {
     "default": "dark"
-  },
-  "redirects": [
-    {
-      "source": "/en/our-discord",
-      "destination": "/en",
-      "permanent": false
-    },
-    {
-      "source": "/ru/our-discord",
-      "destination": "/ru",
-      "permanent": false
-    }
-  ]
+  }
 }
