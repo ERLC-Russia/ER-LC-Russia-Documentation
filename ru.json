@@ -103,6 +103,19 @@
           ]
         }
       ]
+    },
+    {
+      "tab": "Возможности Документации",
+      "icon": "clipboard-list",
+      "pages": [
+        {
+          "group": "Инструменты",
+          "icon": "terminal",
+          "pages": [
+            "ru/docs-features/mcp-server"
+          ]
+        }
+      ]
     }
   ],
   "footer": {
