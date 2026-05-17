@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "ER:LC Россия API",
   "colors": {
-    "primary": "#02B1DA",
-    "light": "#02B1DA",
-    "dark": "#02B1DA"
+    "primary": "#FFA500",
+    "light": "#FFA500",
+    "dark": "#FFA500"
   },
   "icons": {
     "library": "fontawesome"

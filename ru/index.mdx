@@ -12,10 +12,12 @@ hidden: true
 />
 
 <div className="flex justify-center items-center w-full">
-  <h1 className="text-3xl font-bold">ER:LC Россия API Документация</h1>
+  <h1 className="text-3xl font-bold">Документация ER:LC Россия</h1>
 </div>
 
-Добро пожаловать в официальную документацию ER:LC Россия API. Здесь вы найдете все необходимые инструменты, руководства и справочные материалы для интеграции вашего игрового сервера с внешними сервисами.
+<div className="flex justify-center items-center w-full text-center">
+  Добро пожаловать в документацию ER:LC Россия — здесь вы найдёте правила, гайды и всю нужную информацию о нашем сообществе. Ознакомьтесь с разделами, чтобы быстрее разобраться в системе и игровом процессе.
+</div>
 
 <div className="flex justify-center items-center w-full">
   <h2 className="text-2xl font-bold">Быстрое Начало</h2>
@@ -23,37 +25,39 @@ hidden: true
 
 <Columns cols={2}>
   <Column>
-    <Card title="Правила Использования API" href="/api-use-guidelines" img="/images/api-rules.png">
-      Узнайте, как правильно работать с API, чтобы избежать блокировок и ошибок.
+    <Card title="Небольшой Гайд Для Новичков" href="/ru/guides" img="/assets/guides.png">
+      Быстрый старт для новых игроков: как начать игру, куда обращаться, что важно знать.
     </Card>
   </Column>
   <Column>
-    <Card title="Документация API V2" href="/for-developers/api-v2/introduction" img="/images/api-v2.png">
-      Отправка запросов, обработка ответов, новые возможности и миграция с V1.
+    <Card title="Правила Сервера" href="/ru/server-rules/general-rules/server-rules" img="/assets/server-rules.png">
+      Основные правила проекта Moscow RolePlay. Ознакомление обязательно перед началом игры.
     </Card>
   </Column>
 </Columns>
 
 <Columns cols={2}>
   <Column>
-    <Card title="Правила Использования API" href="/for-developers/api-v1/introduction" img="/images/api-v1.png">
-      Узнайте, как правильно работать с API, чтобы избежать блокировок и ошибок.
+    <Card title="РП Термины" href="/ru/server-rules/general-rules/rp-terms" img="/assets/roleplay-terms.png">
+      Раздел содержит ключевые термины правил ролевой игры, обязательные для соблюдения на сервере.
     </Card>
   </Column>
   <Column>
+    <Card title="Правила Discord" href="/ru/server-rules/general-rules/discord-rules" img="/assets/discord-rules.png">
+      Cписок правил поведения в Discord-сервере. Соблюдение обязательно для всех участников.
+    </Card>
   </Column>
 </Columns>
 
-<div className="flex justify-center items-center w-full">
-  <h2 className="text-2xl font-bold">Справочные Материалы</h2>
-</div>
-
 <Columns cols={2}>
-  <Card title="Лимиты Запросов" icon="gauge" href="/for-developers/rate-limits">
-    Информация о глобальных лимитах, защите от спама и заголовках Rate Limit.
-  </Card>
-
-  <Card title="Коды Ошибок" icon="triangle-exclamation" href="/for-developers/error-codes">
-    Полный список кодов ошибок, их описание и рекомендации по обработке.
-  </Card>
+  <Column>
+    <Card title="Правила Персонала" href="/ru/staff-rules" img="/assets/staff-rules.png">
+      Ознакомьтесь с требованиями и обязанностями работы команды проекта.
+    </Card>
+  </Column>
+  <Column>
+    <Card title="История Изменений" href="/ru/changelogs" img="/assets/changelogs.png">
+      Хронология версий, содержащая информацию обо всех ключевых этапах развития проекта.
+    </Card>
+  </Column>
 </Columns>

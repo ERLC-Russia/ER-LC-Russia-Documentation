@@ -5,6 +5,7 @@
       "tab": "Правила Сервера",
       "icon": "shield-halved",
       "pages": [
+        "ru/index",
         {
           "group": "Основные Правила",
           "icon": "book",
@@ -21,14 +22,6 @@
           "pages": [
             "ru/server-rules/fractions-rules/fractions-rules",
             "ru/server-rules/fractions-rules/lider-rules"
-          ]
-        },
-        {
-          "group": "Гайды",
-          "icon": "lightbulb",
-          "pages": [
-            "ru/server-rules/guides/small-guide-for-beginners",
-            "ru/server-rules/guides/how-to-subscribe"
           ]
         }
       ]
@@ -178,7 +171,7 @@
   "navbar": {
     "links": [
       {
-        "label": "API Поддержка",
+        "label": "Поддержка",
         "href": "https://discord.gg/MoscowRus"
       }
     ],
