@@ -1,0 +1,169 @@
+---
+title: "Update V0.2.1"
+---
+
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/server-rules-bots-update.png"
+  alt="Update V0.2.1"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Update V0.2.1 — 29.03.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  A major infrastructure and project regulation update has officially launched! We have completely rewritten the community rules and implemented an updated technical stack to make your interaction with the server more comfortable and system operations more intuitive and fast.
+</div>
+
+***
+
+* **Gameplay and guides:**
+  * We have completely reworked the formatting of the [RP Terms](https://wiki.erlcrussia.xyz/documentation-moscow-roleplay/general-rules/rp-terms) section. Information is now absorbed faster, and all unnecessary and outdated content has been removed.
+  * The player guide has become cleaner and more concise — only what is truly needed for quality gameplay.
+* **"Moscow RolePlay" Bot Update:**
+  * The ticket system has undergone a complete software overhaul. What changed:
+    * The system is now faster and more stable.
+    * Added main tools for working with requests:
+      * `$take` — assign a ticket to yourself.
+      * `$release` — remove responsibility from the current moderator.
+      * `$open` / `$close` — manage access to the conversation.
+    * All bot messages and interfaces have been migrated to V2 components (improved buttons, menus, and attachments).
+* **ER:LC Russia API Launch:**
+  * We are happy to announce the launch of our own API, which will open up new possibilities for integrations and third-party developers:
+  * A detailed description of methods is available here — [**https://apidocs.erlcrussia.xyz/**](https://apidocs.erlcrussia.xyz/)
+  * Keys are issued through tickets in the **"**[**API Support**](https://discord.com/channels/1331331077553262765/1416175944829243422)**"** category.
+  * Be sure to review the requirements in the documentation or clarify details when creating a ticket.
+* **Information channels and interface:**
+  * Visual design has been completely updated across all key sections:
+    * ER:LC information menu.
+    * Discord information and rules menu.
+  * The protection system against unwanted mentions has been updated to the current version for comfortable communication.
+* **Staff management:**
+  * The staff promotion and reporting system has been moved to a specialized "Department Management" bot. This will allow more effective tracking of employee progress and automate routine tasks.
+
+<AccordionGroup>
+  <Accordion title="Updated Server Rules Section">
+    <div className="flex justify-center items-center w-full -mt-8">
+      <h3 className="text-3xl font-bold">RP <span style={{ color: '#ff0000' }}>RULES</span><span style={{ color: '#00be00' }}>ules</span></h3>
+    </div>
+    * **A-1** — The project has a separate section — [**RP Terms**](https://erlcrussia.gitbook.io/documentation-moscow-roleplay/pravila/rp-pravila), containing standard roleplay violations and their abbreviations (e.g., RDM, VDM, LTAP, etc.), which are used throughout the roleplay sphere. Many of these terms may also be described in detail in the server rules. **<span style={{ color: '#ff0000' }}>A moderator has the right to reference RP terms when issuing a punishment</span>**<span style={{ color: '#ff0000' }}> if a player's behavior violates roleplay norms. However, they</span> **<span style={{ color: '#ff0000' }}>must specify which particular RP term was violated,</span>** <span style={{ color: '#ff0000' }}>and</span> **<span style={{ color: '#ff0000' }}>provide the player with an explanation</span>**<span style={{ color: '#ff0000' }}> of why it applies in this situation.</span> **<span style={{ color: '#00be00' }}>A moderator has the right to reference them when issuing a punishment.</span>**
+      * **<span style={{ color: '#00be00' }}>A-1.1</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Important:</span>** <span style={{ color: '#00be00' }}>Due to the absence of text chat or its partial absence, transmitting information about a player's death (NLR) or location in a Discord voice channel is considered Metagaming.</span>
+    * **A-2** — It is prohibited to participate in roleplay scenes in which you were not originally involved. You cannot "involve" yourself in roleplay from the outside, including through pre-arranged or fake (staged) scenes, and claiming that you were "working" with someone is not an acceptable excuse.
+      * **<span style={{ color: '#00be00' }}>A-2.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>This rule also covers intentionally joining a Discord scene (voice channel) where an active RP situation is already taking place, for the purpose of asking something, clarifying, or simply observing by voice. If you are not a participant in the scene, your entry and any questions in this channel are considered interference with the RP process. All questions must be asked strictly after the scene ends or in text OOC channels.</span>
+    * **A-3** — <span style={{ color: '#ff0000' }}>Any events or large-scale organized roleplay games, including border raids, car shows, checkpoints, motorcades, mass road blockades, etc., are prohibited without permission from staff on shift.</span> <span style={{ color: '#00be00' }}>Conducting any events or large organized RP scenes — including border raids, car competitions, checkpoints, motorcades, mass road blockades, and similar actions — is prohibited without prior permission from duty staff.</span>
+    * **A-4** — Before putting handcuffs on someone, you must roleplay it. **<span style={{ color: '#ff0000' }}>Example:</span>** <span style={{ color: '#ff0000' }}>\*put on handcuffs\*.</span>
+      * **<span style={{ color: '#00be00' }}>Note:</span>** <span style={{ color: '#00be00' }}>Since text chat is unavailable or not available to all players, roleplay is done by voice in a Discord scene or in the "game-chat" channel.</span>
+      * **<span style={{ color: '#00be00' }}>Example:</span>** <span style={{ color: '#00be00' }}>"I'm taking handcuffs from my pouch and securing your hands behind your back."</span>\
+        **<span style={{ color: '#00be00' }}>Action without roleplay in the scene/channel is considered Fail RP.</span>**
+    * **A-5** — It is prohibited to engage in roleplay on behalf of <span style={{ color: '#00be00' }}>non-existent</span> <span style={{ color: '#ff0000' }}>unauthorized</span> organizations or <span style={{ color: '#ff0000' }}>companies</span> <span style={{ color: '#00be00' }}>factions</span> (e.g., <span style={{ color: '#00be00' }}>Rosgvardia</span> <span style={{ color: '#ff0000' }}>bounty hunters</span> or <span style={{ color: '#00be00' }}>any other</span> non-existent factions on the server, <span style={{ color: '#00be00' }}>even if they</span> <span style={{ color: '#ff0000' }}>which</span> have their own liveries).
+    * **A-6** — You can perform any civilian work if it is fully realistic, appropriate, and does not violate other server rules. <span style={{ color: '#00be00' }}>Interaction with players is carried out through the corresponding voice channels.</span>
+    * **A-8** — <span style={{ color: '#ff0000' }}>Provocation:</span> If a violation occurred due to someone's provocation, the violation will not count, and the person who provoked will be punished.
+    * **A-9** — It is prohibited to evade punishment <span style={{ color: '#ff0000' }}>(e.g., leaving the server, exiting the game, or other ways to avoid responsibility).</span> <span style={{ color: '#00be00' }}>by any means — for example, leaving the server, not joining, or voluntarily exiting a voice Mod Scene if the moderator has not yet released you, as well as taking other actions to avoid responsibility.</span>
+    * **A-11** — **<span style={{ color: '#ff0000' }}>Rule on conflicts and communication</span>**
+      * <span style={{ color: '#ff0000' }}>It is prohibited to initiate</span> **<span style={{ color: '#ff0000' }}>out-of-game conflicts</span>**<span style={{ color: '#ff0000' }>, provoke, insult, or show aggression towards other participants during a game session in the game chat.</span>
+      * <span style={{ color: '#ff0000' }}>Discussing non-game disputes and conflicts in the game chat is prohibited. Resolving such situations is only allowed in tickets. If the discussion involves other conflict participants, it must take place only under administration control in tickets.</span>
+      * <span style={{ color: '#ff0000' }}>Repeated or intentional violations of this rule may result in a warning, temporary block, or ban.</span>
+      * <span style={{ color: '#ff0000' }}>In case of serious disagreements, contact the administration via Discord or create a support/complaint ticket.</span>
+      * <span style={{ color: '#ff0000' }}>If another player starts provoking you, do not react to the provocation under any circumstances: simply document what is happening (e.g., make a screen recording or screenshot) and call a moderator/submit a ticket, or simply leave the scene</span> <span style={{ color: '#00be00' }}>Every player must be in a Discord scene while playing. The Discord nickname must match the in-game name. Using voice-changing programs (except for special roles, e.g., characters with a unique role) or ignoring calls in the voice channel is equated to Fail RP.</span>
+    
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold">F<span style={{ color: '#ff0000' }}>ACTIONS</span><span style={{ color: '#00be00' }}>actions</span></h3>
+    </div>
+    * **B-3** — <span style={{ color: '#ff0000' }}>Do not abuse items such as cones, signal flares, police tape, etc.</span> <span style={{ color: '#00be00' }}>It is prohibited to abuse official or auxiliary items such as cones, signal flares, police tape, and other similar objects.</span>
+    * **B-4** — <span style={{ color: '#ff0000' }}>You cannot place spikes / stop sticks directly in front of suspects or when they are already close to you, nor place them under parked vehicles. You must prepare a spike blockade in advance.</span> <span style={{ color: '#00be00' }}>It is prohibited to place spikes or stop sticks directly in front of suspects, near their vehicles, or under parked cars. A spike blockade must be prepared in advance.</span>
+    * **B-5** — Impersonating department heads or employees is prohibited. <span style={{ color: '#ff0000' }}>This includes using restricted-access vehicles, indicating rank or roles in the name, using rank call signs (e.g., DP-000), etc. Unofficial employees are allowed to use neutral call signs — only consisting of 4 digits (e.g.,</span> <span style={{ color: '#ff0000' }}>`4832`</span><span style={{ color: '#ff0000' }}>), without prefixes and letter codes.</span>
+      * **<span style={{ color: '#00be00' }}>B-5.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>This includes using restricted-access official vehicles, indicating ranks or positions in the display name, using official call signs (e.g., DP-000), and other actions creating a false impression of faction affiliation.</span>
+      * **<span style={{ color: '#00be00' }}>B-5.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Unofficial employees are allowed to use only neutral call signs — consisting of 4 digits (e.g.,</span> <span style={{ color: '#00be00' }}>`4832`</span><span style={{ color: '#00be00' }}>), without prefixes and letter designations.</span>
+    * **B-6** — <span style={{ color: '#00be00' }}>Factions/</span><span style={{ color: '#ff0000' }}>U</span><span style={{ color: '#00be00' }}>u</span>nits without a rank cannot use any letters in their call signs and must be in a clearly designated official vehicle and in server-provided uniform.
+    * **B-7** — Uniform must correspond to the <span style={{ color: '#ff0000' }}>corresponding</span> vehicle <span style={{ color: '#00be00' }}>you are driving</span> <span style={{ color: '#ff0000' }}>they drive</span> (e.g., PPS uniform on a PPS vehicle).
+    * **B-8** — <span style={{ color: '#ff0000' }}>Fire department vehicles have no right to patrol. This can be done by cars used by leadership, but not trucks. EMERCOM can visit businesses to make purchases / grab a snack between calls.</span> <span style={{ color: '#00be00' }}>Fire trucks, tankers, and ladder trucks cannot be used for patrolling. Patrolling is only allowed on leadership official vehicles and unit auxiliary cars.</span>
+    * **B-9** — <span style={{ color: '#ff0000' }}>All Department of Transport vehicles can patrol, except for the flatbed tow truck and cone truck. The snowplow can only patrol when there is snow/ice on the map.</span> <span style={{ color: '#00be00' }}>Patrolling is allowed on all Department of Transport vehicles except flatbed tow truck, cargo tow truck, and cone truck. The snowplow can only patrol when there is snow or ice on the map.</span>
+    * **<span style={{ color: '#00be00' }}>B-10</span>** <span style={{ color: '#00be00' }}>— FSB and MVD are prohibited from using the SWAT Truck for regular patrolling. Use of special equipment is only allowed when there is a confirmed threat, such as hostage situations or armed resistance.</span>
+    * **B-****<span style={{ color: '#00be00' }}>11</span>****<span style={{ color: '#ff0000' }}>10</span>** — <span style={{ color: '#00be00' }}>Unofficial traffic police officers</span> **<span style={{ color: '#ff0000' }}>Unofficial DPS:</span>** <span style={{ color: '#ff0000' }}>From weapons</span> only pepper spray, baton, and Glock 17 pistol are allowed.
+    * **B-****<span style={{ color: '#00be00' }}>12</span>****<span style={{ color: '#ff0000' }}>11</span>** — Use of the police helicopter is allowed **only upon request** **<span style={{ color: '#00be00' }}>and approval in Discord leadership channels</span>** **<span style={{ color: '#ff0000' }}>from the highest leadership</span>** **<span style={{ color: '#00be00' }}>or moderation approval</span>**. Without official permission, use of the helicopter is prohibited.
+    * **B-****<span style={{ color: '#00be00' }}>13</span>****<span style={{ color: '#ff0000' }}>12</span>** — <span style={{ color: '#ff0000' }}>If you are officially a member of any government faction with access to weapons, law enforcement, or government-authority (public) powers (e.g., MVD, FSB, Investigative Committee, Court, etc.), you are prohibited from participating in criminal group activities (officially or unofficially), while participating in criminal actions alone is not prohibited; it is also prohibited to simultaneously be a member of MVD and FSB; prohibited to be a member of the Court or Investigative Committee if you are a member of FSB; in other cases, combining two government factions is allowed only if you do not hold a leader or deputy leader position in both factions simultaneously.</span> **<span style={{ color: '#ff0000' }}>Exceptions:</span>** <span style={{ color: '#ff0000' }}>Department of Transport, Ministry of Health, EMERCOM, and other similar civilian (non-law-enforcement) services not related to law enforcement/investigative/judicial activities and without access to weapons or law enforcement/government-authority (public) powers.</span> <span style={{ color: '#00be00' }}>Indicating rank or position in the display nickname is prohibited if you are not playing for the corresponding faction. It is only allowed when in the faction and playing for it at that moment.</span>
+    * **<span style={{ color: '#00be00' }}>B-14</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Use of radios in the "Moscow City Emergency Services" Discord. Use of radio communication channels (special voice Discord scenes "Radio") is allowed only to employees of the corresponding factions (MVD, EMERCOM, etc.).</span>
+    * **<span style={{ color: '#00be00' }}>B-15</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>In the absence of active official lawyers, the right to temporarily perform their duties may be granted to any other player exclusively with direct approval from server staff.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#ff0000' }}>OPG</span><span style={{ color: '#00be00' }}>Criminal Activity</span></h3>
+    </div>
+    * **C-1** — Criminal actions cannot be committed in the parking lot or inside buildings of any law enforcement agencies, at EMERCOM stations, or at the Department of Transport. <span style={{ color: '#ff0000' }}>Current maps of green zones marking these and other territories are in the channel</span> [**<span style={{ color: '#ff0000' }}>📑┃information</span>**](https://discord.com/channels/1331331077553262765/1416197158427693056)<span style={{ color: '#ff0000' }}>.</span>
+      <Accordion title="Green Zone Map">
+        <img src="/assets/server-rules/safe-zones-map.png" alt="Green Zone Map" />
+      </Accordion>
+    * **C-2** — <span style={{ color: '#ff0000' }}>Cop baiting: Do not provoke law enforcement with reckless actions such as running stop signs, careless driving, false 112 calls, or other provocative actions.</span> <span style={{ color: '#00be00' }}>It is prohibited to provoke law enforcement with reckless actions such as traffic violations (e.g., running a STOP sign), careless driving, false 112 calls, and other similar actions.</span>
+      * **<span style={{ color: '#00be00' }}>C-2.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Provocations and baiting also include intentionally entering RP scenes or official Discord channels to interfere with work, as well as unjustified mentions (pings) of players or faction employees in text and voice channels to create conflict outside of an RP situation.</span>
+      * **<span style={{ color: '#00be00' }}>C-2.2</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Example:</span>** <span style={{ color: '#00be00' }}>if a player enters a voice channel where an arrest is taking place and interferes with the conversation without being a participant in the scene — this is considered a violation of this rule.</span>
+    * **C-3** — <span style={{ color: '#ff0000' }}>It is prohibited to kidnap law enforcement officers, firefighters, rescue workers, and Department of Transport employees without their consent.</span> <span style={{ color: '#00be00' }}>It is prohibited to kidnap players without their consent, including faction employees (police, firefighters, rescue workers, Department of Transport, etc.).</span>
+      * **<span style={{ color: '#00be00' }}>C-3.1</span>** <span style={{ color: '#00be00' }}>— Any kidnapping must occur by mutual consent of the parties, have a justified purpose, and be conducted within an RP situation.</span>
+      * **<span style={{ color: '#00be00' }}>C-3.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Random or meaningless kidnappings are not allowed; only planned actions are permitted — for example, robberies or story events with prior agreement with participants.</span>
+    * **<span style={{ color: '#ff0000' }}>C-4</span>** <span style={{ color: '#ff0000' }}>— All roleplay kidnappings must have a justified purpose; random kidnapping is not allowed. For example, planned robberies or kidnappings of specific persons for story reasons are allowed, provided there is a prior agreement with the player.</span>
+    * **C-****<span style={{ color: '#00be00' }}>4</span>****<span style={{ color: '#ff0000' }}>5</span>** — During PT (<span style={{ color: '#00be00' }}>Peace Timer/</span><span style={{ color: '#ff0000' }}>P</span>eace <span style={{ color: '#00be00' }}>T</span><span style={{ color: '#ff0000' }}>t</span>imer<span style={{ color: '#ff0000' }}>/priority timer</span>) no intentional criminal actions are allowed, including chases, shootouts, robberies, kidnappings, etc.
+    * **C-****<span style={{ color: '#00be00' }}>5</span>****<span style={{ color: '#ff0000' }}>6</span>** — Groups of <span style={{ color: '#ff0000' }}>more than 2 people committing any illegal actions or behavior are considered an "unauthorized criminal group" and contradict the rules. Only official criminal groups (in civilian operations) can participate in criminal actions as a group of 3 or more people. No individual criminal group can have more than 4 members online simultaneously, and multiple criminal groups cannot work together. Criminal group behavior will be monitored.</span> <span style={{ color: '#00be00' }}>three or more people committing any illegal actions or demonstrating criminal behavior are considered unauthorized criminal groups and violate project rules.</span>
+      * <span style={{ color: '#00be00' }}>Only officially registered criminal organizations (operating within Civilian Operations) have the right to commit criminal actions as a group of three or more participants.</span>
+      * <span style={{ color: '#00be00' }}>Each separate group within an official OPG may include no more than four active participants online simultaneously, however one official OPG may consist of multiple such groups, provided they do not interact directly with each other in unified operations.</span>
+      * <span style={{ color: '#00be00' }}>Joint actions or coordination between different groups, even within the same OPG, are prohibited during active situations.</span>
+      * <span style={{ color: '#00be00' }}>The behavior and activity of criminal groups are under constant staff supervision.</span>
+    * **C-****<span style={{ color: '#00be00' }}>6</span>****<span style={{ color: '#ff0000' }}>7</span>** — <span style={{ color: '#ff0000' }}>Bank robberies can only be committed by official criminal groups with at least 2 players. There must be a 10-minute break between robberies. Jewelry store robberies do not require membership in an official criminal group, but also require 2 players and a 10-minute break. All robberies must be fully roleplayed (without triggering the alarm and immediately running away).</span> <span style={{ color: '#00be00' }}>Bank robberies are only allowed to official criminal organizations with at least 2 players.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.1</span>** <span style={{ color: '#00be00' }}>— There must be at least a 10-minute break between bank robberies.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Jewelry store robberies can be conducted without membership in an official OPG, but also require at least 2 participants and a 10-minute break between attempts.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.3</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>All robberies must be conducted in a roleplay format — without instant escape and with roleplay (e.g., interaction with hostages, guards, police, etc.).</span>
+    *   **C-****<span style={{ color: '#00be00' }}>7</span>****<span style={{ color: '#ff0000' }}>8</span>** — Any players, including members of official criminal groups, can commit cash register robberies, <span style={{ color: '#ff0000' }}>jewelry stores and ATMs</span> <span style={{ color: '#00be00' }}>ATMs and jewelry stores</span>. <span style={{ color: '#ff0000' }}>All actions, including preparation and commission of the robbery, must be fully roleplayed (with special attention to realism when robbing a jewelry store). Video recording during the robbery is also mandatory.</span>
+
+        **<span style={{ color: '#ff0000' }}>Roleplay example:</span>**
+
+        <span style={{ color: '#ff0000' }}>\*Took the duffel bag off my shoulder\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Threw the bag on the floor - bag is on the floor\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Took out a hammer\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Smashed the display case with the hammer\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Takes the jewelry by hand and puts it in the bag\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Locked the bag\*</span>
+
+        <span style={{ color: '#ff0000' }}>\*Put the bag on my shoulder\*</span>
+
+        **<span style={{ color: '#ff0000' }}>Note:</span>** <span style={{ color: '#ff0000' }}>During any robbery, don't forget about A-10 - the 10-minute wanted rule.</span>
+
+        * **<span style={{ color: '#00be00' }}>C-7.1</span>** <span style={{ color: '#00be00' }}>— All actions, including preparation and the robbery itself, must be fully roleplayed in the "game-chat" — roleplay in RP scenes is not allowed.</span>
+        * **<span style={{ color: '#00be00' }}>C-7.2</span>** <span style={{ color: '#00be00' }}>— When robbing a jewelry store, increased attention to roleplay realism is required.</span>
+        * **<span style={{ color: '#00be00' }}>C-7.3</span>** <span style={{ color: '#00be00' }}>— Video recording of the robbery process is mandatory.</span>
+        * **<span style={{ color: '#00be00' }}>C-7.4</span>** <span style={{ color: '#00be00' }}>— Don't forget about rule A-10 — a 10-minute wanted period applies after the robbery.</span>
+        * **<span style={{ color: '#00be00' }}>Roleplay Examples (Available in Documentation):</span>**
+    * **C-****<span style={{ color: '#00be00' }}>8</span>****<span style={{ color: '#ff0000' }}>9</span>** — Only members of official criminal groups can participate in hostage-taking scenes. At least two captors must be actively involved in each such scene.
+    * **C-****<span style={{ color: '#00be00' }}>9</span>****<span style={{ color: '#ff0000' }}>10</span>** — High Rock park cannot be intentionally used to escape from law enforcement. Pursuit may begin in the park, but cannot end/continue in the park after it has started.
+    * **<span style={{ color: '#ff0000' }}>C-11</span>** <span style={{ color: '#ff0000' }}>— Anyone can refuse to participate in hostage-taking/kidnapping roleplay at their personal discretion.</span>
+    * **C-****<span style={{ color: '#00be00' }}>10</span>****<span style={{ color: '#ff0000' }}>12</span>** — **<span style={{ color: '#ff0000' }}>Rule for official OPGs</span>** If all 4 active members of an official OPG were **eliminated or arrested** simultaneously, then that OPG **temporarily suspends its activity** and **has no right to roleplay for that organization for 1 hour** from the moment of the incident.
+      * **<span style={{ color: '#00be00' }}>C-10.1</span>** <span style={{ color: '#00be00' }}>—</span> The OPG itself **is not removed from the Civilian Operations server** — after 1 hour has passed, participants can resume roleplay with at least one active member.
+      * **<span style={{ color: '#00be00' }}>C-10.2</span>** <span style={{ color: '#00be00' }}>—</span> **Note:** "Active participants" refers to players currently in the OPG and participating in roleplay.
+
+    --- 
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold">V<span style={{ color: '#ff0000' }}>EHICLES</span><span style={{ color: '#00be00' }}>ehicles</span></h3>
+    </div>
+    <div className="flex justify-center items-center w-full -mt-16">
+      <h3 className="text-3xl font-bold">M<span style={{ color: '#ff0000' }}>EANS</span><span style={{ color: '#00be00' }}>eans</span></h3>
+    </div>
+    * **D-1** — <span style={{ color: '#ff0000' }}>All driving must be fully realistic both from the vehicle's perspective and in general (e.g., no off-road sports cars, no climbing mountains in any vehicle, no speeding off-roaders, etc.). All emergency services must obey all traffic laws and prioritize safety during searches.</span> <span style={{ color: '#00be00' }}>Vehicle driving must be fully realistic, both in terms of vehicle behavior and overall driving style.</span>
+      * **<span style={{ color: '#00be00' }}>D-1.1</span>** <span style={{ color: '#00be00' }}>— It is prohibited to use sports cars in mountainous areas, climb to the edges of the map (mountains, except for High Rock park territory) in any type of vehicle, or drive off-roaders at excessive speeds.</span>
+      * **<span style={{ color: '#00be00' }}>D-1.2</span>** <span style={{ color: '#00be00' }}>— All emergency service employees must strictly obey traffic laws and prioritize safety during search and rescue operations.</span>
+    * **<span style={{ color: '#ff0000' }}>D-4</span>** <span style={{ color: '#ff0000' }}>— Forklifts and front loaders must stay within the construction zone, except when escorted by a law enforcement or Department of Transport vehicle (except those described in rule B-9). They can travel to another "work site" and can be used on road work only with Department of Transport permission.</span>
+    * **D-****<span style={{ color: '#00be00' }}>4</span>****<span style={{ color: '#ff0000' }}>5</span>** — Bank trucks — only bank employees can use bank trucks.
+    * **D-****<span style={{ color: '#00be00' }}>5</span>****<span style={{ color: '#ff0000' }}>6</span>** — Food trucks — no more than 2 food trucks can operate simultaneously.
+    * **D-****<span style={{ color: '#00be00' }}>6</span>****<span style={{ color: '#ff0000' }}>7</span>** — Lawn mowers can <span style={{ color: '#ff0000' }}>work</span> <span style={{ color: '#00be00' }}>move</span> only <span style={{ color: '#ff0000' }}>on</span> <span style={{ color: '#00be00' }}>on</span> grass and sidewalk<span style={{ color: '#ff0000' }}>s</span><span style={{ color: '#00be00' }}>s.</span><span style={{ color: '#ff0000' }>, on roads they must cross through crosswalks and cannot be involved in accidents with law enforcement.</span> <span style={{ color: '#00be00' }}>They must cross roadways exclusively at pedestrian crossings.</span>
+    * **D-****<span style={{ color: '#00be00' }}>7</span>****<span style={{ color: '#ff0000' }}>8</span>** — Agricultural vehicles, such as tractors, cannot travel on public streets at speeds exceeding 25 miles per hour without an escort.
+    * **D-****<span style={{ color: '#00be00' }}>8</span>****<span style={{ color: '#ff0000' }}>9</span>** — Information about prohibited and limited vehicles can be found in the [**<span style={{ color: '#ff0000' }}>📄 | information</span>**](https://discord.com/channels/1331331077553262765/1416197158427693056)[**<span style={{ color: '#00be00' }}>📂┃information-𝖤𝖱𝖫𝖢</span>**](https://discord.com/channels/1331331077553262765/1394230066896044183) section.
+    * **D-****<span style={{ color: '#00be00' }}>9</span>****<span style={{ color: '#ff0000' }}>10</span>** — <span style={{ color: '#ff0000' }}>All ATVs or buggies can only be used within the park. During competitions, they can be on closed roads only with law enforcement permission. When traveling between permitted competition areas, they must be transported on a trailer. Any use of ATVs/buggies must remain within the park.</span> <span style={{ color: '#00be00' }}>ATVs and buggies are allowed for use only within High Rock park. During competitions, they can be on closed road sections exclusively with law enforcement permission. Travel between permitted event zones/travel to the park must be done via trailer transport. Any use of ATVs and buggies outside the park territory is prohibited.</span>

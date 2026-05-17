@@ -1,0 +1,146 @@
+---
+title: "Update V0.1.2"
+---
+
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/fraction-update-part-1.png"
+  alt="Update V0.1.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Update V0.1.2 — 07.03.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  The first stage of a major faction overhaul has officially launched! We are updating the regulatory framework and technical tools to make interactions between organizations more professional and engaging.
+</div>
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">New Regulations and Rules</h3>
+</div>
+
+We have completely reworked the documentation. Rules are now more transparent, and responsibilities are clearer:
+
+* [**General faction rules**](https://wiki.erlcrussia.xyz/documentation-moscow-roleplay/fractions-rules/fractions-rules) — fundamental foundations of all government structures.
+* [**Rules for leaders**](https://wiki.erlcrussia.xyz/documentation-moscow-roleplay/fractions-rules/lider-rules) — updated management and responsibility standards.
+
+> **Important note:** Leaders are now starting their **first introductory term (without nepotism day)**. Rules will be refined in the process, and with the introduction of the Government system (Investigative Committee, Prosecutor's Office, and Court), compliance with regulations will become even stricter and more realistic.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Technical Changes</h3>
+</div>
+
+We have updated our tools for automating faction operations:
+
+* **Department Management** — a new version of the bot has been released and deployed!
+  * New promotion and demotion system, leaders need to redo the "warnings" and "promotion and demotion" channels to **"📈┃promotions-and-acceptances"** and **"📉┃demotions-and-punishments"**.
+
+  <Accordion title="Full list of changes in the MRP Department Management bot">
+    <div className="flex justify-center items-center w-full -mt-8">
+      <h4 className="text-3xl font-bold">New Features</h4>
+    </div>
+    ~~**1. Custom Bot System For Factions ✨**~~
+
+    * ~~Auto-start bots after reboot~~
+    * ~~Automatic restart on crash~~
+    * ~~Separate logs for each bot~~
+
+    <Warning>
+    **The Custom Bot System for factions is currently under development.**
+    </Warning>
+
+    **2. Extended Punishment System**
+
+    * **Punishment Timers** — automatic removal upon expiration.
+    * **Rank Roles** — now for each rank upon promotion, you can configure roles that will automatically be assigned to the member upon promotion to that rank.
+    * **Units** — now you can configure units for your department. This will allow convenient promotion of employees. Units can also define roles that will be assigned upon their acceptance or transfer.
+
+    **3. Suspension System**
+
+    * **New punishment type** for convenient employee suspension.
+    * **Suspension period** with automatic removal.
+    * **Explanatory notes** — now a member can write an explanatory note through the bot to justify their violations or confess to them.
+    * **Attaching evidence to explanatory notes** through a convenient field in the modal window.
+    * **DM Notifications** — sending explanatory notes via DM.
+
+    **4. Role Synchronization**
+
+    * **Sequential cycle** every 40 minutes:
+      1. Management check.
+      2. Access rights check for livery request channels.
+      3. Synchronization of faction roles with the RP scenes server.
+    * **Automatic assignment/removal** of roles
+    * **Support for 8+ factions:** MVD, FSB, EMERCOM, Ministry of Health, Court, Investigative Committee, Department of Transport
+
+    **5. Configuration System**
+
+    * **Permission Settings** — allowed roles for bot commands.
+    * **Channel Settings** — channels for punishments, promotions, acceptances, dismissals, etc.
+    * **Dismissal Types** — categories with roles for automatic assignment.
+    * **Punishment Roles** — roles that will be assigned through the punishment system.
+    * **Forbidden Roles** — roles that cannot be promoted to (e.g., "Member" role)
+    * **Unit Mode** — if your faction's curator has approved the ability for employees to work in multiple units, you can activate this function. This will allow the bot to permit accepting employees into multiple units.
+    * **Prefix Management** — we have created a convenient panel for managing your faction's employee prefixes. Now you can easily add prefixes, remove them from nicknames, and much more (see point 6 for details).
+
+    **6. Prefix System**
+
+    * **Unique prefixes** in the format `[XX-001]`.
+    * **Automatic check** for already existing prefix.
+    * **Multiple prefixes** for one user.
+    * **Main prefix** — displayed in the nickname.
+    * **Prefix deletion** through the prefix management panel.
+
+    **7. Other**
+
+    * Optimized the bot.
+    * Made its application more automated.
+    * Incorporated your ideas.
+    * Improved the modcall system (now moderators can accept a modcall and you will receive a message in DM).
+
+    ***
+    <div className="flex justify-center items-center w-full text-center">
+      **List of New Commands (Public Access Commands)**
+    </div>
+
+    * /about-bot
+    * /announcement-for-departments
+    * /configure
+    * /accept
+    * /demotion
+    * /dismiss
+    * /promotion
+    * /punishment
+    * /remove-warning
+    * /remove-reprimand
+    * /remove-suspension
+    * /remove-verbal-warning
+    * /remove-blacklist
+    * /active-warnings
+    * /active-reprimands
+    * /active-suspensions
+    * /active-verbal-warnings
+    * /active-blacklists
+    * /suspend
+    * /transfer
+    * /prefix manage
+    * /prefix view
+    * /role give
+    * /role remove
+    * /mod
+
+  </Accordion>
+
+* **Channel** [**📂┃information-ERLC**](https://discord.com/channels/1331331077553262765/1416197158427693056) — added/modified EMERCOM and Ministry of Health sections.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Instructions For Leaders</h3>
+</div>
+
+For the new system to work correctly, all factions **must reconfigure the bot**.
+
+* **Use the command:** `/configure`
+* **Status:** Update loaded, restart Discord to update commands.

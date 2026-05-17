@@ -2,155 +2,106 @@
   "language": "en",
   "tabs": [
     {
-      "tab": "Information And Rules",
-      "icon": "circle-info",
+      "tab": "Server Rules",
+      "icon": "shield-halved",
       "pages": [
         "en/index",
-        "en/our-discord",
         {
-          "group": "Getting Started",
-          "icon": "rocket",
+          "group": "General Rules",
+          "icon": "book",
           "pages": [
-            "en/introduction",
-            "en/api-clients"
+            "en/server-rules/general-rules/server-rules",
+            "en/server-rules/general-rules/rp-terms",
+            "en/server-rules/general-rules/discord-rules",
+            "en/server-rules/general-rules/event-rules"
           ]
         },
         {
-          "group": "Documentation",
-          "icon": "book-open",
+          "group": "Faction Rules",
+          "icon": "users",
           "pages": [
-            "en/documentation/erlc-location-information",
-            "en/documentation/rate-limits",
-            "en/documentation/error-codes"
+            "en/server-rules/fractions-rules/fractions-rules",
+            "en/server-rules/fractions-rules/lider-rules"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "tab": "Staff Rules",
+      "icon": "user-shield",
+      "pages": [
         {
-          "group": "Policies",
+          "group": "Staff Rules",
           "icon": "scale-balanced",
           "pages": [
-            "en/policies/api-use-guidelines"
+            "en/staff-rules/staff-regulations",
+            "en/staff-rules/ethical-norms",
+            "en/staff-rules/curator-rules"
           ]
         }
       ]
     },
     {
-      "tab": "API Documentation",
-      "icon": "code",
-      "versions": [
+      "tab": "Changelogs",
+      "icon": "clock-rotate-left",
+      "pages": [
+        "en/changelogs/index",
         {
-          "version": "API V1",
+          "group": "MRP Changelogs",
+          "icon": "list",
           "pages": [
             {
-              "group": "API V1 Documentation",
-              "icon": "file-code",
+              "group": "Update V0.4",
               "pages": [
-                {
-                  "group": "MRP ER:LC API V1",
-                  "icon": "gamepad",
-                  "pages": [
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-bans",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-players",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-joinlogs",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-queue",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-killlogs",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-commandlogs",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-modcalls",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-vehicles",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/get-moscowroleplay-erlc-server-staff",
-                    "en/api-reference/api-v1/mrp-erlc-api-v1/post-moscowroleplay-erlc-server-command"
-                  ]
-                },
-                {
-                  "group": "MRP Stats API V1",
-                  "icon": "chart-bar",
-                  "pages": [
-                    "en/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-playercount",
-                    "en/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-membercount",
-                    "en/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-allmembercount",
-                    "en/api-reference/api-v1/mrp-stats-api-v1/get-moscowroleplay-stats-server-botcount"
-                  ]
-                }
+                "en/changelogs/changelog-v0.4/changelog-v0.4.1"
+              ]
+            },
+            {
+              "group": "Update V0.3",
+              "pages": [
+                "en/changelogs/changelog-v0.3/changelog-v0.3.3",
+                "en/changelogs/changelog-v0.3/changelog-v0.3.2",
+                "en/changelogs/changelog-v0.3/changelog-v0.3.1"
+              ]
+            },
+            {
+              "group": "Update V0.2",
+              "pages": [
+                "en/changelogs/changelog-v0.2/changelog-v0.2.3",
+                "en/changelogs/changelog-v0.2/changelog-v0.2.2",
+                "en/changelogs/changelog-v0.2/changelog-v0.2.1"
+              ]
+            },
+            {
+              "group": "Update V0.1",
+              "pages": [
+                "en/changelogs/changelog-v0.1/changelog-v0.1.3",
+                "en/changelogs/changelog-v0.1/changelog-v0.1.2",
+                "en/changelogs/changelog-v0.1/changelog-v0.1.1"
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Guides",
+      "icon": "book-open",
+      "pages": [
+        {
+          "group": "Guides",
+          "icon": "atlas",
+          "pages": [
+            "en/guides/index"
           ]
         },
         {
-          "version": "API V2",
-          "default": true,
+          "group": "Forums",
+          "icon": "comments",
           "pages": [
-            {
-              "group": "API V2 Documentation",
-              "icon": "file-code",
-              "pages": [
-                {
-                  "group": "MRP ER:LC API V2",
-                  "icon": "gamepad",
-                  "pages": [
-                    "en/api-reference/api-v2/mrp-erlc-api-v2/get-moscowroleplay-erlc-server",
-                    "en/api-reference/api-v2/mrp-erlc-api-v2/post-moscowroleplay-erlc-server-command"
-                  ]
-                },
-                {
-                  "group": "MRP Economy API V2",
-                  "icon": "coins",
-                  "pages": [
-                    {
-                      "group": "Economy API GET Endpoints",
-                      "icon": "arrow-down",
-                      "pages": [
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-economy",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-users",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-businesses",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-mafias",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-government",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-store",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-ads",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-system",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-get-endpoints-civops-api-v2/get-moscowroleplay-civops-health"
-                      ]
-                    },
-                    {
-                      "group": "Economy API POST Endpoints",
-                      "icon": "arrow-up",
-                      "pages": [
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-economy",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-users",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-businesses",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-mafias",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-government",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-store",
-                        "en/api-reference/api-v2/mrp-civops-api-v2/mrp-post-endpoints-civops-api-v2/post-moscowroleplay-civops-ads"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group": "MRP Stats API V2",
-                  "icon": "chart-bar",
-                  "pages": [
-                    "en/api-reference/api-v2/mrp-stats-api-v2/get-moscowroleplay-stats"
-                  ]
-                }
-              ]
-            }
+            "en/guides/forums/publication-rules"
           ]
         }
-      ]
-    },
-    {
-      "tab": "Other Integration Options",
-      "icon": "puzzle-piece",
-      "pages": [
-        "en/other/websocket-gateway",
-        "en/other/event-webhook"
-      ]
-    },
-    {
-      "tab": "Tutorials",
-      "icon": "book-open",
-      "pages": [
-        "en/tutorials/how-to-get-api-key"
       ]
     }
   ],
@@ -237,7 +188,7 @@
   "navbar": {
     "links": [
       {
-        "label": "API Support",
+        "label": "Support",
         "href": "https://discord.gg/MoscowRus"
       }
     ],
@@ -246,5 +197,14 @@
       "label": "Login",
       "href": "https://erlcrussia.com/login"
     }
+  },
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Our Discord",
+        "icon": "discord",
+        "href": "https://discord.gg/MoscowRus"
+      }
+    ]
   }
 }
