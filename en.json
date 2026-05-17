@@ -103,6 +103,19 @@
           ]
         }
       ]
+    },
+    {
+      "tab": "Documentation Features",
+      "icon": "clipboard-list",
+      "pages": [
+        {
+          "group": "Tools",
+          "icon": "terminal",
+          "pages": [
+            "en/docs-features/mcp-server"
+          ]
+        }
+      ]
     }
   ],
   "footer": {

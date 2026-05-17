@@ -1,0 +1,83 @@
+---
+title: "MCP Server"
+description: "Connect AI assistants to ER:LC Russia documentation via Model Context Protocol for real-time information search and analysis."
+---
+
+## Endpoint
+
+```text
+https://wiki.erlcrussia.com/mcp
+```
+
+## What is MCP?
+
+Model Context Protocol (MCP) is an open standard that allows AI assistants to connect to external data sources and tools. By pointing an MCP-compatible client at our server, your AI assistant will be able to search, retrieve, and analyze information from the ER:LC Russia documentation in real time.
+
+<Tip>
+  **The MCP server provides access to up-to-date documentation without the need to manually copy and paste content into the AI assistant's chat.**
+</Tip>
+
+## Connecting
+
+### Claude Desktop
+
+Add the following to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### Cursor
+
+Add the server in your Cursor MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### OpenCode
+
+Add the server in your OpenCode MCP settings:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "erlcrussia-wiki": {
+      "type": "remote",
+      "url": "https://wiki.erlcrussia.com/mcp",
+      "enabled": true
+    }
+  }
+}
+```
+
+### Other Clients
+
+Any client that supports remote MCP servers can be pointed at the URL above. See your client's documentation for the exact configuration format.
+
+## Available Tools
+
+Once connected, your client will have access to tools for:
+
+* **Searching** the documentation by keywords or topics
+* **Retrieving** specific pages and sections
+* **Navigating** the documentation structure
+
+## Why Use This?
+
+* Ask your AI assistant questions about our documentation and get answers based on the most current information
+* Avoid hallucinations or outdated information
+* Create agents and workflows that automatically stay in sync with documentation changes
