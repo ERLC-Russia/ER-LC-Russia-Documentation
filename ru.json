@@ -51,6 +51,12 @@
           "icon": "list",
           "pages": [
             {
+              "group": "Обновление V0.4",
+              "pages": [
+                "ru/changelogs/changelog-v0.4/changelog-v0.4.1"
+              ]
+            },
+            {
               "group": "Обновление V0.3",
               "pages": [
                 "ru/changelogs/changelog-v0.3/changelog-v0.3.3",
@@ -82,7 +88,20 @@
       "tab": "Гайды",
       "icon": "book-open",
       "pages": [
-        "ru/guides/index"
+        {
+          "group": "Гайды",
+          "icon": "atlas",
+          "pages": [
+            "ru/guides/index"
+          ]
+        },
+        {
+          "group": "Форумы",
+          "icon": "comments",
+          "pages": [
+            "ru/guides/forums/publication-rules"
+          ]
+        }
       ]
     }
   ],
