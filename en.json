@@ -43,9 +43,9 @@
           "icon": "scale-balanced",
           "pages": [
             "en/staff/staff-rules/erlc-staff-rules",
-            "en/staff/staff-rules/ethical-norms",
             "en/staff/staff-rules/curator-rules",
-            "en/staff/staff-rules/pr-rules"
+            "en/staff/staff-rules/pr-rules",
+            "en/staff/staff-rules/ethical-norms"
           ]
         },
         {
