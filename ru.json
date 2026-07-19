@@ -29,8 +29,7 @@
           "icon": "shop",
           "pages": [
             "ru/server-rules/civilian-operations/busines-rules",
-            "ru/server-rules/civilian-operations/opg-rules",
-            "ru/server-rules/civilian-operations/chop-rules"
+            "ru/server-rules/civilian-operations/opg-rules"
           ]
         }
       ]
@@ -69,6 +68,7 @@
           "pages": [
             {
               "group": "Обновление V0.5",
+              "icon": "folder",
               "pages": [
                 "ru/changelogs/changelog-v0.5/changelog-v0.5.2",
                 "ru/changelogs/changelog-v0.5/changelog-v0.5.1"
@@ -76,12 +76,14 @@
             },
             {
               "group": "Обновление V0.4",
+              "icon": "folder",
               "pages": [
                 "ru/changelogs/changelog-v0.4/changelog-v0.4.1"
               ]
             },
             {
               "group": "Обновление V0.3",
+              "icon": "folder",
               "pages": [
                 "ru/changelogs/changelog-v0.3/changelog-v0.3.3",
                 "ru/changelogs/changelog-v0.3/changelog-v0.3.2",
@@ -90,6 +92,7 @@
             },
             {
               "group": "Обновление V0.2",
+              "icon": "folder",
               "pages": [
                 "ru/changelogs/changelog-v0.2/changelog-v0.2.3",
                 "ru/changelogs/changelog-v0.2/changelog-v0.2.2",
@@ -98,6 +101,7 @@
             },
             {
               "group": "Обновление V0.1",
+              "icon": "folder",
               "pages": [
                 "ru/changelogs/changelog-v0.1/changelog-v0.1.3",
                 "ru/changelogs/changelog-v0.1/changelog-v0.1.2",
