@@ -51,7 +51,8 @@
         {
           "group": "Гайды Для Персонала",
           "pages": [
-            "ru/staff-rules/staff-ingame-commands"
+            "ru/staff-rules/erlc-staff-commands",
+            "ru/staff-rules/erlc-staff-handbook"
           ],
           "icon": "compass"
         }
