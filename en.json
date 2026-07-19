@@ -29,8 +29,7 @@
           "icon": "shop",
           "pages": [
             "en/server-rules/civilian-operations/busines-rules",
-            "en/server-rules/civilian-operations/opg-rules",
-            "en/server-rules/civilian-operations/chop-rules"
+            "en/server-rules/civilian-operations/opg-rules"
           ]
         }
       ]
