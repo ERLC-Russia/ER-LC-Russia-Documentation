@@ -42,17 +42,17 @@
           "group": "Staff Rules",
           "icon": "scale-balanced",
           "pages": [
-            "en/staff-rules/staff-regulations",
-            "en/staff-rules/erlc-staff-rules",
-            "en/staff-rules/ethical-norms",
-            "en/staff-rules/curator-rules"
+            "en/staff/staff-rules/erlc-staff-rules",
+            "en/staff/staff-rules/ethical-norms",
+            "en/staff/staff-rules/curator-rules",
+            "en/staff/staff-rules/pr-rules"
           ]
         },
         {
           "group": "Staff Guides",
           "pages": [
-            "en/staff-rules/erlc-staff-commands",
-            "en/staff-rules/erlc-staff-handbook"
+            "en/staff/guides/erlc-staff-commands",
+            "en/staff/guides/erlc-staff-handbook"
           ],
           "icon": "compass"
         }
