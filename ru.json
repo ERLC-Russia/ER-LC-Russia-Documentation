@@ -42,17 +42,17 @@
           "group": "Правила Персонала",
           "icon": "scale-balanced",
           "pages": [
-            "ru/staff-rules/staff-regulations",
-            "ru/staff-rules/erlc-staff-rules",
-            "ru/staff-rules/ethical-norms",
-            "ru/staff-rules/curator-rules"
+            "ru/staff/staff-regulations",
+            "ru/staff/staff-rules/erlc-staff-rules",
+            "ru/staff/staff-rules/ethical-norms",
+            "ru/staff/staff-rules/curator-rules"
           ]
         },
         {
           "group": "Гайды Для Персонала",
           "pages": [
-            "ru/staff-rules/erlc-staff-commands",
-            "ru/staff-rules/erlc-staff-handbook"
+            "ru/staff/guides/erlc-staff-commands",
+            "ru/staff/guides/erlc-staff-handbook"
           ],
           "icon": "compass"
         }
