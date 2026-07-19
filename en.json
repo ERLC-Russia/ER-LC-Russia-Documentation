@@ -43,9 +43,18 @@
           "icon": "scale-balanced",
           "pages": [
             "en/staff-rules/staff-regulations",
+            "en/staff-rules/erlc-staff-rules",
             "en/staff-rules/ethical-norms",
             "en/staff-rules/curator-rules"
           ]
+        },
+        {
+          "group": "Staff Guides",
+          "pages": [
+            "en/staff-rules/erlc-staff-commands",
+            "en/staff-rules/erlc-staff-handbook"
+          ],
+          "icon": "compass"
         }
       ]
     },
