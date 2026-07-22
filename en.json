@@ -39,13 +39,20 @@
       "icon": "user-shield",
       "pages": [
         {
+          "group": "General Provisions",
+          "icon": "scroll",
+          "pages": [
+            "en/staff/general/staff-rights",
+            "en/staff/general/ethical-norms"
+          ]
+        },
+        {
           "group": "Staff Rules",
           "icon": "scale-balanced",
           "pages": [
             "en/staff/staff-rules/erlc-staff-rules",
             "en/staff/staff-rules/curator-rules",
-            "en/staff/staff-rules/pr-rules",
-            "en/staff/staff-rules/ethical-norms"
+            "en/staff/staff-rules/pr-rules"
           ]
         },
         {

@@ -39,13 +39,20 @@
       "icon": "user-shield",
       "pages": [
         {
+          "group": "Основные Положения",
+          "icon": "scroll",
+          "pages": [
+            "ru/staff/general/staff-rights",
+            "ru/staff/general/ethical-norms"
+          ]
+        },
+        {
           "group": "Правила Персонала",
           "icon": "scale-balanced",
           "pages": [
             "ru/staff/staff-rules/erlc-staff-rules",
             "ru/staff/staff-rules/curator-rules",
-            "ru/staff/staff-rules/pr-rules",
-            "ru/staff/staff-rules/ethical-norms"
+            "ru/staff/staff-rules/pr-rules"
           ]
         },
         {
