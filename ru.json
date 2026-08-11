@@ -39,19 +39,27 @@
       "icon": "user-shield",
       "pages": [
         {
+          "group": "Основные Положения",
+          "icon": "scroll",
+          "pages": [
+            "ru/staff/general/staff-rights",
+            "ru/staff/general/ethical-norms"
+          ]
+        },
+        {
           "group": "Правила Персонала",
           "icon": "scale-balanced",
           "pages": [
-            "ru/staff-rules/staff-regulations",
-            "ru/staff-rules/erlc-staff-rules",
-            "ru/staff-rules/ethical-norms",
-            "ru/staff-rules/curator-rules"
+            "ru/staff/staff-rules/erlc-staff-rules",
+            "ru/staff/staff-rules/curator-rules",
+            "ru/staff/staff-rules/pr-rules"
           ]
         },
         {
           "group": "Гайды Для Персонала",
           "pages": [
-            "ru/staff-rules/staff-ingame-commands"
+            "ru/staff/guides/erlc-staff-commands",
+            "ru/staff/guides/erlc-staff-handbook"
           ],
           "icon": "compass"
         }
@@ -66,6 +74,13 @@
           "group": "История Изменений MRP",
           "icon": "list",
           "pages": [
+          {
+              "group": "Обновление V1.0",
+              "icon": "folder",
+              "pages": [
+                "ru/changelogs/changelog-v1.0/changelog-v1.0.1"
+              ]
+            },
             {
               "group": "Обновление V0.5",
               "icon": "folder",

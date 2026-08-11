@@ -29,8 +29,7 @@
           "icon": "shop",
           "pages": [
             "en/server-rules/civilian-operations/busines-rules",
-            "en/server-rules/civilian-operations/opg-rules",
-            "en/server-rules/civilian-operations/chop-rules"
+            "en/server-rules/civilian-operations/opg-rules"
           ]
         }
       ]
@@ -40,13 +39,29 @@
       "icon": "user-shield",
       "pages": [
         {
+          "group": "General Provisions",
+          "icon": "scroll",
+          "pages": [
+            "en/staff/general/staff-rights",
+            "en/staff/general/ethical-norms"
+          ]
+        },
+        {
           "group": "Staff Rules",
           "icon": "scale-balanced",
           "pages": [
-            "en/staff-rules/staff-regulations",
-            "en/staff-rules/ethical-norms",
-            "en/staff-rules/curator-rules"
+            "en/staff/staff-rules/erlc-staff-rules",
+            "en/staff/staff-rules/curator-rules",
+            "en/staff/staff-rules/pr-rules"
           ]
+        },
+        {
+          "group": "Staff Guides",
+          "pages": [
+            "en/staff/guides/erlc-staff-commands",
+            "en/staff/guides/erlc-staff-handbook"
+          ],
+          "icon": "compass"
         }
       ]
     },
@@ -59,6 +74,13 @@
           "group": "MRP Changelogs",
           "icon": "list",
           "pages": [
+            {
+              "group": "Update V1.0",
+              "icon": "folder",
+              "pages": [
+                "en/changelogs/changelog-v1.0/changelog-v1.0.1"
+              ]
+            },
             {
               "group": "Update V0.5",
               "icon": "folder",
