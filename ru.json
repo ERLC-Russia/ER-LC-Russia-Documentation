@@ -74,6 +74,13 @@
           "group": "История Изменений MRP",
           "icon": "list",
           "pages": [
+          {
+              "group": "Обновление V1.0",
+              "icon": "folder",
+              "pages": [
+                "ru/changelogs/changelog-v1.0/changelog-v1.0.1"
+              ]
+            },
             {
               "group": "Обновление V0.5",
               "icon": "folder",

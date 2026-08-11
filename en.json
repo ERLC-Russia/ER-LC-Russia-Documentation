@@ -75,6 +75,13 @@
           "icon": "list",
           "pages": [
             {
+              "group": "Update V1.0",
+              "icon": "folder",
+              "pages": [
+                "en/changelogs/changelog-v1.0/changelog-v1.0.1"
+              ]
+            },
+            {
               "group": "Update V0.5",
               "icon": "folder",
               "pages": [
