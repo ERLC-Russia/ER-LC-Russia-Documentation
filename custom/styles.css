@@ -1,10 +1,14 @@
+/* ==========================================================================
+   ER:LC Russia Documentation - Global & Custom Styles
+   ========================================================================== */
+
 /* ============================================
    КНОПКА CTA В ВЕРХНЕЙ ПАНЕЛИ (ТОЛЬКО ДЕСКТОП 1024px+)
    ============================================ */
 
 @media (min-width: 1024px) {
-  #topbar-cta-button {
-    background: #FFA500 !important;
+  #topbar-cta-button:not(.is-authenticated) {
+    background: #006800 !important;
     border-radius: 12px !important;
     padding: 0 !important;
     width: 80px !important;
@@ -13,13 +17,21 @@
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
+    transition: background-color 0.15s ease, transform 0.15s ease !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-shadow: 0 0 #0000 !important;
+    --tw-ring-color: transparent !important;
   }
 
-  #topbar-cta-button svg {
+  #topbar-cta-button:not(.is-authenticated) svg {
     display: none !important;
   }
 
-  #topbar-cta-button a {
+  #topbar-cta-button:not(.is-authenticated) a {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -27,10 +39,13 @@
     margin: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
 
-  #topbar-cta-button div,
-  #topbar-cta-button span {
+  #topbar-cta-button:not(.is-authenticated) div,
+  #topbar-cta-button:not(.is-authenticated) span {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -38,13 +53,15 @@
     height: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
+    border: none !important;
+    outline: none !important;
   }
 
-  #topbar-cta-button,
-  #topbar-cta-button span,
-  #topbar-cta-button a,
-  #topbar-cta-button svg,
-  #topbar-cta-button svg path {
+  #topbar-cta-button:not(.is-authenticated),
+  #topbar-cta-button:not(.is-authenticated) span,
+  #topbar-cta-button:not(.is-authenticated) a,
+  #topbar-cta-button:not(.is-authenticated) svg,
+  #topbar-cta-button:not(.is-authenticated) svg path {
     color: #ffffff !important;
     fill: #ffffff !important;
     stroke: #ffffff !important;
@@ -52,15 +69,25 @@
     font-size: 0.875rem !important;
   }
 
-  #topbar-cta-button:hover {
-    background: #E69500 !important;
+  #topbar-cta-button:not(.is-authenticated):hover {
+    background: #008200 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    --tw-ring-offset-shadow: 0 0 #0000 !important;
+    --tw-ring-shadow: 0 0 #0000 !important;
+    --tw-shadow: 0 0 #0000 !important;
   }
 
-  #topbar-cta-button:hover,
-  #topbar-cta-button:hover span,
-  #topbar-cta-button:hover a,
-  #topbar-cta-button:hover svg,
-  #topbar-cta-button:hover svg path {
+  #topbar-cta-button:not(.is-authenticated):active {
+    transform: translateY(2px) !important;
+  }
+
+  #topbar-cta-button:not(.is-authenticated):hover,
+  #topbar-cta-button:not(.is-authenticated):hover span,
+  #topbar-cta-button:not(.is-authenticated):hover a,
+  #topbar-cta-button:not(.is-authenticated):hover svg,
+  #topbar-cta-button:not(.is-authenticated):hover svg path {
     color: #ffffff !important;
     fill: #ffffff !important;
     stroke: #ffffff !important;
@@ -69,9 +96,9 @@
     box-shadow: none !important;
   }
 
-  #topbar-cta-button:hover *,
-  #topbar-cta-button:hover *::before,
-  #topbar-cta-button:hover *::after {
+  #topbar-cta-button:not(.is-authenticated):hover *,
+  #topbar-cta-button:not(.is-authenticated):hover *::before,
+  #topbar-cta-button:not(.is-authenticated):hover *::after {
     outline: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -201,9 +228,28 @@ footer a[href*="roblox.com"]:hover::before {
   }
 
   nav a[href*="discord.gg/MoscowRus"]:active {
-    transform: translateX(10px) !important; 
-    background: rgba(2, 177, 218, 0.2) !important;
+    transform: translateX(10px) translateY(2px) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
+}
+
+/* ============================================
+   КНОПКА ПОИСКА - АНИМАЦИЯ НАЖАТИЯ (TRANSLATEY)
+   ============================================ */
+
+#search-bar-entry,
+button#search-bar-entry,
+#navbar button[aria-label*="Search"],
+#navbar button[aria-label*="Поиск"],
+#navbar button:has(svg) {
+  transition: transform 0.15s ease, background-color 0.15s ease !important;
+}
+
+#search-bar-entry:active,
+button#search-bar-entry:active,
+#navbar button[aria-label*="Search"]:active,
+#navbar button[aria-label*="Поиск"]:active {
+  transform: translateY(2px) !important;
 }
 
 /* ============================================
@@ -225,7 +271,6 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
   object-fit: contain !important;
   transform: translate(-10px, -12px) !important;
 }
-
 
 /* ============================================
    СКРЫТЬ ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ
@@ -281,9 +326,9 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
   box-shadow: none !important;
   padding: 0 !important;
   margin-right: 8px !important;
-  
+
   --tw-ring-shadow: none !important;
-  box-shadow: none !important; 
+  box-shadow: none !important;
 }
 
 #mobile-nav a[href*="discord.gg/MoscowRus"] svg {
@@ -299,12 +344,14 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
   #header {
     display: none !important;
   }
-  .prose, 
+
+  .prose,
   main,
   #content-container {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
+
   .relative.max-w-screen-xl {
     padding-top: 0 !important;
   }
@@ -312,4 +359,178 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
 
 #no-header-here {
   display: none !important;
+}
+
+/* ==========================================================================
+   МЕНЮ ПОЛЬЗОВАТЕЛЯ И АВАТАР (ИДЕНТИЧНО FRONTEND)
+   ========================================================================== */
+
+/* Сброс стилей контейнера CTA кнопки при авторизованной сессии */
+#topbar-cta-button:has(.account-menu-container),
+#topbar-cta-button.is-authenticated {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+#topbar-cta-button:has(.account-menu-container)>a,
+#topbar-cta-button.is-authenticated>a {
+  display: none !important;
+}
+
+.account-menu-container {
+  position: relative !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible !important;
+}
+
+.account-avatar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 44px;
+  height: 44px;
+  outline: none;
+}
+
+.account-avatar-button:hover {
+  transform: scale(1.05);
+}
+
+.account-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 240px;
+  background: rgb(20, 20, 20);
+  border: 1px solid rgb(44, 46, 51);
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  animation: dropdown-fade 0.2s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@keyframes dropdown-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-link-roblox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--foreground-muted, #9ca3af);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.dropdown-link-roblox:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground-muted, #9ca3af);
+}
+
+.dropdown-settings-btn,
+.dropdown-dashboard-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--foreground-muted, #9ca3af);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.dropdown-settings-btn:hover,
+.dropdown-dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground-muted, #9ca3af);
+}
+
+.dropdown-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  text-align: left;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.dropdown-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.dropdown-link-roblox svg,
+.dropdown-settings-btn svg,
+.dropdown-dashboard-btn svg,
+.dropdown-logout-btn svg {
+  flex-shrink: 0;
 }

@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Документация ER:LC Россия",
   "colors": {
-    "primary": "#FFA500",
-    "light": "#FFA500",
-    "dark": "#FFA500"
+    "primary": "#006800",
+    "light": "#006800",
+    "dark": "#006800"
   },
   "icons": {
     "library": "fontawesome"
