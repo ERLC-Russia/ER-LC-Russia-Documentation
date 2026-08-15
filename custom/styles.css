@@ -3,16 +3,20 @@
    ========================================================================== */
 
 /* ============================================
-   КНОПКА CTA В ВЕРХНЕЙ ПАНЕЛИ (ТОЛЬКО ДЕСКТОП 1024px+)
+   КНОПКА CTA / ВОЙТИ В ВЕРХНЕЙ ПАНЕЛИ
+   (Дизайн как на основном сайте, высота 38px)
    ============================================ */
 
 @media (min-width: 1024px) {
   #topbar-cta-button:not(.is-authenticated) {
-    background: #006800 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 1px solid #006800 !important;
     border-radius: 12px !important;
-    padding: 0 !important;
-    width: 80px !important;
-    height: 37px !important;
+    padding: 0 1.6rem !important;
+    height: 38px !important;
+    box-sizing: border-box !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -20,11 +24,35 @@
     transition: all 0.15s ease !important;
     box-shadow: none !important;
     outline: none !important;
-    border: none !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    color: #000000 !important;
+    overflow: visible !important;
   }
 
-  #topbar-cta-button:not(.is-authenticated) svg {
+  #topbar-cta-button:not(.is-authenticated)::before,
+  #topbar-cta-button:not(.is-authenticated)::after,
+  #topbar-cta-button:not(.is-authenticated) *::before,
+  #topbar-cta-button:not(.is-authenticated) *::after {
     display: none !important;
+    content: none !important;
+    background: transparent !important;
+  }
+
+  #topbar-cta-button:not(.is-authenticated) svg,
+  #topbar-cta-button:not(.is-authenticated) img {
+    display: none !important;
+  }
+
+  #topbar-cta-button:not(.is-authenticated) * {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
   }
 
   #topbar-cta-button:not(.is-authenticated) a {
@@ -35,6 +63,9 @@
     margin: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    background: transparent !important;
   }
 
   #topbar-cta-button:not(.is-authenticated) div,
@@ -46,48 +77,48 @@
     height: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    color: inherit !important;
+    background: transparent !important;
   }
 
+  /* Светлая тема (текст черный) */
   #topbar-cta-button:not(.is-authenticated),
   #topbar-cta-button:not(.is-authenticated) span,
-  #topbar-cta-button:not(.is-authenticated) a,
-  #topbar-cta-button:not(.is-authenticated) svg,
-  #topbar-cta-button:not(.is-authenticated) svg path {
+  #topbar-cta-button:not(.is-authenticated) a {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Темная тема (текст белый) */
+  .dark #topbar-cta-button:not(.is-authenticated),
+  .dark #topbar-cta-button:not(.is-authenticated) span,
+  .dark #topbar-cta-button:not(.is-authenticated) a {
     color: #ffffff !important;
-    fill: #ffffff !important;
-    stroke: #ffffff !important;
-    font-weight: 600 !important;
-    font-size: 0.875rem !important;
   }
 
-  #topbar-cta-button:not(.is-authenticated):hover {
-    background: #005500 !important;
-  }
-
-  #topbar-cta-button:not(.is-authenticated):active {
-    transform: translateY(2px) !important;
-  }
-
+  /* Hover: зеленый фон #006800, белый текст на любой теме */
   #topbar-cta-button:not(.is-authenticated):hover,
+  .dark #topbar-cta-button:not(.is-authenticated):hover {
+    background: #006800 !important;
+    background-color: #006800 !important;
+    border-color: #006800 !important;
+    color: #ffffff !important;
+  }
+
   #topbar-cta-button:not(.is-authenticated):hover span,
   #topbar-cta-button:not(.is-authenticated):hover a,
-  #topbar-cta-button:not(.is-authenticated):hover svg,
-  #topbar-cta-button:not(.is-authenticated):hover svg path {
+  .dark #topbar-cta-button:not(.is-authenticated):hover span,
+  .dark #topbar-cta-button:not(.is-authenticated):hover a {
     color: #ffffff !important;
-    fill: #ffffff !important;
-    stroke: #ffffff !important;
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: transparent !important;
   }
 
-  #topbar-cta-button:not(.is-authenticated):hover *,
-  #topbar-cta-button:not(.is-authenticated):hover *::before,
-  #topbar-cta-button:not(.is-authenticated):hover *::after {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+  /* Active: нажатие вниз на 2px */
+  #topbar-cta-button:not(.is-authenticated):active {
+    transform: translateY(2px) !important;
   }
 }
 
@@ -197,6 +228,8 @@ footer a[href*="roblox"]:hover::before {
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease !important;
     background: transparent !important;
     border: 1px solid rgba(10, 13, 12, 0.1) !important;
+    /* Двигать кнопку Поддержки по горизонтали (X) и вертикали (Y) */
+    transform: translateX(12px) translateY(0px) !important;
   }
 
   header a[href*="erlcrussia.com/discord"]:hover {
@@ -217,7 +250,7 @@ footer a[href*="roblox"]:hover::before {
   }
 
   header a[href*="erlcrussia.com/discord"]:active {
-    transform: translateY(2px) !important;
+    transform: translateX(0px) translateY(2px) !important;
     background: rgba(255, 255, 255, 0.08) !important;
   }
 }
@@ -262,6 +295,32 @@ footer img[src*="Banner-ERLC-Russia-Docs-System.svg"] {
 }
 
 /* ============================================
+   ПОРЯДОК ЭЛЕМЕНТОВ В ШАПКЕ
+   (Кнопка выбора темы ПЕРЕД кнопкой Поддержки)
+   ============================================ */
+
+@media (min-width: 1024px) {
+
+  header div:has(> #theme-preference-menu-trigger),
+  header [data-component-name="theme-preference-menu"],
+  header #theme-preference-menu-trigger,
+  header .theme-preference-menu-trigger {
+    order: 1 !important;
+  }
+
+  header nav:has(a[href*="erlcrussia.com/discord"]),
+  header div:has(> a[href*="erlcrussia.com/discord"]),
+  header a[href*="erlcrussia.com/discord"] {
+    order: 2 !important;
+  }
+
+  #topbar-cta-button,
+  header div:has(> #topbar-cta-button) {
+    order: 3 !important;
+  }
+}
+
+/* ============================================
    ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ
    ============================================ */
 
@@ -278,6 +337,8 @@ button#theme-preference-menu-trigger {
   background: transparent !important;
   border: 1px solid transparent !important;
   transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+  /* Двигать кнопку выбора темы по горизонтали (X) и вертикали (Y) */
+  transform: translateX(0x) translateY(0px) !important;
 }
 
 #theme-preference-menu-trigger:hover,
@@ -296,7 +357,7 @@ button#theme-preference-menu-trigger:hover {
 button#theme-preference-menu-trigger:active,
 #theme-preference-menu-trigger.is-active-pressed,
 button#theme-preference-menu-trigger.is-active-pressed {
-  transform: translateY(2px) !important;
+  transform: translateX(0px) translateY(2px) !important;
 }
 
 /* ============================================

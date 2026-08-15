@@ -367,8 +367,39 @@
     true
   );
 
+  function reorderHeaderElements() {
+    try {
+      const themeTrigger =
+        document.querySelector('#theme-preference-menu-trigger') ||
+        document.querySelector('button#theme-preference-menu-trigger') ||
+        document.querySelector('[data-component-name="theme-preference-menu"]') ||
+        document.querySelector('header .theme-preference-menu-trigger');
+
+      const supportBtn =
+        document.querySelector('header a[href*="erlcrussia.com/discord"]') ||
+        document.querySelector('header a[href*="discord.gg"]') ||
+        document.querySelector('header a[href*="discord"]');
+
+      if (!themeTrigger || !supportBtn) return;
+
+      const themeWrapper = themeTrigger.closest('[data-component-name="theme-preference-menu"]') || themeTrigger.parentElement;
+      const supportWrapper = supportBtn.closest('nav') || supportBtn.parentElement;
+
+      if (themeWrapper && supportWrapper && themeWrapper.parentElement === supportWrapper.parentElement) {
+        const parent = themeWrapper.parentElement;
+        const children = Array.from(parent.children);
+        const themeIndex = children.indexOf(themeWrapper);
+        const supportIndex = children.indexOf(supportWrapper);
+        if (themeIndex > supportIndex) {
+          parent.insertBefore(themeWrapper, supportWrapper);
+        }
+      }
+    } catch (e) {}
+  }
+
   function init() {
     fetchSession();
+    reorderHeaderElements();
 
     const observer = new MutationObserver(function () {
       const ctaButton = document.getElementById('topbar-cta-button');
@@ -380,6 +411,7 @@
           renderAccountUI();
         }
       }
+      reorderHeaderElements();
     });
 
     observer.observe(document.documentElement || document.body, {
@@ -394,3 +426,4 @@
     init();
   }
 })();
+
