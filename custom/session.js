@@ -1,9 +1,3 @@
-/**
- * ER:LC Russia Documentation - Mintlify Session & Account Menu Script
- * Synchronizes user session with the backend API and renders the account menu in the navbar.
- * Exact 1:1 match with Frontend AccountMenu.tsx
- */
-
 (function () {
   'use strict';
 
@@ -18,7 +12,6 @@
   let isAdmin = false;
   let firstAllowedPage = 'subscriptions';
 
-  // Тексты локализации
   function getTranslations() {
     const isEn =
       (document.documentElement.lang &&
@@ -41,12 +34,11 @@
       settings: 'Настройки',
       dashboard: 'Дашборд',
       logout: 'Выйти',
-      login: 'Вход',
+      login: 'Войти',
       menuAria: 'Меню пользователя',
     };
   }
 
-  // Получение URL аватарки в точности как в AccountMenu.tsx
   function getAvatarUrl(user) {
     if (!user) return 'https://cdn.erlcrussia.com/images/Moscow-RolePlay-Icon-Website.png';
     if (user.image) return user.image;
@@ -57,7 +49,6 @@
     return 'https://cdn.erlcrussia.com/images/Moscow-RolePlay-Icon-Website.png';
   }
 
-  // Безопасное экранирование строк
   function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -68,7 +59,6 @@
       .replace(/'/g, '&#039;');
   }
 
-  // SVG иконки в точности из AccountMenu.tsx (Lucide-react size=18 + Roblox icon)
   const icons = {
     roblox: `<svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="flex-shrink:0;">
       <path d="M3.38116 0L0 12.6188L12.6188 16L16 3.38116L3.38116 0ZM9.291 10.2363L5.76484 9.291L6.71013 5.76484L10.2377 6.71013L9.291 10.2363Z"/>
@@ -90,7 +80,6 @@
     </svg>`,
   };
 
-  // Проверка прав администратора / дашборда через API бэкенда по текущей сессии
   async function checkDashboardAccess() {
     if (!currentUser) {
       isAdmin = false;
@@ -125,7 +114,6 @@
     }
   }
 
-  // Запрос сессии с бэкенда
   async function fetchSession() {
     try {
       const res = await fetch(`${API_BASE_URL}/v2/auth/session`, {
@@ -154,7 +142,6 @@
     }
   }
 
-  // Выход из аккаунта
   async function handleSignOut(e) {
     if (e) e.preventDefault();
     try {
@@ -165,7 +152,6 @@
     } catch (err) {
       console.error('[ERLC Docs Session] Ошибка логаута:', err);
     } finally {
-      // Очищаем куки на клиенте
       const expired = '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
       document.cookie = `erlc_auth${expired}`;
       document.cookie = `erlc_auth${expired} domain=.erlcrussia.com;`;
@@ -178,14 +164,12 @@
     }
   }
 
-  // Отрисовка UI
   function renderAccountUI() {
     const ctaButton = document.getElementById('topbar-cta-button');
     if (!ctaButton) return;
 
     const t = getTranslations();
 
-    // Если пользователь не авторизован -> стандартная кнопка входа
     if (!currentUser) {
       ctaButton.classList.remove('is-authenticated');
       if (ctaButton.tagName === 'A') {
@@ -205,7 +189,6 @@
       return;
     }
 
-    // Пользователь авторизован -> отключаем дефолтные ссылки контейнера
     ctaButton.classList.add('is-authenticated');
     if (ctaButton.tagName === 'A') {
       ctaButton.removeAttribute('href');
@@ -235,9 +218,36 @@
     const displayName = currentUser.name || currentUser.username || 'Avatar';
     const currentCallback = encodeURIComponent(window.location.href);
 
-    let dropdownHtml = '';
+    let avatarBtn = container.querySelector('.account-avatar-button');
+    if (!avatarBtn) {
+      avatarBtn = document.createElement('button');
+      avatarBtn.className = 'account-avatar-button';
+      avatarBtn.type = 'button';
+      avatarBtn.setAttribute('aria-label', escapeHtml(t.menuAria));
+      avatarBtn.innerHTML = `<img src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(displayName)}" class="account-avatar" />`;
+      avatarBtn.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        isOpen = !isOpen;
+        renderAccountUI();
+      };
+      container.appendChild(avatarBtn);
+    } else {
+      const img = avatarBtn.querySelector('img');
+      if (img && img.src !== avatarUrl) {
+        img.src = avatarUrl;
+      }
+    }
+
+    let dropdown = container.querySelector('.account-dropdown');
 
     if (isOpen) {
+      if (!dropdown) {
+        dropdown = document.createElement('div');
+        dropdown.className = 'account-dropdown';
+        container.appendChild(dropdown);
+      }
+
       let itemsHtml = '';
 
       if (!currentUser.robloxId) {
@@ -272,33 +282,9 @@
         </button>
       `;
 
-      dropdownHtml = `
-        <div class="account-dropdown">
-          ${itemsHtml}
-        </div>
-      `;
-    }
+      dropdown.innerHTML = itemsHtml;
 
-    container.innerHTML = `
-      <button class="account-avatar-button" type="button" aria-label="${escapeHtml(t.menuAria)}">
-        <img src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(displayName)}" class="account-avatar" />
-      </button>
-      ${dropdownHtml}
-    `;
-
-    // Привязка событий
-    const avatarBtn = container.querySelector('.account-avatar-button');
-    if (avatarBtn) {
-      avatarBtn.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        isOpen = !isOpen;
-        renderAccountUI();
-      };
-    }
-
-    if (isOpen) {
-      const robloxBtn = container.querySelector('#erlc-docs-roblox-btn');
+      const robloxBtn = dropdown.querySelector('#erlc-docs-roblox-btn');
       if (robloxBtn) {
         robloxBtn.onclick = function (e) {
           e.preventDefault();
@@ -308,7 +294,7 @@
         };
       }
 
-      const settingsBtn = container.querySelector('#erlc-docs-settings-btn');
+      const settingsBtn = dropdown.querySelector('#erlc-docs-settings-btn');
       if (settingsBtn) {
         settingsBtn.onclick = function (e) {
           e.preventDefault();
@@ -318,7 +304,7 @@
         };
       }
 
-      const dashboardBtn = container.querySelector('#erlc-docs-dashboard-btn');
+      const dashboardBtn = dropdown.querySelector('#erlc-docs-dashboard-btn');
       if (dashboardBtn) {
         dashboardBtn.onclick = function (e) {
           e.preventDefault();
@@ -328,7 +314,7 @@
         };
       }
 
-      const logoutBtn = container.querySelector('#erlc-docs-logout-btn');
+      const logoutBtn = dropdown.querySelector('#erlc-docs-logout-btn');
       if (logoutBtn) {
         logoutBtn.onclick = function (e) {
           e.preventDefault();
@@ -337,10 +323,13 @@
           handleSignOut(e);
         };
       }
+    } else {
+      if (dropdown) {
+        dropdown.remove();
+      }
     }
   }
 
-  // Закрытие меню при mousedown вне контейнера (в точности как в React useEffect AccountMenu.tsx)
   document.addEventListener('mousedown', function (event) {
     if (!isOpen) return;
     const container = document.querySelector('.account-menu-container');
@@ -350,7 +339,6 @@
     }
   });
 
-  // Закрытие по Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && isOpen) {
       isOpen = false;
@@ -358,11 +346,30 @@
     }
   });
 
-  // Инициализация и отслеживание SPA навигации в Mintlify
+  document.addEventListener(
+    'pointerdown',
+    function (e) {
+      const btn =
+        e.target && e.target.closest
+          ? e.target.closest('#theme-preference-menu-trigger, .theme-preference-menu-trigger')
+          : null;
+      if (btn) {
+        btn.classList.add('is-active-pressed');
+        const onUp = function () {
+          btn.classList.remove('is-active-pressed');
+          window.removeEventListener('pointerup', onUp);
+          window.removeEventListener('pointercancel', onUp);
+        };
+        window.addEventListener('pointerup', onUp);
+        window.addEventListener('pointercancel', onUp);
+      }
+    },
+    true
+  );
+
   function init() {
     fetchSession();
 
-    // Наблюдатель за изменениями DOM для поддержки динамической навигации Mintlify
     const observer = new MutationObserver(function () {
       const ctaButton = document.getElementById('topbar-cta-button');
       if (ctaButton) {
