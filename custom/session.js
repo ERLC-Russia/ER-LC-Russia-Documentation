@@ -394,7 +394,7 @@
           parent.insertBefore(themeWrapper, supportWrapper);
         }
       }
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function init() {

@@ -388,8 +388,28 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
 }
 
 /* ============================================
-   ДИСКОРД ИКОНКА - НАСТРОЙКА РАЗМЕРОВ
+   ДИСКОРД АНЧОР В САЙДБАРЕ (ОБВОДКА И СТИЛЬ КАРТОЧКИ)
+   (Строго для erlcrussia.com/discord, не затрагивая страницы правил)
    ============================================ */
+
+#sidebar a.nav-anchor[href*="erlcrussia.com/discord"],
+#sidebar a[href*="erlcrussia.com/discord"] {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  height: 42px !important;
+  box-sizing: border-box !important;
+  padding: 0 18px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+  background: transparent !important;
+  border: 1px solid rgba(10, 13, 12, 0.12) !important;
+  margin: 6px 0 14px 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 #sidebar a[href*="erlcrussia.com/discord"] div:first-child {
   background: transparent !important;
@@ -397,29 +417,35 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin-left: 18px !important;
+  margin: 0 !important;
+  margin-right: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #sidebar a[href*="erlcrussia.com/discord"] svg,
 #sidebar a[href*="erlcrussia.com/discord"] svg path {
-  width: 20px !important;
-  height: 20px !important;
-  margin-right: 0px !important;
-  color: #1f2937 !important;
-  fill: #1f2937 !important;
-  opacity: 1 !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  color: rgb(80, 83, 81) !important;
+  fill: rgb(80, 83, 81) !important;
   transition: color 0.15s ease, fill 0.15s ease !important;
 }
 
-#sidebar a[href*="erlcrussia.com/discord"] {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+#sidebar a[href*="erlcrussia.com/discord"],
+#sidebar a[href*="erlcrussia.com/discord"] span {
+  color: rgb(80, 83, 81) !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  transition: color 0.15s ease !important;
 }
 
-#sidebar a[href*="erlcrussia.com/discord"] span {
-  color: #1f2937 !important;
-  font-weight: 500 !important;
-  transition: color 0.15s ease !important;
+/* Hover - светлая тема */
+#sidebar a[href*="erlcrussia.com/discord"]:hover {
+  background: rgba(3, 7, 18, 0.04) !important;
+  border-color: rgba(10, 13, 12, 0.22) !important;
 }
 
 #sidebar a[href*="erlcrussia.com/discord"]:hover svg,
@@ -428,18 +454,34 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
   fill: #000000 !important;
 }
 
+#sidebar a[href*="erlcrussia.com/discord"]:hover,
 #sidebar a[href*="erlcrussia.com/discord"]:hover span {
   color: #000000 !important;
 }
 
-.dark #sidebar a[href*="erlcrussia.com/discord"] svg,
-.dark #sidebar a[href*="erlcrussia.com/discord"] svg path {
-  color: rgb(156, 163, 175) !important;
-  fill: rgb(156, 163, 175) !important;
+/* Темная тема */
+.dark #sidebar a.nav-anchor[href*="erlcrussia.com/discord"],
+.dark #sidebar a[href*="erlcrussia.com/discord"] {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
+.dark #sidebar a[href*="erlcrussia.com/discord"] svg,
+.dark #sidebar a[href*="erlcrussia.com/discord"] svg path {
+  color: rgb(206, 209, 207) !important;
+  fill: rgb(206, 209, 207) !important;
+}
+
+.dark #sidebar a[href*="erlcrussia.com/discord"],
 .dark #sidebar a[href*="erlcrussia.com/discord"] span {
-  color: rgb(209, 213, 219) !important;
+  color: rgb(206, 209, 207) !important;
+  font-weight: 700 !important;
+}
+
+/* Hover - темная тема */
+.dark #sidebar a[href*="erlcrussia.com/discord"]:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .dark #sidebar a[href*="erlcrussia.com/discord"]:hover svg,
@@ -448,8 +490,35 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
   fill: #ffffff !important;
 }
 
+.dark #sidebar a[href*="erlcrussia.com/discord"]:hover,
 .dark #sidebar a[href*="erlcrussia.com/discord"]:hover span {
   color: #ffffff !important;
+}
+
+/* Active */
+#sidebar a[href*="erlcrussia.com/discord"]:active {
+  transform: translateY(1px) !important;
+}
+
+/* ============================================
+   ДИСКОРД АНЧОР В МОБИЛЬНОМ МЕНЮ
+   ============================================ */
+
+#mobile-nav a.nav-anchor[href*="erlcrussia.com/discord"],
+#mobile-nav a[href*="erlcrussia.com/discord"] {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  height: 42px !important;
+  box-sizing: border-box !important;
+  padding: 0 16px !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+  background: transparent !important;
+  border: 1px solid rgba(10, 13, 12, 0.12) !important;
+  margin: 6px 0 12px 0 !important;
 }
 
 #mobile-nav a[href*="erlcrussia.com/discord"] div:first-child {
@@ -458,46 +527,51 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  margin-right: 8px !important;
-  --tw-ring-shadow: none !important;
-  box-shadow: none !important;
+  margin: 0 !important;
+  margin-right: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #mobile-nav a[href*="erlcrussia.com/discord"] svg,
 #mobile-nav a[href*="erlcrussia.com/discord"] svg path {
-  width: 20px !important;
-  height: 20px !important;
-  margin-right: 6px !important;
-  color: #1f2937 !important;
-  fill: #1f2937 !important;
-  opacity: 1 !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  color: rgb(80, 83, 81) !important;
+  fill: rgb(80, 83, 81) !important;
   transition: color 0.15s ease, fill 0.15s ease !important;
 }
 
+#mobile-nav a[href*="erlcrussia.com/discord"],
 #mobile-nav a[href*="erlcrussia.com/discord"] span {
-  color: #1f2937 !important;
-  font-weight: 500 !important;
+  color: rgb(80, 83, 81) !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
   transition: color 0.15s ease !important;
 }
 
-#mobile-nav a[href*="erlcrussia.com/discord"]:hover svg,
-#mobile-nav a[href*="erlcrussia.com/discord"]:hover svg path {
-  color: #000000 !important;
-  fill: #000000 !important;
-}
-
-#mobile-nav a[href*="erlcrussia.com/discord"]:hover span {
-  color: #000000 !important;
+.dark #mobile-nav a.nav-anchor[href*="erlcrussia.com/discord"],
+.dark #mobile-nav a[href*="erlcrussia.com/discord"] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .dark #mobile-nav a[href*="erlcrussia.com/discord"] svg,
 .dark #mobile-nav a[href*="erlcrussia.com/discord"] svg path {
-  color: rgb(156, 163, 175) !important;
-  fill: rgb(156, 163, 175) !important;
+  color: rgb(206, 209, 207) !important;
+  fill: rgb(206, 209, 207) !important;
 }
 
+.dark #mobile-nav a[href*="erlcrussia.com/discord"],
 .dark #mobile-nav a[href*="erlcrussia.com/discord"] span {
-  color: rgb(209, 213, 219) !important;
+  color: rgb(206, 209, 207) !important;
+  font-weight: 700 !important;
+}
+
+.dark #mobile-nav a[href*="erlcrussia.com/discord"]:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .dark #mobile-nav a[href*="erlcrussia.com/discord"]:hover svg,
@@ -506,6 +580,7 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
   fill: #ffffff !important;
 }
 
+.dark #mobile-nav a[href*="erlcrussia.com/discord"]:hover,
 .dark #mobile-nav a[href*="erlcrussia.com/discord"]:hover span {
   color: #ffffff !important;
 }
