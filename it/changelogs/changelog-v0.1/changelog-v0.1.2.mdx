@@ -1,0 +1,146 @@
+---
+title: "Aggiornamento V0.1.2"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/fraction-update-part-1.png"
+  alt="Aggiornamento V0.1.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Aggiornamento V0.1.2 — 07.03.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  La prima fase di un'importante revisione delle fazioni è ufficialmente iniziata! Stiamo aggiornando il quadro normativo e gli strumenti tecnici per rendere le interazioni tra le organizzazioni più professionali e coinvolgenti.
+</div>
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Nuovi Regolamenti e Regole</h3>
+</div>
+
+Abbiamo completamente rielaborato la documentazione. Le regole sono ora più trasparenti e le responsabilità più chiare:
+
+* [**Regole generali delle fazioni**](/it/server-rules/fractions-rules/fractions-rules) — fondamenti basilari di tutte le strutture statali.
+* [**Regole per i leader**](/it/server-rules/fractions-rules/lider-rules) — standard aggiornati di gestione e responsabilità.
+
+> **Nota importante:** I leader stanno ora iniziando il loro **primo mandato introduttivo (senza giorno del nepotismo)**. Le regole verranno perfezionate durante il processo e, con l'introduzione del sistema di Governo (Comitato Investigativo, Procura e Tribunale), il rispetto delle normative diventerà ancora più rigoroso e realistico.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Modifiche Tecniche</h3>
+</div>
+
+Abbiamo aggiornato i nostri strumenti per l'automazione delle operazioni delle fazioni:
+
+* **Gestione Dipartimenti** — è stata rilasciata e implementata una nuova versione del bot!
+  * Nuovo sistema di promozioni e retrocessioni, i leader devono rinominare i canali "avvertimenti" e "promozioni e retrocessioni" in **"📈┃promotions-and-acceptances"** e **"📉┃demotions-and-punishments"**.
+
+  <Accordion title="Elenco completo delle modifiche nel bot Gestione Dipartimenti MRP">
+    <div className="flex justify-center items-center w-full -mt-8">
+      <h4 className="text-3xl font-bold">Nuove Funzionalità</h4>
+    </div>
+    ~~**1. Sistema Bot Personalizzati per le Fazioni ✨**~~
+
+    * ~~Avvio automatico dei bot dopo il riavvio~~
+    * ~~Riavvio automatico in caso di arresto anomalo~~
+    * ~~Log separati per ciascun bot~~
+
+    <Warning>
+    **Il Sistema Bot Personalizzati per le fazioni è attualmente in fase di sviluppo.**
+    </Warning>
+
+    **2. Sistema di Sanzioni Esteso**
+
+    * **Timer delle Sanzioni** — rimozione automatica alla scadenza.
+    * **Ruoli di Grado** — ora per ogni grado, al momento della promozione, puoi configurare ruoli che verranno assegnati automaticamente al membro al raggiungimento di tale grado.
+    * **Unità** — ora puoi configurare unità per il tuo dipartimento. Ciò consentirà una comoda promozione dei dipendenti. Le unità possono anche definire ruoli che verranno assegnati all'accettazione o al trasferimento.
+
+    **3. Sistema di Sospensione**
+
+    * **Nuovo tipo di sanzione** per una comoda sospensione dei dipendenti.
+    * **Periodo di sospensione** con rimozione automatica.
+    * **Note esplicative** — ora un membro può redigere una nota esplicativa tramite il bot per giustificare le proprie infrazioni o ammetterle.
+    * **Allegare prove alle note esplicative** tramite un pratico campo nella finestra modale.
+    * **Notifiche DM** — invio delle note esplicative via messaggio privato.
+
+    **4. Sincronizzazione dei Ruoli**
+
+    * **Ciclo sequenziale** ogni 40 minuti:
+      1. Controllo della gestione.
+      2. Controllo dei diritti di accesso per i canali di richiesta livrea.
+      3. Sincronizzazione dei ruoli di fazione con il server delle scene RP.
+    * **Assegnazione/rimozione automatica** dei ruoli.
+    * **Supporto per 8+ fazioni:** MVD, FSB, EMERCOM, Ministero della Salute, Tribunale, Comitato Investigativo, Dipartimento dei Trasporti.
+
+    **5. Sistema di Configurazione**
+
+    * **Impostazioni Permessi** — ruoli autorizzati per i comandi del bot.
+    * **Impostazioni Canali** — canali per sanzioni, promozioni, assunzioni, licenziamenti, ecc.
+    * **Tipologie di Licenziamento** — categorie con ruoli per l'assegnazione automatica.
+    * **Ruoli di Sanzione** — ruoli che verranno assegnati tramite il sistema sanzionatorio.
+    * **Ruoli Vietati** — ruoli a cui non è possibile essere promossi (es. ruolo "Membro").
+    * **Modalità Unità** — se il curatore della tua fazione ha approvato la possibilità per i dipendenti di operare in più unità, puoi attivare questa funzione per consentire l'accettazione dei dipendenti in più unità.
+    * **Gestione Prefissi** — abbiamo creato un comodo pannello per gestire i prefissi dei dipendenti della tua fazione. Ora puoi facilmente aggiungere prefissi, rimuoverli dai nickname e molto altro (vedi punto 6 per i dettagli).
+
+    **6. Sistema dei Prefissi**
+
+    * **Prefissi unici** nel formato `[XX-001]`.
+    * **Verifica automatica** per prefissi già esistenti.
+    * **Prefissi multipli** per un singolo utente.
+    * **Prefisso principale** — visualizzato nel nickname.
+    * **Cancellazione prefisso** tramite il pannello di gestione dei prefissi.
+
+    **7. Altro**
+
+    * Ottimizzato il bot.
+    * Resa l'applicazione più automatizzata.
+    * Integrate le vostre idee.
+    * Migliorato il sistema modcall (ora i moderatori possono accettare un modcall e riceverai un messaggio nei DM).
+
+    ***
+    <div className="flex justify-center items-center w-full text-center">
+      **Elenco dei Nuovi Comandi (Comandi ad Accesso Pubblico)**
+    </div>
+
+    * /about-bot
+    * /announcement-for-departments
+    * /configure
+    * /accept
+    * /demotion
+    * /dismiss
+    * /promotion
+    * /punishment
+    * /remove-warning
+    * /remove-reprimand
+    * /remove-suspension
+    * /remove-verbal-warning
+    * /remove-blacklist
+    * /active-warnings
+    * /active-reprimands
+    * /active-suspensions
+    * /active-verbal-warnings
+    * /active-blacklists
+    * /suspend
+    * /transfer
+    * /prefix manage
+    * /prefix view
+    * /role give
+    * /role remove
+    * /mod
+
+  </Accordion>
+
+* **Canale** [**📂┃information-ERLC**](https://discord.com/channels/1331331077553262765/1416197158427693056) — aggiunte/modificate le sezioni EMERCOM e Ministero della Salute.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Istruzioni per i Leader</h3>
+</div>
+
+Affinché il nuovo sistema funzioni correttamente, tutte le fazioni **devono riconfigurare il bot**.
+
+* **Usa il comando:** `/configure`
+* **Stato:** Aggiornamento caricato, riavvia Discord per aggiornare i comandi.

@@ -1,0 +1,146 @@
+---
+title: "Actualización V0.1.2"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/fraction-update-part-1.png"
+  alt="Actualización V0.1.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Actualización V0.1.2 — 07.03.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  ¡La primera fase de la gran reestructuración de facciones ha comenzado oficialmente! Actualizamos el marco normativo y las herramientas técnicas para que la interacción entre organizaciones sea más profesional e interesante.
+</div>
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Nuevos Reglamentos y Reglas</h3>
+</div>
+
+Hemos rediseñado completamente la documentación. Ahora las reglas son más transparentes y las responsabilidades más claras:
+
+* [**Reglas generales de facciones**](/es/server-rules/fractions-rules/fractions-rules) — fundamentos esenciales de todas las estructuras gubernamentales.
+* [**Reglas para líderes**](/es/server-rules/fractions-rules/lider-rules) — estándares actualizados de gestión y responsabilidad.
+
+> **Nota importante:** Actualmente los líderes comienzan su **primer mandato introductorio (sin día de favoritismo/nepotismo)**. Las reglas se irán perfeccionando sobre la marcha, y con la introducción del sistema de Gobierno (Comité de Investigación, Fiscalía y Tribunal), el control sobre el cumplimiento de los reglamentos será aún más estricto y realista.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Cambios Técnicos</h3>
+</div>
+
+Actualizamos nuestras herramientas para la automatización del trabajo de las facciones:
+
+* **Gestión de Departamentos** — ¡se ha lanzado e implementado una nueva versión del bot!
+  * Nuevo sistema de ascensos y degradaciones; los líderes deben reorganizar los canales de "advertencias" y "ascensos y degradaciones" en **"📈┃promotions-and-acceptances"** y **"📉┃demotions-and-punishments"**.
+
+  <Accordion title="Lista completa de cambios en el bot de Gestión de Departamentos de MRP">
+    <div className="flex justify-center items-center w-full -mt-8">
+      <h4 className="text-3xl font-bold">Nuevas Funcionalidades</h4>
+    </div>
+    ~~**1. Sistema de Bots Personalizados Para Facciones ✨**~~
+
+    * ~~Inicio automático de bots tras reinicio~~
+    * ~~Reinicio automático en caso de caída~~
+    * ~~Registros (logs) independientes para cada bot~~
+
+    <Warning>
+    **El Sistema de Bots Personalizados para facciones se encuentra actualmente en desarrollo.**
+    </Warning>
+
+    **2. Sistema Extendido de Sanciones**
+
+    * **Temporizadores de Sanciones** — eliminación automática al expirar el plazo.
+    * **Roles de Rango** — ahora para cada rango, al ascender, se pueden configurar roles que se asignarán automáticamente al miembro.
+    * **Divisiones/Unidades** — ahora pueden configurar unidades para su departamento. Esto facilitará el ascenso de empleados. En las unidades también se pueden definir roles que se asignarán al ingresar o transferirse.
+
+    **3. Sistema de Suspensiones**
+
+    * **Nuevo tipo de sanción** para una suspensión conveniente de empleados.
+    * **Plazo de suspensión** con levantamiento automático.
+    * **Explicaciones formales (justificaciones)** — ahora un miembro puede redactar una justificación a través del bot para fundamentar sus infracciones o admitirlas.
+    * **Adjuntar pruebas a la justificación** mediante un campo cómodo en la ventana modal.
+    * **Notificaciones por MD** — envío de la justificación por mensaje directo.
+
+    **4. Sincronización de Roles**
+
+    * **Ciclo secuencial** cada 40 minutos:
+      1. Verificación de administración.
+      2. Verificación de permisos de acceso a los canales de solicitud de libreas.
+      3. Sincronización de roles de facciones con el servidor de escenas de rol (RP).
+    * **Asignación/eliminación automática** de roles
+    * **Soporte para 8+ facciones:** MVD, FSB, EMERCOM (MChS), Ministerio de Salud (MZ), Tribunal, Comité de Investigación (SK), Departamento de Transporte
+
+    **5. Sistema de Configuración**
+
+    * **Configuración de Permisos** — roles autorizados para los comandos del bot.
+    * **Configuración de Canales** — canales para sanciones, ascensos, admisiones, despidos, etc.
+    * **Tipos de Despido** — categorías con roles para asignación automática.
+    * **Roles de Sanción** — roles que se asignarán mediante el sistema de sanciones.
+    * **Roles Prohibidos** — roles a los que no se puede ascender (por ejemplo, el rol "Miembro")
+    * **Modo de Unidades** — si el curador de su facción autorizó que los empleados trabajen en múltiples unidades, puede activar esta función. Esto permitirá al bot aceptar miembros en varias unidades.
+    * **Gestión de Prefijos** — creamos un panel intuitivo para gestionar los prefijos de los empleados de su facción. Ahora puede agregar prefijos, quitarlos de los apodos fácilmente y mucho más (ver detalles en el punto 6).
+
+    **6. Sistema de Prefijos**
+
+    * **Prefijos únicos** en formato `[XX-001]`.
+    * **Verificación automática** de duplicados de prefijo existente.
+    * **Múltiples prefijos** para un mismo usuario.
+    * **Prefijo principal** — visible en el apodo.
+    * **Eliminación de prefijos** mediante el panel de gestión de prefijos.
+
+    **7. Otros**
+
+    * Optimización del bot.
+    * Automatización ampliada en su uso.
+    * Incorporación de sus sugerencias.
+    * Mejora en el sistema de llamadas a moderación (modcalls): ahora los moderadores pueden aceptar una llamada y recibirá un mensaje por MD.
+
+    ***
+    <div className="flex justify-center items-center w-full text-center">
+      **Lista de Nuevos Comandos (Comandos de Acceso Público)**
+    </div>
+
+    * /about-bot
+    * /announcement-for-departments
+    * /configure
+    * /accept
+    * /demotion
+    * /dismiss
+    * /promotion
+    * /punishment
+    * /remove-warning
+    * /remove-reprimand
+    * /remove-suspension
+    * /remove-verbal-warning
+    * /remove-blacklist
+    * /active-warnings
+    * /active-reprimands
+    * /active-suspensions
+    * /active-verbal-warnings
+    * /active-blacklists
+    * /suspend
+    * /transfer
+    * /prefix manage
+    * /prefix view
+    * /role give
+    * /role remove
+    * /mod
+
+  </Accordion>
+
+* **Canal** [**📂┃information-ERLC**](https://discord.com/channels/1331331077553262765/1416197158427693056) — se agregaron/modificaron las secciones de EMERCOM y Ministerio de Salud.
+
+<div className="flex justify-center items-center w-full -mt-4 -mb-4">
+  <h3 className="text-3xl font-bold">Instrucciones Para Líderes</h3>
+</div>
+
+Para que el nuevo sistema funcione correctamente, todas las facciones **deben volver a configurar el bot**.
+
+* **Use el comando:** `/configure`
+* **Estado:** Actualización cargada, reinicie Discord para actualizar los comandos.

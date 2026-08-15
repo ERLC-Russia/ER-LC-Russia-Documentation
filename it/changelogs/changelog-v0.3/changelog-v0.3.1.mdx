@@ -1,0 +1,93 @@
+---
+title: "Aggiornamento V0.3.1"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/tech-part-update.png"
+  alt="Aggiornamento V0.3.1"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Aggiornamento V0.3.1 — 23.04.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  Lanciamo ufficialmente un importante aggiornamento dello stack tecnico incentrato su velocità e comfort. Nella versione V0.3.1, ci siamo concentrati sull'automazione dei processi e sull'espansione delle possibilità di interazione: da un sistema esclusivo per le scene RP all'apertura dell'API dell'economia. I sistemi sono diventati più veloci e lavorare con essi è più intuitivo.
+</div>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">ProxiLink MRP</h3></div>
+
+* **BETA ProxiLink MRP:** Un sistema esclusivo di aggiunta automatica delle scene RP entra nella fase di beta testing pubblico.
+  * Come funziona?
+    * Devi entrare nel canale **⏰┃RP Scene Waiting** sul server **Moscow City Emergency Services**.
+    * Il bot traccia la tua attività sul server e creerà una Scena RP con i giocatori che si trovano nelle vicinanze in gioco. Verrai automaticamente spostato in questa scena.
+    * Al termine della scena, il bot ti riporterà indietro.
+    * Sì, attualmente c'è un ritardo evidente, ma stiamo migliorando costantemente i sistemi.
+  * **Il canale vocale ⏰┃RP Scene Waiting NON è IC e qualsiasi informazione di gioco condivisa lì e successivamente utilizzata nel gioco sarà considerata metagaming.**
+
+> Queste funzionalità sono rilasciate in modalità BETA. Invitiamo tutti i giocatori a utilizzare attivamente i nuovi sistemi, familiarizzare con il loro funzionamento e suggerire miglioramenti o segnalare bug nei canali dedicati. Il vostro feedback ci aiuterà a rendere la versione finale ancora migliore!
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">ModCalls 2.0</h3></div>
+
+**BETA ModCalls 2.0:** Un sistema di chiamata admin completamente riprogettato tramite il comando `;mod`. Le richieste vengono ora elaborate tramite il bot Gestione Dipartimenti MRP. Funziona all'incirca come il comando `!mod` in-game, ma invia le chiamate non al gioco, bensì a un canale separato.
+
+* **Si prega di notare che questo è un comando in-game inserito direttamente nella chat di Roblox. Funziona anche per gli utenti con accesso limitato alla chat: basta digitare il comando nel campo di inserimento e inviarlo.**
+* Puoi anche digitare il comando come `;mod Motivo della chiamata` in modo che il moderatore sappia perché lo hai chiamato al momento del teletrasporto.
+* I comandi nei canali Discord non sono stati rimossi.
+
+> Queste funzionalità sono rilasciate in modalità BETA. Invitiamo tutti i giocatori a utilizzare attivamente i nuovi sistemi, familiarizzare con il loro funzionamento e suggerire miglioramenti o segnalare bug nei canali dedicati. Il vostro feedback ci aiuterà a rendere la versione finale ancora migliore!
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Domini</h3></div>
+
+* Siamo lieti di annunciare la nostra rete di domini! Nota che alcuni percorsi principali potrebbero non avere un sito web: in tali casi, controlla i sottodomini (ad es. `wiki.erlcrussia.com`).
+
+  I nostri indirizzi attuali:
+
+  * erlcrussia.xyz — Questo è il dominio principale)))
+  * erlcrussia.com — **Ritorno col botto!** Dopo oltre 8 mesi, questo dominio torna sotto la nostra gestione.
+  * erlcrp.ru — Dominio di progetto aggiuntivo per i link brevi.
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold"><strong>Rilascio dell'API Economica</strong></h3></div>
+
+* Presentiamo un sistema completamente nuovo mai esistito prima nel progetto. Ciò apre enormi possibilità di integrazione e automazione.
+  * Aggiunte molte funzioni per la gestione dei processi economici, endpoint pubblicitari e candidature commerciali.
+  * Abbiamo preparato una guida dettagliata sull'utilizzo della nuova API. Puoi esaminare i metodi e iniziare lo sviluppo al link: [**Documentazione API V2**](https://apidocs.erlcrussia.com/home/for-developers/documentation-api-v2/mrp-civops-api-v2/)**.**
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Statistiche Aggiornate</h3></div>
+
+* Il monitoraggio della vita del server è ora diventato trasparente e visivo. Abbiamo aggiunto grafici statistici visivi disponibili per diversi periodi:
+  * Statistiche per 1 giorno.
+  * Statistiche per 7 giorni.
+  * Statistiche per 30 giorni.
+* È stato lanciato anche un canale vocale che mostra il numero attuale di giocatori in tempo reale.
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Operazioni Civili</h3></div>
+
+* Sono state apportate correzioni di bug nel bot CO, risolti i problemi con l'elaborazione dei caratteri nei ticket e i ticket sono stati completamente riscritti.
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Parte Tecnica</h3></div>
+
+* La configurazione e il debug del webhook ER:LC sono stati ufficialmente completati in Moscow RolePlay Operations.
+* Ora puoi anche ottenere l'accesso ai webhook di gioco recentemente rilasciati dagli sviluppatori di ER:LC. A tale scopo, crea un ticket e ti forniremo i dati di integrazione necessari.
+  * Puoi anche consultare la documentazione dettagliata qui: [**Documentazione Webhook**](https://apidocs.erlcrussia.com/home/for-developers/documentation-api-v2/mrp-erlc-api-v2/event-webhook).
+* Aggiornato il design e la struttura dei messaggi per il canale "Partner" — ora tutto appare più conciso e professionale.
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Trailer dell'Aggiornamento</h3></div>
+
+Puoi vedere come funzionano nella pratica i nuovi sistemi e l'API nel nostro trailer ufficiale:
+
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/pDGhXgJ1g1g"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>

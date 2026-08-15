@@ -1,0 +1,83 @@
+---
+title: "Servidor MCP"
+description: "Conecta asistentes de IA a la documentación de ER:LC Rusia mediante Model Context Protocol para la búsqueda y el análisis de información en tiempo real."
+icon: "server"
+---
+## Endpoint
+
+```text
+https://wiki.erlcrussia.com/mcp
+```
+
+## ¿Qué es MCP?
+
+Model Context Protocol (MCP) es un estándar abierto que permite a los asistentes de IA conectarse a fuentes de datos y herramientas externas. Al dirigir un cliente compatible con MCP hacia nuestro servidor, tu asistente de IA podrá buscar, recuperar y analizar información de la documentación de ER:LC Rusia en tiempo real.
+
+<Tip>
+  **El servidor MCP proporciona acceso a la documentación actualizada sin necesidad de copiar y pegar contenido manualmente en el chat del asistente de IA.**
+</Tip>
+
+## Conexión
+
+### Claude Desktop
+
+Añade lo siguiente a tu `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### Cursor
+
+Añade el servidor en la configuración de MCP de tu Cursor:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### OpenCode
+
+Añade el servidor en la configuración de MCP de tu OpenCode:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "erlcrussia-wiki": {
+      "type": "remote",
+      "url": "https://wiki.erlcrussia.com/mcp",
+      "enabled": true
+    }
+  }
+}
+```
+
+### Otros Clientes
+
+Cualquier cliente compatible con servidores MCP remotos puede ser dirigido a la URL indicada anteriormente. Consulta la documentación de tu cliente para conocer el formato exacto de configuración.
+
+## Herramientas Disponibles
+
+Una vez conectado, tu cliente tendrá acceso a herramientas para:
+
+* **Buscar** en la documentación por palabras clave o temas
+* **Obtener** páginas y secciones específicas
+* **Navegar** por la estructura de la documentación
+
+## ¿Por qué usar esto?
+
+* Haz preguntas a tu asistente de IA sobre nuestra documentación y obtén respuestas basadas en la información más actualizada
+* Evita alucinaciones o información desactualizada
+* Crea agentes y flujos de trabajo que se sincronicen automáticamente con los cambios en la documentación

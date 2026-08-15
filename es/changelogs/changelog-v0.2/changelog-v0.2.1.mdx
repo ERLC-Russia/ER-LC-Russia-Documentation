@@ -1,0 +1,365 @@
+---
+title: "Actualización V0.2.1"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/server-rules-bots-update.png"
+  alt="Actualización V0.2.1"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Actualización V0.2.1 — 29.03.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  ¡Se ha lanzado oficialmente una importante actualización de la infraestructura y el reglamento del proyecto! Reescribimos completamente las reglas de la comunidad e implementamos un stack técnico actualizado para hacer su interacción con el servidor más cómoda y la operación del sistema más intuitiva y rápida.
+</div>
+
+***
+
+* **Jugabilidad y Guías:**
+  * Hemos rediseñado completamente el formato de la sección [Términos de Rol](/es/server-rules/general-rules/rp-terms). La información ahora se asimila más rápido y se ha eliminado todo el contenido innecesario y desactualizado.
+  * La guía del jugador se ha vuelto más clara y concisa — solo lo verdaderamente necesario para un juego de calidad.
+* **Actualización del Bot "Moscow RolePlay":**
+  * El sistema de tickets ha experimentado una revisión técnica completa. Qué cambió:
+    * El sistema ahora es más rápido y estable.
+    * Se añadieron herramientas esenciales para el trabajo con solicitudes:
+      * `$take` — asignarse un ticket a uno mismo.
+      * `$release` — liberar la responsabilidad del moderador actual.
+      * `$open` / `$close` — gestionar el acceso a la conversación.
+    * Todos los mensajes e interfaces del bot se migraron a componentes V2 (botones mejorados, menús y archivos adjuntos).
+* **Lanzamiento de la API de ER:LC Rusia:**
+  * Nos complace anunciar el lanzamiento de nuestra propia API, que abrirá nuevas posibilidades para integraciones y desarrolladores externos:
+  * Las descripciones detalladas de los métodos están disponibles aquí — [**https://apidocs.erlcrussia.xyz/**](https://apidocs.erlcrussia.xyz/)
+  * Las claves se emiten a través de tickets en la categoría **"**[**Soporte de API**](https://discord.com/channels/1331331077553262765/1416175944829243422)**"**.
+  * Asegúrese de revisar los requisitos en la documentación o aclarar detalles al crear un ticket.
+* **Canales de Información e Interfaz:**
+  * El diseño visual se ha actualizado completamente en todas las secciones clave:
+    * Menú de información de ER:LC.
+    * Menú de información y reglas de Discord.
+  * El sistema de protección contra menciones no deseadas se ha actualizado a la última versión para una experiencia de comunicación más cómoda.
+* **Gestión del Personal:**
+  * El sistema de ascensos e informes del personal se ha trasladado al bot especializado "Gestión de Departamentos". Esto permitirá un seguimiento más eficaz del progreso de los empleados y automatizará las tareas rutinarias.
+
+<AccordionGroup>
+  <Accordion title="Sección Actualizada de Reglas del Servidor">
+    <div className="flex justify-center items-center w-full -mt-8">
+      <h3 className="text-3xl font-bold">R<span style={{ color: '#ff0000' }}>EGLAS DE ROL</span></h3>
+    </div>
+    * **A-1** — El proyecto cuenta con una sección separada — [**Términos de Rol**](/es/server-rules/general-rules/rp-terms), que contiene infracciones de rol estándar y sus abreviaturas (ej., RDM, VDM, LTAP, etc.), utilizadas en todo el ámbito de roleplay. Muchos de estos términos también pueden estar descritos en detalle en las reglas del servidor. **<span style={{ color: '#ff0000' }}>Un moderador tiene derecho a hacer referencia a los Términos de Rol al emitir una sanción</span>**<span style={{ color: '#ff0000' }}>, si la conducta del jugador infringe las normas de rol. Sin embargo, el moderador</span> **<span style={{ color: '#ff0000' }}>está obligado a especificar qué Término de Rol exacto se infringió</span>** <span style={{ color: '#ff0000' }}>y</span> **<span style={{ color: '#ff0000' }}>proporcionar al jugador una explicación</span>**<span style={{ color: '#ff0000' }}> de por qué aplica en dicha situación.</span>
+      * **<span style={{ color: '#00be00' }}>A-1.1</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Importante:</span>** <span style={{ color: '#00be00' }}>Debido a la ausencia o ausencia parcial del chat de texto, transmitir información sobre la muerte (NLR) o la ubicación de un jugador a través de un canal de voz de Discord se considera Metagaming.</span>
+    * **A-2** — Está prohibido participar en escenas de rol en las que no estés involucrado originalmente. No puedes "involucrarte" en el rol ajeno, incluso mediante escenas preacordadas o falsas, y alegar que estabas "trabajando" con alguien no es una excusa válida.
+      * **<span style={{ color: '#00be00' }}>A-2.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Esta regla también abarca unirse intencionalmente a una escena de Discord (canal de voz) donde ya se esté llevando a cabo una situación de rol activa, con el fin de preguntar algo, aclarar o simplemente observar por voz. Si no eres participante de la escena, tu entrada y cualquier pregunta en dicho canal se consideran interferencia en el proceso de rol. Todas las preguntas deben formularse estrictamente tras concluir la escena o en canales de texto OOC.</span>
+    * **A-3** — <span style={{ color: '#00be00' }}>Cualquier evento o actividad de rol organizada a gran escala — incluidas redadas fronterizas, exposiciones de autos, bloqueos, caravanas, bloqueos viales masivos y acciones similares — está prohibido sin el permiso previo del personal de guardia.</span>
+    * **A-4** — Antes de esposar a alguien, debes rolearlo.
+      * **<span style={{ color: '#00be00' }}>Nota:</span>** <span style={{ color: '#00be00' }}>Dado que el chat de texto no está disponible o no es accesible para todos los jugadores, el rol debe realizarse por voz en una escena de Discord o en el canal "game-chat".</span>
+      * **<span style={{ color: '#00be00' }}>Ejemplo:</span>** <span style={{ color: '#00be00' }}>"Saco las esposas de mi cartuchera y sujeto tus manos a la espalda."</span>\
+        **<span style={{ color: '#00be00' }}>Realizar esta acción sin rolear en la escena/canal se considera Fail RP.</span>**
+    * **A-5** — Está prohibido participar en el rol en nombre de organizaciones o <span style={{ color: '#00be00' }}>facciones</span> <span style={{ color: '#00be00' }}>inexistentes</span> <span style={{ color: '#00be00' }}>no autorizadas</span> (por ejemplo, <span style={{ color: '#00be00' }}>cualquier otra</span> facción inexistente en el servidor, <span style={{ color: '#00be00' }}>incluso si</span> tienen sus propias libreas).
+    * **A-6** — Puedes realizar cualquier trabajo civil siempre que sea completamente realista, apropiado y no viole otras reglas del servidor. <span style={{ color: '#00be00' }}>La interacción con los jugadores se lleva a cabo a través de los canales de voz correspondientes.</span>
+    * **A-8** — **<span style={{ color: '#00be00' }}>Provocación:</span>** <span style={{ color: '#00be00' }}>Si una infracción ocurrió debido a la provocación de otra persona, la infracción no se contabilizará y, en su lugar, se sancionará a quien provocó.</span>
+    * **A-9** — <span style={{ color: '#00be00' }}>Está prohibido eludir la sanción por cualquier medio — como abandonar el servidor, no volver a entrar o salir voluntariamente de una Escena de Moderación de Discord antes de que el moderador te haya despedido, así como realizar cualquier otra acción para evitar la responsabilidad.</span>
+    * **A-11** — **<span style={{ color: '#00be00' }}>Regla sobre Conflictos y Comunicación</span>**
+      * <span style={{ color: '#00be00' }}>Cada jugador debe encontrarse en una escena de Discord mientras juega. El apodo de Discord debe coincidir con el nombre dentro del juego. Usar programas moduladores de voz (salvo roles especiales, ej., personajes con un rol único) o ignorar llamados en el canal de voz equivale a Fail RP.</span>
+    
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold">F<span style={{ color: '#ff0000' }}>ACCIONES</span></h3>
+    </div>
+    * **B-3** — <span style={{ color: '#00be00' }}>Está prohibido abusar de objetos de servicio o auxiliares tales como conos, bengalas, cinta policial y otros objetos similares.</span>
+    * **B-4** — <span style={{ color: '#00be00' }}>Está prohibido colocar bandas de clavos (spike strips) o stop sticks directamente frente a sospechosos, cerca de sus vehículos o debajo de autos estacionados. El bloqueo con bandas de clavos debe prepararse con antelación.</span>
+    * **B-5** — Está prohibido hacerse pasar por líderes o miembros del personal de los departamentos.
+      * **<span style={{ color: '#00be00' }}>B-5.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Esto incluye el uso de vehículos de servicio de acceso restringido, mostrar rangos o cargos en el nombre de visualización, utilizar distintivos de llamada de servicio (ej., DP-000) y otras acciones que generen una falsa impresión de pertenencia a una facción.</span>
+      * **<span style={{ color: '#00be00' }}>B-5.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Los empleados no oficiales solo tienen permitido utilizar indicativos neutros — compuestos por 4 dígitos (ej.,</span> <span style={{ color: '#00be00' }}>`4832`</span><span style={{ color: '#00be00' }}>), sin prefijos ni códigos de letras.</span>
+    * **B-6** — <span style={{ color: '#00be00' }}>Las facciones/departamentos que no dispongan de un sistema de rangos no pueden utilizar letras en sus indicativos y deben viajar en un vehículo de servicio claramente identificado y vestir los uniformes proporcionados por el servidor.</span>
+    * **B-7** — Los uniformes deben coincidir con <span style={{ color: '#00be00' }}>el vehículo correspondiente</span> <span style={{ color: '#00be00' }}>que conduces</span> (ej., uniforme de policía de tránsito en un patrullero de tránsito).
+    * **B-8** — <span style={{ color: '#00be00' }}>Los camiones de bomberos, camiones cisterna y camiones con escalera no pueden usarse para patrullajes. El patrullaje solo está permitido en vehículos de servicio de liderazgo y autos auxiliares del departamento.</span>
+    * **B-9** — <span style={{ color: '#00be00' }}>El patrullaje está permitido en todos los vehículos del Departamento de Transporte excepto grúas de plataforma, grúas pesadas y camiones con conos. Las quitanieves solo pueden patrullar cuando haya nieve o hielo en el mapa.</span>
+    * **<span style={{ color: '#00be00' }}>B-10</span>** <span style={{ color: '#00be00' }}>— El FSB y el MVD tienen prohibido utilizar el camión SWAT para patrullajes regulares. El despliegue de equipo especial solo está permitido ante una amenaza confirmada, como una toma de rehenes o resistencia armada.</span>
+    * **<span style={{ color: '#00be00' }}>B-11</span>** <span style={{ color: '#00be00' }}>— Los agentes no oficiales de la policía de tránsito solo pueden utilizar gas pimienta, una porra y una pistola Glock 17 como armamento.</span>
+    * **<span style={{ color: '#00be00' }}>B-12</span>** <span style={{ color: '#00be00' }}>— El uso del helicóptero policial está permitido</span> **<span style={{ color: '#00be00' }}>únicamente previa solicitud</span>** <span style={{ color: '#00be00' }}>y aprobación en los canales de liderazgo en Discord o aprobación de la moderación. Sin permiso oficial, el uso del helicóptero queda prohibido.</span>
+    * **<span style={{ color: '#00be00' }}>B-13</span>** <span style={{ color: '#00be00' }}>— Si eres oficialmente miembro de alguna facción estatal que tenga acceso a armas, facultades policiales o de autoridad estatal (ej., MVD, FSB, Comité de Investigación, Tribunal, etc.), tienes prohibido participar en actividades de grupos criminales (de forma oficial o no oficial). Sin embargo, las acciones delictivas en solitario no están prohibidas. Asimismo, queda prohibido pertenecer al MVD y al FSB simultáneamente; prohibido estar en el Tribunal o SK si perteneces al FSB. En otros casos, combinar dos facciones estatales solo está permitido si no ocupas un puesto de líder o sublíder en ambas facciones simultáneamente.</span> **<span style={{ color: '#00be00' }}>Excepciones:</span>** <span style={{ color: '#00be00' }}>Departamento de Transporte, Ministerio de Salud, Servicios de Emergencia y otros servicios civiles similares que no estén vinculados a labores policiales/investigativas/judiciales y no tengan acceso a armas o facultades policiales/estatales.</span>
+    * **<span style={{ color: '#00be00' }}>B-14</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Uso de canales de radio en el Discord de "Servicios de Emergencia de la Ciudad de Moscú". Los canales de comunicación radial (escenas de voz especiales de Discord "Radio") solo están autorizados para empleados de las facciones correspondientes (MVD, Servicios de Emergencia, etc.).</span>
+    * **<span style={{ color: '#00be00' }}>B-15</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Ante la ausencia de abogados oficiales activos, el derecho a ejercer temporalmente sus funciones puede concederse a cualquier otro jugador exclusivamente con la aprobación directa del personal del servidor.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Actividad Criminal</span></h3>
+    </div>
+    * **C-1** — No se pueden cometer acciones delictivas en los estacionamientos ni dentro de los edificios de ninguna agencia de seguridad, estaciones de servicios de emergencia o en el Departamento de Transporte. <span style={{ color: '#00be00' }}>Los mapas actualizados de zonas verdes que señalan estos y otros territorios están disponibles en el canal</span> [**<span style={{ color: '#00be00' }}>📑┃information</span>**](https://discord.com/channels/1331331077553262765/1416197158427693056)<span style={{ color: '#00be00' }}>.</span>
+      <Accordion title="Mapa de Zonas Seguras">
+        <img src="/assets/server-rules/safe-zones-map.png" alt="Mapa de Zonas Seguras" />
+      </Accordion>
+    * **C-2** — <span style={{ color: '#00be00' }}>Está prohibido provocar a las agencias del orden público mediante conductas imprudentes como saltarse señales de alto, conducción negligente, llamadas falsas al 112 y otras acciones similares.</span>
+      * **<span style={{ color: '#00be00' }}>C-2.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Las provocaciones y el acoso también incluyen el ingreso deliberado a escenas de rol o canales de servicio de Discord para entorpecer el trabajo, así como menciones injustificadas (pings) de jugadores o miembros de facciones en canales de texto y voz para generar conflictos fuera de rol.</span>
+      * **<span style={{ color: '#00be00' }}>C-2.2</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Ejemplo:</span>** <span style={{ color: '#00be00' }}>si un jugador ingresa a un canal de voz donde se lleva a cabo una detención e interfiere en la conversación sin ser participante de la escena, se considerará una infracción a esta regla.</span>
+    * **C-3** — <span style={{ color: '#00be00' }}>Está prohibido secuestrar jugadores sin su consentimiento, incluidos los miembros de facciones (policías, bomberos, rescatistas, departamento de transporte, etc.).</span>
+      * **<span style={{ color: '#00be00' }}>C-3.1</span>** <span style={{ color: '#00be00' }}>— Cualquier secuestro debe contar con consentimiento mutuo, un propósito justificado y desarrollarse dentro de una situación de rol.</span>
+      * **<span style={{ color: '#00be00' }}>C-3.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>No se permiten secuestros aleatorios o sin sentido; solo se autorizan acciones planificadas, como atracos o eventos de trama con acuerdo previo entre los participantes.</span>
+    * **<span style={{ color: '#00be00' }}>C-4</span>** <span style={{ color: '#00be00' }}>— Durante el PT (Peace Timer / Tiempo de Paz), no se permiten acciones criminales intencionadas, incluidas persecuciones, tiroteos, robos, secuestros, etc.</span>
+    * **<span style={{ color: '#00be00' }}>C-5</span>** <span style={{ color: '#00be00' }}>— Los grupos de tres o más personas que cometan actos ilícitos o muestren una conducta delictiva se consideran grupos criminales no autorizados y violan las reglas del proyecto.</span>
+      * <span style={{ color: '#00be00' }}>Únicamente las organizaciones criminales oficialmente registradas (que operen dentro de Operaciones Civiles) tienen derecho a cometer actos delictivos como grupo de tres o más participantes.</span>
+      * <span style={{ color: '#00be00' }}>Cada grupo individual dentro de una organización criminal oficial puede incluir como máximo cuatro participantes activos en línea simultáneamente; no obstante, una organización criminal oficial puede estar formada por varios de estos grupos, siempre que no interactúen directamente entre sí en operaciones conjuntas.</span>
+      * <span style={{ color: '#00be00' }}>Las acciones conjuntas o la coordinación entre diferentes grupos, incluso dentro de la misma organización criminal, están prohibidas durante situaciones activas.</span>
+      * <span style={{ color: '#00be00' }}>El comportamiento y la actividad de los grupos criminales se encuentran bajo constante supervisión del personal.</span>
+    * **<span style={{ color: '#00be00' }}>C-6</span>** <span style={{ color: '#00be00' }}>— Los robos a bancos solo están permitidos para organizaciones criminales oficiales con un mínimo de 2 participantes.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.1</span>** <span style={{ color: '#00be00' }}>— Debe haber un enfriamiento (cooldown) de al menos 10 minutos entre robos bancarios.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.2</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Los robos a joyerías pueden realizarse sin pertenecer a una organización criminal oficial, pero también requieren un mínimo de 2 participantes y un enfriamiento de 10 minutos entre intentos.</span>
+      * **<span style={{ color: '#00be00' }}>C-6.3</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Todos los robos deben desarrollarse en formato de rol — sin escapes instantáneos y con la debida interpretación (ej., interacción con rehenes, guardias, policías, etc.).</span>
+    * **<span style={{ color: '#00be00' }}>C-7</span>** <span style={{ color: '#00be00' }}>— Cualquier jugador, incluidos miembros de organizaciones criminales oficiales, puede robar cajas registradoras, cajeros automáticos (ATM) y joyerías.</span>
+      * **<span style={{ color: '#00be00' }}>C-7.1</span>** <span style={{ color: '#00be00' }}>— Todas las acciones, incluida la preparación y el robo propiamente dicho, deben rolearse íntegramente en "game-chat"; no se permite el rol en escenas de Discord.</span>
+      * **<span style={{ color: '#00be00' }}>C-7.2</span>** <span style={{ color: '#00be00' }}>— Al asaltar una joyería, se requiere especial atención al realismo del rol.</span>
+      * **<span style={{ color: '#00be00' }}>C-7.3</span>** <span style={{ color: '#00be00' }}>— La grabación en video del proceso de robo es obligatoria.</span>
+      * **<span style={{ color: '#00be00' }}>C-7.4</span>** <span style={{ color: '#00be00' }}>— Recuerda la regla A-10: se aplica un periodo de búsqueda de 10 minutos tras un robo.</span>
+      * **<span style={{ color: '#00be00' }}>Ejemplos de Rol (Disponibles en la Documentación):</span>**
+    * **<span style={{ color: '#00be00' }}>C-8</span>** <span style={{ color: '#00be00' }}>— Solo los miembros de organizaciones criminales oficiales pueden participar en escenas de toma de rehenes. Cada una de estas escenas debe contar con al menos dos captores involucrados activamente.</span>
+    * **<span style={{ color: '#00be00' }}>C-9</span>** <span style={{ color: '#00be00' }}>— El parque High Rock no puede utilizarse deliberadamente para huir de las fuerzas del orden. Una persecución puede comenzar en el parque, pero no puede terminar ni continuar en él una vez iniciada.</span>
+    * **<span style={{ color: '#00be00' }}>C-10</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Regla para Organizaciones Criminales Oficiales:</span>** <span style={{ color: '#00be00' }}>Si los 4 miembros activos de una organización criminal oficial son</span> **<span style={{ color: '#00be00' }}>eliminados o arrestados</span>** <span style={{ color: '#00be00' }}>simultáneamente, dicha organización</span> **<span style={{ color: '#00be00' }}>suspende temporalmente sus actividades</span>** <span style={{ color: '#00be00' }}>y</span> **<span style={{ color: '#00be00' }}>no puede interpretar el rol de esa organización durante 1 hora</span>** <span style={{ color: '#00be00' }}>a partir del momento del incidente.</span>
+      * **<span style={{ color: '#00be00' }}>C-10.1</span>** <span style={{ color: '#00be00' }}>—</span> La organización como tal **no es eliminada del servidor de Operaciones Civiles** — transcurrida 1 hora, los participantes pueden reanudar el rol contando con al menos un miembro activo.
+      * **<span style={{ color: '#00be00' }}>C-10.2</span>** <span style={{ color: '#00be00' }}>—</span> **Nota:** "Miembros activos" hace referencia a los jugadores que se encuentran actualmente en la organización y participan en el rol.
+
+    --- 
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold">V<span style={{ color: '#ff0000' }}>EHÍCULOS</span></h3>
+    </div>
+    * **D-1** — <span style={{ color: '#00be00' }}>El manejo de vehículos debe ser completamente realista, tanto en comportamiento vehicular como en el estilo general de conducción.</span>
+      * **<span style={{ color: '#00be00' }}>D-1.1</span>** <span style={{ color: '#00be00' }}>— Se prohíbe el uso de autos deportivos en zonas montañosas, conducir hasta los bordes del mapa (montañas, excepto el territorio del parque High Rock) en cualquier vehículo y conducir vehículos todoterreno a velocidades excesivas.</span>
+      * **<span style={{ color: '#00be00' }}>D-1.2</span>** <span style={{ color: '#00be00' }}>— Todos los empleados de servicios de emergencia deben cumplir estrictamente las normas de tránsito y priorizar la seguridad durante operaciones de búsqueda y rescate.</span>
+    * **<span style={{ color: '#00be00' }}>D-4</span>** <span style={{ color: '#00be00' }}>— Los montacargas y cargadores frontales deben permanecer dentro de la zona de construcción, salvo que estén escoltados por un vehículo policial o del Departamento de Transporte (excepto los descritos en la regla B-9). Pueden trasladarse a otro "sitio de trabajo" y usarse en obras viales únicamente con permiso del Departamento de Transporte.</span>
+    * **<span style={{ color: '#00be00' }}>D-5</span>** <span style={{ color: '#00be00' }}>— Camiones blindados — solo los empleados bancarios pueden utilizar camiones blindados de caudales.</span>
+    * **<span style={{ color: '#00be00' }}>D-6</span>** <span style={{ color: '#00be00' }}>— Food trucks — no pueden operar más de 2 food trucks simultáneamente.</span>
+    * **<span style={{ color: '#00be00' }}>D-7</span>** <span style={{ color: '#00be00' }}>— Las cortadoras de césped pueden circular</span> <span style={{ color: '#00be00' }}>únicamente sobre césped y aceras. Deben cruzar las calzadas exclusivamente por pasos peatonales.</span>
+    * **<span style={{ color: '#00be00' }}>D-8</span>** <span style={{ color: '#00be00' }}>— Los vehículos agrícolas, como tractores, no pueden circular por vías públicas a velocidades superiores a 25 mph sin escolta.</span>
+    * **<span style={{ color: '#00be00' }}>D-9</span>** <span style={{ color: '#00be00' }}>— La información sobre vehículos prohibidos y limitados se encuentra en la sección</span> [**<span style={{ color: '#00be00' }}>📂┃ERLC-Information</span>**](https://discord.com/channels/1331331077553262765/1394230066896044183)<span style={{ color: '#00be00' }}>.</span>
+    * **<span style={{ color: '#00be00' }}>D-10</span>** <span style={{ color: '#00be00' }}>— Los cuatrimotos (ATV) y buggies solo están autorizados para su uso dentro del parque High Rock. Durante competiciones, pueden circular por tramos viales cerrados solo con permiso de las fuerzas de seguridad. Los traslados entre zonas de eventos autorizadas o el viaje al parque deben realizarse en remolque. Cualquier uso de cuatrimotos y buggies fuera del parque está prohibido.</span>
+    * **<span style={{ color: '#00be00' }}>D-11</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Vehículos del FSB:</span>**
+      * <span style={{ color: '#00be00' }}>Los vehículos del FSB (furgoneta encubierta, camión SWAT) tienen prohibido su uso para patrullajes regulares.</span>
+      * <span style={{ color: '#00be00' }}>El despliegue de equipo especial solo es viable ante una amenaza confirmada (ej., toma de rehenes, resistencia armada).</span>
+    * **<span style={{ color: '#00be00' }}>D-12</span>** <span style={{ color: '#00be00' }}>— Se prohíbe tomar o spawnear un vehículo dentro de los 10 minutos posteriores a su remolque (incluso al depósito municipal) para eludir las consecuencias del remolque. Cualquier intento de "reiniciar" el remolque mediante reseteo o reaparición del vehículo, selección de otro auto, reconexión al servidor o cualquier otro método se considera una infracción.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Infracción por Daño</span></h3>
+    </div>
+
+    * **E-1** — Disparar, golpear, usar cuchillos, etc. en una escena de moderación, hacia el personal o contra cualquier vehículo de servicio resultará en una expulsión (kick).
+      * **<span style={{ color: '#00be00' }}>E-1.1</span>** <span style={{ color: '#00be00' }}>— Los jugadores deben detenerse a un lado y/o ceder el paso a los vehículos del personal, independientemente del equipo.</span>
+    * **E-7** — **<span style={{ color: '#00be00' }}>Reglas de Rol de Armamento. 1. Civiles:</span>** <span style={{ color: '#00be00' }}>Los civiles pueden no rolear el desenfundado de una pistola. No obstante, el rol es obligatorio al desenfundar rifles (ej., M14 o LMT L123A1) y todas las demás armas, incluidos subfusiles.</span>
+      * **<span style={{ color: '#00be00' }}>E-7.1</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>2. Oficiales de Policía:</span>** <span style={{ color: '#00be00' }}>Los policías oficiales deben rolear el desenfundado de cualquier arma, excepto la pistola enfundada en su cinturón de servicio.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Otros</span></h3>
+    </div>
+
+    * **F-1** — Todas las acciones dentro del juego deben cumplir con los [**<span style={{ color: '#00be00' }}>TOS de Roblox</span>**](/es/server-rules/general-rules/rp-terms#disposiciones-basicas-de-los-tos-de-roblox), o se aplicará expulsión/bloqueo. Esto incluye la prohibición de racismo, rol +18, suicidio y rol de drogas.
+    * **F-2** — <span style={{ color: '#00be00' }}>Estar AFK por más de 5 minutos puede resultar en kick. La moderación</span> **<span style={{ color: '#00be00' }}>no está obligada</span>** <span style={{ color: '#00be00' }}>a registrar este kick en logs.</span>
+    * **F-3** — <span style={{ color: '#00be00' }}>Se prohíben elementos de avatar poco realistas como mascotas de hombro, alas, espadas, animaciones no estándar, tonos de piel poco naturales, partículas y otros accesorios ajenos al estilo realista. El formato del cuerpo del avatar debe ser</span> **<span style={{ color: '#00be00' }}>estrictamente cuadrado clásico R15 (sin partes redondeadas)</span>**<span style={{ color: '#00be00' }}>. También se prohíbe el uso de objetos ajenos al rol; la apariencia y accesorios deben ajustarse plenamente a los principios de realismo.</span>
+    * **F-4** — <span style={{ color: '#00be00' }}>Las infracciones sancionadas con una advertencia (warn) permiten al jugador continuar jugando de inmediato. En caso de una infracción con expulsión (kick), el jugador debe esperar 1 hora antes de volver a ingresar al servidor. Intentar eludir esta norma e ingresar antes del tiempo establecido conllevará un bloqueo temporal de cuenta.</span>
+    * **F-9** — <span style={{ color: '#00be00' }}>Se prohíbe el rollback frecuente de acciones de rol intencionales, así como realizar rollbacks sin el consentimiento de los demás participantes de la situación.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.1</span>** <span style={{ color: '#00be00' }}>— El rollback de una situación solo se permite con el consentimiento de todos los participantes de la escena de rol o del chat del juego. Si al menos un participante no consiente, el rollback queda prohibido. Excepción: decisión del personal.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.2</span>** <span style={{ color: '#00be00' }}>— En caso de accidente vehicular o persecución, no interpretar el choque sin un rollback constituye una infracción.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.3</span>** <span style={{ color: '#00be00' }}>— Si tres o más personas están en una persecución y ocurre una colisión, se prohíbe el rollback: todas las partes deben interpretar las consecuencias.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.4</span>** <span style={{ color: '#00be00' }}>— Si dos jugadores están en una persecución y ambos continúan conduciendo tras el accidente, ambos serán sancionados, sin importar quién causó el choque.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.5</span>** <span style={{ color: '#00be00' }}>— Un accidente automovilístico involuntario puede anularse mediante rollback bajo las normas generales, únicamente con el acuerdo de todos los involucrados.</span>
+      * **<span style={{ color: '#00be00' }}>F-9.6</span>** <span style={{ color: '#00be00' }}>— Si un accidente fue provocado por un solo jugador (ej., chocar contra un poste o pared), debe escribir o decir ".// rollback" en "game-chat" o en la escena de rol.</span>
+    * **<span style={{ color: '#00be00' }}>F-11</span>** <span style={{ color: '#00be00' }}>— Si tu personaje se encuentra en estado de "gravemente herido" o muerto, debes silenciar tu micrófono (Mute) en Discord. Tienes prohibido gemir, dar información o comentar las acciones del enemigo por voz hasta reaparecer en el hospital (respawn).</span>
+      * **<span style={{ color: '#00be00' }}>F-11.1</span>** <span style={{ color: '#00be00' }}>— Se permite compartir información OOC sobre la gravedad de la herida, su localización, etc.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Chats de Voz</span></h3>
+    </div>
+
+    * **G-1** — **<span style={{ color: '#00be00' }}>Uso de Soundpad y Programas Similares:</span>** <span style={{ color: '#00be00' }}>Soundpad, la Soundboard integrada de Discord y programas similares están permitidos exclusivamente para situaciones de rol en canales de escenas de Discord (ej., sonidos de sirenas, radio, apertura de puertas, herramientas).</span>
+      * **<span style={{ color: '#00be00' }}>G-1.1</span>** <span style={{ color: '#00be00' }}>— Cada efecto de sonido: duración máxima de 10 segundos, volumen no superior a 75 dB (o 75% en Discord Soundboard), para no tapar las voces de los participantes.</span>
+      * **<span style={{ color: '#00be00' }}>G-1.2</span>** <span style={{ color: '#00be00' }}>— El sonido debe ajustarse a la escena en curso y no entorpecer los diálogos de otros jugadores.</span>
+      * **<span style={{ color: '#00be00' }}>G-1.3</span>** <span style={{ color: '#00be00' }}>— Se prohíbe música (fuera de una boombox), memes, troleos, obscenidades, ruidos molestos de fondo, gritos de animales, etc.</span>
+      * **<span style={{ color: '#00be00' }}>G-1.4</span>** <span style={{ color: '#00be00' }}>— Se prohíbe cualquier intento de prolongar la duración del sonido (unir varios efectos, repetir el mismo sonido seguidamente, superponer pistas). Un efecto, una pausa. Cualquier maniobra engañosa se considera infracción y se sanciona como interferencia en el rol.</span>
+    * **G-2** — **<span style={{ color: '#00be00' }}>Uso de Boombox en el Juego:</span>** <span style={{ color: '#00be00' }}>El uso de boombox se permite en cualquier momento siempre que no infrinja los</span> [**<span style={{ color: '#00be00' }}>TOS de Roblox</span>**](/es/server-rules/general-rules/rp-terms#disposiciones-basicas-de-los-tos-de-roblox)<span style={{ color: '#00be00' }}>.</span>
+      * **<span style={{ color: '#00be00' }}>G-2.1</span>** <span style={{ color: '#00be00' }}>— Se prohíbe el uso de pistas y audios contrarios a las normas de Roblox.</span>
+      * **<span style={{ color: '#00be00' }}>G-2.2</span>** <span style={{ color: '#00be00' }}>— Si la boombox dentro del juego interfiere en comunicaciones importantes dentro de una escena de Discord, debes apagarla o bajar su volumen al primer requerimiento de participantes o personal.</span>
+      * **<span style={{ color: '#00be00' }}>G-2.3</span>** <span style={{ color: '#00be00' }}>— La responsabilidad total del cumplimiento de los TOS recae sobre el jugador.</span>
+    * **<span style={{ color: '#00be00' }}>G-3</span>** <span style={{ color: '#00be00' }}>— La infracción a esta regla equivale a interferencia en el proceso de rol y puede acarrear la expulsión del canal o medidas disciplinarias.</span>
+      * **<span style={{ color: '#00be00' }}>G-3.1</span>** <span style={{ color: '#00be00' }}>— La permanencia en canales de voz de escenas de rol y radio solo está permitida para jugadores conectados actualmente al servidor dentro del juego.</span>
+      * **<span style={{ color: '#00be00' }}>G-3.2</span>** <span style={{ color: '#00be00' }}>— Cualquier insulto dirigido a un jugador (¡no al personaje!), que aluda a su nacionalidad, apariencia o defectos del habla en una escena de Discord, se considera acoso. Los conflictos de rol entre personajes no deben trascender a conflictos personales entre jugadores.</span>
+      * **<span style={{ color: '#00be00' }}>G-3.3</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Canales de Radio</span>**
+        * **<span style={{ color: '#00be00' }}>G-3.3.1</span>** <span style={{ color: '#00be00' }}>— Estos canales son zonas IC (In Character / Dentro del Personaje).</span>
+        * **<span style={{ color: '#00be00' }}>G-3.3.2</span>** <span style={{ color: '#00be00' }}>— Mantén la subordinación y un tono profesional. Prohibido gritar o mantener conversaciones innecesarias.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.3.3</span>** <span style={{ color: '#00be00' }}>— El despachador (si está presente) cuenta con</span> **<span style={{ color: '#00be00' }}>modo de prioridad</span>**<span style={{ color: '#00be00' }}>. Cuando habla, todos guardan silencio.</span>
+      * **<span style={{ color: '#00be00' }}>G-3.4</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Canales de Escenas de Rol (RP)</span>**
+        * **<span style={{ color: '#00be00' }}>G-3.4.1</span>** <span style={{ color: '#00be00' }}>— El uso de información OOC (mensajes fuera de juego) solo se permite con aviso previo — por ejemplo, indicando "información OOC" o "información fuera de rol". Sin previo aviso, el canal es estrictamente IC y se usa exclusivamente para el rol. Queda prohibida cualquier charla fuera de juego, discusiones ajenas, temas técnicos y conflictos OOC entre jugadores.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.4.2</span>** <span style={{ color: '#00be00' }}>— Los conflictos IC desarrollados dentro del proceso de rol están permitidos.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.4.3</span>** <span style={{ color: '#00be00' }}>— Respeta a los demás participantes de la escena. No se interrumpan unos a otros; permite que tu interlocutor termine de hablar.</span>
+      * **<span style={{ color: '#00be00' }}>G-3.5</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Canales de Escenas de Moderación (Mod Scene)</span>**
+        * **<span style={{ color: '#00be00' }}>G-3.5.1</span>** <span style={{ color: '#00be00' }}>— Discute únicamente asuntos relativos a la escena en cuestión. Se prohíbe cualquier información irrelevante.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.5.2</span>** <span style={{ color: '#00be00' }}>— Cuando hable cualquier miembro del personal, todos los participantes guardan silencio.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.5.3</span>** <span style={{ color: '#00be00' }}>— Habla únicamente cuando se te otorgue la palabra. Interrumpir al personal durante un procedimiento resultará en mute.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.5.4</span>** <span style={{ color: '#00be00' }}>— Prepárate para compartir pantalla o enviar un enlace de grabación (opción preferida) a solicitud del personal.</span>
+        * **<span style={{ color: '#00be00' }}>G-3.5.5</span>** <span style={{ color: '#00be00' }}>— Cualquier insulto, ataque personal o agresión conllevará un agravamiento de la sanción.</span>
+    * **<span style={{ color: '#00be00' }}>G-4</span>** <span style={{ color: '#00be00' }}>— Si tu personaje se encuentra en estado de "gravemente herido" o muerto, debes silenciar tu micrófono (Mute) en Discord. Tienes prohibido gemir, dar información o comentar las acciones del enemigo por voz hasta reaparecer en el hospital (respawn).</span>
+      * **<span style={{ color: '#00be00' }}>G-4.1</span>** <span style={{ color: '#00be00' }}>— Se permite compartir información OOC sobre la gravedad de la herida, su localización, etc.</span>
+    * **<span style={{ color: '#00be00' }}>G-5 —</span>** <span style={{ color: '#00be00' }}>Cualquier participante de la escena puede solicitar una breve pausa OOC con la frase "Un momento fuera de rol" ante un problema técnico o la sospecha de una infracción grave. Se prohíbe abusar de las pausas para ganar tiempo o pensar una respuesta.</span>
+    * **<span style={{ color: '#00be00' }}>G-6 —</span>** <span style={{ color: '#00be00' }}>Se prohíben monólogos extensos que impongan acciones sin dar a la otra parte la oportunidad física de intervenir en una escena de Discord.</span>\
+      **<span style={{ color: '#00be00' }}>Ejemplo:</span>** <span style={{ color: '#00be00' }}>"Te até, te amordacé, me fui y te maté" pronunciado en 2 segundos sin pausas es</span> [<span style={{ color: '#00be00' }}>PG</span>](/es/server-rules/general-rules/rp-terms#powergaming)<span style={{ color: '#00be00' }}>. Debes hacer pausas, permitiendo que la contraparte rolee resistencia o una reacción.</span>
+    * **<span style={{ color: '#00be00' }}>G-7 —</span>** <span style={{ color: '#00be00' }}>Se prohíbe forzar a jugadores a situaciones de rol sexual, torturas con descripciones sonoras explícitas o cualquier acto inmoral que cause incomodidad real a los participantes.</span>
+      * **<span style={{ color: '#00be00' }}>G-7.1 —</span>** <span style={{ color: '#00be00' }}>Si un jugador dice en una escena de Discord "OOC: Me resulta incómodo escuchar esto, detente", el otro jugador está obligado a frenar esa conducta y moderar el tono.</span>
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Personal (Staff)</span></h3>
+    </div>
+
+    * **H-1** — Está prohibido abandonar deliberadamente un procedimiento de moderación (mod scene) mediante los siguientes métodos: salir del servidor, resetear o matar intencionalmente al personaje, o cualquier otra acción que interrumpa la escena.
+      * **<span style={{ color: '#00be00' }}>H-1.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Salir del canal de voz donde se revisa una situación antes de contar con la autorización oficial del moderador equivale a LTAMS y se sanciona con ban.</span>
+    * **H-2** — Está prohibido ignorar requerimientos del personal o negarse a cooperar cuando la solicitud cuente con una razón justificada y te involucre (ej., eres participante de la escena, testigo, presunto infractor o estás implicado en la situación). En particular, a requerimiento del personal, debes proporcionar cualquier grabación de video o captura de pantalla relacionada con la investigación.
+      * **<span style={{ color: '#00be00' }}>H-2.1</span>** <span style={{ color: '#00be00' }}>— Negarse a unirse a un canal de voz para aclarar la situación también se considera una negativa a cooperar.</span>
+    * **H-5** — Las quejas presentadas sin pruebas (capturas de pantalla, grabaciones de video, logs) o con grabaciones recortadas/incompletas no serán revisadas.
+      * **<span style={{ color: '#00be00' }}>H-5.1</span>** <span style={{ color: '#00be00' }}>— Tampoco se revisan las quejas sobre infracciones cometidas</span> **<span style={{ color: '#00be00' }}>hace más de dos días</span>**<span style={{ color: '#00be00' }}>.</span>
+      * **<span style={{ color: '#00be00' }}>H-5.2</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Si la infracción no es evidente</span>**<span style={{ color: '#00be00' }}>, el video debe</span> **<span style={{ color: '#00be00' }}>mostrar de manera completa el momento de la infracción, su inicio y su final, así como el contexto</span>** <span style={{ color: '#00be00' }}>para confirmar el hecho de forma inequívoca.</span>
+      * **<span style={{ color: '#00be00' }}>H-5.3</span>** <span style={{ color: '#00be00' }}>— Los reportes falsos e intencionados contra otros jugadores o el personal del proyecto están prohibidos y se sancionan con ban.</span>
+    * **H-6** — Utiliza el comando `!mod` <span style={{ color: '#00be00' }}>en</span> **<span style={{ color: '#00be00' }}>"Servicios de Emergencia" o en el servidor principal de Discord</span>** de forma correcta y evita contactar al personal innecesariamente.
+
+    ---
+
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Eventos</span></h3>
+    </div>
+
+    * **<span style={{ color: '#00be00' }}>K-1</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el incumplimiento de las instrucciones del personal, como ignorar órdenes del anfitrión o salir del área del evento sin autorización.</span>
+    * **<span style={{ color: '#00be00' }}>K-2</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe generar interferencias: correr desordenadamente, embestir, tocar la bocina y otras acciones ruidosas que molesten a los participantes, así como entrometerse en concursos/desafíos/minijuegos si no eres participante.</span>
+    * **<span style={{ color: '#00be00' }}>K-3</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso inadecuado de vehículos: utilizar vehículos no autorizados para el evento, bloquear caminos o entorpecer el recorrido de los participantes.</span>
+    * **<span style={{ color: '#00be00' }}>K-4</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso indebido de funciones especiales de facción (esposas, arrestos, bandas de clavos, etc.) sin indicación del organizador, así como utilizar equipamiento de PD/SD/EMS/FD/DOT fuera del escenario previsto.</span>
+    * **<span style={{ color: '#00be00' }}>K-5</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso de armas sin autorización del anfitrión, incluido armamento pesado, si no forma parte de la dinámica.</span>
+    * **<span style={{ color: '#00be00' }}>K-6</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe alterar el orden de turno y la disciplina organizativa: ingresar a la zona de juego antes del llamado, así como cualquier acción que entorpezca el desarrollo normal de una prueba o concurso.</span>
+    * **<span style={{ color: '#00be00' }}>K-7</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíben ruidos y acciones caóticas: uso desmedido de sirenas/bocinas/música/efectos, así como generar caos (accidentes, riñas masivas), salvo que forme parte de la dinámica.</span>
+
+    <Warning>
+      **El bloque de reglas de eventos se encuentra ahora [en este enlace](/es/server-rules/general-rules/event-rules).**
+    </Warning>
+
+  </Accordion>
+
+  <Accordion title="Sección Añadida/Actualizada de Reglas de Eventos">
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h2 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Reglas de Eventos</span></h2>
+    </div>
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>General</span></h3>
+    </div>
+
+    * **<span style={{ color: '#00be00' }}>A-1</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el incumplimiento de las instrucciones del personal, como ignorar órdenes del anfitrión o salir del área del evento sin autorización.</span>
+      * **<span style={{ color: '#00be00' }}>A-1.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Ignorar las órdenes del anfitrión en una escena de Discord también se considera una infracción.</span>
+    * **<span style={{ color: '#00be00' }}>A-2</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe generar interferencias: correr desordenadamente, embestir, tocar la bocina y otras acciones ruidosas que molesten a los participantes, así como entrometerse en concursos/desafíos/minijuegos si no eres participante.</span>
+      * **<span style={{ color: '#00be00' }}>A-2.1</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Específico de Discord:</span>** <span style={{ color: '#00be00' }}>Hablar por encima del anfitrión, reproducir música en el micrófono o emitir sonidos estridentes que impidan a los participantes escuchar las reglas del concurso está prohibido. Se prohíbe interferir en desafíos si no eres participante.</span>
+    * **<span style={{ color: '#00be00' }}>A-3</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso indebido de vehículos: utilizar vehículos no autorizados para el evento, bloquear caminos o entorpecer el recorrido de los participantes.</span>
+    * **<span style={{ color: '#00be00' }}>A-4</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso no autorizado de funciones especiales de facción (esposas, arrestos, bandas de clavos, etc.) sin indicación del organizador, así como utilizar equipamiento de PD/SD/EMS/FD/DOT fuera del escenario previsto.</span>
+      * **<span style={{ color: '#00be00' }}>A-4.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Ignorar las órdenes del anfitrión en una escena de Discord también se considera una infracción.</span>
+    * **<span style={{ color: '#00be00' }}>A-5</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe el uso de armas sin autorización del anfitrión, incluido armamento pesado, si no forma parte de la dinámica.</span>
+      * **<span style={{ color: '#00be00' }}>A-5.1</span>** <span style={{ color: '#00be00' }}>—</span> <span style={{ color: '#00be00' }}>Ignorar las órdenes del anfitrión en una escena de Discord también se considera una infracción.</span>
+    * **<span style={{ color: '#00be00' }}>A-6</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíbe alterar el orden de turno y la disciplina organizativa: ingresar a la zona de juego antes del llamado, así como cualquier acción que entorpezca el desarrollo normal de una prueba o concurso.</span>
+      * **<span style={{ color: '#00be00' }}>A-6.1</span>** <span style={{ color: '#00be00' }}>— Ignorar las órdenes del anfitrión en una escena de Discord también se considera una infracción.</span>
+    * **<span style={{ color: '#00be00' }}>A-7</span>** <span style={{ color: '#00be00' }}>— En eventos regulares (NO-RP), se prohíben ruidos y acciones caóticas: uso desmedido de sirenas/bocinas/música/efectos, así como generar caos (accidentes, riñas masivas), salvo que forme parte de la dinámica.</span>
+      * **<span style={{ color: '#00be00' }}>A-7.1</span>** <span style={{ color: '#00be00' }}>— Ignorar las órdenes del anfitrión en una escena de Discord también se considera una infracción.</span>
+
+    _**<span style={{ color: '#00be00' }}>El moderador determina la sanción a aplicar por la infracción. La sanción dependerá de la gravedad de la misma.</span>**_
+
+  </Accordion>
+
+  <Accordion title="Sección Actualizada de Reglas de Discord">
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h2 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>Reglas de Discord</span></h2>
+    </div>
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>A. Disposiciones Generales</span></h3>
+    </div>
+
+    * **<span style={{ color: '#00be00' }}>A-1</span>** <span style={{ color: '#00be00' }}>— Estas reglas se aplican a todos los canales de texto y voz del servidor sin excepción, así como a todos los servidores gestionados por Moscow RolePlay (incluidos servidores de facciones).</span>
+    * **<span style={{ color: '#00be00' }}>A-2</span>** <span style={{ color: '#00be00' }}>— Cada participante está obligado a familiarizarse con las reglas antes de comenzar a comunicarse. Cualquier infracción conllevará una sanción de acuerdo con los puntos correspondientes. Las medidas disciplinarias se aplican a todos los participantes sin excepción.</span>
+    * **<span style={{ color: '#00be00' }}>A-3</span>** <span style={{ color: '#00be00' }}>— El personal del servidor tiene derecho de prioridad; sus indicaciones son de cumplimiento obligatorio. El personal tiene derecho a ajustar la medida de la sanción — tanto hacia la indulgencia como hacia la severidad — en no más del doble respecto al valor original. El personal se reserva el derecho de interpretar y aplicar las reglas caso por caso.</span>
+    * **<span style={{ color: '#00be00' }}>A-4</span>** <span style={{ color: '#00be00' }}>— Cualquier situación de disputa y apelación contra sanciones impuestas se presenta</span> **<span style={{ color: '#00be00' }}>exclusivamente a través del sistema de tickets</span>** <span style={{ color: '#00be00' }}>(</span><span style={{ color: '#00be00' }}>`/moderation-help`</span> <span style={{ color: '#00be00' }}>o el canal</span> [<span style={{ color: '#00be00' }}>#╝-tickets</span>](https://discord.com/channels/1331331077553262765/1416175944829243422)<span style={{ color: '#00be00' }}>). Las discusiones públicas sobre medidas disciplinarias, así como el contacto con el personal por mensajes directos,</span> **<span style={{ color: '#00be00' }}>no serán atendidas</span>**<span style={{ color: '#00be00' }}>.</span>
+    * **<span style={{ color: '#00be00' }}>A-5</span>** <span style={{ color: '#00be00' }}>— El personal no modera acciones en mensajes directos ni en servidores de terceros no controlados por Moscow RolePlay. Sin embargo, incidentes graves pueden ser revisados de forma individual. En caso de infracciones a las reglas por parte del personal (incluso en MD), se les aplicarán medidas disciplinarias.</span>
+    * **<span style={{ color: '#00be00' }}>A-6</span>** <span style={{ color: '#00be00' }}>— No persuadas ni apoyes a otros a infringir las reglas: esto resultará en sanciones para ambas partes.</span>
+
+    ***
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>B. Reglas de Conducta en Canales</span></h3>
+    </div>
+
+    * **<span style={{ color: '#00be00' }}>B-1</span>** <span style={{ color: '#00be00' }}>— El único idioma oficial en el servidor es el</span> **<span style={{ color: '#00be00' }}>ruso</span>**<span style={{ color: '#00be00' }}>. Todos los participantes están obligados a comunicarse en los canales de texto y voz exclusivamente en ruso.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 1–5 días / Kick del servidor</span>
+    * **<span style={{ color: '#00be00' }}>B-2</span>** <span style={{ color: '#00be00' }}>— Todos los participantes deben tratarse de forma justa y respetuosa. Se prohíben insultos, amenazas, discriminación, toxicidad, troleos, provocaciones e intentos de engaño. El acoso o difamación deliberada a usuarios se sancionará a criterio de la moderación.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–6 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-3</span>** <span style={{ color: '#00be00' }}>— Abstente de mencionar (ping) al personal sin un motivo real y justificado.</span>
+      * **<span style={{ color: '#00be00' }}>Administración (Management)</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>3 pings</span>** <span style={{ color: '#00be00' }}>conllevan un</span> **<span style={{ color: '#00be00' }}>mute de 30 minutos</span>**<span style={{ color: '#00be00' }}>.</span>
+      * **<span style={{ color: '#00be00' }}>Dirección (Leadership)</span>** <span style={{ color: '#00be00' }}>— mencionar está</span> **<span style={{ color: '#00be00' }}>estrictamente prohibido</span>**<span style={{ color: '#00be00' }}>.</span> **<span style={{ color: '#00be00' }}>2 pings</span>** <span style={{ color: '#00be00' }}>conllevan un</span> **<span style={{ color: '#00be00' }}>mute de 1 hora</span>**<span style={{ color: '#00be00' }}>.</span>
+      * <span style={{ color: '#00be00' }}>Las sanciones por infringir este punto se aplican</span> **<span style={{ color: '#00be00' }}>automáticamente a través del bot de moderación</span>**<span style={{ color: '#00be00' }}>. En determinados casos, los participantes pueden ser añadidos a una lista de excepciones a criterio de la dirección.</span>
+        * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 30 minutos / Mute 1 hora</span>
+    * **<span style={{ color: '#00be00' }}>B-4</span>** <span style={{ color: '#00be00' }}>— El uso de lenguaje obsceno solo es admisible en un contexto neutro y sin alterar el ambiente del servidor. Los insultos y el uso de groserías hacia participantes, personal o con fines provocadores están estrictamente prohibidos. El personal puede emitir una advertencia por uso inapropiado de groserías.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–6 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-5</span>** <span style={{ color: '#00be00' }}>— Cualquier declaración ofensiva dirigida contra la raza, nacionalidad, origen étnico, orientación sexual, identidad de género, edad, religión, discapacidad u otras características protegidas está</span> **<span style={{ color: '#00be00' }}>estrictamente prohibida</span>** <span style={{ color: '#00be00' }}>y carece de justificación (incluidos chistes, sarcasmo o "humor negro").</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–6 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-6</span>** <span style={{ color: '#00be00' }}>—</span> **<span style={{ color: '#00be00' }}>Todo contenido NSFW está completamente prohibido.</span>** <span style={{ color: '#00be00' }}>Esto abarca erotismo, violencia, gore, exhibición de partes íntimas, discusión de actos sexuales, estados o cualquier temática de índole sexual, sin excepciones.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 4–24 horas / Ban</span>
+    * **<span style={{ color: '#00be00' }}>B-7</span>** <span style={{ color: '#00be00' }}>— Queda estrictamente prohibido lo siguiente:</span>
+      * <span style={{ color: '#00be00' }}>Cualquier forma de nazismo, extremismo, racismo y el uso de simbología nacionalista prohibida (incluidas versiones estilizadas o encubiertas)</span>
+      * <span style={{ color: '#00be00' }}>Incitación a conflictos relacionados con acciones bélicas y disputas armadas. Se prohíbe el uso de los símbolos "Z" y "V" en cualquier contexto</span>
+      * <span style={{ color: '#00be00' }}>Propaganda de violencia, armas, drogas y cualquier actividad ilícita</span>
+        * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 6–24 horas / Ban</span>
+    * **<span style={{ color: '#00be00' }}>B-8</span>** <span style={{ color: '#00be00' }}>— Se prohíbe el spam en cualquier canal de texto: envío múltiple, sin sentido o excesivo de imágenes, mensajes, emojis, reacciones, historias largas o copypastes — cualquier acción que dificulte la lectura normal y la conversación.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–4 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-9</span>** <span style={{ color: '#00be00' }}>— Se prohíbe la publicidad de recursos de terceros: enlaces web, servidores de Discord, sitios de internet, grupos en redes sociales y cualquier otra plataforma ajena a este proyecto. La publicidad incluye menciones tanto explícitas como implícitas, invitaciones o desvío de atención hacia recursos externos.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 1–2 días / Ban</span>
+    * **<span style={{ color: '#00be00' }}>B-10</span>** <span style={{ color: '#00be00' }}>— No envíes enlaces a servidores de terceros, capturadores de IP (IP grabbers) ni enlaces sospechosos, inapropiados o fuera de contexto. Se prohíbe la distribución de malware (virus, troyanos, ransomware) y enlaces hacia ellos.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Ban (por malware) / Mute 1–2 días (por enlaces sospechosos)</span>
+    * **<span style={{ color: '#00be00' }}>B-11</span>** <span style={{ color: '#00be00' }}>— Se prohíbe la difusión de información personal (nombre real, domicilio, teléfono, fotos, videos, lugar de trabajo, geolocalización, correspondencia privada) sin el consentimiento explícito de su titular. No reveles datos personales propios ni ajenos. Cualquier forma de fraude, doxxing, desanonimización o swatting conlleva</span> **<span style={{ color: '#00be00' }}>ban inmediato</span>**<span style={{ color: '#00be00' }}>.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 6–24 horas / Ban</span>
+    * **<span style={{ color: '#00be00' }}>B-12</span>** <span style={{ color: '#00be00' }}>— Utiliza los canales de texto y voz estrictamente conforme a su propósito previsto. Por ejemplo, no uses comandos de bots en canales no destinados a ello. Memes, arte y multimedia — solo en los canales correspondientes a la temática del servidor.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–4 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-13</span>** <span style={{ color: '#00be00' }}>— Canales de voz:</span>
+      * <span style={{ color: '#00be00' }}>Mantén el silencio, respeta a los demás participantes</span>
+      * <span style={{ color: '#00be00' }}>Música, ruidos o sonidos externos —</span> **<span style={{ color: '#00be00' }}>únicamente con el consentimiento de todos los presentes</span>**
+      * <span style={{ color: '#00be00' }}>Usa el botón de silenciar micrófono cuando sea necesario</span>
+      * <span style={{ color: '#00be00' }}>Cualquier canal de voz creado mediante la opción</span> _<span style={{ color: '#00be00' }}>Crear Chat de Voz</span>_<span style={{ color: '#00be00' }}> es controlado por su creador — este decide qué conversaciones son admisibles en él</span>
+      * <span style={{ color: '#00be00' }}>Si no te agrada la conversación o el contenido en curso —</span> **<span style={{ color: '#00be00' }}>sal del canal de voz</span>**
+        * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–4 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-14</span>** <span style={{ color: '#00be00' }}>— Se prohíbe el uso de apodos, avatares y estados ofensivos o provocadores. Se prohíbe la suplantación de identidad de personalidades reconocidas, personal o miembros de la dirección.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Cambio de apodo / Mute</span>
+    * **<span style={{ color: '#00be00' }}>B-15</span>** <span style={{ color: '#00be00' }}>— Los bots de terceros, scripts, programas no autorizados y trampas (cheats) en el servidor están</span> **<span style={{ color: '#00be00' }}>prohibidos</span>**<span style={{ color: '#00be00' }}>. Juega limpio, no utilices bugs ni programas externos.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Ban</span>
+    * **<span style={{ color: '#00be00' }}>B-16</span>** <span style={{ color: '#00be00' }}>— Se prohíbe toda discusión, promoción o justificación de actos vinculados a vulneración o pirateo (cuentas, servidores, software), captación de IP sin consentimiento o suplantación de otros miembros o representantes del personal.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 1–6 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-17</span>** <span style={{ color: '#00be00' }}>— Se prohíbe cualquier manifestación pública de falta de respeto, descrédito, humillación o insultos hacia el proyecto, su administración, moderación, dirección, así como hacia el concepto general y valores de la comunidad. Las ofensas incluyen tanto declaraciones soeces directas como formas encubiertas (sarcasmo, ironía, difamación). La crítica constructiva en tono respetuoso a través de un ticket no se considera infracción.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Mute 2–12 horas / Kick</span>
+    * **<span style={{ color: '#00be00' }}>B-18</span>** <span style={{ color: '#00be00' }}>— Se prohíbe cualquier provocación orientada a desatar conflictos (troleo, gaslighting, incitación, crear guerras de mensajes o flames). Se prohíbe iniciar o participar en disputas abiertas cargadas de agresividad, menoscabo de la dignidad o intentos de someter al interlocutor.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 2–6 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-19</span>** <span style={{ color: '#00be00' }}>— Se prohíbe cualquier alusión a familiares o allegados de otros participantes en contexto negativo, incluidos insultos, humillaciones y burlas, independientemente del formato (insultos directos, frases encubiertas, sarcasmo).</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 4–24 horas</span>
+    * **<span style={{ color: '#00be00' }}>B-20</span>** <span style={{ color: '#00be00' }}>— Se prohíben debates de política, religión, discusiones provocadoras y la condena de actuaciones del personal. Los temas de política o asuntos internos/externos se permiten</span> **<span style={{ color: '#00be00' }}>únicamente si los participantes mantienen un tono respetuoso</span>**<span style={{ color: '#00be00' }}>.</span>
+      * **<span style={{ color: '#00be00' }}>Sanción:</span>** <span style={{ color: '#00be00' }}>Advertencia / Mute 6–24 horas / Ban</span>
+
+    ***
+    <div className="flex justify-center items-center w-full -mt-14">
+      <h3 className="text-3xl font-bold"><span style={{ color: '#00be00' }}>C. Notas</span></h3>
+    </div>
+
+    * **<span style={{ color: '#00be00' }}>C-1</span>** <span style={{ color: '#00be00' }}>— Puedes llamar a un miembro de moderación de Discord para revisar una infracción mediante el comando</span> <span style={{ color: '#00be00' }}>`/moderation-help`</span><span style={{ color: '#00be00' }}>. Adjunta el enlace al mensaje objeto de queja para que el equipo de moderación pueda asistir con mayor rapidez y efectividad.</span>
+    * **<span style={{ color: '#00be00' }}>C-2</span>** <span style={{ color: '#00be00' }}>— Cualquier servidor gestionado por Moscow RolePlay se rige por estas reglas. Esto incluye los servidores de departamentos. La infracción de cualquier norma puede derivar en sanciones tanto en el servidor respectivo como en el servidor principal de Moscow RolePlay.</span>
+    * **<span style={{ color: '#00be00' }}>C-3</span>** <span style={{ color: '#00be00' }}>— Estas reglas son de cumplimiento obligatorio.</span>
+      * <span style={{ color: '#00be00' }}>La permanencia en el servidor implica tu aceptación incondicional de las mismas.</span>
+      * <span style={{ color: '#00be00' }}>El desconocimiento de las reglas no exime de responsabilidad.</span>
+    * **<span style={{ color: '#00be00' }}>C-4</span>** <span style={{ color: '#00be00' }}>— En el servidor rigen los Términos de Servicio de Discord, así como las normas generales de convivencia y respeto. La infracción de estos términos también puede motivar sanciones.</span>
+
+  </Accordion>
+</AccordionGroup>

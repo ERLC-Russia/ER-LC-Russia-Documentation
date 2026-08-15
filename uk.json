@@ -1,0 +1,266 @@
+{
+  "language": "uk",
+  "tabs": [
+    {
+      "tab": "Правила Сервера",
+      "icon": "shield-halved",
+      "pages": [
+        "uk/index",
+        {
+          "group": "Основні Правила",
+          "icon": "book",
+          "pages": [
+            "uk/server-rules/general-rules/server-rules",
+            "uk/server-rules/general-rules/rp-terms",
+            "uk/server-rules/general-rules/discord-rules",
+            "uk/server-rules/general-rules/event-rules"
+          ]
+        },
+        {
+          "group": "Правила Фракцій",
+          "icon": "users",
+          "pages": [
+            "uk/server-rules/fractions-rules/fractions-rules",
+            "uk/server-rules/fractions-rules/lider-rules"
+          ]
+        },
+        {
+          "group": "Цивільні Операції",
+          "icon": "shop",
+          "pages": [
+            "uk/server-rules/civilian-operations/busines-rules",
+            "uk/server-rules/civilian-operations/opg-rules"
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Правила Персоналу",
+      "icon": "user-shield",
+      "pages": [
+        {
+          "group": "Основні Положення",
+          "icon": "scroll",
+          "pages": [
+            "uk/staff/general/staff-rights",
+            "uk/staff/general/ethical-norms"
+          ]
+        },
+        {
+          "group": "Правила Персоналу",
+          "icon": "scale-balanced",
+          "pages": [
+            "uk/staff/staff-rules/erlc-staff-rules",
+            "uk/staff/staff-rules/curator-rules",
+            "uk/staff/staff-rules/pr-rules"
+          ]
+        },
+        {
+          "group": "Гайди Для Персоналу",
+          "pages": [
+            "uk/staff/guides/erlc-staff-commands",
+            "uk/staff/guides/erlc-staff-handbook"
+          ],
+          "icon": "compass"
+        }
+      ]
+    },
+    {
+      "tab": "Історія Змін",
+      "icon": "clock-rotate-left",
+      "pages": [
+        "uk/changelogs/index",
+        {
+          "group": "Історія Змін MRP",
+          "icon": "list",
+          "pages": [
+            {
+              "group": "Оновлення V1.0",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v1.0/changelog-v1.0.1"
+              ]
+            },
+            {
+              "group": "Оновлення V0.5",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v0.5/changelog-v0.5.2",
+                "uk/changelogs/changelog-v0.5/changelog-v0.5.1"
+              ]
+            },
+            {
+              "group": "Оновлення V0.4",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v0.4/changelog-v0.4.1"
+              ]
+            },
+            {
+              "group": "Оновлення V0.3",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v0.3/changelog-v0.3.3",
+                "uk/changelogs/changelog-v0.3/changelog-v0.3.2",
+                "uk/changelogs/changelog-v0.3/changelog-v0.3.1"
+              ]
+            },
+            {
+              "group": "Оновлення V0.2",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v0.2/changelog-v0.2.3",
+                "uk/changelogs/changelog-v0.2/changelog-v0.2.2",
+                "uk/changelogs/changelog-v0.2/changelog-v0.2.1"
+              ]
+            },
+            {
+              "group": "Оновлення V0.1",
+              "icon": "folder",
+              "pages": [
+                "uk/changelogs/changelog-v0.1/changelog-v0.1.3",
+                "uk/changelogs/changelog-v0.1/changelog-v0.1.2",
+                "uk/changelogs/changelog-v0.1/changelog-v0.1.1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Гайди",
+      "icon": "book-open",
+      "pages": [
+        {
+          "group": "Гайди",
+          "icon": "atlas",
+          "pages": [
+            "uk/guides/index"
+          ]
+        },
+        {
+          "group": "Форуми",
+          "icon": "comments",
+          "pages": [
+            "uk/guides/forums/publication-rules"
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Можливості Документації",
+      "icon": "clipboard-list",
+      "pages": [
+        {
+          "group": "Інструменти",
+          "icon": "terminal",
+          "pages": [
+            "uk/docs-features/mcp-server"
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "socials": {
+      "discord": "https://erlcrussia.com/discord",
+      "x": "https://erlcrussia.com/x",
+      "telegram": "https://erlcrussia.com/telegram",
+      "youtube": "https://erlcrussia.com/youtube",
+      "instagram": "https://erlcrussia.com/tiktok",
+      "linkedin": "https://erlcrussia.com/roblox"
+    },
+    "links": [
+      {
+        "header": " ",
+        "items": [
+          {
+            "label": " ",
+            "href": "https://erlcrussia.com/privacy"
+          },
+          {
+            "label": " ",
+            "href": "https://erlcrussia.com/terms"
+          }
+        ]
+      },
+      {
+        "header": "ER:LC Росія",
+        "items": [
+          {
+            "label": "Вікі",
+            "href": "/uk"
+          },
+          {
+            "label": "Історія Змін",
+            "href": "/uk/changelogs"
+          },
+          {
+            "label": "Правила Персоналу",
+            "href": "/uk/staff-rules"
+          },
+          {
+            "label": "Почати Грати",
+            "href": "/uk/guides"
+          },
+          {
+            "label": "API",
+            "href": "https://api.erlcrussia.xyz"
+          },
+          {
+            "label": "Статус",
+            "href": "https://status.erlcrussia.com"
+          }
+        ]
+      },
+      {
+        "header": "Продукти",
+        "items": [
+          {
+            "label": "Магазин",
+            "href": "https://erlcrussia.com/store"
+          },
+          {
+            "label": "Moscow RolePlay",
+            "href": "https://erlcrussia.com/moscowroleplay"
+          }
+        ]
+      },
+      {
+        "header": "Документи",
+        "items": [
+          {
+            "label": "Приватність",
+            "href": "https://erlcrussia.com/privacy"
+          },
+          {
+            "label": "Умови",
+            "href": "https://erlcrussia.com/terms"
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Підтримка",
+        "href": "https://erlcrussia.com/discord"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Увійти",
+      "href": "https://erlcrussia.com/login"
+    }
+  },
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Наш Discord",
+        "icon": "discord",
+        "href": "https://erlcrussia.com/discord"
+      }
+    ]
+  }
+}

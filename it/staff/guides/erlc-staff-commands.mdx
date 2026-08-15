@@ -1,0 +1,80 @@
+---
+title: "Comandi dello Staff ER:LC"
+icon: "terminal"
+---
+<div id="no-header-here" />
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Comandi dello Staff ER:LC</h2>
+</div>
+
+<div className="flex justify-center items-center w-full -mt-10">
+  <h3 className="text-3xl font-bold">Comandi per Moderazione+</h3>
+</div>
+
+1. `:tocar` — Ti consente di teletrasportarti alla tua auto. (funziona solo in auto)
+2. `:toatv` — Ti consente di teletrasportarti al tuo buggy, tagliaerba o quad. (funziona solo su un veicolo a motore)
+3. `:logs` — Ti consente di visualizzare i log del server.
+4. `:kl` — Ti consente di visualizzare l'elenco delle uccisioni (kill list) sul server.
+5. `:h` — Ti consente di inviare una notifica all'intero server.
+6. `:pm giocatore` — Ti consente di inviare un messaggio privato a un giocatore.
+7. `:m` — Ti consente di inviare un messaggio globale a tutti i giocatori sul server.
+8. `:tp giocatore` — Ti consente di teletrasportare un giocatore selezionato da te.
+9. `:tp giocatore(chi) giocatore(da chi)` — Ti consente di teletrasportare un giocatore selezionato verso un altro giocatore.
+10. `:bring giocatore` — Ti consente di teletrasportare un giocatore selezionato da te.
+11. `:to giocatore` — Ti consente di teletrasportarti da un giocatore selezionato.
+12. `:kill giocatore` — Ti consente di uccidere un giocatore.
+13. `:kick giocatore(o id)` — Ti consente di espellere (kickare) un giocatore dal server.
+14. `:heal giocatore` — Ti consente di ripristinare gli HP di un giocatore o riportarlo in vita.
+15. `:time 00 - 23` — Ti consente di impostare l'orario sul server.
+    - Ad esempio: `:time 12` (Imposta le 12:00 di mezzogiorno sulla mappa)
+16: `:wanted giocatore` — Ti consente di assegnare un livello di ricercato a un giocatore.
+17. `:unwanted giocatore` — Ti consente di rimuovere il livello di ricercato da un giocatore.
+18. `:cmds` — Consente a un giocatore di visualizzare l'elenco dei comandi.
+19. `:refresh giocatore` — Ti consente di ricaricare la skin di un giocatore.
+20. `:pt numero` — Questo comando consente di creare una modalità in cui i giocatori non possono danneggiarsi a vicenda.
+    - Ad esempio: `:pt 60` (crea una modalità per 60 secondi in cui nessuno può essere colpito o ucciso)
+21. `:prty` — Questo comando consente di creare una modalità prioritaria per un determinato periodo di tempo.
+    - Ad esempio: `:prty 60` (crea una modalità prioritaria per 60 secondi).
+22. `:bans` — Questo comando consente di visualizzare i ban.
+23. `:helpers` — Questo comando consente di visualizzare gli helper su questo server.
+24. `:mods` — Questo comando consente di visualizzare i moderatori su questo server.
+25. `:admins` — Questo comando consente di visualizzare gli admin su questo server.
+26. `:startnearfire string` — Questo comando ti consente di appiccare un incendio nelle vicinanze.
+    - `:stopdumpsterfire` — Ti consente di spegnere l'incendio in un cassonetto.
+    - `:stopfire string` — Ti consente di estinguere un incendio.
+    - `:starfire string` — Ti consente di appiccare un incendio.
+
+---
+
+<div className="flex justify-center items-center w-full -mt-14">
+  <h3 className="text-3xl font-bold">Comandi per Amministrazione+</h3>
+</div>
+
+1. `:loadlayout string` — Comando per l'Editor Mappa. Ti consente di caricare una mappa specifica senza cercarla manualmente.
+2. `:unloadlayout string` — Comando per l'Editor Mappa. Ti consente di rimuovere un caricamento di mappa specifico.
+3. `:shutdown` — Comando creato per riavviare il server. Durante questa operazione, tutti i giocatori verranno espulsi dal server.
+   <Danger>
+     **Questo comando può essere utilizzato solo con il permesso del Proprietario (Owner).**
+   </Danger>
+4. `:weather` — Il comando consente di creare o rimuovere il meteo. **Ad esempio:**
+   - `:weather fog` — Crea nebbia sul server.
+   - `:weather snow` — Crea neve sul server.
+   - `:weather thunderstorm` — Crea un temporale sul server.
+   - `:weather rain` — Crea pioggia sul server.
+   - `:weather clear` — Rimuove il meteo sul server.
+5. `:mod giocatore(o id)` — Ti consente di assegnare il ruolo di "Moderator" a un giocatore sul server.
+6. `:unmod giocatore(o id)` — Ti consente di rimuovere il ruolo di "Moderator" da un giocatore sul server.
+7. `:helper giocatore(o id)` — Ti consente di assegnare il ruolo di "Helper" a un giocatore sul server.
+8. `:unhelper giocatore(o id)` — Ti consente di rimuovere il ruolo di "Helper" da un giocatore sul server.
+9. `:ban giocatore(o id)` — Ti consente di bannare un giocatore sul server.
+10. `:unban giocatore(o id)` — Ti consente di sbannare un giocatore sul server.
+
+---
+
+<div className="flex justify-center items-center w-full -mt-14">
+  <h3 className="text-3xl font-bold">Comandi per Comproprietari+</h3>
+</div>
+
+1. `:admin giocatore(o id)` — Ti consente di assegnare il ruolo di "Administrator" a un giocatore sul server.
+2. `:unadmin giocatore(o id)` — Ti consente di rimuovere il ruolo di "Administrator" da un giocatore sul server.

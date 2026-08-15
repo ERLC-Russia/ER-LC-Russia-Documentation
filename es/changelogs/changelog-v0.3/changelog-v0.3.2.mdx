@@ -1,0 +1,197 @@
+---
+title: "Actualización V0.3.2"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/referal-links-update.png"
+  alt="Actualización V0.3.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Actualización V0.3.2 — 26.04.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  Invita a amigos mediante enlaces personales y recibe bonificaciones exclusivas. También revisamos y agregamos modificaciones a las reglas del servidor: desde nuevos rangos del MVD hasta reglas para líderes y curadores. ¡Hazte más fuerte junto a tus amigos!
+</div>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Sistema de Enlaces de Referidos</h3></div>
+
+<p align="center"><strong>¡Más amigos — más oportunidades!</strong> Ahora contamos con un sistema de enlaces de referidos: envía invitaciones y desbloquea acceso a bonificaciones y recompensas especiales.</p>
+
+<Warning>
+  Para que un enlace de referido funcione, deben haber transcurrido al menos **3 meses** desde que el usuario abandonó el servidor. Este plazo no es definitivo y puede modificarse.
+</Warning>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h4 className="text-2xl font-bold">Nuevos Comandos</h4></div>
+
+* **`/create link`**
+  * Crea tu enlace de referido.
+* **`/my link`**
+  * Muestra información sobre tu enlace de referido.
+  * **Información mostrada:**
+    * Enlace de referido.
+    * Cantidad de usuarios invitados.
+    * Posición en la clasificación.
+    * Botón para consultar la lista de usuarios invitados.
+
+<Info>
+  Por el momento, la autoeliminación de enlaces de referidos por los usuarios no está disponible. Si necesitas eliminar un enlace de referido, crea un ticket justificando la acción.
+</Info>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-16"><h3 className="text-3xl font-bold">Cambios en las Reglas</h3></div>
+<AccordionGroup>
+  <Accordion title="Modificación de la Tabla de Rangos del MVD">
+    <div className="flex justify-center items-center w-full"><h4 className="text-2xl font-bold"><strong>Modificación de la Tabla de Rangos del MVD</strong></h4></div>
+
+    * **Unidades y Prefijos:**
+      * **MVD —** `MV-XXX`
+        * **PPS —** `PS-XXX`
+        * **DPS —** `DP-XXX`
+        * **OUR —** `SO-XXX`
+        * **SPP —** `SP-XXX`
+    * **Rangos:**
+      * **General de Policía** (**Cargo:** Ministro del Interior de Rusia)
+      * **Coronel General** (**Cargo:** Viceministro del Interior)
+      * **Teniente General** (**Cargo:** Jefe de la GU MVD de la FR para Moscú)
+      * **Mayor General** (**Cargo:** Subjefe de la GU MVD de la FR para Moscú)
+      * **Coronel** (**Cargo:** Comandante/Subcomandante de regimiento, departamento, división)
+      * **Teniente Coronel** (**Cargo:** Comandante/Subcomandante de regimiento, departamento, división)
+      * **Mayor** (**Cargo:** Comandante de departamento, batallón)
+      * **Capitán**
+      * **Teniente Mayor**
+      * **Teniente**
+      * **Teniente Menor**
+      * **Alférez Mayor (Senior Warrant Officer)**
+      * **Alférez (Warrant Officer)**
+      * **Sargento Mayor**
+      * **Sargento Primero**
+      * **Sargento**
+      * **Sargento Menor**
+      * **<span style={{ color: '#ff0000' }}>Soldado Raso (Private)</span>**
+
+  </Accordion>
+  <Accordion title="Modificación de las Reglas de Facciones">
+
+    <div className="flex justify-center items-center w-full"><h4 className="text-2xl font-bold"><strong>B. Gestión de Personal</strong></h4></div>
+
+    **<span style={{ color: '#00be00' }}>B-11</span>** <span style={{ color: '#00be00' }}>— Multifacción y combinación de cargos.</span>
+
+    * **<span style={{ color: '#00be00' }}>B-11.1 —</span>** <span style={{ color: '#00be00' }}>El jugador debe cumplir íntegramente las cuotas establecidas (normas de turnos/informes) en cada una de sus facciones elegidas. No cumplir la cuota en una facción por encontrarse ocupado en otra no es excusa y se sanciona conforme al reglamento interno.</span>
+    * **<span style={{ color: '#00be00' }}>B-11.2 —</span>** <span style={{ color: '#00be00' }}>Está prohibido pertenecer simultáneamente a las siguientes facciones:</span>
+      * <span style={{ color: '#00be00' }}>Comité de Investigación de la Federación Rusa y cualquier otra facción.</span>
+      * <span style={{ color: '#00be00' }}>Fiscalía de la Federación Rusa y cualquier otra facción.</span>
+      * <span style={{ color: '#00be00' }}>Tribunal y cualquier otra facción.</span>
+      * <span style={{ color: '#00be00' }}>MVD y FSB.</span>
+      * <span style={{ color: '#00be00' }}>OPG y MVD.</span>
+      * <span style={{ color: '#00be00' }}>OPG y FSB.</span>
+      * <span style={{ color: '#00be00' }}>OPG y Comité de Investigación de la Federación Rusa.</span>
+      * <span style={{ color: '#00be00' }}>OPG y Tribunal.</span>
+      * <span style={{ color: '#00be00' }}>OPG y Fiscalía de la Federación Rusa.</span>
+    * **<span style={{ color: '#00be00' }}>B-11.3 —</span>** <span style={{ color: '#00be00' }}>Se permite la combinación de dos o más facciones del siguiente listado siempre que se cumpla</span> **<span style={{ color: '#00be00' }}>B-11.1</span>**<span style={{ color: '#00be00' }}>:</span>
+      * <span style={{ color: '#00be00' }}>MVD y EMERCOM.</span>
+      * <span style={{ color: '#00be00' }}>MVD y Ministerio de Salud.</span>
+      * <span style={{ color: '#00be00' }}>MVD y Departamento de Transporte.</span>
+      * <span style={{ color: '#00be00' }}>FSB y EMERCOM.</span>
+      * <span style={{ color: '#00be00' }}>FSB y Ministerio de Salud.</span>
+      * <span style={{ color: '#00be00' }}>FSB y Departamento de Transporte.</span>
+      * <span style={{ color: '#00be00' }}>EMERCOM y Ministerio de Salud.</span>
+      * <span style={{ color: '#00be00' }}>Departamento de Transporte y EMERCOM.</span>
+      * <span style={{ color: '#00be00' }}>Departamento de Transporte y Ministerio de Salud.</span>
+      * <span style={{ color: '#00be00' }}>OPG y Departamento de Transporte.</span>
+      * <span style={{ color: '#00be00' }}>OPG y EMERCOM.</span>
+      * <span style={{ color: '#00be00' }}>OPG y Ministerio de Salud.</span>
+
+    <div className="flex justify-center items-center w-full -mt-14"><h4 id="b" className="text-2xl font-bold">G. MVD (Ministerio de Asuntos Internos)</h4></div>
+
+    * **<span style={{ color: '#ff0000' }}>G-3</span>** <span style={{ color: '#ff0000' }}>— Durante disturbios masivos, el MVD puede solicitar apoyo a EMERCOM (evacuación, barreras) y al Ministerio de Salud (asistencia médica).</span>
+
+    <div className="flex justify-center items-center w-full -mt-14"><h4 id="c" className="text-2xl font-bold">H. FSB (Servicio Federal de Seguridad)</h4></div>
+
+    * **H-2** — El Servicio Federal de Seguridad no tiene derecho a ejercer presión <span style={{ color: '#ff0000' }}>ni a realizar actividades de supervisión</span> sobre las facciones estatales (incluidos MVD, EMERCOM, Ministerio de Salud y otros). Todas las facciones se encuentran en un mismo nivel de subordinación, y el FSB no cuenta con facultades de control sobre su funcionamiento interno. No obstante, previa solicitud oficial de la jefatura de otra facción, el FSB puede llevar a cabo una inspección o detener a un empleado concreto dentro del marco de sus competencias de seguridad.
+
+  </Accordion>
+  <Accordion title="Modificación de las Reglas del Servidor">
+
+    <div className="flex justify-center items-center w-full"><h4 className="text-2xl font-bold">**<span style={{ color: '#00be00' }}>A.</span>**<strong> Reglas de Rol</strong></h4></div>
+
+    <div className="flex justify-center items-center w-full -mt-10"><h4 className="text-2xl font-bold">**<span style={{ color: '#00be00' }}>B.</span>**<strong> Facciones</strong></h4></div>
+
+    * **<span style={{ color: '#00be00' }}>B-11</span>** <span style={{ color: '#00be00' }}>— Regulación del oficial de policía de tránsito no oficial.</span>
+      * **<span style={{ color: '#00be00' }}>B-11.1</span>** <span style={{ color: '#00be00' }}>— Un oficial no oficial de la policía de tránsito se equipara jerárquicamente al rango de Soldado Raso. Debe cumplir incondicionalmente el estatuto interno y acatar las órdenes del mando no solo de la policía de tránsito, sino de todo el MVD.</span>
+      * **<span style={{ color: '#00be00' }}>B-11.2</span>** <span style={{ color: '#00be00' }}>— Los oficiales no oficiales tienen estrictamente prohibido extralimitarse en sus facultades legales. Cualquier acción que exceda los reglamentos establecidos del MVD y la legislación se sanciona conforme a las reglas del servidor.</span>
+      * **<span style={{ color: '#00be00' }}>B-11.3</span>** <span style={{ color: '#00be00' }}>— Para el cumplimiento de sus labores de servicio, se autoriza al oficial no oficial a portar y emplear exclusivamente el siguiente armamento (de entre los objetos capaces de causar daño; otros objetos de servicio también están permitidos):</span>
+        * <span style={{ color: '#00be00' }}>Gas pimienta.</span>
+        * <span style={{ color: '#00be00' }}>Porra de goma.</span>
+        * <span style={{ color: '#00be00' }}>Pistola Glock 17.</span>
+      * **<span style={{ color: '#00be00' }}>B-11.4</span>** <span style={{ color: '#00be00' }}>— Está prohibido interpretar el rol de un oficial no oficial del MVD (policía de tránsito) si ya eres miembro de cualquier otra facción estatal o criminal.</span>
+      * > <span style={{ color: '#00be00' }}>Nota: Esta regla aplica también dentro del propio MVD — no se puede ser empleado oficial de una estructura y no oficial de otra simultáneamente.</span>
+    * **<span style={{ color: '#00be00' }}>B-16</span>** <span style={{ color: '#00be00' }}>— El alto mando de una facción tiene derecho a rolear como empleado de rangos inferiores dentro de su facción para generar situaciones de juego.</span>
+      * **<span style={{ color: '#00be00' }}>Por ejemplo:</span>** <span style={{ color: '#00be00' }}>Un Teniente General interpreta a un Sargento para salir de patrullaje, ya que los generales habitualmente no salen a patrullar.</span>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold">**<span style={{ color: '#00be00' }}>C.</span>**<strong> Actividad Criminal</strong></h4></div>
+
+    * **C-5** — Los grupos de tres o más personas que cometan actos ilícitos o muestren una conducta criminal se consideran grupos criminales no autorizados y violan las reglas del proyecto.
+      * **<span style={{ color: '#00be00' }}>C-5.1</span>** <span style={{ color: '#00be00' }}>—</span> Solo las organizaciones criminales oficialmente registradas (que operen dentro de Operaciones Civiles) tienen derecho a cometer actos delictivos como grupo de tres o más participantes.
+      * <span style={{ color: '#ff0000' }}>Cada grupo individual dentro de una OPG oficial puede incluir como máximo cuatro participantes activos en línea simultáneamente; no obstante, una OPG oficial puede constar de varios grupos, siempre que no interactúen directamente entre sí en operaciones conjuntas.</span>
+      * **<span style={{ color: '#00be00' }}>C-5.2</span>** <span style={{ color: '#00be00' }}>— La cantidad máxima autorizada de participantes activos de una misma OPG oficial en una sesión de juego depende directamente del total de usuarios conectados en el servidor. Asimismo, solo un grupo operativo de una organización oficial puede coincidir en una sesión.</span>
+
+        | **<span style={{ color: '#00be00' }}>Jugadores conectados en el servidor</span>** | **<span style={{ color: '#00be00' }}>Máx. participantes por grupo</span>** |
+        | ------------------------------------------------------------ | -------------------------------------------------------------------- |
+        | <span style={{ color: '#00be00' }}>0 — 20 jugadores</span> | <span style={{ color: '#00be00' }}>hasta 4 personas</span> |
+        | <span style={{ color: '#00be00' }}>20 — 25 jugadores</span> | <span style={{ color: '#00be00' }}>hasta 5 personas</span> |
+        | <span style={{ color: '#00be00' }}>25 — 40 jugadores</span> | <span style={{ color: '#00be00' }}>hasta 6 personas</span> |
+      * **<span style={{ color: '#00be00' }}>C-5.3</span>** <span style={{ color: '#00be00' }}>—</span> Quedan prohibidas las acciones conjuntas o la coordinación entre diferentes grupos, incluso dentro de la misma OPG, durante situaciones activas.
+        * La conducta y actividad de los grupos criminales están bajo constante supervisión del personal.
+    * **<span style={{ color: '#00be00' }}>C-11</span>** <span style={{ color: '#00be00' }}>— Está prohibido regresar a la base de la OPG durante una persecución o tiroteo activo con el fin de ocultarse o recibir refuerzos de miembros de tu organización (en base a la regla</span> **<span style={{ color: '#00be00' }}>A-2</span>**<span style={{ color: '#00be00' }}>).</span>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold"><span style={{ color: '#00be00' }}>D.</span> Vehículos</h4></div>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold">**<span style={{ color: '#00be00' }}>E.</span>**<strong> Infracción por Daño</strong></h4></div>
+
+    * **<span style={{ color: '#00be00' }}>E-8</span>** <span style={{ color: '#00be00' }}>— Los empleados del Comité de Investigación y de la Fiscalía de Rusia tienen prohibido portar y emplear cualquier arma de fuego, así como usar equipamiento especial: esposas, porras de goma, escopetas de goma, táseres, escudos de asalto y arietes. El uso de chalecos antibalas individuales se permite únicamente para porte oculto. El porte abierto de equipo de combate y táctico está estrictamente prohibido.</span>
+      * **<span style={{ color: '#00be00' }}>Excepción para porte de armas de fuego:</span>** <span style={{ color: '#00be00' }}>régimen de Operación Antiterrorista (CTO) activo.</span>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold"><span style={{ color: '#00be00' }}>F.</span> Otros</h4></div>
+
+    * **F-9** — Se prohíbe el rollback frecuente de acciones de rol intencionales, así como realizar rollbacks sin el consentimiento de los demás participantes de la situación.
+      * **F-9.1** — El rollback de una situación solo se permite con el consentimiento de todos los participantes de la escena de rol o del chat del juego. Si al menos un participante no consiente, el rollback queda prohibido. Excepción: decisión del personal.
+      * **F-9.2** — En caso de accidente vehicular o persecución, no interpretar el choque sin un rollback constituye una infracción.
+      * **F-9.3** — Si tres o más personas están involucradas en una persecución y ocurre una colisión, se prohíbe el rollback: todas las partes deben interpretar las consecuencias.
+      * **F-9.4** — Si dos jugadores están en una persecución y ambos continúan conduciendo tras el accidente, ambos serán sancionados, sin importar quién causó el choque.
+      * **F-9.5** — Un accidente automovilístico involuntario puede anularse mediante rollback bajo las normas generales, únicamente con el acuerdo de todos los involucrados.
+      * **F-9.6** — Si un accidente fue provocado por un solo jugador (ej., chocar contra un poste o pared), debe escribir o decir el mensaje ".// rollback" en "game-chat" o en la escena de rol.
+      * **<span style={{ color: '#00be00' }}>F-9.7</span>** <span style={{ color: '#00be00' }}>— Tras el inicio de un proceso penal oficial contra un jugador respecto a un hecho específico, queda prohibido el "rollback" de dicha situación (anulación de sus consecuencias y curso) de manera unilateral o por mutuo acuerdo.</span>
+        * **<span style={{ color: '#00be00' }}>Excepción:</span>** <span style={{ color: '#00be00' }}>El rollback solo es posible con la aprobación directa de la Administración del Servidor (o Curador de Facción / Curador Principal).</span>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold"><span style={{ color: '#00be00' }}>G.</span> Chats de Voz</h4></div>
+
+    <div className="flex justify-center items-center w-full -mt-6"><h4 className="text-2xl font-bold"><span style={{ color: '#00be00' }}>H.</span> Personal (Staff)</h4></div>
+
+  </Accordion>
+
+  <Accordion title="Modificación de las Reglas de Líderes">
+    <div className="flex justify-center items-center w-full"><h4 className="text-2xl font-bold"><strong>C. Principales Prohibiciones</strong></h4></div>
+    * **<span style={{ color: '#00be00' }}>C-7</span>** <span style={{ color: '#00be00' }}>— Se prohíbe al líder de una organización anular, modificar o aplicar de forma autónoma cualquier sanción disciplinaria sobre sí mismo. La potestad para imponer y levantar sanciones a un líder corresponde exclusivamente al Curador de Facción, Curador Principal y Encargado de Facciones.</span>
+  </Accordion>
+
+  <Accordion title="Modificación de las Reglas de Curadores">
+    <div className="flex justify-center items-center w-full"><h4 className="text-2xl font-bold">C. Aprobación de Acciones</h4></div>
+    * **<span style={{ color: '#00be00' }}>C-3</span>** <span style={{ color: '#00be00' }}>— Se prohíbe a los curadores aplicarse de forma autónoma cualquier medida disciplinaria o forma de reconocimiento a sí mismos.</span>
+  </Accordion>
+</AccordionGroup>
+
+<div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold">Corrección de Errores</h3></div>
+
+* Se corrigieron las transcripciones de tickets en los bots de Operaciones Civiles y Moscow RolePlay.
+* Se corrigió el prefijo de comandos de chat de voz en el bot Moscow RolePlay Utils.

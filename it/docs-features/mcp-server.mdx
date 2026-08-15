@@ -1,0 +1,83 @@
+---
+title: "Server MCP"
+description: "Collega gli assistenti IA alla documentazione di ER:LC Russia tramite Model Context Protocol per la ricerca e l'analisi delle informazioni in tempo reale."
+icon: "server"
+---
+## Endpoint
+
+```text
+https://wiki.erlcrussia.com/mcp
+```
+
+## Che cos'è l'MCP?
+
+Il Model Context Protocol (MCP) è uno standard aperto che consente agli assistenti IA di connettersi a fonti di dati e strumenti esterni. Puntando un client compatibile con MCP verso il nostro server, il tuo assistente IA sarà in grado di cercare, recuperare e analizzare le informazioni dalla documentazione di ER:LC Russia in tempo reale.
+
+<Tip>
+  **Il server MCP fornisce l'accesso alla documentazione aggiornata senza la necessità di copiare e incollare manualmente i contenuti nella chat dell'assistente IA.**
+</Tip>
+
+## Connessione
+
+### Claude Desktop
+
+Aggiungi quanto segue al tuo file `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### Cursor
+
+Aggiungi il server nelle impostazioni MCP di Cursor:
+
+```json
+{
+  "mcpServers": {
+    "erlcrussia-wiki": {
+      "url": "https://wiki.erlcrussia.com/mcp"
+    }
+  }
+}
+```
+
+### OpenCode
+
+Aggiungi il server nelle impostazioni MCP di OpenCode:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "erlcrussia-wiki": {
+      "type": "remote",
+      "url": "https://wiki.erlcrussia.com/mcp",
+      "enabled": true
+    }
+  }
+}
+```
+
+### Altri Client
+
+Qualsiasi client che supporti server MCP remoti può essere indirizzato all'URL sopra indicato. Consulta la documentazione del tuo client per il formato di configurazione esatto.
+
+## Strumenti Disponibili
+
+Una volta connesso, il tuo client avrà accesso a strumenti per:
+
+* **Cercare** nella documentazione tramite parole chiave o argomenti
+* **Recuperare** pagine e sezioni specifiche
+* **Navigare** nella struttura della documentazione
+
+## Perché Usarlo?
+
+* Fai domande al tuo assistente IA sulla nostra documentazione e ricevi risposte basate sulle informazioni più aggiornate
+* Evita allucinazioni o informazioni obsolete
+* Crea agenti e flussi di lavoro che rimangono automaticamente sincronizzati con le modifiche alla documentazione
