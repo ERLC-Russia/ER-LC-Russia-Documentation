@@ -261,16 +261,22 @@ footer a[href*="roblox"]:hover::before {
 
 #search-bar-entry,
 button#search-bar-entry,
-#navbar button[aria-label*="Search"],
-#navbar button[aria-label*="Поиск"],
+#navbar button[aria-label*="Search" i],
+#navbar button[aria-label*="Поиск" i],
+#navbar button[aria-label*="Пошук" i],
+#navbar button[aria-label*="Buscar" i],
+#navbar button[aria-label*="Cerca" i],
 #navbar button:has(svg) {
   transition: transform 0.15s ease, background-color 0.15s ease !important;
 }
 
 #search-bar-entry:active,
 button#search-bar-entry:active,
-#navbar button[aria-label*="Search"]:active,
-#navbar button[aria-label*="Поиск"]:active {
+#navbar button[aria-label*="Search" i]:active,
+#navbar button[aria-label*="Поиск" i]:active,
+#navbar button[aria-label*="Пошук" i]:active,
+#navbar button[aria-label*="Buscar" i]:active,
+#navbar button[aria-label*="Cerca" i]:active {
   transform: translateY(2px) !important;
 }
 
@@ -369,8 +375,10 @@ footer [data-component-name="theme-preference-menu"],
 footer #theme-preference-menu-trigger,
 footer .theme-preference-menu-trigger,
 footer div:has(> #theme-preference-menu-trigger),
-footer div:has(> button[aria-label*="theme"]),
-footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
+footer div:has(> button[aria-label*="theme" i]),
+footer div:has(> button[aria-label*="тем" i]),
+footer div:has(> button[aria-label*="теми" i]),
+footer div:has(> button[aria-label*="tema" i]),
 [data-testid*="mode-switch"] {
   display: none !important;
 }

@@ -13,30 +13,64 @@
   let firstAllowedPage = 'subscriptions';
 
   function getTranslations() {
-    const isEn =
-      (document.documentElement.lang &&
-        document.documentElement.lang.toLowerCase().startsWith('en')) ||
-      window.location.pathname.startsWith('/en');
+    const path = (window.location.pathname || '').toLowerCase();
+    const docLang = (document.documentElement.lang || '').toLowerCase();
 
-    if (isEn) {
-      return {
+    let lang = 'ru';
+    if (path.startsWith('/en/') || path === '/en' || docLang.startsWith('en')) {
+      lang = 'en';
+    } else if (path.startsWith('/uk/') || path === '/uk' || docLang.startsWith('uk')) {
+      lang = 'uk';
+    } else if (path.startsWith('/es/') || path === '/es' || docLang.startsWith('es')) {
+      lang = 'es';
+    } else if (path.startsWith('/it/') || path === '/it' || docLang.startsWith('it')) {
+      lang = 'it';
+    }
+
+    const dict = {
+      en: {
         linkRoblox: 'Link Roblox',
         settings: 'Settings',
         dashboard: 'Dashboard',
         logout: 'Log out',
         login: 'Login',
         menuAria: 'Account menu',
-      };
-    }
-
-    return {
-      linkRoblox: 'Привязать Roblox',
-      settings: 'Настройки',
-      dashboard: 'Дашборд',
-      logout: 'Выйти',
-      login: 'Войти',
-      menuAria: 'Меню пользователя',
+      },
+      uk: {
+        linkRoblox: 'Прив’язати Roblox',
+        settings: 'Налаштування',
+        dashboard: 'Дашборд',
+        logout: 'Вийти',
+        login: 'Увійти',
+        menuAria: 'Меню користувача',
+      },
+      es: {
+        linkRoblox: 'Vincular Roblox',
+        settings: 'Ajustes',
+        dashboard: 'Panel',
+        logout: 'Cerrar sesión',
+        login: 'Iniciar sesión',
+        menuAria: 'Menú de cuenta',
+      },
+      it: {
+        linkRoblox: 'Collega Roblox',
+        settings: 'Impostazioni',
+        dashboard: 'Dashboard',
+        logout: 'Disconnettiti',
+        login: 'Accedi',
+        menuAria: 'Menu account',
+      },
+      ru: {
+        linkRoblox: 'Привязать Roblox',
+        settings: 'Настройки',
+        dashboard: 'Дашборд',
+        logout: 'Выйти',
+        login: 'Войти',
+        menuAria: 'Меню пользователя',
+      },
     };
+
+    return dict[lang] || dict.ru;
   }
 
   function getAvatarUrl(user) {
