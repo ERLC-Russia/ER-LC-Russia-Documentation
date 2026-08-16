@@ -644,18 +644,21 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
 }
 
 .account-avatar-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  border-radius: 50%;
-  padding: 0;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  width: 44px;
-  height: 44px;
-  outline: none;
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease !important;
+  width: 44px !important;
+  height: 44px !important;
+  outline: none !important;
+  overflow: visible !important;
+  flex-shrink: 0 !important;
 }
 
 .account-avatar-button:hover {
@@ -663,11 +666,23 @@ footer div:has(> button[aria-label*="тем"], button[aria-label*="Тем"]),
 }
 
 .account-avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.account-avatar-decoration {
+  position: absolute !important;
+  top: -9.8% !important;
+  left: -9.8% !important;
+  width: 119.6% !important;
+  height: 119.6% !important;
+  max-width: none !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 1 !important;
 }
 
 .account-dropdown {

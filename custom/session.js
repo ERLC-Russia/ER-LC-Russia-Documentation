@@ -49,6 +49,11 @@
     return 'https://cdn.erlcrussia.com/images/Moscow-RolePlay-Icon-Website.png';
   }
 
+  function getAvatarDecorationUrl(user) {
+    if (!user) return null;
+    return user.discordAvatarDecoration || null;
+  }
+
   function escapeHtml(str) {
     if (!str) return '';
     return String(str)
@@ -215,6 +220,7 @@
     }
 
     const avatarUrl = getAvatarUrl(currentUser);
+    const decorationUrl = getAvatarDecorationUrl(currentUser);
     const displayName = currentUser.name || currentUser.username || 'Avatar';
     const currentCallback = encodeURIComponent(window.location.href);
 
@@ -224,7 +230,11 @@
       avatarBtn.className = 'account-avatar-button';
       avatarBtn.type = 'button';
       avatarBtn.setAttribute('aria-label', escapeHtml(t.menuAria));
-      avatarBtn.innerHTML = `<img src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(displayName)}" class="account-avatar" />`;
+      let avatarHtml = `<img src="${escapeHtml(avatarUrl)}" alt="${escapeHtml(displayName)}" class="account-avatar" />`;
+      if (decorationUrl) {
+        avatarHtml += `<img src="${escapeHtml(decorationUrl)}" alt="" aria-hidden="true" class="account-avatar-decoration" />`;
+      }
+      avatarBtn.innerHTML = avatarHtml;
       avatarBtn.onclick = function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -233,9 +243,24 @@
       };
       container.appendChild(avatarBtn);
     } else {
-      const img = avatarBtn.querySelector('img');
+      const img = avatarBtn.querySelector('.account-avatar');
       if (img && img.src !== avatarUrl) {
         img.src = avatarUrl;
+      }
+      let decoImg = avatarBtn.querySelector('.account-avatar-decoration');
+      if (decorationUrl) {
+        if (!decoImg) {
+          decoImg = document.createElement('img');
+          decoImg.className = 'account-avatar-decoration';
+          decoImg.alt = '';
+          decoImg.setAttribute('aria-hidden', 'true');
+          avatarBtn.appendChild(decoImg);
+        }
+        if (decoImg.src !== decorationUrl) {
+          decoImg.src = decorationUrl;
+        }
+      } else if (decoImg) {
+        decoImg.remove();
       }
     }
 
