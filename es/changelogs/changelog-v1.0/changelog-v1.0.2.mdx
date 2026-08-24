@@ -16,8 +16,69 @@ icon: "tag"
 </div>
 
 <div className="flex justify-center items-center w-full text-center">
-  Actualización masiva del bot <b>«Supervisión de Departamentos»</b> y de la documentación del proyecto: se implementó un nuevo sistema de control de turnos, permisos de ausencia y actividad reducida, paneles unificados de gestión y disciplina, configuración completa desde Discord y soporte bilingüe. Se incorporó una sección de guías para todos los módulos del bot y un manual de migración desde ClueControl M.
+  Lanzamiento a gran escala del bot <b>«Supervisión de Departamentos»</b> y actualización de la documentación del proyecto: nuevo sistema de turnos, ausencias y actividad reducida, paneles interactivos unificados de gestión y disciplina, configuración total desde Discord y soporte bilingüe. Se añade una sección de guías de bots y manual de migración desde ClueControl M.
 </div>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Actualización de la Documentación</h3></div>
+
+### Nueva sección «Bots»
+Se ha incorporado una sección completa de **«Bots»** dentro de la pestaña **Guías**, que incluye un manual de migración y 15 tutoriales detallados para el bot «Supervisión de Departamentos»:
+* [**Guía de migración desde ClueControl M**](/es/guides/bots/migration-from-cluecontrol-m) — traslado de turnos, ausencias y roles con tablas de equivalencia y lista de verificación.
+* [**Configuración del Bot**](/es/guides/bots/department-oversight/configure) — arquitectura, orden de configuración y comando `/configure`.
+* [**Selección de Idioma**](/es/guides/bots/department-oversight/language) — cambio de idioma del servidor (RU/EN).
+* [**Permisos de Acceso**](/es/guides/bots/department-oversight/permissions) — configuración de roles de configuración, roles autorizados y prefijos.
+* [**Sistema de Rangos**](/es/guides/bots/department-oversight/ranks) — creación de divisiones, rangos con asignación automática de roles, despidos y listas negras.
+* [**Sanciones y Suspensiones**](/es/guides/bots/department-oversight/punishments) — tipos de infracción, niveles de escalado, automatización y descargos explicativos.
+* [**Canales de Registro**](/es/guides/bots/department-oversight/logs) — registros de auditoría y seguimiento de movimiento de canales.
+* [**Turnos**](/es/guides/bots/department-oversight/shifts) — parámetros base, tipos de turno, cuotas de rol y formatos de duración.
+* [**Permisos de Ausencia**](/es/guides/bots/department-oversight/loa) — canal de revisión, asignación de roles y retiro automático.
+* [**Actividad Reducida**](/es/guides/bots/department-oversight/ra) — cuota reducida al 50% y tramitación de solicitudes.
+* [**Tickets**](/es/guides/bots/department-oversight/tickets) — roles de soporte, categorías, transcripciones y constructor visual de paneles.
+* [**Google Forms**](/es/guides/bots/department-oversight/google-forms) — revisión de respuestas de Google Forms directamente en Discord.
+* [**Anuncios**](/es/guides/bots/department-oversight/announcements) — configuración de canales de departamento y difusiones globales.
+* [**Modcalls**](/es/guides/bots/department-oversight/modcalls) — despacho de emergencias, teletransporte en el juego y prevención de abusos.
+* [**Baneo Global**](/es/guides/bots/department-oversight/global-ban) — conexión de servidores de la red y centralización de baneos.
+* [**Limpieza de Datos**](/es/guides/bots/department-oversight/server-manage) — restablecimiento seguro de turnos, órdenes y datos mediante `/server manage`.
+
+---
+
+### Nuevas localizaciones de idioma
+* Traducción integral de toda la documentación, manuales del personal, reglas del servidor e historiales de cambios a 3 nuevos idiomas: **Ucraniano**, **Español** e **Italiano**.
+* Localización de la interfaz de autenticación y menús de perfil de usuario para todos los idiomas.
+
+---
+
+### Autenticación y perfil de usuario
+* **Decoraciones de avatar:** visualización de decoraciones de avatar personalizadas de Discord en la cabecera y el menú de perfil.
+* **Guías de inicio de sesión:** actualización de los manuales de acceso y especificación del nivel de seguridad Tier 1.
+* **Mejoras de interfaz:** nuevo diseño del botón «Iniciar sesión», reordenamiento de elementos de cabecera y animaciones optimizadas para botones activos.
+
+---
+
+### Estilos, navegación y normativas
+* **Enlaces a Discord:** estilos personalizados para enlaces a servidores comunitarios en la barra lateral y el menú móvil.
+* **Reglas del servidor:** redacción revisada y actualizada de la Regla **A-5** (regulaciones de organizaciones y facciones ilegales).
+* **Optimización:** eliminación de recursos no utilizados, actualización de colores de tema y limpieza del directorio de iconos.
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Rol y Recompensas por Votar</h3></div>
+
+### Nuevo rol de «Votante»
+* Votar por el servidor en las plataformas [Top.gg](https://vote.erlcrp.ru/mrp/topgg) y [Melonly](https://vote.erlcrp.ru/mrp/melonly) otorga automáticamente un rol especial con beneficios.
+
+---
+
+### Beneficios del rol
+* Envío de **animaciones GIF** en el chat general y canales de comandos de bots.
+* Capacidad de crear **encuestas** en el chat de la comunidad.
+
+---
+
+### Integración de plataformas
+* Las reseñas y votos ahora se registran y publican en un canal dedicado desde [Melonly](https://vote.erlcrp.ru/mrp/melonly), [Top.gg](https://vote.erlcrp.ru/mrp/topgg) y [AdERLC](https://vote.erlcrp.ru/mrp/aderlc).
 
 ***
 
@@ -25,62 +86,62 @@ icon: "tag"
   <Accordion title="Actualización del Bot «Supervisión de Departamentos»">
     <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Actualización de Supervisión de Departamentos</strong></h3></div>
 
-    ### Sistema de control de turnos — `/shift`
-    * **Panel personal:** el comando `/shift manage` abre una tarjeta interactiva con estado en tiempo real y botones **Iniciar**, **Pausa**, **Finalizar**.
-    * **Tipos de turno:** selección del tipo de turno al iniciar (con roles de guardia, canales de registro y prefijos dedicados).
-    * **Contabilidad de pausas:** el tiempo en pausa se excluye automáticamente del cómputo de horas trabajadas.
-    * **Estadísticas y cuotas:** `/shift time` muestra horas acumuladas, duración promedio y estado de cumplimiento considerando la cuota específica del rol.
-    * **Clasificaciones e informes:** `/shift leaderboard` con medallas top-3 y exportación a archivo de texto, `/shift history @usuario`, `/shift activity` para cualquier período con marcas de ausencia y actividad reducida.
-    * **Administración:** `/shift admin @usuario` — inicio/fin forzado de turnos, ajuste manual de horas («1h 30m»), anulación y limpieza.
-    * **Límites de personal:** número máximo configurable de empleados en turno simultáneamente.
+    ### Sistema de registro de turnos — `/shift`
+    * **Panel personal:** el comando `/shift manage` abre una tarjeta interactiva con estado en tiempo real y botones **Start**, **Break**, **End**.
+    * **Tipos de turno:** selección del tipo de turno al iniciar (con roles de servicio dedicados, canales de registro y prefijos).
+    * **Cómputo de pausas:** el tiempo en pausa se descuenta automáticamente del total de horas de guardia trabajadas.
+    * **Estadísticas y cuotas:** `/shift time` muestra horas acumuladas, duración promedio y estado de cumplimiento según la cuota del rol.
+    * **Clasificaciones y reportes:** `/shift leaderboard` con medallas top-3 y exportación a archivo de texto, `/shift history @usuario` y `/shift activity` para cualquier periodo con marcas de ausencia y actividad reducida.
+    * **Administración:** `/shift admin @usuario` — inicio/cierre forzado de turnos, ajuste manual de tiempo («1h 30m»), anulación y limpieza.
+    * **Límites de personal:** máximo configurable de miembros en turno simultáneamente.
 
     ---
 
     ### Permisos de Ausencia y Actividad Reducida
-    * **Envío de solicitudes:** comandos `/loa submit` y `/ra submit` con duración seleccionable (1 a 90 días) y motivo.
-    * **Revisión en Discord:** las solicitudes con historial del empleado llegan al canal de liderazgo con botones **Aprobar** / **Rechazar** (con motivo obligatorio).
-    * **Automatización de roles:** los roles de ausencia y actividad reducida se asignan al aprobar y se retiran automáticamente cada 5 minutos al expirar; notificaciones enviadas por MD.
-    * **Integración con turnos:** inicio de turno bloqueado durante ausencias; cuotas horarias reducidas al 50% durante actividad reducida.
-    * **Gestión:** comandos `/loa admin` y `/ra admin` para asignación manual, prórroga y finalización anticipada.
+    * **Envío de solicitudes:** comandos `/loa submit` y `/ra submit` con duración seleccionable (de 1 a 90 días) y motivo.
+    * **Revisión en Discord:** las tarjetas con el historial del miembro llegan al canal de gestión con botones **Approve** / **Deny** (con motivo obligatorio de rechazo).
+    * **Automatización de roles:** los roles de ausencia y actividad reducida se asignan al aprobar y se retiran automáticamente cada 5 minutos al expirar; notificaciones por MD.
+    * **Integración con turnos:** inicio de guardia bloqueado durante ausencias; cuotas horarias reducidas al 50% durante actividad reducida.
+    * **Gestión:** comandos `/loa admin` y `/ra admin` para asignación manual, extensiones y finalizaciones anticipadas.
 
     ---
 
     ### Consentimiento de mensajes directos — `/consent`
-    * Interruptor para recibir mensajes directos del bot (resúmenes de turnos, avisos disciplinarios y órdenes de personal).
+    * Interruptor para recibir mensajes directos del bot (resúmenes de turnos, notificaciones disciplinarias y órdenes de personal).
 
     ---
 
     ### Panel unificado de gestión de personal — `/manage`
-    * Perfil interactivo `/manage @empleado` que reemplaza comandos dispersos:
+    * Perfil interactivo `/manage @miembro` que sustituye comandos dispersos:
       * **Contratar** en un departamento con selección de rango y prefijo;
       * **Ascender / Degradar** con registro de motivos;
       * **Transferir** entre divisiones o facciones;
-      * **Despedir** (baja estándar o lista negra con duración personalizada / permanente);
-      * **Gestión de prefijos** y levantamiento anticipado de listas negras.
-    * Generación automática de números de orden oficiales (№00000001), publicación en canales de registro y notificación por MD.
+      * **Despedir** (baja ordinaria o lista negra con duración personalizada / permanente);
+      * **Gestión de prefijos** y revocación anticipada de listas negras.
+    * Generación automática de números de orden oficiales (№00000001), publicación en canales de registro y entrega por MD.
 
     ---
 
     ### Sanciones y suspensiones — `/punishment`
-    * Panel `/punishment @empleado` para control disciplinario.
-    * **Escalado y niveles:** tipos de sanción configurables vinculados a roles de nivel (1, 2, 3...).
-    * **Automatización:** reglas del tipo «3 advertencias → 1 amonestación por 1 mes».
-    * **Expiración automática:** retiro automático de roles de sanción al vencer el plazo.
-    * **Suspensiones:** asignación del rol de suspensión, envío de formulario de descargo por MD (48 horas para responder, texto + hasta 5 archivos) y publicación en el canal de descargos.
+    * Panel unificado `/punishment @miembro` para control disciplinario.
+    * **Niveles de escalado:** tipos de infracción configurables vinculados a roles de nivel (Nivel 1, 2, 3...).
+    * **Automatización:** reglas como «3 advertencias → 1 amonestación por 1 mes».
+    * **Retiro automático:** los roles de sanción se eliminan automáticamente al expirar el plazo.
+    * **Suspensiones:** asignación de rol de suspensión, envío de formulario de descargo por MD (48 horas para responder, texto + hasta 5 archivos) y publicación en el canal correspondiente.
 
     ---
 
     ### Configuración completa desde Discord — `/configure`
-    * Panel interactivo de configuración con 13 secciones:
+    * Panel de configuración interactivo dividido en 13 secciones:
       1. **Idioma** — ruso o inglés para todo el servidor;
-      2. **Permisos de Acceso** — roles de configuración y roles de gestión;
+      2. **Permisos de Acceso** — roles de configuración y roles autorizados;
       3. **Sistema de Rangos** — departamentos, rangos, tipos de despido, listas negras, roles prohibidos;
       4. **Sanciones** — tipos, niveles, automatización y suspensiones;
-      5. **Canales de Registro** — hasta 25 canales de auditoría y movimientos de canales;
-      6. **Google Forms** — integración y vinculación de formularios a canales;
+      5. **Canales de Registro** — hasta 25 canales de auditoría y seguimiento de movimiento de canales;
+      6. **Google Forms** — integración y enrutamiento de respuestas a canales;
       7. **Baneo Global** — red de servidores asociados;
-      8. **Anuncios** — canales de departamentos para difusiones globales;
-      9. **Modcalls** — canal de despacho, roles de moderadores y rol de respaldo;
+      8. **Anuncios** — canales de departamento para difusiones globales;
+      9. **Modcalls** — canal de despacho, roles de moderadores de guardia y rol de respaldo;
       10. **Tickets** — categorías, roles de soporte, constructor de paneles;
       11. **Turnos** — tipos, prefijos, cuotas, límites;
       12. **Permisos de Ausencia** — canal y roles de ausencia;
@@ -90,13 +151,13 @@ icon: "tag"
 
     ### Limpieza de datos — `/server manage`
     * Panel seguro de restablecimiento: historial de turnos, ausencias, actividad reducida, rangos y departamentos.
-    * Protegido mediante la introducción manual de la frase de confirmación `I AM READY TO DELETE DATA` (o `Я ГОТОВ УДАЛИТЬ ДАННЫЕ`) y finalización adecuada de turnos activos.
+    * Protegido mediante la escritura obligatoria de la frase de confirmación `I AM READY TO DELETE DATA` (o `Я ГОТОВ УДАЛИТЬ ДАННЫЕ`) y cierre ordenado de turnos activos.
 
     ---
 
     ### Llamadas de moderación de emergencia — Modcalls
-    * Comando `/mod motivo` vía Discord y `:mod motivo` directamente en el chat del juego ER:LC.
-    * Alertas en el servidor central de moderación, botón de reclamo y teletransporte automático del moderador hacia el jugador en Roblox.
+    * Comando `/mod motivo` desde Discord y `:mod motivo` en el chat del juego ER:LC.
+    * Notificaciones en el servidor central de moderación, botón de atención y teletransporte automático del moderador al jugador en Roblox.
     * Panel de administración `/modcall` con listas negras de Discord/Roblox y bloqueo global de llamadas.
 
     ---
@@ -111,66 +172,5 @@ icon: "tag"
     ### Desarrollo de bots personalizados para facciones
     * Ahora es posible desarrollar e integrar un bot personalizado para su facción con el fin de ampliar las funciones existentes e incorporar mecánicas únicas.
     * El código fuente, las plantillas y la documentación de desarrollo están disponibles en el repositorio oficial de [Bots Personalizados](https://link.erlcrussia.xyz/custom-bots).
-  </Accordion>
-
-  <Accordion title="Rol y Recompensas por Votar">
-    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Rol y Recompensas por Votar</strong></h3></div>
-
-    ### Nuevo rol de «Votante»
-    * Votar por el servidor en las plataformas [Top.gg](https://vote.erlcrp.ru/mrp/topgg) y [Melonly](https://vote.erlcrp.ru/mrp/melonly) otorga automáticamente un rol especial con beneficios.
-
-    ---
-
-    ### Beneficios del rol
-    * Envío de **animaciones GIF** en el chat general y canales de comandos de bots.
-    * Capacidad de crear **encuestas** en el chat de la comunidad.
-
-    ---
-
-    ### Integración de plataformas
-    * Las reseñas y votos ahora se registran y publican en un canal dedicado desde [Melonly](https://vote.erlcrp.ru/mrp/melonly), [Top.gg](https://vote.erlcrp.ru/mrp/topgg) y [AdERLC](https://vote.erlcrp.ru/mrp/aderlc).
-  </Accordion>
-
-  <Accordion title="Actualización de la Documentación">
-    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Cambios en la Documentación y el Sitio</strong></h3></div>
-
-    ### Nueva sección «Bots»
-    Se ha incorporado una sección completa de **«Bots»** dentro de la pestaña **Guías**, que incluye un manual de migración y 15 tutoriales detallados para el bot «Supervisión de Departamentos»:
-    * [**Guía de migración desde ClueControl M**](/es/guides/bots/migration-from-cluecontrol-m) — traslado de turnos, ausencias y roles con tablas de equivalencia y lista de verificación.
-    * [**Configuración del Bot**](/es/guides/bots/department-oversight/configure) — arquitectura, orden de configuración y comando `/configure`.
-    * [**Selección de Idioma**](/es/guides/bots/department-oversight/language) — cambio de idioma del servidor (RU/EN).
-    * [**Permisos de Acceso**](/es/guides/bots/department-oversight/permissions) — configuración de roles de configuración, roles autorizados y prefijos.
-    * [**Sistema de Rangos**](/es/guides/bots/department-oversight/ranks) — creación de divisiones, rangos con asignación automática de roles, despidos y listas negras.
-    * [**Sanciones y Suspensiones**](/es/guides/bots/department-oversight/punishments) — tipos de infracción, niveles de escalado, automatización y descargos explicativos.
-    * [**Canales de Registro**](/es/guides/bots/department-oversight/logs) — registros de auditoría y seguimiento de movimiento de canales.
-    * [**Turnos**](/es/guides/bots/department-oversight/shifts) — parámetros base, tipos de turno, cuotas de rol y formatos de duración.
-    * [**Permisos de Ausencia**](/es/guides/bots/department-oversight/loa) — canal de revisión, asignación de roles y retiro automático.
-    * [**Actividad Reducida**](/es/guides/bots/department-oversight/ra) — cuota reducida al 50% y tramitación de solicitudes.
-    * [**Tickets**](/es/guides/bots/department-oversight/tickets) — roles de soporte, categorías, transcripciones y constructor visual de paneles.
-    * [**Google Forms**](/es/guides/bots/department-oversight/google-forms) — revisión de respuestas de Google Forms directamente en Discord.
-    * [**Anuncios**](/es/guides/bots/department-oversight/announcements) — configuración de canales de departamento y difusiones globales.
-    * [**Modcalls**](/es/guides/bots/department-oversight/modcalls) — despacho de emergencias, teletransporte en el juego y prevención de abusos.
-    * [**Baneo Global**](/es/guides/bots/department-oversight/global-ban) — conexión de servidores de la red y centralización de baneos.
-    * [**Limpieza de Datos**](/es/guides/bots/department-oversight/server-manage) — restablecimiento seguro de turnos, órdenes y datos mediante `/server manage`.
-
-    ---
-
-    ### Nuevas localizaciones de idioma
-    * Traducción integral de toda la documentación, manuales del personal, reglas del servidor e historiales de cambios a 3 nuevos idiomas: **Ucraniano**, **Español** e **Italiano**.
-    * Localización de la interfaz de autenticación y menús de perfil de usuario para todos los idiomas.
-
-    ---
-
-    ### Autenticación y perfil de usuario
-    * **Decoraciones de avatar:** visualización de decoraciones de avatar personalizadas de Discord en la cabecera y el menú de perfil.
-    * **Guías de inicio de sesión:** actualización de los manuales de acceso y especificación del nivel de seguridad Tier 1.
-    * **Mejoras de interfaz:** nuevo diseño del botón «Iniciar sesión», reordenamiento de elementos de cabecera y animaciones optimizadas para botones activos.
-
-    ---
-
-    ### Estilos, navegación y normativas
-    * **Enlaces a Discord:** estilos personalizados para enlaces a servidores comunitarios en la barra lateral y el menú móvil.
-    * **Reglas del servidor:** redacción revisada y actualizada de la Regla **A-5** (regulaciones de organizaciones y facciones ilegales).
-    * **Optimización:** eliminación de recursos no utilizados, actualización de colores de tema y limpieza del directorio de iconos.
   </Accordion>
 </AccordionGroup>

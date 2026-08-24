@@ -16,8 +16,69 @@ icon: "tag"
 </div>
 
 <div className="flex justify-center items-center w-full text-center">
-  Aggiornamento su larga scala del bot <b>«Supervisione dei Dipartimenti»</b> e della documentazione del progetto: introdotto un nuovo sistema di tracciamento turni, congedi e attività ridotta, pannelli interattivi unificati di gestione e disciplina, configurazione totale da Discord e supporto bilingue. È stata aggiunta una sezione di guide per tutti i moduli del bot e un manuale di migrazione da ClueControl M.
+  Rilascio su larga scala del bot <b>«Supervisione dei Dipartimenti»</b> e della documentazione del progetto: nuovo sistema di turni, congedi e attività ridotta, pannelli interattivi unificati di gestione e disciplina, configurazione totale da Discord e supporto bilingue. È stata aggiunta una sezione di guide per tutti i moduli del bot e un manuale di migrazione da ClueControl M.
 </div>
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Aggiornamento della Documentazione</h3></div>
+
+### Nuova sezione «Bot»
+È stata integrata una sezione completa **«Bot»** all'interno della scheda **Guide**, comprendente un manuale di migrazione e 15 guide dettagliate per il bot «Supervisione dei Dipartimenti»:
+* [**Guida di migrazione da ClueControl M**](/it/guides/bots/migration-from-cluecontrol-m) — trasferimento di turni, congedi e ruoli con tabelle di corrispondenza e lista di controllo.
+* [**Configurazione del Bot**](/it/guides/bots/department-oversight/configure) — architettura, ordine di configurazione e comando `/configure`.
+* [**Selezione della Lingua**](/it/guides/bots/department-oversight/language) — cambio della lingua di sistema del server (RU/EN).
+* [**Permessi di Accesso**](/it/guides/bots/department-oversight/permissions) — configurazione di ruoli di configurazione, ruoli autorizzati e prefissi.
+* [**Sistema di Gradi**](/it/guides/bots/department-oversight/ranks) — creazione divisioni, gradi con assegnazione automatica ruoli, dimissioni e blacklist.
+* [**Sanzioni e Sospensioni**](/it/guides/bots/department-oversight/punishments) — violazioni, livelli di escalation, automazione e memorie difensive.
+* [**Canali di Log**](/it/guides/bots/department-oversight/logs) — registri di audit e tracciamento spostamento canali.
+* [**Turni**](/it/guides/bots/department-oversight/shifts) — impostazioni base, tipi di turno, quote di ruolo e formati di durata.
+* [**Congedi**](/it/guides/bots/department-oversight/loa) — canale di revisione, assegnazione ruoli e rimozione automatica.
+* [**Attività Ridotta**](/it/guides/bots/department-oversight/ra) — quota dimezzata al 50% ed elaborazione richieste.
+* [**Ticket**](/it/guides/bots/department-oversight/tickets) — ruoli di supporto, categorie, trascrizioni e costruttore visuale di pannelli.
+* [**Google Forms**](/it/guides/bots/department-oversight/google-forms) — revisione risposte Google Forms direttamente su Discord.
+* [**Annunci**](/it/guides/bots/department-oversight/announcements) — configurazione canali di dipartimento e comunicazioni globali.
+* [**Modcall**](/it/guides/bots/department-oversight/modcalls) — smistamento emergenze, teletrasporto in gioco e prevenzione abusi.
+* [**Ban Globale**](/it/guides/bots/department-oversight/global-ban) — connessione dei server di rete e centralizzazione dei ban.
+* [**Pulizia Dati**](/it/guides/bots/department-oversight/server-manage) — ripristino sicuro di turni, ordini e dati tramite `/server manage`.
+
+---
+
+### Nuove lingue supportate
+* Traduzione completa di tutta la documentazione, regolamenti dello staff, regole del server e registri delle modifiche in 3 nuove lingue: **Ucraino**, **Spagnolo** e **Italiano**.
+* Localizzazione delle interfacce di autenticazione e dei menu profilo per tutte le lingue.
+
+---
+
+### Autenticazione e profilo utente
+* **Decorazioni avatar:** visualizzazione delle decorazioni avatar personalizzate di Discord nell'intestazione e nel menu del profilo.
+* **Guide all'accesso:** aggiornati i manuali di login e aggiunta la descrizione del livello di sicurezza Tier 1.
+* **Miglioramenti interfaccia:** nuovo design del pulsante «Accedi», riorganizzazione degli elementi dell'intestazione e animazioni rifinite per i pulsanti attivi.
+
+---
+
+### Stili, navigazione e regole
+* **Link Discord:** stili dedicati per i collegamenti ai server della community nella barra laterale e nel menu mobile.
+* **Regole del server:** revisione e aggiornamento della Regola **A-5** (normativa su organizzazioni e fazioni illegali).
+* **Ottimizzazione:** rimozione delle risorse non utilizzate, aggiornamento dei colori del tema e pulizia della cartella icone.
+
+***
+
+<div className="flex justify-center items-center w-full -mt-14"><h3 className="text-3xl font-bold">Ruolo e Ricompense per il Voto</h3></div>
+
+### Nuovo ruolo «Votante»
+* Votare per il server sulle piattaforme [Top.gg](https://vote.erlcrp.ru/mrp/topgg) e [Melonly](https://vote.erlcrp.ru/mrp/melonly) conferisce automaticamente un ruolo speciale con vantaggi dedicati.
+
+---
+
+### Vantaggi del ruolo
+* Invio di **animazioni GIF** nella chat generale e nei canali comandi bot.
+* Permessi per creare **sondaggi** nella chat della community.
+
+---
+
+### Integrazione delle piattaforme
+* Recensioni e voti vengono ora monitorati e pubblicati in un canale dedicato dalle piattaforme [Melonly](https://vote.erlcrp.ru/mrp/melonly), [Top.gg](https://vote.erlcrp.ru/mrp/topgg) e [AdERLC](https://vote.erlcrp.ru/mrp/aderlc).
 
 ***
 
@@ -26,7 +87,7 @@ icon: "tag"
     <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Aggiornamento di Supervisione dei Dipartimenti</strong></h3></div>
 
     ### Sistema di tracciamento turni — `/shift`
-    * **Pannello personale:** il comando `/shift manage` apre una scheda interattiva con stato in tempo reale e pulsanti **Inizia**, **Pausa**, **Termina**.
+    * **Pannello personale:** il comando `/shift manage` apre una scheda interattiva con stato in tempo reale e pulsanti **Start**, **Break**, **End**.
     * **Tipi di turno:** selezione del tipo di turno all'avvio (con ruoli di servizio dedicati, canali di log e prefissi).
     * **Conteggio delle pause:** il tempo trascorso in pausa viene automaticamente escluso dal totale delle ore lavorate.
     * **Statistiche e quote:** `/shift time` mostra ore accumulate, durata media e stato di completamento della quota in base al ruolo.
@@ -38,7 +99,7 @@ icon: "tag"
 
     ### Congedi e Attività Ridotta
     * **Invio richieste:** comandi `/loa submit` e `/ra submit` con durata selezionabile (da 1 a 90 giorni) e motivazione.
-    * **Revisione su Discord:** le schede con lo storico del membro arrivano nel canale di gestione con pulsanti **Approva** / **Rifiuta** (con motivazione obbligatoria).
+    * **Revisione su Discord:** le schede con lo storico del membro arrivano nel canale di gestione con pulsanti **Approve** / **Deny** (con motivazione obbligatoria).
     * **Automazione ruoli:** i ruoli di congedo e attività ridotta vengono assegnati all'approvazione e rimossi automaticamente ogni 5 minuti alla scadenza; notifiche inviate tramite MD.
     * **Integrazione con i turni:** avvio del servizio bloccato durante i congedi; quote orarie dimezzate al 50% durante l'attività ridotta.
     * **Gestione:** comandi `/loa admin` e `/ra admin` per assegnazione manuale, estensione e chiusura anticipata.
@@ -111,66 +172,5 @@ icon: "tag"
     ### Sviluppo di bot personalizzati per le fazioni
     * È ora possibile sviluppare e integrare un bot personalizzato per la propria fazione al fine di estendere le funzionalità esistenti e introdurre meccaniche dedicate.
     * Il codice sorgente, i modelli e la documentazione di sviluppo sono disponibili nel repository ufficiale dei [Bot Personalizzati](https://link.erlcrussia.xyz/custom-bots).
-  </Accordion>
-
-  <Accordion title="Ruolo e Ricompense per il Voto">
-    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Ruolo e Ricompense per il Voto</strong></h3></div>
-
-    ### Nuovo ruolo «Votante»
-    * Votare per il server sulle piattaforme [Top.gg](https://vote.erlcrp.ru/mrp/topgg) e [Melonly](https://vote.erlcrp.ru/mrp/melonly) conferisce automaticamente un ruolo speciale con vantaggi dedicati.
-
-    ---
-
-    ### Vantaggi del ruolo
-    * Invio di **animazioni GIF** nella chat generale e nei canali comandi bot.
-    * Permessi per creare **sondaggi** nella chat della community.
-
-    ---
-
-    ### Integrazione delle piattaforme
-    * Recensioni e voti vengono ora monitorati e pubblicati in un canale dedicato dalle piattaforme [Melonly](https://vote.erlcrp.ru/mrp/melonly), [Top.gg](https://vote.erlcrp.ru/mrp/topgg) e [AdERLC](https://vote.erlcrp.ru/mrp/aderlc).
-  </Accordion>
-
-  <Accordion title="Aggiornamento della Documentazione">
-    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Modifiche a Documentazione e Sito</strong></h3></div>
-
-    ### Nuova sezione «Bot»
-    È stata integrata una sezione completa **«Bot»** all'interno della scheda **Guide**, comprendente un manuale di migrazione e 15 guide dettagliate per il bot «Supervisione dei Dipartimenti»:
-    * [**Guida di migrazione da ClueControl M**](/it/guides/bots/migration-from-cluecontrol-m) — trasferimento di turni, congedi e ruoli con tabelle di corrispondenza e lista di controllo.
-    * [**Configurazione del Bot**](/it/guides/bots/department-oversight/configure) — architettura, ordine di configurazione e comando `/configure`.
-    * [**Selezione della Lingua**](/it/guides/bots/department-oversight/language) — cambio della lingua di sistema del server (RU/EN).
-    * [**Permessi di Accesso**](/it/guides/bots/department-oversight/permissions) — configurazione di ruoli di configurazione, ruoli autorizzati e prefissi.
-    * [**Sistema di Gradi**](/it/guides/bots/department-oversight/ranks) — creazione divisioni, gradi con assegnazione automatica ruoli, dimissioni e blacklist.
-    * [**Sanzioni e Sospensioni**](/it/guides/bots/department-oversight/punishments) — violazioni, livelli di escalation, automazione e memorie difensive.
-    * [**Canali di Log**](/it/guides/bots/department-oversight/logs) — registri di audit e tracciamento spostamento canali.
-    * [**Turni**](/it/guides/bots/department-oversight/shifts) — impostazioni base, tipi di turno, quote di ruolo e formati di durata.
-    * [**Congedi**](/it/guides/bots/department-oversight/loa) — canale di revisione, assegnazione ruoli e rimozione automatica.
-    * [**Attività Ridotta**](/it/guides/bots/department-oversight/ra) — quota dimezzata al 50% ed elaborazione richieste.
-    * [**Ticket**](/it/guides/bots/department-oversight/tickets) — ruoli di supporto, categorie, trascrizioni e costruttore visuale di pannelli.
-    * [**Google Forms**](/it/guides/bots/department-oversight/google-forms) — revisione risposte Google Forms direttamente su Discord.
-    * [**Annunci**](/it/guides/bots/department-oversight/announcements) — configurazione canali di dipartimento e comunicazioni globali.
-    * [**Modcall**](/it/guides/bots/department-oversight/modcalls) — smistamento emergenze, teletrasporto in gioco e prevenzione abusi.
-    * [**Ban Globale**](/it/guides/bots/department-oversight/global-ban) — connessione dei server di rete e centralizzazione dei ban.
-    * [**Pulizia Dati**](/it/guides/bots/department-oversight/server-manage) — ripristino sicuro di turni, ordini e dati tramite `/server manage`.
-
-    ---
-
-    ### Nuove lingue supportate
-    * Traduzione completa di tutta la documentazione, regolamenti dello staff, regole del server e registri delle modifiche in 3 nuove lingue: **Ucraino**, **Spagnolo** e **Italiano**.
-    * Localizzazione delle interfacce di autenticazione e dei menu profilo per tutte le lingue.
-
-    ---
-
-    ### Autenticazione e profilo utente
-    * **Decorazioni avatar:** visualizzazione delle decorazioni avatar personalizzate di Discord nell'intestazione e nel menu del profilo.
-    * **Guide all'accesso:** aggiornati i manuali di login e aggiunta la descrizione del livello di sicurezza Tier 1.
-    * **Miglioramenti interfaccia:** nuovo design del pulsante «Accedi», riorganizzazione degli elementi dell'intestazione e animazioni rifinite per i pulsanti attivi.
-
-    ---
-
-    ### Stili, navigazione e regole
-    * **Link Discord:** stili dedicati per i collegamenti ai server della community nella barra laterale e nel menu mobile.
-    * **Regole del server:** revisione e aggiornamento della Regola **A-5** (normativa su organizzazioni e fazioni illegali).
-    * **Ottimizzazione:** rimozione delle risorse non utilizzate, aggiornamento dei colori del tema e pulizia della cartella icone.
   </Accordion>
 </AccordionGroup>
