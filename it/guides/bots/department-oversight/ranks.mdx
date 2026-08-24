@@ -1,0 +1,120 @@
+---
+title: "Sistema di Gradi"
+icon: "ranking-star"
+---
+<div id="no-header-here" />
+
+# Configurazione del Sistema di Gradi e Dipartimenti
+
+## Che cos'è?
+
+È il fulcro di tutte le funzionalità del bot. Definisce la struttura organizzativa della vostra fazione:
+
+- **Dipartimenti** — suddivisioni interne (es. «Reparto Mobile», «Pattuglia Stradale»). Ogni dipartimento ha il proprio ruolo Discord.
+- **Gradi** — posizioni del personale (es. «Cadetto», «Agente», «Sergente»). A ciascun grado è associato un ruolo e l'elenco dei ruoli assegnati automaticamente alla promozione.
+
+Quando la direzione assume, promuove o licenzia un membro tramite `/manage`, il bot assegna o rimuove autonomamente i ruoli richiesti, aggiorna il prefisso nel nickname, archivia l'ordine di servizio nei canali di log e invia una notifica in privato per MD.
+
+## Come abilitare il sistema
+
+1. Eseguite il comando `/configure`.
+2. Aprite la pagina **«Sistema di Gradi»**.
+3. Nel menu **«Stato del sistema di gradi»**, scegliete **«Abilitato»**.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  Finché il sistema rimane disabilitato, tutti i comandi di gestione del personale (`/manage` e derivati) saranno inaccessibili.
+</Callout>
+
+### Modalità dipartimenti
+
+Nel menu **«Limite dipartimenti»**, selezionate:
+
+- **«Dipartimento Singolo»** — i membri possono appartenere a un solo dipartimento alla volta. Raccomandato per la maggior parte delle fazioni.
+- **«Dipartimenti Multipli»** — i membri possono far parte di più dipartimenti contemporaneamente.
+
+***
+
+## Configurazione dei Dipartimenti
+
+Fate clic sul pulsante **«Configura Dipartimenti»**.
+
+### Aggiungere un dipartimento
+
+1. Fate clic su **«Aggiungi»**.
+2. Compilate i campi:
+   - **«Nome del dipartimento»** — es. `Reparto Mobile`;
+   - **«Ruolo del dipartimento»** — selezionate il ruolo Discord della divisione (obbligatorio);
+   - **«Canale promozioni e assunzioni»** — dove pubblicare ordini di assunzione, promozione e trasferimento (obbligatorio);
+   - **«Canale retrocessioni e sanzioni»** — dove pubblicare ordini di retrocessione, sanzione e licenziamento (obbligatorio).
+
+Potete registrare fino a **50 dipartimenti**, visualizzati in pagine da 8 elementi.
+
+### Modifica ed eliminazione
+
+- **«Modifica»** — selezionate il dipartimento e aggiornate i campi desiderati. I campi vuoti manterranno il valore precedente.
+- **«Elimina»** — selezionate il dipartimento e confermate la cancellazione.
+
+***
+
+## Configurazione dei Gradi
+
+Fate clic su **«Configura Gradi»** per visualizzare l'elenco «grado = ruoli assegnati».
+
+### Aggiungere un grado
+
+1. Fate clic su **«Aggiungi»**.
+2. Nel modulo specificate:
+   - **«Grado»** — selezionate il ruolo Discord che identifica la posizione (es. `Agente`);
+   - **«Ruoli assegnati»** — scegliete uno o più ruoli (fino a 25) che il bot assegnerà in automatico al conferimento di questo grado.
+
+Create i gradi in ordine gerarchico crescente (dal più basso al comando). Si possono registrare fino a **50 gradi**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  In «Ruoli assegnati» è comodo includere permessi accessori: accesso a canali riservati, ruolo generale di fazione, ecc. Il bot li assegnerà automaticamente durante la promozione.
+</Callout>
+
+***
+
+## Tipi di Dimissione e Blacklist
+
+Fate clic su **«Configura Dimissioni»** e scegliete la tipologia desiderata.
+
+### Tipi di dimissione
+
+- Fate clic su **«Configura Tipi di Dimissione»** → **«Aggiungi Tipo di Dimissione»**.
+- Inserite un nome (es. `Dimissioni Volontarie`) e selezionate i ruoli da assegnare dopo la revoca.
+
+### Tipi di blacklist
+
+1. Fate clic su **«Configura Tipi di Blacklist»** → **«Aggiungi Tipo di Blacklist»**.
+2. Inserite il nome (es. `Blacklist Fazione`) e selezionate:
+   - **«Ruolo primario di blacklist»** — ruolo principale rimosso automaticamente allo scadere del periodo;
+   - **«Ruoli aggiuntivi»** — ruoli supplementari (es. blacklist generale del server).
+
+La durata della blacklist si definisce **al momento dell'emissione** tramite il comando `/manage`. È possibile indicare scadenze temporali (`3d`, `14 days`) o a tempo indeterminato («forever»). Al termine, il bot rimuove i ruoli automaticamente.
+
+Capacità fino a **25 tipi** per ciascuna categoria.
+
+***
+
+## Impostazioni Globali (Canali Condivisi)
+
+Il pulsante **«Impostazioni Globali»** nel menu dipartimenti consente di gestire direttive valide per l'intera fazione:
+
+- **Stato** — abilita o disabilita canali unificati in sostituzione di quelli dei singoli dipartimenti.
+- **«Canale promozioni e assunzioni»** — riceve ordini di assunzione e promozione di tutti i reparti.
+- **«Canale retrocessioni e sanzioni»** — riceve ordini di retrocessione, sanzione, licenziamento e sospensione.
+- **«Ruoli condivisi di fazione»** — ruoli (fino a 25) assegnati a tutto il personale all'ingresso/promozione e revocati al licenziamento.
+
+***
+
+## Ruoli Vietati
+
+La sezione **«Ruoli Vietati»** consente di indicare fino a 25 ruoli che il bot **non assegnerà mai** tramite i suoi comandi — anche se presenti per errore nelle impostazioni di un grado. Protegge i ruoli amministrativi da assegnazioni accidentali.
+
+## Visualizzazione dei Prefissi
+
+Il menu **«Visualizzazione Prefissi»** controlla l'inserimento del prefisso di grado nel nickname del server (es. `[OW-001] Pancakeboyman_8`).
+
+- **Abilitato** — il bot adatta il nickname a ogni cambio di grado.
+- **Disabilitato** — i prefissi rimangono memorizzati nel sistema senza modificare il nickname Discord.

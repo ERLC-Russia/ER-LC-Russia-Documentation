@@ -1,0 +1,89 @@
+---
+title: "Punishments"
+icon: "gavel"
+---
+<div id="no-header-here" />
+
+# Setting Up Punishments and Suspensions
+
+## What is This?
+
+The disciplinary system module. Leadership issues punishments via `/punishment`, and the bot:
+
+- tracks active punishments for each employee;
+- **automatically escalates levels** — assigning higher-tier roles as violations accumulate;
+- executes **automation workflows**, such as: “3 warnings → remove warnings and issue 1 reprimand”;
+- **automatically removes punishments upon expiration** and notifies the employee.
+
+Suspensions are a dedicated sub-system: the employee loses access (assigned the suspension role) and has 48 hours to submit an explanatory statement.
+
+***
+
+## Punishment Types
+
+1. Open `/configure` → navigate to the **“Punishments”** page.
+2. Click **“Configure Punishments”**.
+3. Click **“Add Type”** and enter a name — e.g. `Warning`, `Reprimand`, `Severe Reprimand`.
+
+You can create up to **24 types**. If a type has no levels configured, it can be issued without restrictions.
+
+### Escalation Levels
+
+Each punishment type can have up to 25 levels. Each level is linked to a Discord role: the more active punishments an employee accumulates, the higher the level and the more restrictive the role.
+
+1. Select a type → click **“Edit Type”**.
+2. Click **“Add Level”** and select the role for the new level.
+3. Repeat for additional levels.
+
+Classic example for “Reprimand”: Level 1 → `Reprimand 1`, Level 2 → `Reprimand 2`, Level 3 → `Reprimand 3`.
+
+<Callout icon="circle-info" color="#3B82F6">
+  The number of levels serves as a cap: if a type has 3 levels, no more than 3 active punishments of this type can be issued to one person.
+</Callout>
+
+### Renaming and Deletion
+
+In the type editing screen, you have access to **“Rename”**, **“Edit Level”** (change the assigned role), and **“Delete Level”**.
+
+***
+
+## Automation (Workflows)
+
+Here you define rules such as *“if an employee accumulates N punishments of a certain type — execute an automated action”*.
+
+1. In the punishments sub-screen, click **“Go to Automation”**.
+2. Click **“Add Rule”**.
+3. **“Configure Condition”**: select the punishment type and trigger count (e.g. `Warning` × `3`).
+4. **“Add Action”**:
+   - **“Remove Punishment”** — reset the counter: removes all or N punishments of the selected type;
+   - **“Issue Punishment”** — automatically issues a designated punishment for a specific duration (format `14d`, `1mo`, etc.).
+5. You can add multiple actions to a single rule.
+6. Click the green **“Save”** button.
+
+<Callout icon="lightbulb" color="#22C55E">
+  A classic workflow is pre-filled as a draft: condition “3 × Warning”, actions — remove all Warnings + issue 1 Reprimand for 1 month. Simply save or customize it to your needs.
+</Callout>
+
+***
+
+## Suspensions
+
+On the **“Punishments”** page, click **“Configure Suspensions”** and configure:
+
+- **Suspension Role** — role assigned to the suspended employee (usually restricting access to faction channels). Only one active suspension can exist per user at a time.
+- **Suspension Channel** — channel where explanatory statements and suspension logs are published.
+
+How it works in practice:
+
+1. Leadership suspends an employee via `/punishment` → employee receives the suspension role and a DM with an explanation statement form.
+2. The employee has **48 hours** to submit their response: text + up to 5 evidence files.
+3. The response is automatically posted to the suspension channel for leadership review.
+4. If a duration was set, the role is automatically removed upon expiration, and the employee is notified in DMs.
+
+***
+
+## User Commands
+
+- `/punishment @employee` — leadership panel: issue punishment (type, reason, proof, duration) or suspend, view active records, remove records manually.
+- Duration format: `30m`, `7d`, `1mo`, `1y`, `forever`.
+- All actions are logged, and the employee receives a detailed DM notification.

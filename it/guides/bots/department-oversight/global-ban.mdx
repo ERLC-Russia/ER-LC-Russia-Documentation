@@ -1,0 +1,50 @@
+---
+title: "Ban Globale"
+icon: "ban"
+---
+<div id="no-header-here" />
+
+# Configurazione del Ban Globale
+
+## Che cos'è?
+
+Sistema sincronizzato di blacklist tra i server partner del progetto. Il comando
+
+```
+/global-ban @utente
+```
+
+espelle l'infractor **simultaneamente da tutti i server collegati**, anziché solo dal server locale. Analogamente, `/global-unban` revoca il ban a livello di intera rete.
+
+Il canale di log riceve un resoconto completo con autore del ban, destinatario, motivazione e stato per ciascun server.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Ban Globale»**.
+2. Abilitate il modulo: menu di stato → **«Abilitato»**.
+3. In **«Ruoli Autorizzati»**, scegliete i ruoli del team di ban globale (fino a 25).
+4. Fate clic su **«Configura Server»** → **«Aggiungi Server»** e inserite il **Guild ID**.
+
+### Conferma del Proprietario
+
+1. Il proprietario del server riceve un messaggio privato dal bot.
+2. Il proprietario preme **«Collega»** o **«Rifiuta»**.
+3. Fino alla conferma, il server rimane in stato «In attesa»; una volta approvato, risulta pienamente sincronizzato.
+
+La rimozione avviene tramite **«Rimuovi Server»**. Si possono connettere fino a **25 server**.
+
+***
+
+## Chi Può Eseguire i Ban Globali
+
+Il comando è attivo **esclusivamente sul server centrale (hub)**. Sui server client collegati è inibito a tutti gli utenti, inclusi i rispettivi proprietari.
+
+Sul server hub i privilegi sono così distribuiti:
+
+- **Proprietario dell'Hub** — accesso permanente;
+- **Amministratori** — fino alla designazione dei ruoli specifici;
+- Membri con ruoli in **«Ruoli Autorizzati»** — ottengono accesso esclusivo, prevalendo sui permessi generici di amministratore.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Il ban globale è un provvedimento di massima severità. Assicuratevi che la violazione giustifichi l'esclusione da tutti i server del progetto: la revoca richiede una procedura di sblocco su tutta la rete.
+</Callout>

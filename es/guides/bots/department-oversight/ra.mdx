@@ -1,0 +1,54 @@
+---
+title: "Actividad Reducida"
+icon: "arrow-trend-down"
+---
+<div id="no-header-here" />
+
+# Configuración de Actividad Reducida
+
+## ¿Qué es esto?
+
+Módulo de solicitudes de actividad reducida (RA). Pensado para miembros que temporalmente no pueden cubrir la cuota horaria completa (exámenes, compromisos laborales) pero desean seguir operativos en la facción.
+
+Diferencias esenciales con respecto a las ausencias:
+
+- El empleado **puede continuar realizando turnos**;
+- Su cuota horaria **se reduce automáticamente al 50%** — en los informes de actividad figurará con un distintivo especial;
+- El rol de RA se asigna y se retira automáticamente al concluir el plazo.
+
+El procedimiento de tramitación es análogo al de las solicitudes de ausencia.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Actividad Reducida»**.
+2. Configure los tres parámetros:
+   - **Recepción de solicitudes** — «Habilitado» o «Deshabilitado»;
+   - **Canal de revisión** — canal de texto para recibir las tarjetas;
+   - **Roles de RA** — hasta 25 roles asignados a los miembros autorizados.
+
+***
+
+## Mecánica de Uso
+
+### Para Empleados
+
+- `/ra submit` — duración (1 a 90 días) y motivo.
+- No se admite una nueva solicitud mientras exista una pendiente o en vigor.
+- Tras la aprobación se asigna el rol y se retira automáticamente al vencer el plazo.
+
+### Para la Directiva
+
+Las solicitudes se entregan en el canal asignado con el contexto del miembro:
+
+- **«Aprobar»** — habilita el régimen de actividad reducida;
+- **«Rechazar»** — desestima indicando motivo obligatorio.
+
+Comandos de administración:
+
+- `/ra list` — listado de estados de RA activos;
+- `/ra view @empleado` — historial de solicitudes del usuario;
+- `/ra admin @empleado` — conceder manualmente, prorrogar, finalizar anticipadamente o eliminar registros.
+
+<Callout icon="circle-info" color="#3B82F6">
+  En el informe `/shift activity`, los miembros en actividad reducida se evalúan bajo la mitad de su cuota habitual, evitando sanciones injustificadas por bajo rendimiento.
+</Callout>

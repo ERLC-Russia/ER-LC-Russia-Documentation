@@ -1,0 +1,52 @@
+---
+title: "Congedi"
+icon: "umbrella-beach"
+---
+<div id="no-header-here" />
+
+# Configurazione delle Richieste di Congedo
+
+## Che cos'è?
+
+Modulo per la gestione di permessi e assenze temporanee. I membri inviano richieste tramite `/loa submit`, la direzione approva o rifiuta, e il bot gestisce il resto in automatico:
+
+- assegna il ruolo di congedo dopo l'approvazione;
+- monitora la scadenza e **rimuove il ruolo automaticamente** al termine;
+- invia notifiche informative per MD a ogni aggiornamento di stato;
+- esonera il membro dalle quote orarie durante il periodo (indicato nei report);
+- impedisce l'avvio di turni durante il congedo.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Congedi»**.
+2. Configurate tre parametri:
+   - **Accettazione richieste** — «Abilitato» per consentire l'invio;
+   - **Canale di revisione** — canale di testo in cui arrivano le schede con pulsanti «Approva» / «Rifiuta»;
+   - **Ruoli di congedo** — fino a 25 ruoli assegnati ai membri approvati.
+
+***
+
+## Esperienza d'Uso
+
+### Per i Membri
+
+- `/loa submit` — selezione della durata (da 1 a 90 giorni) e motivazione.
+- Non è possibile inviare una nuova richiesta se ne esiste già una in sospeso o attiva.
+- All'approvazione viene assegnato il ruolo e inviato un avviso in privato. Alla scadenza, il ruolo viene rimosso automaticamente.
+
+### Per la Direzione
+
+La scheda nel canale di revisione mostra il profilo del richiedente: grado massimo, congedi precedenti e ore totali accumulate.
+
+- **«Approva»** — abilita lo stato di congedo.
+- **«Rifiuta»** — richiede una motivazione obbligatoria (fino a 500 caratteri), recapitata via MD al membro.
+
+Comandi di amministrazione:
+
+- `/loa list` — elenco dei congedi attualmente attivi;
+- `/loa view @membro` — cronologia richieste di uno specifico utente;
+- `/loa admin @membro` — concessione manuale, estensione, chiusura anticipata o eliminazione record.
+
+<Callout icon="lightbulb" color="#22C55E">
+  Il bot verifica le scadenze ogni 5 minuti, garantendo che nessun ruolo rimanga bloccato anche a seguito di riavvii.
+</Callout>

@@ -1,0 +1,86 @@
+---
+title: "Turni"
+icon: "business-time"
+---
+<div id="no-header-here" />
+
+# Configurazione del Sistema di Turni
+
+## Che cos'è?
+
+Modulo di tracciamento dell'orario di lavoro. Il personale entra in servizio tramite pulsanti interattivi, mentre il bot:
+
+- assegna il ruolo di servizio e adatta il prefisso nel nickname;
+- calcola il tempo netto di guardia (escludendo le pause);
+- verifica il raggiungimento delle **quote orarie** — globali o stabilite per singolo ruolo;
+- controlla i limiti di personale contemporaneo (**massimo membri in turno**);
+- produce classifiche, registri di turno e report di attività.
+
+Comandi utente: `/shift manage` — pannello per iniziare/mettere in pausa/terminare il turno, `/shift time` — statistiche personali.
+
+## Come abilitare
+
+1. Aprite `/configure` → sezione **«Impostazioni Turni»**.
+2. Nel menu **«Stato modulo turni»**, selezionate **«Abilitato»**.
+
+***
+
+## Impostazioni Base
+
+Configurate i parametri generali:
+
+- **Canale log dei turni** — dove il bot pubblica gli avvisi di inizio e fine servizio.
+- **Ruolo di servizio** — fino a 25 ruoli assegnati al personale all'entrata in turno (es. `In Servizio`).
+
+### Opzioni Aggiuntive
+
+Fate clic su **«Opzioni Aggiuntive»** per regolazioni avanzate:
+
+- **Ruolo di pausa** — ruolo temporaneo assegnato mentre il membro è in pausa.
+- **Prefisso nel nickname** — testo aggiunto al nome durante il turno (es. `[ON-DUTY]`).
+- **Quota del turno** — requisito orario standard; formato: `60m`, `2h`, `1d`, `1mo`. Inserire `0` disattiva la quota.
+- **Limite di personale** — numero massimo di membri in turno simultaneamente (es. `5`). `0` = illimitato.
+
+***
+
+## Tipi di Turno
+
+Se diversi reparti necessitano di monitoraggi separati (canale dedicato, ruolo esclusivo, permessi propri) — create tipi di turno distinti.
+
+1. Fate clic su **«Tipi di Turno»** → **«Aggiungi»** → inserite il nome, es. `Pattuglia`.
+2. Selezionate il tipo creato → fate clic su **«Modifica»** e definite:
+   - **Canale log del tipo** — canale dedicato per questo tipo di turno;
+   - **Ruolo di servizio** — ruolo assegnato per questo tipo;
+   - **Ruolo di pausa** — ruolo di riposo specifico;
+   - **Ruoli di accesso** — fino a 25 ruoli abilitati ad avviare questo tipo. Vuoto = aperto a tutti;
+   - **Prefisso del turno** — prefisso nickname dedicato (es. `[PATROL]`).
+
+***
+
+## Quote per Ruolo
+
+Per richiedere requisiti orari differenziati in base al grado (es. Agente 2 ore, Comandante 5 ore):
+
+1. Fate clic su **«Quote per Ruolo»** → **«Crea Quota Ruolo»**.
+2. Selezionate il ruolo Discord e assegnate la quota oraria richiesta (`12m`, `2h`, `1d`, `1mo`).
+
+La quota per ruolo ha priorità rispetto alla quota generale del server.
+
+***
+
+## Pulizia Dati
+
+In fondo alla pagina sono presenti pulsanti per la pulizia rapida: eliminare tutti / conclusi / attivi, cancellare richieste in attesa o svuotare turni di un tipo specifico.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  I pulsanti di questa pagina hanno effetto immediato senza conferma. Per una cancellazione massiva sicura, utilizzate [`/server manage`](/it/guides/bots/department-oversight/server-manage) — richiede una frase di conferma scritta e chiude i turni attivi in modo pulito.
+</Callout>
+
+## Esperienza del Personale
+
+- **Inizio turno:** selezione del tipo (se multipli), assegnazione ruolo e prefisso, invio avviso nel canale.
+- **Pausa:** sostituzione del ruolo di servizio con quello di riposo; cronometro fermato.
+- **Fine turno:** calcolo delle ore lavorate e riepilogo inviato per MD.
+- `/shift leaderboard [type]` — classifica con medaglie, paginazione ed esportazione in file di testo.
+- `/shift history @membro` — storico di servizio di qualsiasi utente.
+- `/shift activity [period]` — report periodico di rendimento con indicazioni di congedo e attività ridotta.

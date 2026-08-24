@@ -1,0 +1,86 @@
+---
+title: "Turnos"
+icon: "business-time"
+---
+<div id="no-header-here" />
+
+# Configuración del Sistema de Turnos
+
+## ¿Qué es esto?
+
+Módulo de control de jornada laboral. El personal inicia servicio mediante botones interactivos, mientras el bot:
+
+- asigna el rol de servicio y modifica el prefijo en el apodo;
+- contabiliza el tiempo neto de guardia (descontando pausas);
+- verifica el cumplimiento de **cuotas horarias** — globales o específicas por rol;
+- gestiona límites de personal simultáneo (**máximo de empleados de guardia**);
+- produce clasificaciones, registros de guardia e informes de rendimiento.
+
+Comandos de usuario: `/shift manage` — panel para iniciar/pausar/concluir guardia, `/shift time` — estadísticas personales.
+
+## Cómo habilitar
+
+1. Abra `/configure` → sección **«Configuración de Turnos»**.
+2. En el menú **«Estado del módulo de turnos»**, seleccione **«Habilitado»**.
+
+***
+
+## Ajustes Base
+
+Configure los parámetros generales:
+
+- **Canal de registro de turnos** — donde el bot notifica inicios y conclusiones de guardia.
+- **Rol de guardia** — hasta 25 roles asignados al personal al entrar de servicio (ej. `De Servicio`).
+
+### Opciones Adicionales
+
+Haga clic en **«Opciones Adicionales»** para ajustes avanzados:
+
+- **Rol de pausa** — rol sustitutivo asignado mientras el miembro está en pausa.
+- **Prefijo en el apodo** — texto añadido al nombre durante el servicio (ej. `[ON-DUTY]`).
+- **Cuota de turno** — requerimiento horario estándar; formato: `60m`, `2h`, `1d`, `1mo`. Indicar `0` desactiva la cuota.
+- **Límite de personal** — máximo de empleados de guardia a la vez (ej. `5`). `0` = sin límite.
+
+***
+
+## Tipos de Turno
+
+Si distintas divisiones requieren controles independientes (canal exclusivo, rol específico, permisos propios) — cree tipos de turno.
+
+1. Haga clic en **«Tipos de Turno»** → **«Agregar»** → ingrese el nombre, ej. `Patrulla`.
+2. Seleccione el tipo creado → haga clic en **«Editar»** y defina:
+   - **Canal de registro del tipo** — canal dedicado a este tipo de turno;
+   - **Rol de guardia** — rol de servicio para este tipo;
+   - **Rol de pausa** — rol de descanso específico;
+   - **Roles de acceso** — hasta 25 roles autorizados para iniciar este turno. Vacío = abierto a todos;
+   - **Prefijo de turno** — prefijo de apodo propio (ej. `[PATROL]`).
+
+***
+
+## Cuotas por Rol
+
+Para exigir distintos requisitos de tiempo según el cargo (ej. Oficial 2 horas, Capitán 5 horas):
+
+1. Haga clic en **«Cuotas por Rol»** → **«Crear Cuota de Rol»**.
+2. Seleccione el rol de Discord y asigne la cuota requerida (`12m`, `2h`, `1d`, `1mo`).
+
+La cuota por rol prevalece sobre la cuota general del servidor.
+
+***
+
+## Limpieza de Datos
+
+Al final de la página se ofrecen accesos rápidos de borrado: eliminar todos / finalizados / activos, limpiar solicitudes pendientes o vaciar turnos de un tipo concreto.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Los botones de esta página actúan de forma instantánea sin confirmación. Para una purga masiva segura, utilice [`/server manage`](/es/guides/bots/department-oversight/server-manage) — solicita confirmación escrita y cierra guardias activas adecuadamente.
+</Callout>
+
+## Experiencia del Personal
+
+- **Inicio de turno:** selección de tipo (si existen varios), asignación de rol y prefijo, registro en canal.
+- **Pausa:** reemplazo del rol de servicio por el de descanso; cronómetro en pausa.
+- **Finalización:** cálculo de horas trabajadas y resumen enviado por MD.
+- `/shift leaderboard [type]` — clasificación con medallas, paginación y exportación en archivo de texto.
+- `/shift history @empleado` — historial de servicio de cualquier usuario.
+- `/shift activity [period]` — informe periódico de cumplimiento con indicadores de ausencia y actividad reducida.

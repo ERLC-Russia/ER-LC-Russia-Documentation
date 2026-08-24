@@ -1,0 +1,46 @@
+---
+title: "Google Forms"
+icon: "square-poll-vertical"
+---
+<div id="no-header-here" />
+
+# Setting Up Google Forms Integration
+
+## What is This?
+
+This module connects Google Forms to Discord. When a user submits a response in your form (e.g. faction recruitment application), the bot posts a structured card into the designated channel, allowing leadership to approve or deny the submission with buttons directly in Discord:
+
+- **“Approve” / “Deny”** — with mandatory reason input;
+- Applicant receives an **instant DM notification** with the decision;
+- Results are logged into the designated results channel.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Google Forms Settings”** page.
+2. Enable the module: set status menu to **“Enabled”**.
+3. Click **“Configure Forms”** → **“Add”** and complete the modal:
+   - **“Form URL”** — complete URL to your Google Form (required);
+   - **“Form Name”** — user-friendly title, e.g. `MVD Application` (optional);
+   - **“Responses Channel”** — destination channel for incoming submission cards;
+   - **“Thread ID”** — optional thread ID to route responses to a specific thread;
+   - **“Results Channel”** — destination channel for approval/rejection outcome logs.
+
+You can connect up to **50 forms**, shown 8 per page.
+
+### Editing and Deletion
+
+- **“Edit”** — choose a form from the list and update fields; blank fields remain unchanged.
+- **“Delete”** — select a form from the list to remove integration.
+
+***
+
+## Workflow After Setup
+
+1. User submits the Google Form — the submission appears in the responses channel as an embed card containing the user's name and all form questions/answers.
+2. Card status: **“Under Review”**.
+3. A leader clicks “Approve” or “Deny”, enters a justification reason (minimum 10 characters), and confirms.
+4. The card status updates to “Accepted” or “Rejected”, the applicant receives a direct message, and the resolution is archived in the results channel.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  To receive responses from Google Forms into Discord, the form must be linked to the bot by the project's technical administrator (one-time setup on Google's end). All ongoing management — adding forms, channels, and reviewing responses — is handled directly in Discord.
+</Callout>

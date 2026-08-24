@@ -1,0 +1,47 @@
+---
+title: "Anuncios"
+icon: "bullhorn"
+---
+<div id="no-header-here" />
+
+# Configuración de Anuncios
+
+## ¿Qué es esto?
+
+Sistema de difusión masiva entre los servidores de la red. En lugar de copiar y pegar comunicados en decenas de canales, el liderazgo emite una publicación global mediante un único comando:
+
+```
+/announcement for departments
+```
+
+El bot distribuye el comunicado en todos los canales departamentales asignados (y en los IDs adicionales que se indiquen), permitiendo **mencionar roles específicos** y entregando un reporte de distribución en el canal de registros.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Anuncios»**.
+2. Active el módulo: selector de estado → **«Habilitado»**.
+3. En **«Roles Autorizados»**, elija quiénes pueden difundir comunicados (hasta 25 roles).
+4. Seleccione el **canal de registros de anuncios** para los reportes de envío.
+5. Haga clic en **«Configurar Canales»** → **«Agregar Canal»** y complete:
+   - **«Nombre»** — denominación del departamento (ej. `MVD`);
+   - **«ID de servidor»** — ID del servidor donde reside el canal;
+   - **«ID de canal»** — ID del canal de texto o avisos para las difusiones;
+   - **«IDs de roles separados por coma»** — roles a mencionar en envíos masivos.
+
+Capacidad de hasta **25 departamentos**.
+
+### Confirmación del Propietario del Servidor
+
+Si el canal pertenece a un servidor externo, su propietario recibirá un mensaje por MD del bot con botones de **«Confirmar» / «Rechazar»**. Hasta ser autorizado, el canal figurará como «Pendiente». Los canales de su propio servidor se vinculan de inmediato.
+
+***
+
+## Cómo Emitir un Comunicado
+
+1. Ejecute `/announcement for departments`.
+2. Elija la modalidad:
+   - **«Para todos»** — difusión a todos los canales departamentales (+ mención opcional);
+   - manual — lista de IDs de canal separados por comas.
+3. Rellene el formulario: **cuerpo del anuncio** (hasta 1700 caracteres) y **URL de imagen** opcional.
+4. El mensaje se publica en todos los canales indicados firmado por el autor.
+5. El canal de registros recibe el informe completo de entrega.

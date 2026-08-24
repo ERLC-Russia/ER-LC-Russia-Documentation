@@ -1,0 +1,50 @@
+---
+title: "Baneo Global"
+icon: "ban"
+---
+<div id="no-header-here" />
+
+# Configuración de Baneo Global
+
+## ¿Qué es esto?
+
+Sistema sincronizado de listas negras entre servidores asociados del proyecto. El comando
+
+```
+/global-ban @usuario
+```
+
+sanciona al infractor **simultáneamente en todos los servidores vinculados**, en lugar de únicamente en el servidor local. Del mismo modo, `/global-unban` levanta el baneo a nivel de red completa.
+
+El canal de registros recibe un informe exhaustivo con el autor del baneo, el infractor, el motivo y el estado individual por cada servidor.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Baneo Global»**.
+2. Active el módulo: selector de estado → **«Habilitado»**.
+3. En **«Roles Autorizados»**, elija los roles del equipo de baneo global (hasta 25).
+4. Haga clic en **«Configurar Servidores»** → **«Agregar Servidor»** e introduzca el **Guild ID**.
+
+### Confirmación del Propietario
+
+1. El propietario del servidor destino recibe un mensaje por MD del bot.
+2. El propietario presiona **«Vincular»** o **«Rechazar»**.
+3. Hasta confirmarse, el servidor permanece en estado «Pendiente»; una vez aprobado, queda totalmente sincronizado.
+
+La desvinculación se realiza mediante **«Eliminar Servidor»**. Se admiten hasta **25 servidores**.
+
+***
+
+## Quién Puede Ejecutar Baneos Globales
+
+El comando opera **estrictamente en el servidor central (hub)**. En los servidores clientes vinculados está bloqueado para todos los usuarios, incluidos sus respectivos propietarios.
+
+En el servidor central los privilegios se asignan así:
+
+- **Propietario del Hub** — acceso permanente;
+- **Administradores** — hasta la asignación de roles específicos;
+- Miembros con roles en **«Roles Autorizados»** — obtienen acceso exclusivo, por encima de permisos de administrador sin dicho rol.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  El baneo global es una sanción de máxima gravedad. Asegúrese de que la falta justifique la exclusión de todos los servidores del proyecto: el desbaneo requiere un proceso de desbloqueo en toda la red.
+</Callout>

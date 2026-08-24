@@ -1,0 +1,52 @@
+---
+title: "Permisos de Ausencia"
+icon: "umbrella-beach"
+---
+<div id="no-header-here" />
+
+# Configuración de Solicitudes de Ausencia
+
+## ¿Qué es esto?
+
+Módulo de gestión de licencias y ausencias temporales. Los empleados solicitan permisos mediante `/loa submit`, la directiva aprueba o deniega, y el bot actúa automáticamente:
+
+- asigna el rol de ausencia tras la aprobación;
+- monitoriza la vigencia y **retira el rol automáticamente** al vencer;
+- envía avisos informativos por MD con cada cambio de estado;
+- exonera al empleado de las cuotas de guardia durante la ausencia (reflejado en informes);
+- impide iniciar turnos durante el período aprobado.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Permisos de Ausencia»**.
+2. Ajuste tres parámetros:
+   - **Recepción de solicitudes** — «Habilitado» para permitir solicitudes;
+   - **Canal de revisión** — canal de texto donde se publican las solicitudes con botones «Aprobar» / «Rechazar»;
+   - **Roles de ausencia** — hasta 25 roles asignados al personal autorizado.
+
+***
+
+## Mecánica de Uso
+
+### Para Empleados
+
+- `/loa submit` — elección de duración (1 a 90 días) y justificación.
+- No es posible enviar una nueva solicitud mientras exista una en trámite o en curso.
+- Tras la aprobación se asigna el rol y se envía aviso por MD. Al concluir el plazo, el rol se remueve automáticamente.
+
+### Para la Directiva
+
+La tarjeta en el canal de revisión incluye el perfil del solicitante: rango máximo, ausencias previas y total de horas acumuladas.
+
+- **«Aprobar»** — activa la condición de ausencia.
+- **«Rechazar»** — exige un motivo formal de rechazo (hasta 500 caracteres), enviado al empleado por MD.
+
+Comandos de administración:
+
+- `/loa list` — consultar ausencias activas en el servidor;
+- `/loa view @empleado` — historial de solicitudes de un usuario;
+- `/loa admin @empleado` — otorgar manualmente, prorrogar, finalizar antes de tiempo o eliminar registros.
+
+<Callout icon="lightbulb" color="#22C55E">
+  El bot revisa vencimientos cada 5 minutos, garantizando que ningún rol quede retenido incluso ante reinicios.
+</Callout>

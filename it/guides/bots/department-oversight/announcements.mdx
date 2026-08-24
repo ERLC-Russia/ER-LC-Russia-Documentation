@@ -1,0 +1,47 @@
+---
+title: "Annunci"
+icon: "bullhorn"
+---
+<div id="no-header-here" />
+
+# Configurazione degli Annunci
+
+## Che cos'è?
+
+Sistema di diffusione massiva tra i server della rete. Invece di copiare e incollare comunicazioni in decine di canali, la direzione trasmette un comunicato globale tramite un unico comando:
+
+```
+/announcement for departments
+```
+
+Il bot inoltra il post a tutti i canali di dipartimento collegati (più eventuali ID canale manuali), con supporto a **menzioni di ruoli specifici** e invio del rapporto di consegna nel canale di log.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Annunci»**.
+2. Abilitate il modulo: menu di stato → **«Abilitato»**.
+3. In **«Ruoli Autorizzati»**, selezionate chi può inviare annunci (fino a 25 ruoli).
+4. Scegliete il **canale di log degli annunci** per i rapporti di consegna.
+5. Fate clic su **«Configura Canali»** → **«Aggiungi Canale»** e indicate:
+   - **«Nome»** — nome del dipartimento (es. `MVD`);
+   - **«ID server»** — ID del server in cui si trova il canale;
+   - **«ID canale»** — ID del canale per le pubblicazioni;
+   - **«ID ruoli separati da virgola»** — ruoli da menzionare negli invii globali.
+
+Capacità fino a **25 dipartimenti**.
+
+### Conferma del Proprietario del Server
+
+Se il canale risiede su un server esterno, il rispettivo proprietario riceverà un messaggio privato dal bot con i pulsanti **«Conferma» / «Rifiuta»**. Fino all'autorizzazione, il canale figurerà come «In attesa». I canali del proprio server vengono collegati all'istante.
+
+***
+
+## Come Inviare un Annuncio
+
+1. Eseguite `/announcement for departments`.
+2. Scegliete la modalità:
+   - **«Per tutti»** — invio a tutti i canali predefiniti (+ menzione opzionale);
+   - manuale — elenco di ID canale separati da virgola.
+3. Compilate il modulo: **testo dell'annuncio** (fino a 1700 caratteri) e **URL immagine** facoltativo.
+4. Il messaggio viene inoltrato in tutti i canali con la firma dell'autore.
+5. Il canale di log riceve il rapporto dettagliato sulla consegna.

@@ -1,0 +1,46 @@
+---
+title: "Google Forms"
+icon: "square-poll-vertical"
+---
+<div id="no-header-here" />
+
+# Configuración de Integración con Google Forms
+
+## ¿Qué es esto?
+
+Enlaza Google Forms con Discord. Al completar un usuario un formulario (ej. postulación a una división), el bot publica una tarjeta interactiva en el canal de revisión para resolver la solicitud con botones:
+
+- **«Aprobar» / «Rechazar»** — con indicación de motivo obligatorio;
+- Notificación **automática por MD** enviada al postulante con la resolución;
+- Archivo del dictamen en el canal de resultados.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Google Forms»**.
+2. Active el módulo: selector de estado → **«Habilitado»**.
+3. Haga clic en **«Configurar Formularios»** → **«Agregar»** y complete los campos:
+   - **«URL del formulario»** — enlace íntegro de su Google Form (obligatorio);
+   - **«Nombre del formulario»** — título identificativo, ej. `Postulación a MVD`;
+   - **«Canal de respuestas»** — destino de las tarjetas con respuestas;
+   - **«ID de hilo»** — opcional para canalizar respuestas dentro de un hilo;
+   - **«Canal de resultados»** — canal de registro para dictámenes finales.
+
+Puede vincular hasta **50 formularios**, visualizados en listas de 8 por página.
+
+### Edición y eliminación
+
+- **«Editar»** — seleccione el formulario y actualice los campos necesarios.
+- **«Eliminar»** — elija el formulario para suprimir la vinculación.
+
+***
+
+## Flujo Operativo tras la Configuración
+
+1. El usuario envía el Google Form — en el canal de respuestas aparece la tarjeta con la información del postulante y todas las respuestas.
+2. Estado inicial: **«En Revisión»**.
+3. El responsable presiona «Aprobar» o «Rechazar», redacta el motivo (mínimo 10 caracteres) y confirma.
+4. La tarjeta se actualiza («Aprobado» / «Rechazado»), el postulante recibe la resolución por MD y el fallo queda archivado en el canal de resultados.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  Para que las respuestas ingresen a Discord, el formulario debe haber sido vinculado previamente por la administración técnica del proyecto. El resto de tareas se gestiona íntegramente desde Discord.
+</Callout>

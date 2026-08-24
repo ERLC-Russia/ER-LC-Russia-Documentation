@@ -1,0 +1,89 @@
+---
+title: "Sanzioni"
+icon: "gavel"
+---
+<div id="no-header-here" />
+
+# Configurazione di Sanzioni e Sospensioni
+
+## Che cos'è?
+
+Modulo di disciplina interna. La direzione applica sanzioni tramite il comando `/punishment`, mentre il bot:
+
+- registra le sanzioni attive per ciascun membro;
+- **escala i livelli automaticamente** — assegnando ruoli più restrittivi all'accumularsi delle infrazioni;
+- esegue **flussi di automazione**, quali: «3 avvertimenti → rimuovi avvertimenti e applica 1 richiamo per 1 mese»;
+- **rimuove le sanzioni automaticamente alla scadenza** e notifica l'interessato.
+
+Le sospensioni costituiscono un sub-regime specifico: il membro viene sospeso (riceve il ruolo di sospensione) e dispone di 48 ore per inviare una memoria difensiva.
+
+***
+
+## Tipi di Sanzione
+
+1. Aprite `/configure` → sezione **«Sanzioni»**.
+2. Fate clic su **«Configura Sanzioni»**.
+3. Fate clic su **«Aggiungi Tipo»** e inserite il nome — es. `Avvertimento`, `Richiamo`, `Infrazione Grave`.
+
+Capacità fino a **24 tipi**. Se un tipo non ha livelli impostati, può essere assegnato senza restrizioni di quantità.
+
+### Livelli di escalation
+
+Ciascun tipo di sanzione supporta fino a 25 livelli associati a ruoli Discord: all'aumentare delle violazioni, maggiore sarà il livello e la severità del ruolo.
+
+1. Selezionate un tipo → fate clic su **«Modifica Tipo»**.
+2. Fate clic su **«Aggiungi Livello»** e assegnate il ruolo relativo.
+3. Ripetete la procedura per i livelli successivi.
+
+Esempio standard per «Richiamo»: Livello 1 → `Richiamo 1`, Livello 2 → `Richiamo 2`, Livello 3 → `Richiamo 3`.
+
+<Callout icon="circle-info" color="#3B82F6">
+  Il numero totale di livelli fa da tetto massimo: con 3 livelli configurati, un membro non potrà ricevere più di 3 sanzioni attive di quel tipo contemporaneamente.
+</Callout>
+
+### Modifica e rimozione
+
+Nel menu di modifica sono disponibili le opzioni **«Rinomina»**, **«Modifica Livello»** (cambio ruolo) ed **«Elimina Livello»**.
+
+***
+
+## Automazione
+
+Consente di stabilire direttive: *«se un membro accumula N sanzioni di un certo tipo — esegui un'azione automatica»*.
+
+1. Nel menu sanzioni, fate clic su **«Vai alle Automazioni»**.
+2. Fate clic su **«Aggiungi Regola»**.
+3. **«Configura Condizione»**: scegliete il tipo di infrazione e la soglia di attivazione (es. `Avvertimento` × `3`).
+4. **«Aggiungi Azione»**:
+   - **«Rimuovi Sanzione»** — azzera il conteggio (rimuove tutte o N sanzioni del tipo);
+   - **«Assegna Sanzione»** — applica automaticamente un'altra sanzione per un periodo prestabilito (formato `14d`, `1mo`, ecc.).
+5. È possibile concatenare più azioni in una sola regola.
+6. Fate clic sul pulsante verde **«Salva»**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  È presente una bozza preconfigurata: condizione «3 × Avvertimento», azioni — rimuovi tutti gli Avvertimenti + applica 1 Richiamo per 1 mese.
+</Callout>
+
+***
+
+## Sospensioni
+
+Nella pagina **«Sanzioni»**, fate clic su **«Configura Sospensioni»** e definite:
+
+- **Ruolo di Sospensione** — ruolo assegnato al membro sospeso (di solito inibisce l'accesso ai canali operativi). È consentita una sola sospensione attiva per utente.
+- **Canale di Sospensione** — canale in cui vengono inoltrate le memorie difensive e i registri di sospensione.
+
+Funzionamento:
+
+1. La direzione sospende il membro con `/punishment` → il membro riceve il ruolo e un modulo di memoria difensiva via MD.
+2. Il membro ha **48 ore** per rispondere: testo + fino a 5 file di allegati.
+3. La dichiarazione viene pubblicata nel canale di sospensione per la valutazione della direzione.
+4. Se è stata impostata una scadenza temporale, il ruolo viene rimosso automaticamente al termine del periodo.
+
+***
+
+## Comandi Utente
+
+- `/punishment @membro` — pannello direttivo: assegna sanzione (tipo, motivo, prove, durata), sospendi, consulta storico o rimuovi voci manualmente.
+- Formati di durata: `30m`, `7d`, `1mo`, `1y`, `forever`.
+- Tutte le operazioni vengono registrate e notificate all'interessato via MD.

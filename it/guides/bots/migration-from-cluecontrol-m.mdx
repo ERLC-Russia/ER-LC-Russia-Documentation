@@ -1,0 +1,113 @@
+---
+title: "Migrazione da ClueControl M"
+icon: "right-left"
+---
+<div id="no-header-here" />
+
+# Migrazione da ClueControl M
+
+Se il vostro server utilizzava in precedenza il bot ClueControl M, questa guida vi aiuterà a trasferire le configurazioni dei moduli turni e congedi a Supervisione dei Dipartimenti. Il trasferimento si esegue manualmente e richiede circa 10-15 minuti.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  La cronologia dei turni e le statistiche <b>non vengono migrate automaticamente</b>. I vecchi dati rimangono nel database di ClueControl M: il tracciamento del tempo nel nuovo bot partirà da zero.
+</Callout>
+
+## Dove si trovano le sezioni
+
+In ClueControl M, le impostazioni sono accessibili tramite il comando `/config` e riservate alla direzione (Management). In Supervisione dei Dipartimenti, tutto è centralizzato nel menu `/configure`: prima della configurazione iniziale è accessibile agli amministratori del server, e successivamente solo ai [«Ruoli di Configurazione»](/it/guides/bots/department-oversight/permissions).
+
+| Sezione in ClueControl M (`/config`) | Pagina in `/configure` |
+| --- | --- |
+| Basic Settings | [Permessi di Accesso](/it/guides/bots/department-oversight/permissions) |
+| Shift Management | [Impostazioni Turni](/it/guides/bots/department-oversight/shifts) |
+| LOA Requests | [Congedi](/it/guides/bots/department-oversight/loa) |
+| RA Requests | [Congedi](/it/guides/bots/department-oversight/loa) + [Attività Ridotta](/it/guides/bots/department-oversight/ra) |
+
+Trasferite i ruoli del personale da **Basic Settings** (Staff / Admin / Management) alla pagina [«Permessi di Accesso»](/it/guides/bots/department-oversight/permissions): questi determinano chi può approvare le richieste e utilizzare i comandi di amministrazione.
+
+***
+
+## Turni
+
+Pagina: [«Impostazioni Turni»](/it/guides/bots/department-oversight/shifts):
+
+| In ClueControl M | In Supervisione dei Dipartimenti |
+| --- | --- |
+| Interruttore «Shift Management» | Stato del modulo: «Abilitato» |
+| Shift Channel | Canale log dei turni |
+| On-Duty Role | Ruolo di servizio |
+| More Options → Break Roles | Ruolo di pausa |
+| More Options → Maximum Staff Online | Limite personale (`0` — illimitato) |
+| More Options → Nickname Prefix | Prefisso nel nickname |
+| More Options → Quota | Quota del turno |
+| Shift Types | Tipi di turno |
+| Role Quotas | Quote per ruolo |
+
+<Callout icon="lightbulb" color="#22C55E">
+  Il formato della quota è diverso: ClueControl M accetta `1h30m`, mentre il nuovo bot richiede `60m`, `2h`, `1d`, `1mo`. Ricalcolate i valori prima di inserirli.
+</Callout>
+
+I tipi di turno vengono ricreati fedelmente: nome, canale di log, ruoli di servizio, ruolo di pausa, prefisso nickname e ruoli di accesso. Lo stesso vale per le quote per ruolo da ricreare tramite «Quote per Ruolo».
+
+## Congedi e Attività Ridotta
+
+Pagina: [«Congedi»](/it/guides/bots/department-oversight/loa):
+
+| In ClueControl M | In Supervisione dei Dipartimenti |
+| --- | --- |
+| Interruttore «LOA Requests» | Accettazione richieste: «Abilitato» |
+| LOA Channel | Canale congedi |
+| LOA Role | Ruoli di congedo |
+| RA Role | Ruoli di RA ([Pagina Attività Ridotta](/it/guides/bots/department-oversight/ra)) |
+
+Principali novità rispetto a ClueControl M:
+
+- **Interruttori separati** — l'accettazione di richieste di congedo e attività ridotta si attiva in modo indipendente;
+- **Canale dedicato per attività ridotta** — le richieste di RA non si mescolano più con i congedi;
+- **Durate fisse** — il personale seleziona da un elenco: 1, 3, 7, 14, 21, 30, 60 o 90 giorni;
+- **Motivazione di rifiuto obbligatoria** — inviata direttamente nei messaggi privati dell'utente;
+- **Conteggio attività ridotta** — durante l'attività ridotta si applica il 50% della quota standard;
+- L'approvazione è riservata ai ruoli direttivi configurati in [«Permisos de Acceso»](/it/guides/bots/department-oversight/permissions) o agli amministratori Discord.
+
+## Corrispondenza dei comandi
+
+| ClueControl M | Supervisione dei Dipartimenti |
+| --- | --- |
+| `/duty manage` | `/shift manage` |
+| `/duty time` | `/shift time` |
+| `/duty admin` | `/shift admin` |
+| `/duty active` | `/shift active` |
+| `/duty leaderboard` | `/shift leaderboard` |
+| `/duty history` | `/shift history` |
+| `/activity show` | `/shift activity` |
+| `/loa request` | `/loa submit` |
+| `/loa view` | `/loa view` |
+| `/loa active` | `/loa list` |
+| `/loa admin` | `/loa admin` |
+| `/ra …` | `/ra …` |
+
+***
+
+## Disattivazione dei moduli in ClueControl M
+
+Dopo aver configurato Supervisione dei Dipartimenti, disattivate gli stessi moduli nel vecchio bot. In ClueControl M, aprite `/config` e impostate i selettori su **Disabled** in due pagine:
+
+- Pagina **Shift Management** — selettore «Shift Management» → Disabled;
+- Pagina **LOA Requests** — selettore «LOA Requests» → Disabled.
+
+<Callout icon="lightbulb" color="#22C55E">
+  In ClueControl M, il selettore «LOA Requests» gestisce contemporaneamente sia i congedi che l'attività ridotta; non occorre spegnere la RA separatamente.
+</Callout>
+
+A moduli disattivati, i vecchi comandi risponderanno con «Not Enabled» e il personale passerà completamente al nuovo bot.
+
+## Lista di controllo per la migrazione
+
+1. Assegnate l'accesso al team direttivo: [«Permessi di Accesso»](/it/guides/bots/department-oversight/permissions) → «Ruoli di Configurazione» e ruoli di gestione.
+2. [Abilitate i turni](/it/guides/bots/department-oversight/shifts), specificate il canale di log e il ruolo di servizio.
+3. In «Opzioni Aggiuntive», impostate ruolo di pausa, prefisso nickname, limite personale e quota turno (nel nuovo formato).
+4. Ricreate i [tipi di turno](/it/guides/bots/department-oversight/shifts) e le quote per ruolo.
+5. Configurate i [congedi](/it/guides/bots/department-oversight/loa): abilitate l'accettazione, indicate il canale e i ruoli di congedo.
+6. Configurate l'[attività ridotta](/it/guides/bots/department-oversight/ra): canale e ruoli dedicati.
+7. Verificate che il personale possa avviare turni tramite `/shift manage` e che le richieste arrivino nel canale di revisione.
+8. [Disattivate i moduli](#disattivazione-dei-moduli-in-cluecontrol-m) in ClueControl M per evitare duplicazioni.

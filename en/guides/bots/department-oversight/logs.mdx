@@ -1,0 +1,45 @@
+---
+title: "Log Channels"
+icon: "newspaper"
+---
+<div id="no-header-here" />
+
+# Setting Up Log Channels
+
+## What is This?
+
+Logs are automated records of all administration actions and configuration updates. They provide full transparency: any leader can verify who performed an action and when.
+
+This page configures two types of audit logs:
+
+1. **Server Logs and Command Audit** — logs bot configuration changes via `/configure` and `/server manage`, shift admin actions (`/shift admin`), and more.
+2. **Channel Move Logs** — records when channels or categories are moved or rearranged on the server (position changes, parent category updates).
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Log Channels”** page.
+2. In the first menu, select **up to 25 text channels** for server and command audit logs.
+3. In the second menu, select channels for channel movement logs.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Tip:** Create a private “Logs” category with dedicated channels for different categories and assign 2–3 channels in each menu so records are well-organized and never lost among chat messages.
+</Callout>
+
+***
+
+## Module-Specific Log Channels
+
+In addition to this page, individual modules have their own dedicated log channels configured in their respective sections:
+
+| Module | What is Logged | Where to Configure |
+| --- | --- | --- |
+| Shifts | Shift starts and completions | `/configure` → Shift Settings |
+| Departments | Orders for promotions and hirings | “Rank System” page |
+| Punishments | Orders for demotions and punishments | “Rank System” page |
+| Announcements | Delivery reports | `/configure` → Announcements |
+| Modcalls | Moderation calls and responses | `/configure` → Modcalls |
+| Tickets | Transcripts of closed tickets | Ticket configuration |
+
+<Callout icon="circle-info" color="#3B82F6">
+  Each log entry is formatted as a clean embed card with timestamps, avatars, and clear color coding for easy reading at scale.
+</Callout>

@@ -1,0 +1,45 @@
+---
+title: "Canali di Log"
+icon: "newspaper"
+---
+<div id="no-header-here" />
+
+# Configurazione dei Canali di Log
+
+## Che cos'è?
+
+I log sono registrazioni automatizzate di tutte le operazioni amministrative e delle modifiche di configurazione. Garantiscono piena trasparenza: qualsiasi responsabile può verificare chi ha compiuto una determinata azione e quando.
+
+In questa pagina si configurano due categorie di audit:
+
+1. **Log del Server e Audit dei Comandi** — memorizza modifiche alle impostazioni tramite `/configure` e `/server manage`, azioni direttive sui turni (`/shift admin`) e altro.
+2. **Log di Spostamento Canali** — storico delle variazioni di posizione e categoria di canali Discord all'interno del server.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Canali di Log»**.
+2. Nel primo menu, scegliete **fino a 25 canali di testo** per i log del server e l'audit dei comandi.
+3. Nel secondo menu, selezionate i canali per i log di spostamento dei canali.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consiglio:** Create una categoria privata «Logs» con canali dedicati per ciascuna tipologia e assegnate 2–3 canali in ciascun menu per mantenere l'ordine.
+</Callout>
+
+***
+
+## Canali di Log Specifici per Modulo
+
+Oltre a questa pagina, diversi moduli dispongono di canali dedicati configurabili nelle rispettive sezioni:
+
+| Modulo | Evento registrato | Dove si configura |
+| --- | --- | --- |
+| Turni | Inizio e termine dei turni | `/configure` → Impostazioni Turni |
+| Dipartimenti | Ordini di promozione e assunzione | Pagina «Sistema di Gradi» |
+| Sanzioni | Ordini di retrocessione e sanzione | Pagina «Sistema di Gradi» |
+| Annunci | Rapporti di invio comunicazioni | `/configure` → Annunci |
+| Modcall | Chiamate e risposte di moderazione | `/configure` → Modcall |
+| Ticket | Trascrizioni dei ticket chiusi | Configurazione ticket |
+
+<Callout icon="circle-info" color="#3B82F6">
+  Ciascuna voce di registro è formattata come messaggio embed ordinato con timestamp, avatar dell'autore e codice colore identificativo.
+</Callout>

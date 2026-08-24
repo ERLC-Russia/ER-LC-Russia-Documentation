@@ -1,0 +1,77 @@
+---
+title: "Configurazione del Bot"
+icon: "screwdriver-wrench"
+---
+<div id="no-header-here" />
+
+# Configurazione del Bot «Supervisione dei Dipartimenti»
+
+**«Supervisione dei Dipartimenti»** è il bot per la gestione del personale sui server di ER:LC Russia. Gestisce tutte le operazioni di leadership: controllo ore di lavoro, assunzioni e licenziamenti, sanzioni disciplinari, congedi, ticket, annunci e moderazione.
+
+L'intero bot si configura **direttamente da Discord** — senza pannelli web esterni o file di configurazione. Tutto viene eseguito tramite un unico comando:
+
+```
+/configure
+```
+
+Il comando apre un pannello interattivo con 13 sezioni, ciascuna spiegata nel dettaglio nelle guide seguenti.
+
+***
+
+## Chi può configurare il bot?
+
+Solo i membri con ruoli assegnati in [«Permessi di Accesso»](/it/guides/bots/department-oversight/permissions) possono modificare le impostazioni. Se avete appena aggiunto il bot al server, iniziate da questa sezione per assegnarvi l'accesso.
+
+<Callout icon="shield-halved" color="#3B82F6">
+  Prima della configurazione iniziale, il comando `/configure` è accessibile agli amministratori del server. Una volta assegnati i [«Ruoli di Configurazione»](/it/guides/bots/department-oversight/permissions), l'accesso sarà riservato solo ad essi — ricordatevi di inserire il vostro ruolo nell'elenco.
+</Callout>
+
+## Quali moduli include il bot?
+
+| Modulo | Scopo | Comandi |
+| --- | --- | --- |
+| [Sistema di Gradi](/it/guides/bots/department-oversight/ranks) | Dipartimenti, gradi, ordini di servizio, prefissi | `/manage` |
+| [Sanzioni](/it/guides/bots/department-oversight/punishments) | Richiami, avvertimenti, sospensioni, blacklist | `/punishment`, `/manage` |
+| [Turni](/it/guides/bots/department-oversight/shifts) | Monitoraggio ore lavorate, classifiche, quote | `/shift` |
+| [Congedi](/it/guides/bots/department-oversight/loa) | Richieste di congedo con assegnazione automatica ruoli | `/loa` |
+| [Attività Ridotta](/it/guides/bots/department-oversight/ra) | Richieste di riduzione delle quote orarie | `/ra` |
+| [Ticket](/it/guides/bots/department-oversight/tickets) | Supporto utenti con costruttore visuale di pannelli | Pulsanti sui pannelli ticket |
+| [Google Forms](/it/guides/bots/department-oversight/google-forms) | Risposte di Google Forms gestite su Discord | Pulsanti sulle schede di candidatura |
+| [Annunci](/it/guides/bots/department-oversight/announcements) | Diffusione comunicati nei dipartimenti della rete | `/announcement` |
+| [Modcall](/it/guides/bots/department-oversight/modcalls) | Chiamate di emergenza da Discord e in gioco | `/mod` |
+| [Ban Globale](/it/guides/bots/department-oversight/global-ban) | Ban simultaneo di utenti su tutta la rete | `/global-ban` |
+
+## Da dove iniziare? Sequenza di prima configurazione
+
+Consigliamo di configurare il bot nel seguente ordine:
+
+<Steps>
+  <Step title="Lingua dell'interfaccia">
+    Selezionate la lingua del server — [russo o inglese](/it/guides/bots/department-oversight/language).
+  </Step>
+  <Step title="Permessi di accesso">
+    Assegnate [ruoli di configurazione e ruoli di gestione](/it/guides/bots/department-oversight/permissions) per consentire alla direzione di operare.
+  </Step>
+  <Step title="Sistema di gradi">
+    Create i [dipartimenti e i gradi](/it/guides/bots/department-oversight/ranks) della vostra fazione.
+  </Step>
+  <Step title="Sanzioni">
+    Configurate [tipi di sanzione e regole di sospensione](/it/guides/bots/department-oversight/punishments).
+  </Step>
+  <Step title="Canali di log">
+    Specificate i [canali di audit delle azioni amministrative](/it/guides/bots/department-oversight/logs).
+  </Step>
+  <Step title="Turni, congedi e attività ridotta">
+    Configurate il [tracciamento orario](/it/guides/bots/department-oversight/shifts) e le [richieste di congedo](/it/guides/bots/department-oversight/loa).
+  </Step>
+  <Step title="Moduli rimanenti">
+    Attivate secondo necessità: [ticket](/it/guides/bots/department-oversight/tickets), [moduli](/it/guides/bots/department-oversight/google-forms), [annunci](/it/guides/bots/department-oversight/announcements), [modcall](/it/guides/bots/department-oversight/modcalls), [ban globale](/it/guides/bots/department-oversight/global-ban).
+  </Step>
+</Steps>
+
+## Consigli utili
+
+- Quasi tutti i moduli possono essere semplicemente **attivati o disattivati tramite interruttore** — le funzioni non utilizzate non interferiscono.
+- Tutte le azioni della direzione vengono registrate automaticamente nei [canali di log](/it/guides/bots/department-oversight/logs).
+- Il pannello `/configure` risponde solo all'utente che lo ha aperto e si chiude automaticamente dopo 15 minuti di inattività.
+- In caso di necessità, i dati possono essere ripristinati in sicurezza tramite [`/server manage`](/it/guides/bots/department-oversight/server-manage).

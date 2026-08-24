@@ -78,6 +78,7 @@
               "group": "Обновление V1.0",
               "icon": "folder",
               "pages": [
+                "ru/changelogs/changelog-v1.0/changelog-v1.0.2",
                 "ru/changelogs/changelog-v1.0/changelog-v1.0.1"
               ]
             },

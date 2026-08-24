@@ -1,0 +1,54 @@
+---
+title: "Reduced Activity"
+icon: "arrow-trend-down"
+---
+<div id="no-header-here" />
+
+# Setting Up Reduced Activity
+
+## What is This?
+
+The reduced activity application module. This status is designed for employees who temporarily cannot fulfill standard quota requirements (exams, workload, personal events) but wish to remain active in the faction.
+
+Key differences between reduced activity and leaves:
+
+- The employee **can continue working shifts**;
+- Their hour quota is **automatically reduced by 50%** — in activity reports, such staff are clearly marked;
+- The reduced activity role is assigned and removed automatically upon expiration, identical to leaves.
+
+The submission and review mechanics mirror the leave management system.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Reduced Activity Settings”** page.
+2. Configure three settings:
+   - **Request Intake Status** — “Enabled” or “Disabled”;
+   - **RA Request Channel** — text channel where request cards appear;
+   - **RA Roles** — up to 25 roles assigned to approved staff (e.g. `Reduced Activity`).
+
+***
+
+## User Experience
+
+### For Employees
+
+- `/ra submit` — duration (1–90 days) and reason.
+- While a request is active or awaiting review, a new one cannot be submitted.
+- Upon approval, the role is assigned and automatically removed when expired; status updates are delivered via DM.
+
+### For Leadership
+
+Requests arrive in the designated channel with applicant context and action buttons:
+
+- **“Approve”** — grants reduced activity status;
+- **“Deny”** — rejects with a mandatory reason.
+
+Admin commands:
+
+- `/ra list` — list active reduced activity statuses;
+- `/ra view @employee` — request history for a specific employee;
+- `/ra admin @employee` — grant manually, extend, end early, or delete records.
+
+<Callout icon="circle-info" color="#3B82F6">
+  In the `/shift activity` report, staff on reduced activity are evaluated against a halved quota with an indicator, preventing unwarranted disciplinary actions for reduced hours.
+</Callout>

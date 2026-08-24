@@ -1,0 +1,52 @@
+---
+title: "Leaves"
+icon: "umbrella-beach"
+---
+<div id="no-header-here" />
+
+# Setting Up Leave Requests
+
+## What is This?
+
+The leave request module. Staff apply for leave using `/loa submit`, leadership approves or denies it, and the bot handles the rest automatically:
+
+- assigns the leave role upon approval;
+- monitors duration and **removes the role automatically** upon expiration;
+- sends DM updates to the employee on every status change;
+- exempts the employee from time quotas during the leave period (marked in activity reports);
+- prevents starting shifts while on leave.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Leave Settings”** page.
+2. Configure three settings:
+   - **Request Intake Status** — select “Enabled” to allow employees to submit requests. Selecting “Disabled” temporarily closes intake with a bot notice;
+   - **Leave Channel** — text channel where request cards appear with “Approve”/“Deny” buttons;
+   - **Leave Roles** — up to 25 roles granted to approved staff (e.g. `On Leave`).
+
+***
+
+## User Experience
+
+### For Employees
+
+- `/loa submit` — duration (from 1 to 90 days; accepts “14 days”, “2 weeks”, “1 month”) + reason.
+- Cannot submit a new request while an active or pending one exists.
+- Upon approval, a DM is sent and the role is assigned. When the period ends, the role is automatically removed and a conclusion DM is delivered.
+
+### For Leadership
+
+The request card in the leave channel displays employee context: highest rank, past leave count, and total career hours worked.
+
+- **“Approve”** — grants the leave status.
+- **“Deny”** — requires a mandatory rejection reason (up to 500 characters), sent to the employee via DM.
+
+Admin commands:
+
+- `/loa list` — view all currently active leaves.
+- `/loa view @employee` — application history for a specific employee.
+- `/loa admin @employee` — control panel: issue leave manually, extend by N days, end early, or delete records.
+
+<Callout icon="lightbulb" color="#22C55E">
+  The bot sweeps for expired leaves every 5 minutes — even if the server reboots, no leave role gets stuck indefinitely.
+</Callout>

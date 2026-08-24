@@ -1,0 +1,113 @@
+---
+title: "Migración desde ClueControl M"
+icon: "right-left"
+---
+<div id="no-header-here" />
+
+# Migración desde ClueControl M
+
+Si su servidor utilizaba anteriormente el bot ClueControl M, esta guía le ayudará a transferir las configuraciones de los módulos de turnos y permisos de ausencia a Supervisión de Departamentos. La transferencia se realiza manualmente y toma entre 10 y 15 minutos.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  El historial de turnos y las estadísticas <b>no se transfieren automáticamente</b>. Los datos anteriores permanecen en la base de datos de ClueControl M; el control de tiempo en el nuevo bot comenzará desde cero.
+</Callout>
+
+## Dónde se encuentra cada sección
+
+En ClueControl M, los ajustes se gestionan con el comando `/config` y están restringidos a la directiva (Management). En Supervisión de Departamentos, todo está centralizado en el menú `/configure`: antes de la configuración inicial está disponible para administradores del servidor, y posteriormente solo para los [«Roles de Configuración»](/es/guides/bots/department-oversight/permissions).
+
+| Sección en ClueControl M (`/config`) | Página en `/configure` |
+| --- | --- |
+| Basic Settings | [Permisos de Acceso](/es/guides/bots/department-oversight/permissions) |
+| Shift Management | [Configuración de Turnos](/es/guides/bots/department-oversight/shifts) |
+| LOA Requests | [Permisos de Ausencia](/es/guides/bots/department-oversight/loa) |
+| RA Requests | [Permisos de Ausencia](/es/guides/bots/department-oversight/loa) + [Actividad Reducida](/es/guides/bots/department-oversight/ra) |
+
+Transfiera los roles de su personal desde **Basic Settings** (Staff / Admin / Management) a la página [«Permisos de Acceso»](/es/guides/bots/department-oversight/permissions): estos definen quién puede aprobar solicitudes y ejecutar comandos de administración.
+
+***
+
+## Turnos
+
+Página: [«Configuración de Turnos»](/es/guides/bots/department-oversight/shifts):
+
+| En ClueControl M | En Supervisión de Departamentos |
+| --- | --- |
+| Interruptor «Shift Management» | Estado del módulo: «Habilitado» |
+| Shift Channel | Canal de registro de turnos |
+| On-Duty Role | Rol de guardia |
+| More Options → Break Roles | Rol de pausa |
+| More Options → Maximum Staff Online | Límite de personal (`0` — sin límite) |
+| More Options → Nickname Prefix | Prefijo en el apodo |
+| More Options → Quota | Cuota de turno |
+| Shift Types | Tipos de turno |
+| Role Quotas | Cuotas por rol |
+
+<Callout icon="lightbulb" color="#22C55E">
+  El formato de cuota es distinto: ClueControl M acepta `1h30m`, mientras que el nuevo bot requiere `60m`, `2h`, `1d`, `1mo`. Recalcule los valores antes de introducirlos.
+</Callout>
+
+Los tipos de turno se recrean uno a uno: nombre, canal de registros, roles de guardia, rol de pausa, prefijo en el apodo y roles de acceso. Lo mismo aplica a las cuotas por rol: créelas nuevamente en «Cuotas por Rol».
+
+## Permisos de Ausencia y Actividad Reducida
+
+Página: [«Permisos de Ausencia»](/es/guides/bots/department-oversight/loa):
+
+| En ClueControl M | En Supervisión de Departamentos |
+| --- | --- |
+| Interruptor «LOA Requests» | Recepción de solicitudes: «Habilitado» |
+| LOA Channel | Canal de ausencias |
+| LOA Role | Roles de ausencia |
+| RA Role | Roles de RA ([Página de Actividad Reducida](/es/guides/bots/department-oversight/ra)) |
+
+Cambios destacados frente a ClueControl M:
+
+- **Interruptores independientes** — la recepción de solicitudes de ausencia y actividad reducida se activa por separado;
+- **Canal dedicado para actividad reducida** — las solicitudes de RA no se mezclan con las ausencias;
+- **Duraciones predeterminadas** — el personal selecciona de una lista fija: 1, 3, 7, 14, 21, 30, 60 o 90 días;
+- **Motivo de rechazo obligatorio** — se envía directamente al MD del empleado;
+- **Cómputo en actividad reducida** — durante el estado de RA aplica el 50% de la cuota habitual;
+- Aprobación reservada a roles de liderazgo asignados en [«Permisos de Acceso»](/es/guides/bots/department-oversight/permissions) o administradores de Discord.
+
+## Correspondencia de comandos
+
+| ClueControl M | Supervisión de Departamentos |
+| --- | --- |
+| `/duty manage` | `/shift manage` |
+| `/duty time` | `/shift time` |
+| `/duty admin` | `/shift admin` |
+| `/duty active` | `/shift active` |
+| `/duty leaderboard` | `/shift leaderboard` |
+| `/duty history` | `/shift history` |
+| `/activity show` | `/shift activity` |
+| `/loa request` | `/loa submit` |
+| `/loa view` | `/loa view` |
+| `/loa active` | `/loa list` |
+| `/loa admin` | `/loa admin` |
+| `/ra …` | `/ra …` |
+
+***
+
+## Desactivación de módulos en ClueControl M
+
+Tras configurar Supervisión de Departamentos, desactive los módulos homólogos en el bot antiguo. En ClueControl M, abra `/config` y cambie los selectores a **Disabled** en dos páginas:
+
+- Página **Shift Management** — selector «Shift Management» → Disabled;
+- Página **LOA Requests** — selector «LOA Requests» → Disabled.
+
+<Callout icon="lightbulb" color="#22C55E">
+  En ClueControl M, el selector «LOA Requests» gestiona simultáneamente las ausencias y la actividad reducida; no se requiere apagar RA por separado.
+</Callout>
+
+Con los módulos desactivados, los comandos responderán con «Not Enabled» y el personal migrará por completo al nuevo sistema.
+
+## Lista de verificación de migración
+
+1. Otorgue acceso al equipo directivo: [«Permisos de Acceso»](/es/guides/bots/department-oversight/permissions) → «Roles de Configuración» y roles de gestión.
+2. [Habilite los turnos](/es/guides/bots/department-oversight/shifts), asigne el canal de registros y el rol de guardia.
+3. En «Opciones Adicionales», configure el rol de pausa, prefijo de apodo, límite de personal y cuota de turno (en el nuevo formato).
+4. Recree los [tipos de turno](/es/guides/bots/department-oversight/shifts) y las cuotas por rol.
+5. Configure los [permisos de ausencia](/es/guides/bots/department-oversight/loa): habilite la recepción, asigne el canal y los roles de ausencia.
+6. Configure la [actividad reducida](/es/guides/bots/department-oversight/ra): canal y roles correspondientes.
+7. Compruebe que el personal pueda iniciar turnos mediante `/shift manage` y que las solicitudes lleguen al canal de revisión.
+8. [Desactive los módulos](#desactivación-de-módulos-en-cluecontrol-m) en ClueControl M para evitar duplicidad.

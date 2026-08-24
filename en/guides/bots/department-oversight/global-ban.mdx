@@ -1,0 +1,52 @@
+---
+title: "Global Ban"
+icon: "ban"
+---
+<div id="no-header-here" />
+
+# Setting Up Global Ban
+
+## What is This?
+
+A synchronized blacklist system across community partner servers. The command
+
+```
+/global-ban @user
+```
+
+bans an offender **simultaneously across all connected servers**, rather than just the local server. Correspondingly, `/global-unban` lifts the ban network-wide.
+
+The logs channel receives a comprehensive status report: banner, target, reason, and individual server status indicators.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Global Ban”** page.
+2. Enable the module: set status menu to **“Enabled”**.
+3. In **“Allowed Roles”**, select global ban team roles (up to 25) — only these can issue or revoke global bans.
+4. Click **“Configure Servers”** → **“Add Server”** and input the **Guild ID** in the modal.
+
+### Server Owner Confirmation
+
+To prevent unauthorized server additions:
+
+1. The target server owner receives a direct message from the bot titled “Server Link Request”.
+2. The owner clicks **“Link”** or **“Decline”**.
+3. Until confirmed, the server is listed as “Pending”; once approved, it is fully synchronized.
+
+Remove servers from the network via **“Remove Server”**. Up to **25 servers** can be connected.
+
+***
+
+## Who Can Execute Global Bans
+
+The command works **strictly on the main hub server**. On connected client servers, it is blocked for all users — including their respective server owners: global bans are managed centrally.
+
+On the primary hub server, permissions are as follows:
+
+- **Hub Server Owner** — always authorized;
+- **Administrators** — until custom roles are assigned;
+- Users with roles in **“Allowed Roles”** — once configured, they gain exclusive access, overriding Discord administrator permissions without that role.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Global ban is a serious disciplinary measure. Ensure the violation warrants total exclusion across all project servers before issuing: lifting a global ban requires a full network-wide unban procedure.
+</Callout>

@@ -1,0 +1,134 @@
+---
+title: "Aggiornamento V1.0.2"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/server-rules-bots-update.png"
+  alt="Aggiornamento V1.0.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Aggiornamento V1.0.2 — 24.08.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  Aggiornamento su larga scala del bot <b>«Supervisione dei Dipartimenti»</b> e della documentazione del progetto: introdotto un nuovo sistema di tracciamento turni, congedi e attività ridotta, pannelli interattivi unificati di gestione e disciplina, configurazione totale da Discord e supporto bilingue. È stata aggiunta una sezione di guide per tutti i moduli del bot e un manuale di migrazione da ClueControl M.
+</div>
+
+***
+
+<AccordionGroup>
+  <Accordion title="Aggiornamento del Bot «Supervisione dei Dipartimenti»">
+    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Aggiornamento di Supervisione dei Dipartimenti</strong></h3></div>
+
+    ### Sistema di tracciamento turni — `/shift`
+    * **Pannello personale:** il comando `/shift manage` apre una scheda interattiva con stato in tempo reale e pulsanti **Inizia**, **Pausa**, **Termina**.
+    * **Tipi di turno:** selezione del tipo di turno all'avvio (con ruoli di servizio dedicati, canali di log e prefissi).
+    * **Conteggio delle pause:** il tempo trascorso in pausa viene automaticamente escluso dal totale delle ore lavorate.
+    * **Statistiche e quote:** `/shift time` mostra ore accumulate, durata media e stato di completamento della quota in base al ruolo.
+    * **Classifiche e report:** `/shift leaderboard` con medaglie top-3 ed esportazione in file di testo, `/shift history @utente`, `/shift activity` per qualsiasi periodo con indicatori di congedo e attività ridotta.
+    * **Amministrazione:** `/shift admin @utente` — avvio/termine forzato dei turni, regolazione manuale del tempo («1h 30m»), annullamento e pulizia.
+    * **Limiti di personale:** numero massimo configurabile di membri in turno contemporaneamente.
+
+    ---
+
+    ### Congedi e Attività Ridotta
+    * **Invio richieste:** comandi `/loa submit` e `/ra submit` con durata selezionabile (da 1 a 90 giorni) e motivazione.
+    * **Revisione su Discord:** le schede con lo storico del membro arrivano nel canale di gestione con pulsanti **Approva** / **Rifiuta** (con motivazione obbligatoria).
+    * **Automazione ruoli:** i ruoli di congedo e attività ridotta vengono assegnati all'approvazione e rimossi automaticamente ogni 5 minuti alla scadenza; notifiche inviate tramite MD.
+    * **Integrazione con i turni:** avvio del servizio bloccato durante i congedi; quote orarie dimezzate al 50% durante l'attività ridotta.
+    * **Gestione:** comandi `/loa admin` e `/ra admin` per assegnazione manuale, estensione e chiusura anticipata.
+
+    ---
+
+    ### Consenso ai messaggi diretti — `/consent`
+    * Interruttore per ricevere messaggi diretti dal bot (riepiloghi turni, notifiche disciplinari e ordini di servizio).
+
+    ---
+
+    ### Pannello unificato di gestione personale — `/manage`
+    * Profilo interattivo `/manage @membro` che sostituisce i comandi separati:
+      * **Assunzione** in un dipartimento con selezione di grado e prefisso;
+      * **Promozione / Retrocessione** con registrazione dei motivi;
+      * **Trasferimento** tra divisioni o fazioni;
+      * **Licenziamento** (dimissioni standard o blacklist con durata personalizzata / permanente);
+      * **Gestione prefissi** e revoca anticipata della blacklist.
+    * Generazione automatica di numeri d'ordine ufficiali (№00000001), pubblicazione nei canali di log e notifica via MD.
+
+    ---
+
+    ### Sanzioni e sospensioni — `/punishment`
+    * Pannello `/punishment @membro` per il controllo disciplinare.
+    * **Livelli di escalation:** tipi di violazione configurabili collegati a ruoli di livello (1, 2, 3...).
+    * **Automazione:** regole del tipo «3 avvertimenti → 1 richiamo per 1 mese».
+    * **Scadenza automatica:** rimozione automatica dei ruoli di sanzione allo scadere del periodo.
+    * **Sospensioni:** assegnazione del ruolo di sospensione, invio del modulo di memoria difensiva via MD (48 ore per rispondere, testo + fino a 5 file) e pubblicazione nel canale dedicato.
+
+    ---
+
+    ### Configurazione completa da Discord — `/configure`
+    * Pannello interattivo di configurazione articolato in 13 sezioni:
+      1. **Lingua** — russo o inglese per l'intero server;
+      2. **Permessi di Accesso** — ruoli di configurazione e ruoli di gestione;
+      3. **Sistema di Gradi** — dipartimenti, gradi, tipi di dimissione, blacklist, ruoli vietati;
+      4. **Sanzioni** — tipi, livelli, automazione e sospensioni;
+      5. **Canali di Log** — fino a 25 canali di audit e spostamento canali;
+      6. **Google Forms** — integrazione e instradamento moduli nei canali;
+      7. **Ban Globale** — rete di server partner;
+      8. **Annunci** — canali dei dipartimenti per comunicazioni di rete;
+      9. **Modcall** — canale di smistamento, ruoli moderatori e ruolo di riserva;
+      10. **Ticket** — categorie, ruoli di supporto, costruttore di pannelli;
+      11. **Turni** — tipi, prefissi, quote, limiti;
+      12. **Congedi** — canale e ruoli di congedo;
+      13. **Attività Ridotta** — canale e ruoli di attività ridotta.
+
+    ---
+
+    ### Pulizia dati — `/server manage`
+    * Pannello sicuro di ripristino: storico turni, congedi, attività ridotta, gradi e dipartimenti.
+    * Protetto tramite digitazione manuale della frase di conferma `I AM READY TO DELETE DATA` (o `Я ГОТОВ УДАЛИТЬ ДАННЫЕ`) e chiusura corretta dei turni attivi.
+
+    ---
+
+    ### Chiamate di moderazione di emergenza — Modcall
+    * Comando `/mod motivo` via Discord e `:mod motivo` direttamente nella chat di gioco ER:LC.
+    * Notifiche sul server centrale di moderazione, pulsante di presa in carico e teletrasporto automatico del moderatore verso il giocatore su Roblox.
+    * Pannello di amministrazione `/modcall` con blacklist Discord/Roblox e blocco globale delle chiamate.
+
+    ---
+
+    ### Ban Globale e Annunci
+    * **Ban Globale:** `/global-ban` e `/global-unban` su tutti i server collegati contemporaneamente.
+    * **Annunci di massa:** `/announcement for departments` con supporto a URL immagini e menzioni di ruolo.
+    * **Supporto bilingue:** localizzazione completa in russo e inglese.
+  </Accordion>
+
+  <Accordion title="Nuove Guide nella Documentazione">
+    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Sezione Documentazione «Bot»</strong></h3></div>
+
+    È stata integrata una nuova sezione completa **«Bot»** all'interno della scheda **Guide**, comprendente un manuale di migrazione e 15 guide dettagliate per il bot «Supervisione dei Dipartimenti»:
+
+    * [**Guida di migrazione da ClueControl M**](/it/guides/bots/migration-from-cluecontrol-m) — trasferimento passo-passo di turni, congedi e ruoli con tabelle di corrispondenza e lista di controllo.
+
+    #### Sottosezione «Supervisione dei Dipartimenti»:
+    * [**Configurazione del Bot**](/it/guides/bots/department-oversight/configure) — panoramica dell'architettura, ordine di configurazione e comando `/configure`.
+    * [**Selezione della Lingua**](/it/guides/bots/department-oversight/language) — cambio della lingua di sistema del server (RU/EN).
+    * [**Permessi di Accesso**](/it/guides/bots/department-oversight/permissions) — configurazione di ruoli di configurazione, ruoli autorizzati e prefisso comandi.
+    * [**Sistema di Gradi**](/it/guides/bots/department-oversight/ranks) — creazione divisioni, gradi con assegnazione automatica ruoli, tipi di dimissione e blacklist.
+    * [**Sanzioni e Sospensioni**](/it/guides/bots/department-oversight/punishments) — violazioni, livelli di escalation, automazione e memorie difensive.
+    * [**Canali di Log**](/it/guides/bots/department-oversight/logs) — registri di audit, tracciamento spostamento canali e directory dei log.
+    * [**Turni**](/it/guides/bots/department-oversight/shifts) — impostazioni base, tipi di turno, quote di ruolo e formati di durata.
+    * [**Congedi**](/it/guides/bots/department-oversight/loa) — canale di revisione, assegnazione ruoli e rimozione automatica.
+    * [**Attività Ridotta**](/it/guides/bots/department-oversight/ra) — quota dimezzata al 50% ed elaborazione richieste.
+    * [**Ticket**](/it/guides/bots/department-oversight/tickets) — ruoli di supporto, categorie, trascrizioni e costruttore visuale di pannelli con 6 tipi di blocco.
+    * [**Google Forms**](/it/guides/bots/department-oversight/google-forms) — revisione risposte Google Forms direttamente su Discord.
+    * [**Annunci**](/it/guides/bots/department-oversight/announcements) — configurazione canali di dipartimento e comunicazioni globali.
+    * [**Modcall**](/it/guides/bots/department-oversight/modcalls) — smistamento emergenze, teletrasporto in gioco e prevenzione abusi.
+    * [**Ban Globale**](/it/guides/bots/department-oversight/global-ban) — connessione dei server di rete e centralizzazione dei ban.
+    * [**Pulizia Dati**](/it/guides/bots/department-oversight/server-manage) — ripristino sicuro di turni, ordini e dati del personale tramite `/server manage`.
+  </Accordion>
+</AccordionGroup>

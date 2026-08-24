@@ -1,0 +1,46 @@
+---
+title: "Google Forms"
+icon: "square-poll-vertical"
+---
+<div id="no-header-here" />
+
+# Configurazione dell'Integrazione con Google Forms
+
+## Che cos'è?
+
+Collega Google Forms a Discord. Quando un utente invia una candidatura o una risposta (es. reclutamento in un reparto), il bot pubblica una scheda nel canale di revisione per permettere alla direzione di decidere tramite pulsanti:
+
+- **«Approva» / «Rifiuta»** — con inserimento obbligatorio della motivazione;
+- Notifica **immediata per MD** inviata al candidato con l'esito;
+- Archiviazione della delibera nel canale dei risultati.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Google Forms»**.
+2. Abilitate il modulo: menu di stato → **«Abilitato»**.
+3. Fate clic su **«Configura Moduli»** → **«Aggiungi»** e compilate i campi:
+   - **«URL del modulo»** — link completo al vostro Google Form (obbligatorio);
+   - **«Nome del modulo»** — nome identificativo, es. `Candidatura MVD`;
+   - **«Canale risposte»** — canale di destinazione delle schede;
+   - **«ID thread»** — opzionale per instradare le risposte in un thread;
+   - **«Canale risultati»** — canale di log per le decisioni finali.
+
+È possibile associare fino a **50 moduli**, suddivisi in pagine da 8 elementi.
+
+### Modifica ed eliminazione
+
+- **«Modifica»** — selezionate il modulo e aggiornate i campi richiesti.
+- **«Elimina»** — rimuovete l'integrazione del modulo selezionato.
+
+***
+
+## Flusso Operativo dopo la Configurazione
+
+1. L'utente compila il Google Form — nel canale delle risposte compare la scheda con i dati del candidato e tutte le domande con relative risposte.
+2. Stato iniziale: **«In Valutazione»**.
+3. Un responsabile preme «Approva» o «Rifiuta», scrive la motivazione (almeno 10 caratteri) e conferma.
+4. La scheda si aggiorna («Approvato» / «Rifiutato»), il candidato riceve un messaggio privato e la risoluzione viene registrata nel canale risultati.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  Affinché le risposte confluiscano in Discord, il modulo deve essere preventivamente collegato dall'amministrazione tecnica del progetto. Tutte le altre operazioni si gestiscono direttamente in Discord.
+</Callout>

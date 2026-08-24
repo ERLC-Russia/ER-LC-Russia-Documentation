@@ -1,0 +1,113 @@
+---
+title: "Migration from ClueControl M"
+icon: "right-left"
+---
+<div id="no-header-here" />
+
+# Migration from ClueControl M
+
+If your server previously ran on the ClueControl M bot, this guide will help you transfer your shift and leave management module settings to Department Oversight. Data is transferred manually and takes about 10–15 minutes.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Shift history and statistics are <b>not migrated automatically</b>. Old data remains in the ClueControl M database — time tracking in the new bot will start from scratch.
+</Callout>
+
+## Where Things Are Located
+
+In ClueControl M, settings are accessed via the `/config` command and are restricted to Management. In Department Oversight, everything is contained in a single `/configure` menu — before initial configuration it is accessible to server administrators, and afterwards only to [“Config Roles”](/en/guides/bots/department-oversight/permissions).
+
+| Section in ClueControl M (`/config`) | Page in `/configure` |
+| --- | --- |
+| Basic Settings | [Permission Settings](/en/guides/bots/department-oversight/permissions) |
+| Shift Management | [Shift Settings](/en/guides/bots/department-oversight/shifts) |
+| LOA Requests | [Leave Settings](/en/guides/bots/department-oversight/loa) |
+| RA Requests | [Leave Settings](/en/guides/bots/department-oversight/loa) + [Reduced Activity](/en/guides/bots/department-oversight/ra) |
+
+Transfer your staff roles from **Basic Settings** (Staff / Admin / Management) to the [“Access Permissions”](/en/guides/bots/department-oversight/permissions) page — these determine who can approve leave requests and use admin commands.
+
+***
+
+## Shifts
+
+Page: [“Shift Settings”](/en/guides/bots/department-oversight/shifts):
+
+| In ClueControl M | In Department Oversight |
+| --- | --- |
+| Toggle “Shift Management” | Module Status: “Enabled” |
+| Shift Channel | Shift Log Channel |
+| On-Duty Role | On-Duty Role |
+| More Options → Break Roles | Break Role |
+| More Options → Maximum Staff Online | Staff Limit (`0` — unlimited) |
+| More Options → Nickname Prefix | Nickname Prefix |
+| More Options → Quota | Shift Quota |
+| Shift Types | Shift Types |
+| Role Quotas | Role Quotas |
+
+<Callout icon="lightbulb" color="#22C55E">
+  The quota format is different: ClueControl M accepts `1h30m`, while the new bot accepts `60m`, `2h`, `1d`, `1mo`. Recalculate your values before entering.
+</Callout>
+
+Shift types are recreated one-to-one: name, type log channel, duty roles, break role, nickname prefix, and access roles. The same applies to role quotas — recreate them via “Role Quotas”.
+
+## Leaves and Reduced Activity
+
+Page: [“Leave Settings”](/en/guides/bots/department-oversight/loa):
+
+| In ClueControl M | In Department Oversight |
+| --- | --- |
+| Toggle “LOA Requests” | Leave Request Acceptance: “Enabled” |
+| LOA Channel | Leave Channel |
+| LOA Role | Leave Roles |
+| RA Role | RA Roles ([Reduced Activity Page](/en/guides/bots/department-oversight/ra)) |
+
+What has changed compared to ClueControl M:
+
+- **Separate toggles** — accepting leave and reduced activity requests is enabled independently rather than with a single switch;
+- **Dedicated RA channel** — reduced activity requests no longer drop into the general leave channel;
+- **Fixed durations** — employees select from a list: 1, 3, 7, 14, 21, 30, 60, or 90 days (instead of freeform `s/m/h/d`);
+- **Rejection reason is mandatory** — it is sent directly to the employee's DMs;
+- **RA credit** — during reduced activity, 50% of the standard time quota applies;
+- Approvals are available to management-level roles configured in [“Access Permissions”](/en/guides/bots/department-oversight/permissions) or Discord administrators.
+
+## Command Mapping
+
+| ClueControl M | Department Oversight |
+| --- | --- |
+| `/duty manage` | `/shift manage` |
+| `/duty time` | `/shift time` |
+| `/duty admin` | `/shift admin` |
+| `/duty active` | `/shift active` |
+| `/duty leaderboard` | `/shift leaderboard` |
+| `/duty history` | `/shift history` |
+| `/activity show` | `/shift activity` |
+| `/loa request` | `/loa submit` |
+| `/loa view` | `/loa view` |
+| `/loa active` | `/loa list` |
+| `/loa admin` | `/loa admin` |
+| `/ra …` | `/ra …` |
+
+***
+
+## Disabling Modules in ClueControl M
+
+After setting up Department Oversight, disable the same modules in the old bot so they do not run concurrently. In ClueControl M, open `/config` and switch the selectors to **Disabled** on two pages:
+
+- **Shift Management** page — selector “Shift Management” → Disabled;
+- **LOA Requests** page — selector “LOA Requests” → Disabled.
+
+<Callout icon="lightbulb" color="#22C55E">
+  In ClueControl M, the single “LOA Requests” toggle manages both leaves and reduced activity — no separate switch is needed for RA.
+</Callout>
+
+While a module is disabled, shift and request commands respond with a “Not Enabled” message — staff will stop using them and fully switch to the new bot.
+
+## Migration Checklist
+
+1. Grant access to your leadership team: [“Access Permissions”](/en/guides/bots/department-oversight/permissions) → “Config Roles” and management roles.
+2. [Enable shifts](/en/guides/bots/department-oversight/shifts), specify the log channel and on-duty role.
+3. In “Additional Options”, set the break role, nickname prefix, staff limit, and shift quota (in the new format).
+4. Recreate [shift types](/en/guides/bots/department-oversight/shifts) and role quotas.
+5. Configure [leaves](/en/guides/bots/department-oversight/loa): enable request intake, specify the channel and leave roles.
+6. Configure [reduced activity](/en/guides/bots/department-oversight/ra): dedicated channel and roles.
+7. Verify that staff can start shifts via `/shift manage` and that leave requests arrive in the review channel.
+8. [Disable modules](#disabling-modules-in-cluecontrol-m) in ClueControl M to prevent them from running across both bots simultaneously.

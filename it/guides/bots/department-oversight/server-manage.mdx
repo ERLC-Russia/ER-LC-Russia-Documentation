@@ -1,0 +1,69 @@
+---
+title: "Pulizia Dati"
+icon: "broom"
+---
+<div id="no-header-here" />
+
+# Pulizia dei Dati del Server
+
+## Che cos'è?
+
+`/server manage` è un pannello di servizio per il ripristino completo del server. Consente di cancellare in modo sicuro i dati accumulati dal bot: storico dei turni, ordini di servizio, congedi e associazioni di grado.
+
+Casi di utilizzo tipici:
+
+- avvio di una nuova stagione o ristrutturazione profonda della fazione;
+- rimozione dei dati di un membro non più presente;
+- pulizia di record obsoleti che alterano statistiche e classifiche.
+
+## Come accedere
+
+```
+/server manage
+```
+
+Accessibile solo ai membri con ruoli definiti in [«Permessi di Accesso»](/it/guides/bots/department-oversight/permissions) («Ruoli di Configurazione»). Il pannello è articolato in cinque pagine.
+
+***
+
+## Pagine del Pannello
+
+### Introduzione
+Panoramica delle funzioni e avvertenze sulle conseguenze della rimozione dei dati.
+
+### Congedi e Attività Ridotta
+- cancellare le richieste in attesa di valutazione;
+- eliminare l'intero storico dei congedi;
+- eliminare l'intero storico dell'attività ridotta.
+
+### Dipartimenti
+- ripristinare **tutti** i dati dei dipartimenti: prefissi e parametri di visualizzazione;
+- eliminare i dati relativi a un singolo utente specifico.
+
+### Gradi
+- cancellare tutti gli ordini di promozione, retrocessione, trasferimento e assunzione;
+- disassociare i gradi da tutti gli utenti del server;
+- oppure eseguire il ripristino puntuale per un utente selezionato.
+
+### Turni
+- eliminare turni tutti / completati / attivi;
+- eliminare turni appartenenti a un tipo di turno specifico.
+
+<Callout icon="circle-check" color="#22C55E">
+  I turni attivi vengono terminati correttamente: il bot rimuove i ruoli di servizio e pausa, ripristina il nickname originale e invia un riepilogo per MD. Nessun membro rimane bloccato nello stato di turno attivo.
+</Callout>
+
+***
+
+## Misure di Sicurezza contro le Cancellazioni Accidentali
+
+Il pannello include diversi livelli di protezione:
+
+1. Le azioni massive sono evidenziate da pulsanti di pericolo in colore rosso.
+2. Prima dell'esecuzione è obbligatorio **digitare manualmente la frase di conferma**: `I AM READY TO DELETE DATA` (o `Я ГОТОВ УДАЛИТЬ ДАННЫЕ`).
+3. La sessione scade dopo 15 minuti e risponde solo all'amministratore che ha avviato il comando.
+4. Ogni operazione viene registrata nei [canali di log di audit](/it/guides/bots/department-oversight/logs).
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  I dati eliminati non possono essere recuperati. In caso di dubbi, eseguite prima un test su un singolo utente prima di azzerare l'intero database.
+</Callout>

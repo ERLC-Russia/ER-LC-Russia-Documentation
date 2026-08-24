@@ -1,0 +1,113 @@
+---
+title: "Міграція з ClueControl M"
+icon: "right-left"
+---
+<div id="no-header-here" />
+
+# Міграція з ClueControl M
+
+Якщо ваш сервер раніше працював на боті ClueControl M, ця інструкція допоможе перенести налаштування модулів смен і відпусток у бота «Управління Департаментами». Перенесення виконується вручну і займає приблизно 10–15 хвилин.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Історія смен та статистика <b>не переносяться автоматично</b>. Старі дані залишаються в базі ClueControl M — у новому боті облік часу почнеться з нуля.
+</Callout>
+
+## Де що знаходиться
+
+У ClueControl M налаштування відкриваються командою `/config` і доступні лише ролям рівня Management. В «Управлінні Департаментами» все зібрано в єдиній панелі `/configure` — до першого налаштування доступ є в адміністраторів сервера, а після нього — лише в [«Ролей Налаштувань»](/uk/guides/bots/department-oversight/permissions).
+
+| Розділ у ClueControl M (`/config`) | Сторінка в `/configure` |
+| --- | --- |
+| Basic Settings | [Права Доступу](/uk/guides/bots/department-oversight/permissions) |
+| Shift Management | [Система Змін](/uk/guides/bots/department-oversight/shifts) |
+| LOA Requests | [Відпустка](/uk/guides/bots/department-oversight/loa) |
+| RA Requests | [Відпустка](/uk/guides/bots/department-oversight/loa) + [Знижена Активність](/uk/guides/bots/department-oversight/ra) |
+
+Перенесіть ролі персоналу з **Basic Settings** (Staff / Admin / Management) на сторінку [«Права Доступу»](/uk/guides/bots/department-oversight/permissions) — вони визначають, хто зможе схвалювати заявки та використовувати команди керівництва.
+
+***
+
+## Зміни
+
+Сторінка: [«Система Змін»](/uk/guides/bots/department-oversight/shifts):
+
+| У ClueControl M | В «Управлінні Департаментами» |
+| --- | --- |
+| Перемикач «Shift Management» | Статус модуля: «Увімкнено» |
+| Shift Channel | Канал логів змін |
+| On-Duty Role | Роль на зміні |
+| More Options → Break Roles | Роль перерви |
+| More Options → Maximum Staff Online | Ліміт персоналу (`0` — без обмежень) |
+| More Options → Nickname Prefix | Префікс у нікнеймі |
+| More Options → Quota | Норма зміни |
+| Shift Types | Типи змін |
+| Role Quotas | Норми для ролей |
+
+<Callout icon="lightbulb" color="#22C55E">
+  Формат норми зміни відрізняється: у ClueControl M вказується `1h30m`, а в новому боті — `60m`, `2h`, `1d`, `1mo`. Перерахуйте значення перед введенням.
+</Callout>
+
+Типи змін створюються один в один: назва, канал логів типу, ролі чергування, роль перерви, префікс у нікнеймі та ролі доступу. Те саме стосується норм для ролей — створіть їх заново через «Норми для ролей».
+
+## Відпустка та Знижена Активність
+
+Сторінка: [«Відпустка»](/uk/guides/bots/department-oversight/loa):
+
+| У ClueControl M | В «Управлінні Департаментами» |
+| --- | --- |
+| Перемикач «LOA Requests» | Прийом заявок: «Увімкнено» |
+| LOA Channel | Канал відпусток |
+| LOA Role | Ролі відпустки |
+| RA Role | Ролі ПА ([Сторінка ПА](/uk/guides/bots/department-oversight/ra)) |
+
+Що змінилося порівняно з ClueControl M:
+
+- **Окремі перемикачі** — прийом заявок на відпустку та знижену активність вмикається незалежно;
+- **Окремий канал для зниженої активності** — заявки більше не змішуються з відпустками;
+- **Фіксовані терміни** — співробітник обирає зі списку: 1, 3, 7, 14, 21, 30, 60 або 90 днів;
+- **Причина відхилення є обов'язковою** — надсилається співробітнику в ПП;
+- **Залік зниженої активності** — під час статусу зниженої активності діє 50% від норми часу;
+- Схвалення доступне ролям керівництва з розділу [«Права Доступу»](/uk/guides/bots/department-oversight/permissions) або адміністраторам Discord.
+
+## Відповідність команд
+
+| ClueControl M | Управління Департаментами |
+| --- | --- |
+| `/duty manage` | `/shift manage` |
+| `/duty time` | `/shift time` |
+| `/duty admin` | `/shift admin` |
+| `/duty active` | `/shift active` |
+| `/duty leaderboard` | `/shift leaderboard` |
+| `/duty history` | `/shift history` |
+| `/activity show` | `/shift activity` |
+| `/loa request` | `/loa submit` |
+| `/loa view` | `/loa view` |
+| `/loa active` | `/loa list` |
+| `/loa admin` | `/loa admin` |
+| `/ra …` | `/ra …` |
+
+***
+
+## Вимкнення модулів у ClueControl M
+
+Після налаштування «Управління Департаментами» обов'язково вимкніть ті самі модулі в старому боті. У ClueControl M відкрийте `/config` і на двох сторінках переведіть перемикачі в положення **Disabled**:
+
+- Сторінка **Shift Management** — перемикач «Shift Management» → Disabled;
+- Сторінка **LOA Requests** — перемикач «LOA Requests» → Disabled.
+
+<Callout icon="lightbulb" color="#22C55E">
+  У ClueControl M перемикач «LOA Requests» відповідає одночасно і за відпустки, і за знижену активність — окремо вимикати ПА не потрібно.
+</Callout>
+
+Коли модуль вимкнено, команди смен і заявок відповідають «Not Enabled» — співробітники перестануть ними користуватися і перейдуть на нового бота.
+
+## Чек-лист міграції
+
+1. Видайте доступ керівництву: [«Права Доступу»](/uk/guides/bots/department-oversight/permissions) → «Ролі Налаштувань» та ролі управління.
+2. [Увімкніть зміни](/uk/guides/bots/department-oversight/shifts), вкажіть канал логів і роль на зміні.
+3. У «Додаткових параметрах» задайте роль перерви, префікс у нікнеймі, ліміт персоналу та норму зміни (в новому форматі).
+4. Створіть заново [типи змін](/uk/guides/bots/department-oversight/shifts) та норми для ролей.
+5. Налаштуйте [відпустки](/uk/guides/bots/department-oversight/loa): увімкніть прийом заявок, вкажіть канал і ролі відпустки.
+6. Налаштуйте [знижену активність](/uk/guides/bots/department-oversight/ra): окремий канал і ролі.
+7. Перевірте, що співробітники можуть виходити на зміну через `/shift manage`, а заявки на відпустку надходять у канал розгляду.
+8. [Вимкніть модулі](#вимкнення-модулів-у-cluecontrol-m) у ClueControl M, щоб вони не дублювалися в обох ботах.

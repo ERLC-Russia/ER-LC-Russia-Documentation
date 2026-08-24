@@ -1,0 +1,76 @@
+---
+title: "Tickets"
+icon: "ticket"
+---
+<div id="no-header-here" />
+
+# Configuración del Sistema de Tickets
+
+## ¿Qué es esto?
+
+Plataforma de soporte y atención: los usuarios abren canales de atención privados pulsando botones en paneles interactivos, y el personal asignado gestiona las consultas. Idóneo para denuncias, dudas al liderazgo, reclutamiento y asuntos confidenciales.
+
+Características del módulo:
+
+- **Roles de Soporte** — quiénes tienen acceso y capacidad de respuesta en los tickets;
+- **Transcripciones** — al cerrar un ticket, el bot exporta el chat (en formato HTML o vídeo) a canales de registro;
+- **Constructor Visual de Paneles** — creación de paneles modulares en Discord sin programación.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Tickets»**.
+2. Habilite el módulo: selector de estado → **«Habilitado»**.
+3. Haga clic en **«Ir a la Configuración»**.
+
+***
+
+## Roles y Accesos
+
+La página **«Permisos y Accesos de Tickets»** ofrece cuatro selectores de roles:
+
+- **«Roles de Configuración de Tickets»** — autorizados para alterar ajustes de tickets;
+- **«Roles de Creación de Tickets»** — usuarios autorizados para abrir tickets;
+- **«Roles de Soporte»** — personal encargado de atender consultas;
+- **«Roles de Reclamo»** — miembros facultados para asignarse tickets (claim).
+
+## Canales y Categorías
+
+Página **«Canales y Categorías de Tickets»**:
+
+- **Canal de transcripciones** — destino de las exportaciones HTML al cerrar tickets;
+- **Canal de transcripciones en vídeo** — para registros visuales en vídeo;
+- **Categoría de tickets** — categoría de Discord donde se alojarán los canales abiertos.
+
+## Paneles de Tickets
+
+Página **«Paneles de Tickets»**:
+
+- **«Lista de Paneles»** — creación de paneles (nombre + categoría de Discord), hasta 25 paneles;
+- cada panel admite roles de soporte, pings y roles post-reclamo individuales;
+- **«Límite de Tickets»** — número máximo de tickets simultáneos por usuario.
+
+### Constructor Visual de Paneles
+
+El botón **«Configurar Panel»** abre el editor visual de diseño (hasta 25 bloques):
+
+| Elemento | Descripción |
+| --- | --- |
+| **Texto** | Bloque de texto estándar |
+| **Separador** | Línea horizontal divisoria |
+| **Sección con imagen** | Texto acompañado de miniatura o botón |
+| **Galería multimedia** | Cuadrícula de previsualización de imágenes |
+| **Fila de acciones** | Hasta 5 botones o un menú desplegable de hasta 25 opciones |
+| **Contenedor** | Bloque con borde de color para agrupar elementos hijos |
+
+Acciones configurables en botones y menús:
+
+- **«Abrir formulario (modal)»** — cuestionario previo a la creación del canal (hasta 5 campos);
+- **«Crear ticket directamente»** — apertura en un solo clic;
+- **Navegar a subpanel** — navegación jerárquica multinivel;
+- **Enlace web externo**.
+
+Permite además personalizar avisos de apertura/cierre, colores de embebido, banners y **previsualización en vivo**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consejo:** Configure un panel principal con menú selector de motivos («Consultas», «Denuncias», «Postulaciones») enlazando un formulario dedicado a cada opción.
+</Callout>

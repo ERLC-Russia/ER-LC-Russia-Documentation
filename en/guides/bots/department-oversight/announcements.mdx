@@ -1,0 +1,47 @@
+---
+title: "Announcements"
+icon: "bullhorn"
+---
+<div id="no-header-here" />
+
+# Setting Up Announcements
+
+## What is This?
+
+A mass-broadcast system across community servers. Instead of manually copying announcements across dozens of channels, leadership sends a global broadcast with a single command:
+
+```
+/announcement for departments
+```
+
+The bot broadcasts the post to all linked department channels (plus optional custom channel IDs), optionally **pinging designated roles**, and delivers a dispatch delivery report to the logs channel.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Announcements”** page.
+2. Enable the module: set status menu to **“Enabled”**.
+3. In **“Allowed Roles”**, choose who can send global announcements (up to 25 roles).
+4. Select the **announcements log channel** to receive dispatch delivery reports.
+5. Click **“Configure Channels”** → **“Add Channel”** and complete the modal:
+   - **“Name”** — department name, e.g. `MVD`;
+   - **“Guild ID”** — server ID where the channel resides;
+   - **“Channel ID”** — text or announcement channel ID for publications;
+   - **“Comma-Separated Role IDs”** — optional role IDs eligible for pings in “All” broadcasts.
+
+You can connect up to **25 departments**.
+
+### Server Owner Confirmation
+
+If a channel is located on an external server, its owner will receive a bot DM with **“Confirm” / “Decline”** action buttons. Until approved, the channel entry is marked as “Pending”. Your own server channels are linked immediately.
+
+***
+
+## How to Send an Announcement
+
+1. Run `/announcement for departments`.
+2. Choose a distribution mode:
+   - **“For all”** — broadcast to all default department channels (+ optional role ping);
+   - manual input — comma-separated list of channel IDs.
+3. Fill in the modal: **announcement body** (up to 1700 characters) and an optional **image URL**.
+4. The message publishes across all selected channels signed by the author as a global broadcast.
+5. A delivery log (successful destinations, failed delivery errors) is posted to the logs channel.

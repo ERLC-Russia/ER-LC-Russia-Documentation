@@ -1,0 +1,76 @@
+---
+title: "Tickets"
+icon: "ticket"
+---
+<div id="no-header-here" />
+
+# Setting Up the Ticket System
+
+## What is This?
+
+A user support system: users create private ticket channels by clicking buttons on interactive panels, and staff handle inquiries. Ideal for complaints, leadership questions, recruitment, and private correspondence.
+
+Tickets feature:
+
+- **Support Roles** — users who can see and respond within tickets;
+- **Transcripts** — upon closure, the bot saves chat logs (HTML export or video) into designated log channels;
+- **Visual Panel Builder** — build modular ticket panels with zero code directly in Discord.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Ticket Settings”** page.
+2. Enable the module: set status menu to **“Enabled”**.
+3. Click **“Go to Setup”**.
+
+***
+
+## Roles and Access
+
+The **“Ticket Permissions and Access Settings”** page provides four role selector menus:
+
+- **“Ticket Config Roles”** — who can modify ticket settings;
+- **“Ticket Creation Roles”** — who can open tickets;
+- **“Staff Roles”** — who provides support and handles tickets;
+- **“Claim Roles”** — who can claim tickets into active handling.
+
+## Channels and Categories
+
+The **“Channel and Category Settings”** page:
+
+- **Transcript Log Channel** — destination for HTML export files upon ticket close;
+- **Video Transcript Channel** — destination for video transcript recordings;
+- **Ticket Category** — Discord category where newly opened ticket channels will be created.
+
+## Ticket Panels
+
+The **“Ticket Panels”** page:
+
+- **“Configure Panel List”** — create panels (name + Discord category), up to 25 panels;
+- each panel supports customized parameters: support roles, post-claim roles, ping roles;
+- **“Configure Ticket Limit”** — limit concurrent open tickets per user.
+
+### Visual Panel Builder
+
+The **“Configure Panel”** button opens an interactive visual layout editor (up to 25 blocks). Available elements:
+
+| Element | Description |
+| --- | --- |
+| **Text** | Plain text message block |
+| **Divider** | Visual horizontal separator line |
+| **Image Section** | Text accompanied by a side thumbnail or button |
+| **Media Gallery** | Multi-image preview grid |
+| **Action Row** | Up to 5 buttons or a dropdown menu with up to 25 choices |
+| **Container** | Color-accented wrapper holding nested child blocks |
+
+Button and dropdown actions:
+
+- **“Open Form (Modal)”** — users complete a modal questionnaire before ticket creation (up to 5 fields: text input, role selector, user selector);
+- **“Create Ticket Directly”** — channel generates instantly;
+- **Navigate to Sub-Panel** — multi-step branching menus;
+- **External Link URL**.
+
+Additionally, customize open/close/DM messages, panel embed colors, banners, block reordering, and **live preview**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Tip:** Build a main panel with a category select menu (“General Inquiry”, “Complaint”, “Application”) and link a tailored form to each choice — ensuring incoming tickets contain all required information upfront.
+</Callout>

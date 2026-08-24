@@ -1,0 +1,89 @@
+---
+title: "Sanciones"
+icon: "gavel"
+---
+<div id="no-header-here" />
+
+# Configuración de Sanciones y Suspensiones
+
+## ¿Qué es esto?
+
+Módulo de disciplina interna. El liderazgo aplica sanciones mediante el comando `/punishment`, mientras el bot:
+
+- registra las sanciones vigentes de cada empleado;
+- **escala niveles automáticamente** — asignando roles más restrictivos al acumularse infracciones;
+- ejecuta **flujos de automatización**, como: «3 advertencias → retirar advertencias y aplicar 1 amonestación por 1 mes»;
+- **retira sanciones automáticamente tras vencer su plazo** y notifica al afectado.
+
+Las suspensiones constituyen un subrégimen específico: el empleado queda suspendido (se le asigna el rol de suspensión) y dispone de 48 horas para presentar un descargo explicativo.
+
+***
+
+## Tipos de Sanción
+
+1. Abra `/configure` → sección **«Sanciones»**.
+2. Haga clic en **«Configurar Sanciones»**.
+3. Haga clic en **«Agregar Tipo»** e introduzca el nombre — ej. `Advertencia`, `Amonestación`, `Falta Grave`.
+
+Capacidad de hasta **24 tipos**. Si un tipo no posee niveles configurados, puede aplicarse sin restricciones de cantidad.
+
+### Niveles de escalado
+
+Cada tipo de sanción admite hasta 25 niveles asociados a roles de Discord: a mayor acumulación de faltas, mayor será el nivel y la severidad del rol.
+
+1. Seleccione un tipo → haga clic en **«Editar Tipo»**.
+2. Haga clic en **«Agregar Nivel»** y asigne el rol correspondiente.
+3. Repita el proceso para niveles sucesivos.
+
+Ejemplo estándar para «Amonestación»: Nivel 1 → `Amonestación 1`, Nivel 2 → `Amonestación 2`, Nivel 3 → `Amonestación 3`.
+
+<Callout icon="circle-info" color="#3B82F6">
+  El total de niveles actúa como tope máximo: con 3 niveles configurados, no podrán coexistir más de 3 sanciones activas de dicho tipo sobre un mismo miembro.
+</Callout>
+
+### Modificación y supresión
+
+En el menú de edición dispone de opciones para **«Renombrar»**, **«Editar Nivel»** (cambiar rol) y **«Eliminar Nivel»**.
+
+***
+
+## Automatización
+
+Permite programar directivas: *«si un empleado acumula N faltas de cierto tipo — ejecutar una acción automática»*.
+
+1. En el menú de sanciones, haga clic en **«Ir a Automatizaciones»**.
+2. Haga clic en **«Agregar Regla»**.
+3. **«Configurar Condición»**: elija el tipo de falta y la cantidad activadora (ej. `Advertencia` × `3`).
+4. **«Agregar Acción»**:
+   - **«Retirar Sanción»** — reinicia el conteo (retira todas o N faltas del tipo);
+   - **«Aplicar Sanción»** — otorga automáticamente otra sanción por un plazo fijado (formato `14d`, `1mo`, etc.).
+5. Es posible encadenar múltiples acciones en una sola regla.
+6. Haga clic en el botón verde **«Guardar»**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  Se incluye un borrador predeterminado: condición «3 × Advertencia», acciones — retirar todas las advertencias + aplicar 1 Amonestación por 1 mes.
+</Callout>
+
+***
+
+## Suspensiones
+
+En la página **«Sanciones»**, haga clic en **«Configurar Suspensiones»** y defina:
+
+- **Rol de Suspensión** — rol asignado al empleado suspendido (suele restringir el acceso a canales de facción). Solo puede haber una suspensión activa por usuario.
+- **Canal de Suspensiones** — canal donde se reciben descargos y registros de suspensión.
+
+Mecánica operativa:
+
+1. El liderazgo suspende al empleado mediante `/punishment` → el empleado recibe el rol y un formulario de descargo por MD.
+2. El empleado cuenta con **48 horas** para responder: texto + hasta 5 archivos de prueba.
+3. La declaración se publica en el canal de suspensiones para evaluación de la directiva.
+4. Si se fijó una duración temporal, el rol se retira automáticamente al expirar el plazo.
+
+***
+
+## Comandos de Usuario
+
+- `/punishment @empleado` — panel de liderazgo: emitir sanción (tipo, motivo, pruebas, duración), suspender, consultar antecedentes o retirar registros manualmente.
+- Formato de duración: `30m`, `7d`, `1mo`, `1y`, `forever`.
+- Todas las operaciones quedan registradas y notificadas al afectado por MD.

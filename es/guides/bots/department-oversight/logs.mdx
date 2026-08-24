@@ -1,0 +1,45 @@
+---
+title: "Canales de Registro"
+icon: "newspaper"
+---
+<div id="no-header-here" />
+
+# Configuración de Canales de Registro
+
+## ¿Qué es esto?
+
+Los registros son historiales automatizados de todas las acciones administrativas y cambios de configuración. Garantizan total transparencia: cualquier líder puede auditar quién ejecutó qué acción y en qué fecha.
+
+En esta página se configuran dos modalidades de auditoría:
+
+1. **Registros del Servidor y Auditoría de Comandos** — almacena alteraciones de configuración mediante `/configure` y `/server manage`, acciones directivas en turnos (`/shift admin`) y más.
+2. **Registros de Movimiento de Canales** — historial de reordenamiento de canales y categorías en el servidor de Discord.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Canales de Registro»**.
+2. En el primer menú, elija **hasta 25 canales de texto** para registros del servidor y auditoría.
+3. En el segundo menú, seleccione los canales para movimientos de canales.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consejo:** Cree una categoría privada «Logs» con canales dedicados por temática y asigne 2–3 canales en cada menú para mantener registros organizados.
+</Callout>
+
+***
+
+## Canales de Registro Especializados
+
+Además de esta página, existen módulos con canales propios configurables en sus respectivas secciones:
+
+| Módulo | Evento registrado | Dónde se configura |
+| --- | --- | --- |
+| Turnos | Inicios y finales de turno | `/configure` → Configuración de Turnos |
+| Departamentos | Órdenes de ascenso y contratación | Página «Sistema de Rangos» |
+| Sanciones | Órdenes de descenso y sanción | Página «Sistema de Rangos» |
+| Anuncios | Informes de entrega de difusión | `/configure` → Anuncios |
+| Modcalls | Llamadas y respuestas de moderación | `/configure` → Modcalls |
+| Tickets | Transcripciones de tickets cerrados | Configuración de tickets |
+
+<Callout icon="circle-info" color="#3B82F6">
+  Cada entrada de registro se formatea en un mensaje embebido con marcas de tiempo, avatar del autor e indicativo visual de estado.
+</Callout>

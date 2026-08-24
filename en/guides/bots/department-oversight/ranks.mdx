@@ -1,0 +1,120 @@
+---
+title: "Rank System"
+icon: "ranking-star"
+---
+<div id="no-header-here" />
+
+# Setting Up the Rank and Department System
+
+## What is This?
+
+This is the core of the entire bot. It defines the organizational structure of your faction:
+
+- **Departments** — faction subdivisions (e.g. “Patrol Division”, “Traffic Enforcement”). Each department has its own Discord role.
+- **Ranks** — employee positions (e.g. “Cadet”, “Officer”, “Sergeant”). Each rank is linked to a role, along with a list of roles automatically granted when reaching that rank.
+
+When leadership hires, promotes, or dismisses an employee via `/manage`, the bot automatically grants or removes all required roles, updates their nickname prefix, and logs an official order while sending a DM notification to the employee.
+
+## How to Enable the System
+
+1. Run the `/configure` command.
+2. Open the **“Rank System Settings”** page.
+3. In the **“Rank System Status”** menu, select **“Enabled”**.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  While the system is disabled, all employee management commands (`/manage` and related) are unavailable.
+</Callout>
+
+### Department Mode
+
+In the **“Department Limit”** menu, choose:
+
+- **“Single Department”** — employees can only belong to one department at a time. Recommended for most factions.
+- **“Multiple Departments”** — employees can belong to several departments simultaneously.
+
+***
+
+## Setting Up Departments
+
+Click the **“Configure Departments”** button.
+
+### Add a Department
+
+1. Click **“Add”**.
+2. Fill out the modal window:
+   - **“Department Name”** — e.g. `Patrol Division`;
+   - **“Department Role”** — select the Discord role for the division (required);
+   - **“Promotions and Hirings Channel”** — channel where the bot publishes orders for promotions, hirings, and transfers (required);
+   - **“Demotions and Punishments Channel”** — channel for orders regarding demotions, punishments, and dismissals (required).
+
+You can create up to **50 departments**, displayed 8 per list page.
+
+### Edit and Delete
+
+- **“Edit”** — select a department from the list, then specify new values. Unchanged fields remain as they were.
+- **“Delete”** — select a department from the list and confirm deletion.
+
+***
+
+## Setting Up Ranks
+
+Click the **“Configure Ranks”** button — a list of “rank = granted roles” will open.
+
+### Add a Rank
+
+1. Click **“Add”**.
+2. In the modal window:
+   - **“Rank”** — select the Discord role representing the position (e.g. `Officer`);
+   - **“Granted Roles”** — select one or more roles (up to 25) that the bot will grant to the employee when this rank is assigned.
+
+Create ranks from bottom to top: junior positions first (“Cadet”), followed by senior ranks. You can create up to **50 ranks**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  In “Granted Roles”, it is convenient to include not only the rank role itself, but also associated permissions: channel access roles, general faction roles, etc. The bot assigns them automatically upon promotion.
+</Callout>
+
+***
+
+## Dismissal and Blacklist Types
+
+Click the **“Configure Dismissals”** button, then choose the desired option.
+
+### Dismissal Types
+
+- Click **“Configure Dismissal Types”** → **“Add Dismissal Type”**.
+- Enter a name (e.g. `Voluntary Resignation`) and select roles granted to the employee upon this type of dismissal.
+
+### Blacklist Types
+
+1. Click **“Configure Blacklist Types”** → **“Add Blacklist Type”**.
+2. Enter a name (e.g. `Faction Blacklist`) and select:
+   - **“Primary Blacklist Role”** — main role automatically removed when the blacklist duration expires;
+   - **“Additional Roles”** — other roles (e.g. global server blacklist).
+
+The blacklist duration is specified **at the moment of issuance** via `/manage`, not here. You can specify a duration (`3d`, `14 days`) or “forever”. When expired, the bot removes the roles automatically.
+
+Up to **25 types** per category.
+
+***
+
+## Global Settings (Shared Channels)
+
+The **“Global Settings”** button in the departments list opens settings applied faction-wide:
+
+- **Status** — enable or disable using shared channels instead of individual department channels.
+- **“Promotions and Hirings Channel”** — receives promotions, hirings, and transfers for all departments.
+- **“Demotions and Punishments Channel”** — receives demotions, punishments, dismissals, and suspensions.
+- **“Shared Faction Roles”** — roles (up to 25) granted to every employee upon hiring/promotion/transfer and removed upon dismissal (e.g. faction server member role).
+
+***
+
+## Prohibited Roles
+
+The **“Prohibited Roles”** page lets you designate up to 25 roles that the bot will **never grant** through any of its commands — even if included in rank grant lists. This protects administrative roles from accidental assignment.
+
+## Nickname Prefix Display
+
+The **“Prefix Display”** menu controls whether position prefixes are added to employee server nicknames (e.g. `[OW-001] Pancakeboyman_8`).
+
+- **Enabled** — the bot updates the employee's nickname whenever their rank changes.
+- **Disabled** — prefixes are saved internally but not applied to server nicknames.

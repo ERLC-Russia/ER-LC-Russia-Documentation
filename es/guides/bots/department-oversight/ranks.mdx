@@ -1,0 +1,120 @@
+---
+title: "Sistema de Rangos"
+icon: "ranking-star"
+---
+<div id="no-header-here" />
+
+# Configuración del Sistema de Rangos y Departamentos
+
+## ¿Qué es esto?
+
+Es el núcleo operativo del bot. Modela el organigrama de su facción:
+
+- **Departamentos** — subdivisiones (ej. «División de Patrulla», «Investigaciones»). Cada división posee su respectivo rol de Discord.
+- **Rangos** — puestos de trabajo (ej. «Cadete», «Oficial», «Sargento»). Cada rango se asocia a un rol y a una lista de roles otorgados automáticamente al ascender.
+
+Cuando el liderazgo contrata, asciende o despide a un empleado mediante `/manage`, el bot asigna o retira los roles pertinentes, actualiza el prefijo en el apodo, emite la orden oficial en los canales de registro y envía una notificación privada por MD.
+
+## Cómo habilitar el sistema
+
+1. Ejecute el comando `/configure`.
+2. Abra la página **«Sistema de Rangos»**.
+3. En el selector **«Estado del sistema de rangos»**, elija **«Habilitado»**.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  Mientras el sistema permanezca inactivo, todos los comandos de gestión de personal (`/manage`, etc.) estarán deshabilitados.
+</Callout>
+
+### Modo de departamentos
+
+En el menú **«Límite de departamentos»**, seleccione:
+
+- **«Departamento Único»** — los empleados solo pueden pertenecer a una división a la vez. Recomendado para la mayoría de facciones.
+- **«Múltiples Departamentos»** — los empleados pueden integrar varias divisiones simultáneamente.
+
+***
+
+## Configuración de Departamentos
+
+Haga clic en el botón **«Configurar Departamentos»**.
+
+### Agregar departamento
+
+1. Haga clic en **«Agregar»**.
+2. Complete los campos:
+   - **«Nombre del departamento»** — ej. `División de Patrulla`;
+   - **«Rol del departamento»** — seleccione el rol de Discord correspondiente (obligatorio);
+   - **«Canal de ascensos y contrataciones»** — donde se publican las altas, ascensos y traslados (obligatorio);
+   - **«Canal de degradaciones y sanciones»** — donde se publican descensos, sanciones y bajas (obligatorio).
+
+Puede registrar hasta **50 departamentos**, organizados en páginas de 8 elementos.
+
+### Edición y eliminación
+
+- **«Editar»** — elija el departamento y modifique los valores necesarios. Los campos en blanco conservarán su valor previo.
+- **«Eliminar»** — seleccione el departamento y confirme su supresión.
+
+***
+
+## Configuración de Rangos
+
+Haga clic en **«Configurar Rangos»** — se desplegará el listado de asociaciones «rango = roles otorgados».
+
+### Agregar rango
+
+1. Haga clic en **«Agregar»**.
+2. Especifique en el formulario:
+   - **«Rango»** — seleccione el rol de Discord que representa el cargo (ej. `Oficial`);
+   - **«Roles otorgados»** — elija uno o varios roles (hasta 25) que el bot concederá automáticamente al otorgar este rango.
+
+Cree los puestos en orden jerárquico ascendente (desde cadete hasta comandancia). Se admiten hasta **50 rangos**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  En «Roles otorgados» es conveniente incluir permisos complementarios: acceso a salas privadas, rol general de facción, etc. El bot los asignará sin intervención manual al producirse un ascenso.
+</Callout>
+
+***
+
+## Tipos de Despido y Listas Negras
+
+Haga clic en **«Configurar Bajas»** y seleccione la modalidad deseada.
+
+### Tipos de despido
+
+- Haga clic en **«Configurar Tipos de Despido»** → **«Agregar Tipo de Despido»**.
+- Ingrese un nombre (ej. `Renuncia Voluntaria`) y seleccione los roles que se otorgarán tras la baja.
+
+### Tipos de lista negra
+
+1. Haga clic en **«Configurar Tipos de Lista Negra»** → **«Agregar Tipo de Lista Negra»**.
+2. Ingrese el nombre (ej. `Lista Negra de Facción`) y seleccione:
+   - **«Rol principal de lista negra»** — rol principal retirado automáticamente al expirar la sanción;
+   - **«Roles adicionales»** — roles complementarios (ej. lista negra general del servidor).
+
+El período de la lista negra se define **al momento de emitirse** mediante el comando `/manage`. Puede especificar plazos (`3d`, `14 days`) o carácter permanente («forever»). Al concluir, el bot retira los roles de forma autónoma.
+
+Capacidad de hasta **25 tipos** por categoría.
+
+***
+
+## Ajustes Globales (Canales Compartidos)
+
+El botón **«Ajustes Globales»** en el menú de departamentos configura directivas para toda la facción:
+
+- **Estado** — habilita o deshabilita canales unificados en sustitución de los canales por departamento.
+- **«Canal de ascensos y contrataciones»** — centraliza altas y ascensos de todas las divisiones.
+- **«Canal de degradaciones y sanciones»** — centraliza descensos, sanciones, despidos y suspensiones.
+- **«Roles compartidos de facción»** — roles (hasta 25) otorgados a todo el personal al ingresar/ascender y retirados al producirse una baja.
+
+***
+
+## Roles Prohibidos
+
+La sección **«Roles Prohibidos»** permite designar hasta 25 roles que el bot **jamás otorgará** mediante sus comandos — incluso si figuran por error en la configuración de un rango. Protege roles administrativos de asignaciones involuntarias.
+
+## Visualización de Prefijos
+
+El menú **«Visualización de Prefijos»** controla si se añade el prefijo del cargo al apodo del servidor del empleado (ej. `[OW-001] Pancakeboyman_8`).
+
+- **Habilitado** — el bot ajusta el apodo con cada cambio de rango.
+- **Deshabilitado** — los prefijos se almacenan en el sistema pero no modifican el apodo en Discord.

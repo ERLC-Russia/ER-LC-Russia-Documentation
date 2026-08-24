@@ -1,0 +1,76 @@
+---
+title: "Ticket"
+icon: "ticket"
+---
+<div id="no-header-here" />
+
+# Configurazione del Sistema di Ticket
+
+## Che cos'è?
+
+Piattaforma di assistenza e supporto: gli utenti aprono canali privati premendo pulsanti su pannelli interattivi, e il personale preposto gestisce le richieste. Ideale per segnalazioni, quesiti alla direzione, candidature e questioni riservate.
+
+Caratteristiche del modulo:
+
+- **Ruoli di Supporto** — chi può visualizzare e rispondere all'interno dei ticket;
+- **Trascrizioni** — alla chiusura, il bot salva la cronologia della chat (in formato HTML o video) nei canali di log;
+- **Costruttore Visuale di Pannelli** — creazione di layout modulari direttamente in Discord senza codice.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Ticket»**.
+2. Abilitate il modulo: menu di stato → **«Abilitato»**.
+3. Fate clic su **«Vai alla Configurazione»**.
+
+***
+
+## Ruoli e Accessi
+
+La pagina **«Permessi e Accessi Ticket»** offre quattro menu di selezione ruoli:
+
+- **«Ruoli di Configurazione Ticket»** — abilitati alla modifica delle impostazioni dei ticket;
+- **«Ruoli di Creazione Ticket»** — utenti che hanno il permesso di aprire ticket;
+- **«Ruoli di Supporto»** — staff incaricato di fornire assistenza;
+- **«Ruoli di Presa in Carico»** — membri che possono prendersi in carico i ticket (claim).
+
+## Canali e Categorie
+
+Pagina **«Canali e Categorie Ticket»**:
+
+- **Canale trascrizioni** — destinazione dei file HTML alla chiusura dei ticket;
+- **Canale trascrizioni video** — per registrazioni video;
+- **Categoria ticket** — categoria Discord in cui verranno generati i canali aperti.
+
+## Pannelli Ticket
+
+Pagina **«Pannelli Ticket»**:
+
+- **«Elenco Pannelli»** — creazione dei pannelli (nome + categoria Discord), fino a 25 pannelli;
+- ciascun pannello supporta ruoli di supporto, ping e ruoli post-claim dedicati;
+- **«Limite Ticket»** — numero massimo di ticket aperti contemporaneamente per utente.
+
+### Costruttore Visuale di Pannelli
+
+Il pulsante **«Configura Pannello»** apre l'editor di layout (fino a 25 blocchi):
+
+| Elemento | Descrizione |
+| --- | --- |
+| **Testo** | Blocco di testo semplice |
+| **Separatore** | Linea divisoria orizzontale |
+| **Sezione con immagine** | Testo affiancato da miniatura o pulsante |
+| **Galleria multimediale** | Griglia di anteprima immagini |
+| **Riga di azioni** | Fino a 5 pulsanti o un menu a discesa fino a 25 voci |
+| **Contenitore** | Blocco con bordo colorato per raggruppare elementi |
+
+Azioni per pulsanti e menu:
+
+- **«Apri modulo (modale)»** — questionario preliminare prima della creazione del ticket (fino a 5 campi);
+- **«Crea ticket direttamente»** — apertura del canale in un clic;
+- **Naviga a sottopannello** — menu gerarchici multilivello;
+- **Collegamento esterno URL**.
+
+Inoltre: personalizzazione dei messaggi di apertura/chiusura, colori degli embed, banner e **anteprima in tempo reale**.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consiglio:** Costruite un pannello principale con menu a tendina per argomento («Domande», «Reclami», «Candidature») collegando un modulo dedicato a ogni opzione.
+</Callout>

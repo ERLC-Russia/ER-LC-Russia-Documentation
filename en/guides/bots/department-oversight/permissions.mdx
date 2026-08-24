@@ -1,0 +1,50 @@
+---
+title: "Access Permissions"
+icon: "user-lock"
+---
+<div id="no-header-here" />
+
+# Permission Settings
+
+## What is This?
+
+This section defines **who can perform actions with the bot** on your server:
+
+- **Config Roles** — users who can change the bot configuration via `/configure` and `/server manage`. Typically the faction owner and deputies.
+- **Allowed Roles** — users who can use personnel management commands: `/manage`, `/punishment`, `/shift admin`, and others. Typically the entire faction leadership.
+
+## How Access Works
+
+The bot checks permissions by assigned roles rather than Discord server permission flags:
+
+**Before first-time permission setup:**
+- `/configure` and admin commands are available to **server administrators**;
+- other management commands report that permissions have not been configured yet.
+
+**After roles are configured:**
+- `/configure` and `/server manage` — restricted to users with **“Config Roles”**;
+- personnel management commands — restricted to users with **“Allowed Roles”**;
+- Discord Administrator permissions alone grant no access: without the specified role, administrators cannot configure the bot or issue punishments.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  The server owner is no exception. If the owner's role is not added to the lists above, the bot will deny access just like any other user. Always add your own role right away.
+</Callout>
+
+## How to Configure
+
+1. Run the `/configure` command.
+2. Open the **“Permission Settings”** page.
+3. In the **“Config Roles”** menu, select roles allowed to modify settings (up to 25 roles).
+4. In the **“Allowed Roles”** menu, select leadership roles allowed to manage personnel (up to 25 roles).
+
+Both menus support multi-selection — simply check the desired roles, and changes are saved automatically.
+
+### Text Command Prefix
+
+In addition to slash commands, the bot supports legacy text commands (e.g. `-!ping`). You can configure the command prefix here.
+
+In the **“Command Prefix”** dropdown, options include: `-!`, `-=`, `!`, `>`, `-`, `;`, `?`, `d!`, `d?`, `d;`, `$`.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Tip:** Grant “Config Roles” to as few individuals as possible — these roles grant full control, including modifying permissions and purging server data.
+</Callout>

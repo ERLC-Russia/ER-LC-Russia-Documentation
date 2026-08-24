@@ -78,6 +78,7 @@
               "group": "Оновлення V1.0",
               "icon": "folder",
               "pages": [
+                "uk/changelogs/changelog-v1.0/changelog-v1.0.2",
                 "uk/changelogs/changelog-v1.0/changelog-v1.0.1"
               ]
             },
@@ -143,6 +144,34 @@
           "icon": "comments",
           "pages": [
             "uk/guides/forums/publication-rules"
+          ]
+        },
+        {
+          "group": "Боти",
+          "icon": "robot",
+          "pages": [
+            "uk/guides/bots/migration-from-cluecontrol-m",
+            {
+              "group": "Управління Департаментами",
+              "icon": "users-gear",
+              "pages": [
+                "uk/guides/bots/department-oversight/configure",
+                "uk/guides/bots/department-oversight/language",
+                "uk/guides/bots/department-oversight/permissions",
+                "uk/guides/bots/department-oversight/ranks",
+                "uk/guides/bots/department-oversight/punishments",
+                "uk/guides/bots/department-oversight/logs",
+                "uk/guides/bots/department-oversight/shifts",
+                "uk/guides/bots/department-oversight/loa",
+                "uk/guides/bots/department-oversight/ra",
+                "uk/guides/bots/department-oversight/tickets",
+                "uk/guides/bots/department-oversight/google-forms",
+                "uk/guides/bots/department-oversight/announcements",
+                "uk/guides/bots/department-oversight/modcalls",
+                "uk/guides/bots/department-oversight/global-ban",
+                "uk/guides/bots/department-oversight/server-manage"
+              ]
+            }
           ]
         }
       ]

@@ -1,0 +1,54 @@
+---
+title: "Attività Ridotta"
+icon: "arrow-trend-down"
+---
+<div id="no-header-here" />
+
+# Configurazione dell'Attività Ridotta
+
+## Che cos'è?
+
+Modulo per la richiesta di attività ridotta (RA). Pensato per i membri che temporaneamente non possono soddisfare la quota oraria completa (esami, impegni lavorativi), ma desiderano rimanere operativi nella fazione.
+
+Differenze chiave rispetto ai congedi:
+
+- Il membro **può continuare a svolgere turni**;
+- La quota oraria **viene ridotta automaticamente del 50%** — nei report di attività compare un indicatore speciale;
+- Il ruolo di RA viene assegnato e rimosso automaticamente alla scadenza del periodo.
+
+La procedura di invio e valutazione ricalca quella delle richieste di congedo.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Attività Ridotta»**.
+2. Configurate i tre parametri:
+   - **Accettazione richieste** — «Abilitato» o «Disabilitato»;
+   - **Canale di revisione** — canale di testo per la ricezione delle schede;
+   - **Ruoli di RA** — fino a 25 ruoli assegnati ai membri approvati.
+
+***
+
+## Esperienza d'Uso
+
+### Per i Membri
+
+- `/ra submit` — durata (da 1 a 90 giorni) e motivazione.
+- Non si possono presentare nuove richieste mentre ne esiste una attiva o in valutazione.
+- All'approvazione il ruolo viene assegnato e poi revocato automaticamente alla scadenza.
+
+### Per la Direzione
+
+Le richieste arrivano nel canale designato con il quadro del membro richiedente:
+
+- **«Approva»** — abilita lo status di attività ridotta;
+- **«Rifiuta»** — respinge indicando una motivazione obbligatoria.
+
+Comandi di amministrazione:
+
+- `/ra list` — elenco degli stati di RA attivi;
+- `/ra view @membro` — storico delle richieste dell'utente;
+- `/ra admin @membro` — concessione manuale, estensione, revoca anticipata o eliminazione record.
+
+<Callout icon="circle-info" color="#3B82F6">
+  Nel report `/shift activity`, i membri in attività ridotta vengono valutati con la metà della quota standard, evitando sanzioni ingiustificate per orario ridotto.
+</Callout>

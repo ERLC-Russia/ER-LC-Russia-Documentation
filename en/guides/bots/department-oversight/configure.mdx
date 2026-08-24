@@ -1,0 +1,77 @@
+---
+title: "Bot Setup"
+icon: "screwdriver-wrench"
+---
+<div id="no-header-here" />
+
+# Setting Up the "Department Oversight" Bot
+
+**“Department Oversight”** is the personnel management bot for ER:LC Russia. It handles all faction leadership routines: work hour tracking, hiring and dismissals, disciplinary actions, leave requests, tickets, announcements, and moderation.
+
+The entire bot is configured **directly from Discord** — no web panels or configuration files needed. Everything is done with a single command:
+
+```
+/configure
+```
+
+The command opens an interactive panel with 13 sections, each described in detail in the guides below.
+
+***
+
+## Who Can Configure the Bot?
+
+Only users holding a role configured under [“Access Permissions”](/en/guides/bots/department-oversight/permissions) can configure the bot. If you are starting fresh on a server, begin with this section to grant yourself access.
+
+<Callout icon="shield-halved" color="#3B82F6">
+  Before initial setup, the `/configure` command is available to server administrators. As soon as you assign [“Config Roles”](/en/guides/bots/department-oversight/permissions), only those roles will have access — remember to include your own role in the list.
+</Callout>
+
+## What Modules Are Included?
+
+| Module | Purpose | Commands |
+| --- | --- | --- |
+| [Rank System](/en/guides/bots/department-oversight/ranks) | Departments, ranks, orders, nickname prefixes | `/manage` |
+| [Punishments](/en/guides/bots/department-oversight/punishments) | Reprimands, warnings, suspensions, blacklists | `/punishment`, `/manage` |
+| [Shifts](/en/guides/bots/department-oversight/shifts) | Work time tracking, leaderboards, hour quotas | `/shift` |
+| [Leaves](/en/guides/bots/department-oversight/loa) | Leave applications with automatic role assignment | `/loa` |
+| [Reduced Activity](/en/guides/bots/department-oversight/ra) | Applications with reduced hour quotas | `/ra` |
+| [Tickets](/en/guides/bots/department-oversight/tickets) | User support tickets with visual panel builder | Buttons on ticket panels |
+| [Google Forms](/en/guides/bots/department-oversight/google-forms) | Google Form submissions reviewed directly in Discord | Buttons on application cards |
+| [Announcements](/en/guides/bots/department-oversight/announcements) | Broadcast announcements across network factions | `/announcement` |
+| [Modcalls](/en/guides/bots/department-oversight/modcalls) | Emergency moderation calls from Discord and in-game | `/mod` |
+| [Global Ban](/en/guides/bots/department-oversight/global-ban) | Network-wide user ban across all linked servers | `/global-ban` |
+
+## Where to Start? First-Time Setup Sequence
+
+We recommend setting up the bot in the following order:
+
+<Steps>
+  <Step title="Interface Language">
+    Select the server language — [Russian or English](/en/guides/bots/department-oversight/language).
+  </Step>
+  <Step title="Access Permissions">
+    Grant [config roles and management roles](/en/guides/bots/department-oversight/permissions) so your leadership team can operate the bot.
+  </Step>
+  <Step title="Rank System">
+    Create [departments and ranks](/en/guides/bots/department-oversight/ranks) for your faction.
+  </Step>
+  <Step title="Punishments">
+    Configure [reprimand types and suspension rules](/en/guides/bots/department-oversight/punishments).
+  </Step>
+  <Step title="Log Channels">
+    Designate where to send [audit logs of administration actions](/en/guides/bots/department-oversight/logs).
+  </Step>
+  <Step title="Shifts, Leaves, and Reduced Activity">
+    Configure [time tracking](/en/guides/bots/department-oversight/shifts) and [leave/reduced activity applications](/en/guides/bots/department-oversight/loa).
+  </Step>
+  <Step title="Remaining Modules">
+    Enable modules as needed for your server: [tickets](/en/guides/bots/department-oversight/tickets), [forms](/en/guides/bots/department-oversight/google-forms), [announcements](/en/guides/bots/department-oversight/announcements), [modcalls](/en/guides/bots/department-oversight/modcalls), [global ban](/en/guides/bots/department-oversight/global-ban).
+  </Step>
+</Steps>
+
+## Useful Tips
+
+- Almost every module can simply be **toggled on or off** — unused features will not interfere.
+- All administration actions are automatically logged in designated [log channels](/en/guides/bots/department-oversight/logs).
+- The `/configure` panel only responds to the user who opened it and automatically closes after 15 minutes of inactivity.
+- If needed, data can be safely reset via [`/server manage`](/en/guides/bots/department-oversight/server-manage).

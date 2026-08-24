@@ -1,0 +1,50 @@
+---
+title: "Permessi di Accesso"
+icon: "user-lock"
+---
+<div id="no-header-here" />
+
+# Configurazione dei Permessi di Accesso
+
+## Che cos'è?
+
+In questa sezione si stabilisce **chi può interagire con il bot** all'interno del server:
+
+- **Ruoli di Configurazione** — utenti autorizzati a modificare le impostazioni del bot tramite `/configure` e `/server manage`. Generalmente il proprietario della fazione e i suoi sostituti.
+- **Ruoli Autorizzati** — utenti abilitati all'uso dei comandi di gestione del personale: `/manage`, `/punishment`, `/shift admin` e simili. Generalmente l'intera direzione della fazione.
+
+## Come funzionano i permessi
+
+Il bot verifica i permessi in base ai ruoli specifici e non tramite i privilegi generici di Discord:
+
+**Prima della configurazione iniziale:**
+- `/configure` e i comandi di amministrazione sono accessibili agli **amministratori del server**;
+- gli altri comandi di gestione segnalano che i permessi non sono ancora stati definiti.
+
+**Dopo la configurazione dei ruoli:**
+- `/configure` e `/server manage` — riservati unicamente ai membri con **«Ruoli di Configurazione»**;
+- comandi di gestione personale — riservati ai membri con **«Ruoli Autorizzati»**;
+- i permessi di Amministratore di Discord da soli non garantiscono più alcun accesso: senza il ruolo designato non sarà possibile configurare il bot né applicare sanzioni.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  Il proprietario del server non fa eccezione. Se il suo ruolo non compare negli elenchi, il bot negherà l'accesso. Aggiungete il vostro ruolo fin da subito.
+</Callout>
+
+## Come configurare
+
+1. Eseguite il comando `/configure`.
+2. Aprite la pagina **«Permessi di Accesso»**.
+3. Nel menu **«Ruoli di Configurazione»**, selezionate i ruoli autorizzati a modificare le impostazioni (fino a 25 ruoli).
+4. Nel menu **«Ruoli Autorizzati»**, selezionate i ruoli della direzione per la gestione del personale (fino a 25 ruoli).
+
+Entrambi i menu supportano la selezione multipla; le modifiche vengono salvate automaticamente.
+
+### Prefisso dei comandi di testo
+
+Oltre ai comandi slash (`/`), il bot supporta i comandi di testo tradizionali (es. `-!ping`). Qui è possibile personalizzare il prefisso.
+
+Nel menu a discesa **«Prefisso comandi»**, le opzioni disponibili sono: `-!`, `-=`, `!`, `>`, `-`, `;`, `?`, `d!`, `d?`, `d;`, `$`.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consiglio:** Assegnate i «Ruoli di Configurazione» al minor numero di persone possibile: conferiscono il pieno controllo del bot, inclusa la modifica dei permessi e l'eliminazione dei dati.
+</Callout>

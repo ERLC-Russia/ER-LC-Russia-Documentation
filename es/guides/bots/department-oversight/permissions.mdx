@@ -1,0 +1,50 @@
+---
+title: "Permisos de Acceso"
+icon: "user-lock"
+---
+<div id="no-header-here" />
+
+# Configuración de Permisos de Acceso
+
+## ¿Qué es esto?
+
+En esta sección se define **quién tiene autorización para utilizar las funciones del bot** en el servidor:
+
+- **Roles de Configuración** — miembros autorizados a modificar ajustes mediante `/configure` y `/server manage`. Generalmente el propietario de la facción y sus lugartenientes.
+- **Roles Autorizados** — miembros facultados para utilizar comandos de gestión de personal: `/manage`, `/punishment`, `/shift admin` y similares. Generalmente toda la directiva de la facción.
+
+## Cómo funciona el acceso
+
+El bot valida permisos por roles específicos, no por privilegios globales de Discord:
+
+**Antes de la configuración inicial:**
+- `/configure` y los comandos administrativos están habilitados para **administradores del servidor**;
+- los demás comandos de gestión indican que los permisos aún no han sido configurados.
+
+**Tras configurar los roles:**
+- `/configure` y `/server manage` — restringidos exclusivamente a miembros con **«Roles de Configuración»**;
+- comandos de gestión de personal — restringidos a miembros con **«Roles Autorizados»**;
+- los permisos de Administrador de Discord por sí solos dejan de otorgar acceso: sin el rol correspondiente, ningún usuario podrá alterar configuraciones ni aplicar sanciones.
+
+<Callout icon="triangle-exclamation" color="#F59E0B">
+  El propietario del servidor no es una excepción. Si su rol no figura en las listas, el bot denegará el acceso. Asegúrese de agregar su rol desde el primer momento.
+</Callout>
+
+## Cómo configurar
+
+1. Ejecute el comando `/configure`.
+2. Abra la página **«Permisos de Acceso»**.
+3. En el menú **«Roles de Configuración»**, elija los roles autorizados para modificar ajustes (hasta 25 roles).
+4. En el menú **«Roles Autorizados»**, elija los roles directivos autorizados para gestionar personal (hasta 25 roles).
+
+Ambos menús admiten selección múltiple; los cambios se aplican automáticamente.
+
+### Prefijo de comandos de texto
+
+Además de los comandos de barra diagonal (`/`), el bot admite comandos de texto tradicionales (ej. `-!ping`). Aquí puede personalizar el prefijo.
+
+En el menú desplegable **«Prefijo de comandos»**, las opciones disponibles son: `-!`, `-=`, `!`, `>`, `-`, `;`, `?`, `d!`, `d?`, `d;`, `$`.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consejo:** Otorgue «Roles de Configuración» al menor número de personas posible: confieren control total sobre el bot, incluida la alteración de permisos y el borrado de bases de datos.
+</Callout>

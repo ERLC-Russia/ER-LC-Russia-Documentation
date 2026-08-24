@@ -1,0 +1,88 @@
+---
+title: "Shifts"
+icon: "business-time"
+---
+<div id="no-header-here" />
+
+# Setting Up the Shift System
+
+## What is This?
+
+The work time tracking module. Employees go on shift with interactive buttons, and the bot:
+
+- assigns the “on-duty” role and updates the nickname prefix;
+- calculates active work time (break durations are excluded);
+- validates completion of **hour quotas** — per-role or global defaults;
+- enforces concurrent staff limits (**maximum staff on duty**);
+- generates leaderboards, shift logs, and activity reports.
+
+User commands: `/shift manage` — panel to start/pause/end shift, `/shift time` — personal statistics.
+
+## How to Enable
+
+1. Open `/configure` → navigate to the **“Shift Settings”** page.
+2. In the **“Select shift module status...”** menu, choose **“Enabled”**.
+
+***
+
+## Base Settings
+
+On this page, configure global parameters:
+
+- **Shift Log Channel** — where the bot posts announcements for every shift start and completion.
+- **On-Duty Role** — up to 25 roles assigned to staff when starting a shift (e.g. `On-Duty`).
+
+### Additional Options
+
+Click **“Additional Options”** to access fine-tuned settings:
+
+- **Break Role** — assigned in place of the duty role while the employee is on break.
+- **Nickname Prefix** — prefix added to usernames during active shifts (e.g. `[ON-DUTY]`). Leave empty to leave nicknames unchanged.
+- **Shift Quota** — default work quota for all staff; format: `60m`, `2h`, `1d`, `1mo`. Setting `0` disables quotas. Raw numbers without units (e.g. “120”) are not accepted.
+- **Staff Limit** — maximum number of staff permitted on shift simultaneously (e.g. `5`). Set to `0` for unlimited.
+
+***
+
+## Shift Types
+
+If different divisions need dedicated time tracking (separate log channel, separate duty role, distinct permissions) — create multiple shift types.
+
+1. Click **“Shift Types”** → **“Add”** → enter a name, e.g. `Patrol`.
+2. Select the newly created type → click **“Edit”** and configure:
+   - **Type Log Channel** — dedicated event channel for this shift type;
+   - **On-Duty Role** — duty role specific to this shift type;
+   - **Break Role** — break role specific to this type;
+   - **Access Roles** — up to 25 roles permitted to start this shift type. Empty = open to everyone;
+   - **Shift Prefix** — nickname prefix for this shift type (e.g. `[PATROL]`).
+
+Editing and deletion of shift types is done using their numerical ID shown in the list.
+
+***
+
+## Role Quotas
+
+If different ranks have different hourly requirements (e.g. Patrolman needs 2 hours, Commander needs 5 hours):
+
+1. Click **“Role Quotas”** → **“Create Role Quota”**.
+2. Select a Discord role and specify the required time quota (`12m`, `2h`, `1d`, `1mo`).
+
+Individual role quotas override global quotas for role holders. In statistics and reports, the bot evaluates the highest applicable quota automatically.
+
+***
+
+## Data Cleanup
+
+At the bottom of the page, quick cleanup buttons are available: clear all / completed / active shifts, clear pending leave and reduced activity requests, or clear shifts of a specific type.
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Cleanup buttons on this page execute immediately without confirmation. For safe bulk management, use [`/server manage`](/en/guides/bots/department-oversight/server-manage) — it requires typing a confirmation phrase and terminates active shifts cleanly.
+</Callout>
+
+## What Staff Experience
+
+- **Starting a Shift:** Select shift type (if multiple exist), receive role and prefix, logged to channel.
+- **Break:** Duty role swaps to break role, timer paused; clicking “Resume” returns the staff member on-duty.
+- **Ending:** DM summary with total on-duty time.
+- `/shift leaderboard [type]` — leaderboard with medal rankings, page flipping, and text file export.
+- `/shift history @employee` — detailed shift history of any employee (for leadership).
+- `/shift activity [period]` — period activity report: hours worked vs. quota, with leave and reduced activity status markers.

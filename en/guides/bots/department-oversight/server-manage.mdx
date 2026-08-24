@@ -1,0 +1,69 @@
+---
+title: "Data Cleanup"
+icon: "broom"
+---
+<div id="no-header-here" />
+
+# Server Data Cleanup
+
+## What is This?
+
+`/server manage` is a secure administrative panel for complete server data resets. It allows you to safely wipe accumulated bot records: shift histories, orders, leave records, and rank assignments.
+
+When to use it:
+
+- starting a new season or undergoing a major faction restructure;
+- cleaning up records of a departed employee;
+- purging legacy entries skewing statistics and leaderboards.
+
+## How to Access
+
+```
+/server manage
+```
+
+Accessible only to members holding roles specified in [“Access Permissions”](/en/guides/bots/department-oversight/permissions) (“Config Roles”). The panel consists of five pages.
+
+***
+
+## Panel Pages
+
+### Introduction
+Brief overview of capabilities and cautionary warnings regarding data removal.
+
+### Leaves and Reduced Activity
+- purge pending requests;
+- wipe complete leave history;
+- wipe complete reduced activity history.
+
+### Departments
+- reset **all** department data: prefixes and display settings;
+- delete records for a specific individual user.
+
+### Ranks
+- purge all promotions, demotions, transfers, and hirings;
+- unbind ranks from all users;
+- or perform targeted rank resets for a single selected user.
+
+### Shifts
+- purge all / completed / active shifts;
+- purge shifts belonging to a specific shift type.
+
+<Callout icon="circle-check" color="#22C55E">
+  Active shifts are terminated gracefully: the bot removes the on-duty and break roles, strips the nickname prefix, and sends a DM summary to the employee. No one is left stuck in an active shift state.
+</Callout>
+
+***
+
+## Accidental Deletion Safeguards
+
+The panel is engineered with multi-layered safety mechanisms:
+
+1. Bulk actions are highlighted with explicit red danger buttons.
+2. Before execution, you must **manually type the confirmation phrase**: `I AM READY TO DELETE DATA`.
+3. Panel sessions expire after 15 minutes and respond only to the invoking administrator.
+4. Every wipe action is recorded in [audit log channels](/en/guides/bots/department-oversight/logs).
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  Purged data cannot be recovered. When in doubt, start by testing cleanup on a single user rather than executing a full database reset.
+</Callout>

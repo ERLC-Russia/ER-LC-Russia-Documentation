@@ -78,6 +78,7 @@
               "group": "Actualización V1.0",
               "icon": "folder",
               "pages": [
+                "es/changelogs/changelog-v1.0/changelog-v1.0.2",
                 "es/changelogs/changelog-v1.0/changelog-v1.0.1"
               ]
             },
@@ -143,6 +144,34 @@
           "icon": "comments",
           "pages": [
             "es/guides/forums/publication-rules"
+          ]
+        },
+        {
+          "group": "Bots",
+          "icon": "robot",
+          "pages": [
+            "es/guides/bots/migration-from-cluecontrol-m",
+            {
+              "group": "Supervisión de Departamentos",
+              "icon": "users-gear",
+              "pages": [
+                "es/guides/bots/department-oversight/configure",
+                "es/guides/bots/department-oversight/language",
+                "es/guides/bots/department-oversight/permissions",
+                "es/guides/bots/department-oversight/ranks",
+                "es/guides/bots/department-oversight/punishments",
+                "es/guides/bots/department-oversight/logs",
+                "es/guides/bots/department-oversight/shifts",
+                "es/guides/bots/department-oversight/loa",
+                "es/guides/bots/department-oversight/ra",
+                "es/guides/bots/department-oversight/tickets",
+                "es/guides/bots/department-oversight/google-forms",
+                "es/guides/bots/department-oversight/announcements",
+                "es/guides/bots/department-oversight/modcalls",
+                "es/guides/bots/department-oversight/global-ban",
+                "es/guides/bots/department-oversight/server-manage"
+              ]
+            }
           ]
         }
       ]

@@ -1,0 +1,45 @@
+---
+title: "Modcalls"
+icon: "headset"
+---
+<div id="no-header-here" />
+
+# Setting Up Modcalls
+
+## What is This?
+
+**Modcall** is an emergency moderation dispatch system. When players encounter rule violations in-game or on Discord, they can dispatch moderators with a single command — from Discord **or directly in-game**:
+
+- `/mod reason` — dispatch via Discord;
+- `:mod reason` — dispatch in-game (via ER:LC Roblox chat).
+
+The dispatch alert arrives on the central moderation hub server pinging active on-duty moderator roles. A moderator clicks **“Answer Call”**, and the caller receives an immediate DM confirming their call has been accepted. If no moderators are online, the bot pings a designated fallback role.
+
+For in-game dispatches: the moderator inputs their Roblox username, and the bot **teleports them directly to the player** on the live game server.
+
+## How to Configure
+
+1. Open `/configure` → navigate to the **“Modcall Settings”** page.
+2. Enable the module: set status menu to **“Enabled”**.
+3. Select **on-duty moderator roles** (up to 25) — these receive pings for new dispatches.
+4. Select a **fallback role** to ping if no moderators are on duty.
+5. Select the **modcalls channel** — for call dispatches and response logs.
+6. Click **“Manage Servers”** → **“Add Server”** and specify the hub server ID.
+
+As with other cross-server modules, the target server owner confirms via a DM prompt. Up to **25 servers** can be linked.
+
+***
+
+## Abuse Prevention
+
+The module includes an administration suite (`/modcall`):
+
+- `/modcall discord` — block/unblock Discord users from sending dispatches, view blacklist;
+- `/modcall roblox` — block/unblock Roblox players by username or ID;
+- Global **“Call Lock”** — temporarily disable incoming modcalls network-wide.
+
+Additionally, built-in rate limiting applies a 60-second cooldown per user.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Tip:** Assign a broadly held fallback role (e.g. night duty roster) so emergency calls are never left unanswered during off-peak hours.
+</Callout>

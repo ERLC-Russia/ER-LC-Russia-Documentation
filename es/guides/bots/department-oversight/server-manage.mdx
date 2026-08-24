@@ -1,0 +1,69 @@
+---
+title: "Limpieza de Datos"
+icon: "broom"
+---
+<div id="no-header-here" />
+
+# Limpieza de Datos del Servidor
+
+## ¿Qué es esto?
+
+`/server manage` es un panel de servicio para el restablecimiento completo del servidor. Permite purgar de manera segura los registros acumulados por el bot: historiales de turnos, órdenes de personal, licencias y asociaciones de rangos.
+
+Casos de uso habituales:
+
+- inicio de una nueva temporada o reestructuración profunda de la facción;
+- eliminación de antecedentes de un miembro desvinculado;
+- saneamiento de entradas obsoletas que alteran estadísticas y clasificaciones.
+
+## Cómo acceder
+
+```
+/server manage
+```
+
+Disponible únicamente para miembros con roles definidos en [«Permisos de Acceso»](/es/guides/bots/department-oversight/permissions) («Roles de Configuración»). El panel consta de cinco páginas.
+
+***
+
+## Páginas del Panel
+
+### Introducción
+Visión general de las opciones y advertencias sobre las consecuencias del borrado de datos.
+
+### Permisos de Ausencia y Actividad Reducida
+- purgar solicitudes pendientes de revisión;
+- eliminar el historial íntegro de ausencias;
+- eliminar el historial íntegro de actividad reducida.
+
+### Departamentos
+- restablecer **todos** los datos de departamentos: prefijos y parámetros visuales;
+- eliminar los registros individuales de un usuario específico.
+
+### Rangos
+- purgar todas las órdenes de ascenso, descenso, traslado y contratación;
+- desvincular rangos de todos los usuarios del servidor;
+- o ejecutar el restablecimiento puntual sobre un miembro seleccionado.
+
+### Turnos
+- eliminar turnos todos / finalizados / activos;
+- eliminar turnos pertenecientes a un tipo de turno concreto.
+
+<Callout icon="circle-check" color="#22C55E">
+  Los turnos activos se concluyen de forma ordenada: el bot retira roles de guardia y descanso, restablece el apodo habitual y remite un resumen por MD. Ningún miembro queda bloqueado en estado de guardia.
+</Callout>
+
+***
+
+## Mecanismos de Seguridad contra Borrados Accidentales
+
+El panel integra múltiples capas de protección:
+
+1. Las acciones masivas se identifican con botones de peligro en rojo.
+2. Antes de la ejecución es obligatorio **escribir manualmente la frase de confirmación**: `I AM READY TO DELETE DATA` (o `Я ГОТОВ УДАЛИТЬ ДАННЫЕ`).
+3. Las sesiones caducan tras 15 minutos y solo atienden al administrador que invocó el comando.
+4. Cualquier operación se registra en los [canales de auditoría](/es/guides/bots/department-oversight/logs).
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  La información eliminada no puede recuperarse. Ante cualquier duda, realice pruebas sobre un único usuario antes de reiniciar la base de datos completa.
+</Callout>

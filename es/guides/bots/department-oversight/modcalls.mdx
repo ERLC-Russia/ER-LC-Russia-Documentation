@@ -1,0 +1,45 @@
+---
+title: "Modcalls"
+icon: "headset"
+---
+<div id="no-header-here" />
+
+# Configuración de Modcalls
+
+## ¿Qué es esto?
+
+**Modcall** es un sistema de despacho de moderación ante emergencias. Cuando los jugadores detectan infracciones de normativas, pueden solicitar auxilio con un solo comando — desde Discord **o directamente en el juego**:
+
+- `/mod motivo` — solicitud mediante Discord;
+- `:mod motivo` — solicitud en el juego (chat de Roblox en ER:LC).
+
+El aviso se remite al servidor central de moderación notificando a los moderadores de guardia. Un moderador pulsa **«Atender Llamada»**, y el solicitante recibe una notificación por MD. Si no hay moderadores de guardia, el bot menciona el rol de respaldo.
+
+En llamadas desde el juego: el moderador ingresa su usuario de Roblox y el bot **lo teletransporta de inmediato junto al jugador** en el servidor de juego activo.
+
+## Cómo configurar
+
+1. Abra `/configure` → sección **«Modcalls»**.
+2. Active el módulo: selector de estado → **«Habilitado»**.
+3. Seleccione los **roles de moderadores de guardia** (hasta 25) para las menciones.
+4. Elija un **rol de respaldo** para emergencias sin cobertura.
+5. Seleccione el **canal de modcalls** para alertas y registros.
+6. Haga clic en **«Administrar Servidores»** → **«Agregar Servidor»** e indique el ID del servidor central.
+
+El propietario del servidor valida la vinculación mediante un aviso por MD. Se admiten hasta **25 servidores**.
+
+***
+
+## Prevención de Abusos
+
+El módulo incorpora herramientas de administración (`/modcall`):
+
+- `/modcall discord` — bloquear/desbloquear usuarios de Discord para enviar llamadas, consultar lista negra;
+- `/modcall roblox` — bloquear jugadores por nombre o ID de Roblox;
+- **«Bloqueo Global de Llamadas»** — suspensión temporal de la recepción de llamadas en toda la red.
+
+Aplica un enfriamiento automático de 60 segundos por usuario.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consejo:** Configure un rol de respaldo amplio (ej. personal nocturno) para garantizar cobertura ininterrumpida.
+</Callout>

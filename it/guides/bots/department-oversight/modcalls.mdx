@@ -1,0 +1,45 @@
+---
+title: "Modcall"
+icon: "headset"
+---
+<div id="no-header-here" />
+
+# Configurazione dei Modcall
+
+## Che cos'è?
+
+**Modcall** è un sistema di smistamento per le emergenze di moderazione. Quando i giocatori riscontrano infrazioni alle regole, possono richiedere l'intervento dello staff con un unico comando — da Discord **oppure direttamente in gioco**:
+
+- `/mod motivo` — richiesta inviata da Discord;
+- `:mod motivo` — richiesta in gioco (chat di Roblox in ER:LC).
+
+L'allerta giunge sul server centrale di moderazione menzionando i moderatori in servizio. Un moderatore preme **«Prendi in Carico»** e il chiamante riceve una notifica per MD. Se non ci sono moderatori di turno, il bot menziona il ruolo di riserva.
+
+Per le chiamate in gioco: il moderatore inserisce il proprio username di Roblox e il bot **lo teletrasporta all'istante accanto al giocatore** nel server di gioco.
+
+## Come configurare
+
+1. Aprite `/configure` → sezione **«Modcall»**.
+2. Abilitate il modulo: menu di stato → **«Abilitato»**.
+3. Selezionate i **ruoli dei moderatori di servizio** (fino a 25) per le notifiche.
+4. Scegliete un **ruolo di riserva** in caso di assenza di personale di turno.
+5. Selezionate il **canale modcall** per avvisi e registri.
+6. Fate clic su **«Gestisci Server»** → **«Aggiungi Server»** e indicate l'ID del server hub.
+
+Il proprietario del server autorizza il collegamento tramite messaggio privato. Si possono connettere fino a **25 server**.
+
+***
+
+## Prevenzione Abusi
+
+Il modulo integra strumenti di amministrazione (`/modcall`):
+
+- `/modcall discord` — blocca/sblocca utenti Discord dall'inviare chiamate, visualizza blacklist;
+- `/modcall roblox` — blocca giocatori per username o ID Roblox;
+- **«Blocco Globale Chiamate»** — disattivazione temporanea delle chiamate su tutta la rete.
+
+È attivo un tempo di ricarica automatico di 60 secondi per utente.
+
+<Callout icon="lightbulb" color="#22C55E">
+  **Consiglio:** Impostate un ruolo di riserva ampio (es. personale notturno) per garantire copertura continua.
+</Callout>

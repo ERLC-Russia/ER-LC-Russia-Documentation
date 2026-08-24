@@ -1,0 +1,134 @@
+---
+title: "Update V1.0.2"
+icon: "tag"
+---
+<div id="no-header-here" />
+
+<img
+  src="/assets/changelogs/server-rules-bots-update.png"
+  alt="Update V1.0.2"
+  style={{width: "100%", height: "219px", borderRadius: "12px", objectFit: "cover", objectPosition: "0% 63%"}}
+  noZoom
+/>
+
+<div className="flex justify-center items-center w-full -mt-8">
+  <h2 className="text-3xl font-bold">Update V1.0.2 — 24.08.2026</h2>
+</div>
+
+<div className="flex justify-center items-center w-full text-center">
+  A major release of the <b>Department Oversight</b> bot and project documentation: introducing an all-new shift tracking, leave, and reduced activity system, unified interactive staff and disciplinary panels, full in-Discord configuration, and bilingual support. A dedicated Bots documentation section with comprehensive setup guides and a complete ClueControl M migration manual has also been published.
+</div>
+
+***
+
+<AccordionGroup>
+  <Accordion title="Department Oversight Bot Update">
+    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>Department Oversight Update</strong></h3></div>
+
+    ### Shift Tracking System — `/shift`
+    * **Personal Panel:** `/shift manage` opens an interactive card with real-time status and action buttons: **Start**, **Break**, **End**.
+    * **Shift Types:** Choose shift type on duty start (with dedicated duty roles, logs, and prefixes).
+    * **Break Accounting:** Time spent on break is automatically excluded from total worked hours.
+    * **Statistics & Quotas:** `/shift time` shows worked hours, average shift duration, and quota completion status considering role-specific quotas.
+    * **Leaderboards & Reports:** `/shift leaderboard` with top-3 medals and text file export, `/shift history @employee`, `/shift activity` for any timeframe with leave and reduced activity status markers.
+    * **Administration:** `/shift admin @employee` — force start/end shifts, manual time adjustments (“1h 30m”), voids, and cleanup.
+    * **Staff Limits:** Configurable maximum number of concurrent personnel on shift.
+
+    ---
+
+    ### Leaves and Reduced Activity
+    * **Submitting Applications:** `/loa submit` and `/ra submit` with flexible duration (1 to 90 days) and reason.
+    * **Discord Review:** Application cards with employee service history drop into leadership review channels with **Approve** / **Deny** buttons (with mandatory reason).
+    * **Role Automation:** Leave and reduced activity roles assigned upon approval and automatically removed every 5 minutes when expired; notifications sent via DM.
+    * **Shift Integration:** Duty shifts blocked during active leaves; hour quotas reduced by 50% during reduced activity.
+    * **Management:** `/loa admin` and `/ra admin` for manual grant, extension, and early termination.
+
+    ---
+
+    ### DM Notification Consent — `/consent`
+    * Toggle for direct message deliveries from the bot (shift summaries, disciplinary notifications, and personnel orders).
+
+    ---
+
+    ### Unified Personnel Management Panel — `/manage`
+    * Interactive employee profile card `/manage @employee` replacing scattered commands:
+      * **Hire** into department with rank and prefix selection;
+      * **Promote / Demote** with reason logs;
+      * **Transfer** between divisions or factions;
+      * **Dismiss** (standard resignation or blacklist with custom duration / permanent);
+      * **Prefix Management** and early blacklist removal.
+    * Automatic order numbering (№00000001), publishing to log channels, and DM notifications.
+
+    ---
+
+    ### Punishments and Suspensions — `/punishment`
+    * Panel `/punishment @employee` for disciplinary enforcement.
+    * **Escalation Levels:** Customizable violation types linked to tier roles (Level 1, 2, 3...).
+    * **Automation:** Rules like “3 warnings → 1 reprimand for 1 month”.
+    * **Auto-Expiration:** Automatic role removal when punishment terms expire.
+    * **Suspensions:** Assigns suspension role, delivers explanatory statement form in DM (48 hours to reply, text + up to 5 files), and posts to review channel.
+
+    ---
+
+    ### Full Configuration from Discord — `/configure`
+    * Interactive setup panel featuring 13 sections:
+      1. **Language** — Russian or English server-wide;
+      2. **Access Permissions** — config roles and management roles;
+      3. **Rank System** — departments, ranks, dismissal types, blacklists, prohibited roles;
+      4. **Punishments** — types, levels, automation, and suspensions;
+      5. **Log Channels** — up to 25 audit and channel move log channels;
+      6. **Google Forms** — integration and channel routing;
+      7. **Global Ban** — partner server network;
+      8. **Announcements** — broadcast department channels;
+      9. **Modcalls** — dispatch channel, moderator roles, and fallback role;
+      10. **Tickets** — categories, support roles, panel builder;
+      11. **Shifts** — types, prefixes, quotas, limits;
+      12. **Leaves** — review channel and leave roles;
+      13. **Reduced Activity** — review channel and reduced activity roles.
+
+    ---
+
+    ### Server Data Cleanup — `/server manage`
+    * Secure reset panel: shift history, leaves, reduced activity, ranks, and departments.
+    * Safeguarded with mandatory confirmation phrase `Я ГОТОВ УДАЛИТЬ ДАННЫЕ` and graceful active shift termination.
+
+    ---
+
+    ### Emergency Moderation Calls — Modcalls
+    * Command `/mod reason` via Discord and `:mod reason` directly inside ER:LC in-game chat.
+    * Hub server alerts, one-click claim button, and automatic in-game moderator teleportation to the player in Roblox.
+    * Admin panel `/modcall` with Discord/Roblox blacklists and emergency call lock.
+
+    ---
+
+    ### Global Ban and Announcements
+    * **Global Ban:** `/global-ban` and `/global-unban` across all linked network servers simultaneously.
+    * **Mass Announcements:** `/announcement for departments` with image URL and role ping support.
+    * **Bilingual Support:** Complete localization in Russian and English.
+  </Accordion>
+
+  <Accordion title="New Documentation Guides">
+    <div className="flex justify-center items-center w-full -mt-10"><h3 className="text-3xl font-bold"><strong>“Bots” Documentation Section</strong></h3></div>
+
+    A comprehensive new **“Bots”** section has been added under the **Guides** tab, featuring a migration guide and 15 in-depth tutorials for the Department Oversight bot:
+
+    * [**Migration Guide from ClueControl M**](/en/guides/bots/migration-from-cluecontrol-m) — step-by-step transfer of shifts, leaves, and role configurations with command mapping tables and a checklist.
+
+    #### “Department Oversight” Sub-Section:
+    * [**Bot Setup**](/en/guides/bots/department-oversight/configure) — architectural overview, initial setup sequence, and `/configure` command.
+    * [**Language Selection**](/en/guides/bots/department-oversight/language) — switching server interface language (RU/EN).
+    * [**Access Permissions**](/en/guides/bots/department-oversight/permissions) — configuring Config Roles, Allowed Roles, and command prefixes.
+    * [**Rank System**](/en/guides/bots/department-oversight/ranks) — creating departments, ranks with auto-role grants, dismissal types, and blacklists.
+    * [**Punishments and Suspensions**](/en/guides/bots/department-oversight/punishments) — violation types, escalation tiers, automation, and explanatory statements.
+    * [**Log Channels**](/en/guides/bots/department-oversight/logs) — audit logging, channel movement tracking, and module log directory.
+    * [**Shifts**](/en/guides/bots/department-oversight/shifts) — base settings, shift types, role quotas, and duration formats.
+    * [**Leaves**](/en/guides/bots/department-oversight/loa) — intake status, review channel, role assignments, and auto-removal.
+    * [**Reduced Activity**](/en/guides/bots/department-oversight/ra) — 50% reduced quota status and application processing.
+    * [**Tickets**](/en/guides/bots/department-oversight/tickets) — support roles, categories, transcripts, and visual panel builder with 6 block types.
+    * [**Google Forms**](/en/guides/bots/department-oversight/google-forms) — reviewing Google Forms submissions directly in Discord.
+    * [**Announcements**](/en/guides/bots/department-oversight/announcements) — configuring department channels and global broadcasting.
+    * [**Modcalls**](/en/guides/bots/department-oversight/modcalls) — emergency dispatching, in-game teleportation, and abuse protection.
+    * [**Global Ban**](/en/guides/bots/department-oversight/global-ban) — connecting network servers and centralizing bans.
+    * [**Data Cleanup**](/en/guides/bots/department-oversight/server-manage) — secure resetting of shifts, orders, and personnel data via `/server manage`.
+  </Accordion>
+</AccordionGroup>
