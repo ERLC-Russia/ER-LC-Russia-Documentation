@@ -47,7 +47,38 @@ Página: [«Configuración de Turnos»](/es/guides/bots/department-oversight/shi
   El formato de cuota es distinto: ClueControl M acepta `1h30m`, mientras que el nuevo bot requiere `60m`, `2h`, `1d`, `1mo`. Recalcule los valores antes de introducirlos.
 </Callout>
 
-Los tipos de turno se recrean uno a uno: nombre, canal de registros, roles de guardia, rol de pausa, prefijo en el apodo y roles de acceso. Lo mismo aplica a las cuotas por rol: créelas nuevamente en «Cuotas por Rol».
+Los tipos de turno se recrean uno a uno: nombre, canal de registros del tipo, roles de servicio, rol de pausa, prefijo de apodo y roles de acceso. Lo mismo se aplica a las cuotas de rol: vuelva a crearlas mediante «Cuotas por Rol».
+
+### Cómo transferir tipos de turno
+
+Para que los turnos funcionen como antes, debe transferir los tipos de turno:
+
+1. **En ClueControl M**, abra `/config` → página **Shift Management** → **Shift Types**.
+2. Anote para cada tipo:
+   - **Nombre** (por ejemplo: «Patrullaje», «Oficina», «Entrenamiento»)
+   - **Canal de registros del tipo** (donde se envían los registros de inicio/cierre de este tipo específico)
+   - **Roles de servicio** (qué roles se otorgan al iniciar este tipo de turno)
+   - **Rol de pausa** (si difiere del general)
+   - **Prefijo de apodo** (por ejemplo: `[PATRULLA] `)
+   - **Roles de acceso** (quién puede seleccionar este tipo al iniciar el turno)
+3. **En Supervisión de Departamentos**, vaya a `/configure` → **Configuración de Turnos** → **Tipos de Turno** → «Crear tipo».
+4. Complete los campos **estrictamente de acuerdo con los datos anotados**:
+   - **Nombre** — el mismo
+   - **Canal de registros** — seleccione el mismo canal (o cree uno nuevo si cambia la estructura)
+   - **Roles de servicio** — añada los mismos roles
+   - **Rol de pausa** — indíquelo si existía
+   - **Prefijo de apodo** — cópielo símbolo por símbolo (importante: en ClueControl M el prefijo se colocaba **antes** del apodo, igual en el nuevo bot)
+   - **Roles de acceso** — seleccione los mismos roles que podían usar este tipo
+5. Repita para cada tipo de turno.
+6. Tras crear todos los tipos, verifique: inicie un turno de prueba con `/shift manage` → seleccione el tipo → compruebe que se otorguen los roles correctos, se aplique el prefijo y los registros se envíen al canal correspondiente.
+
+<Callout icon="lightbulb" color="#22C55E">
+  Si en ClueControl M había muchos tipos de turno (5+), créelos todos juntos y luego pruébelos uno por uno; esto es mucho más rápido.
+</Callout>
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  **Importante:** En el nuevo bot, los **roles de acceso al tipo de turno** requieren que el miembro posea **al menos uno** de los roles especificados para que el tipo aparezca en su lista. Verifique las asignaciones de roles.
+</Callout>
 
 ## Permisos de Ausencia y Actividad Reducida
 

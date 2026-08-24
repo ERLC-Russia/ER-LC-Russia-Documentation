@@ -49,6 +49,37 @@ Page: [“Shift Settings”](/en/guides/bots/department-oversight/shifts):
 
 Shift types are recreated one-to-one: name, type log channel, duty roles, break role, nickname prefix, and access roles. The same applies to role quotas — recreate them via “Role Quotas”.
 
+### How to Transfer Shift Types
+
+To make shifts work as before, you need to transfer the shift types:
+
+1. **In ClueControl M**, open `/config` → **Shift Management** page → **Shift Types**.
+2. Note down for each type:
+   - **Name** (e.g., “Patrol”, “Office Duty”, “Training”)
+   - **Type log channel** (where duty start/end logs for this specific type are sent)
+   - **On-duty roles** (roles assigned when starting this shift type)
+   - **Break role** (if different from the global one)
+   - **Nickname prefix** (e.g., `[PATROL] `)
+   - **Access roles** (who can select this type when starting a shift)
+3. **In Department Oversight**, navigate to `/configure` → **Shift Settings** → **Shift Types** → “Create Type”.
+4. Fill in the fields **strictly according to the recorded data**:
+   - **Name** — identical
+   - **Log channel** — select the same channel (or create a new one if restructuring)
+   - **On-duty roles** — add the same roles
+   - **Break role** — specify if configured previously
+   - **Nickname prefix** — copy character for character (note: in ClueControl M the prefix was placed **before** the nickname, same as in the new bot)
+   - **Access roles** — select the same roles that were allowed to use this type
+5. Repeat for each shift type.
+6. After creating all types, verify: start a test shift using `/shift manage` → select the type → ensure proper roles are granted, prefix is applied, and logs are sent to the correct channel.
+
+<Callout icon="lightbulb" color="#22C55E">
+  If ClueControl M had many shift types (5+), create them in bulk first, then test each one — this is much faster than creating and testing them one by one.
+</Callout>
+
+<Callout icon="triangle-exclamation" color="#EF4444">
+  **Important:** In the new bot, **shift type access roles** require the member to have **at least one** of the specified roles for the type to appear in their menu. Verify role assignments accordingly.
+</Callout>
+
 ## Leaves and Reduced Activity
 
 Page: [“Leave Settings”](/en/guides/bots/department-oversight/loa):
