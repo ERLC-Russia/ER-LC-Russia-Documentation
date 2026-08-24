@@ -144,6 +144,33 @@
           "pages": [
             "ru/guides/forums/publication-rules"
           ]
+        },
+        {
+          "group": "Боты",
+          "icon": "robot",
+          "pages": [
+            {
+              "group": "Управление Департаментами",
+              "icon": "users-gear",
+              "pages": [
+                "ru/guides/bots/department-oversight/configure",
+                "ru/guides/bots/department-oversight/language",
+                "ru/guides/bots/department-oversight/permissions",
+                "ru/guides/bots/department-oversight/ranks",
+                "ru/guides/bots/department-oversight/punishments",
+                "ru/guides/bots/department-oversight/logs",
+                "ru/guides/bots/department-oversight/shifts",
+                "ru/guides/bots/department-oversight/loa",
+                "ru/guides/bots/department-oversight/ra",
+                "ru/guides/bots/department-oversight/tickets",
+                "ru/guides/bots/department-oversight/google-forms",
+                "ru/guides/bots/department-oversight/announcements",
+                "ru/guides/bots/department-oversight/modcalls",
+                "ru/guides/bots/department-oversight/global-ban",
+                "ru/guides/bots/department-oversight/server-manage"
+              ]
+            }
+          ]
         }
       ]
     },

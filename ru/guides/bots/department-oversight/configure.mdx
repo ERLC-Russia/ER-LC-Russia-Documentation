@@ -1,0 +1,77 @@
+﻿---
+title: "Настройка Бота"
+icon: "screwdriver-wrench"
+---
+<div id="no-header-here" />
+
+# Настройка бота «Управление Департаментами»
+
+**«Управление Департаментами»** — бот управления персоналом ER:LC Россия. Он берёт на себя всю рутину руководителя фракции: учёт рабочего времени, приём и увольнения, наказания, отпуска, тикеты, объявления и модерацию.
+
+Весь бот настраивается **прямо из Discord** — никаких файлов и панелей на сайте не нужно. Всё делается одной командой:
+
+```
+/настроить
+```
+
+Команда открывает интерактивную панель из 13 разделов, каждый из которых описан в отдельном гайде ниже.
+
+***
+
+## Кто может настраивать бота?
+
+Настраивать бота могут только участники с ролью из раздела [«Права Доступа»](/ru/guides/bots/department-oversight/permissions). Если вы только начинаете настройку сервера — начните именно с этого раздела, чтобы выдать себе доступ.
+
+<Callout icon="shield-halved" color="#3B82F6">
+  До первой настройки команда `/настроить` доступна администраторам сервера. Но как только вы назначите [«Роли Настроек»](/ru/guides/bots/department-oversight/permissions), доступ получат только они — не забудьте добавить в список и свою роль.
+</Callout>
+
+## Из чего состоит бот?
+
+| Модуль | Для чего нужен | Команды |
+| --- | --- | --- |
+| [Система Звания](/ru/guides/bots/department-oversight/ranks) | Подразделения, звания, приказы, префиксы в никах | `/управление` |
+| [Наказания](/ru/guides/bots/department-oversight/punishments) | Выговоры, предупреждения, отстранения, ЧС | `/наказание`, `/управление` |
+| [Смены](/ru/guides/bots/department-oversight/shifts) | Учёт отработанного времени, рейтинги, нормы часов | `/смена` |
+| [Отпуска](/ru/guides/bots/department-oversight/loa) | Заявки на отпуск с автовыдачей роли | `/отпуск` |
+| [Пониженная Активность](/ru/guides/bots/department-oversight/ra) | Заявки на ПА со сниженной нормой часов | `/па` |
+| [Тикеты](/ru/guides/bots/department-oversight/tickets) | Обращения пользователей с конструктором панелей | кнопки на панели тикетов |
+| [Google Формы](/ru/guides/bots/department-oversight/google-forms) | Приём заявок через Google Формы прямо в Discord | кнопки на карточках заявок |
+| [Объявления](/ru/guides/bots/department-oversight/announcements) | Массовые рассылки по всем фракциям сети | `/объявление` |
+| [Модколлы](/ru/guides/bots/department-oversight/modcalls) | Вызов модерации из Discord и из игры | `/mod` |
+| [Глобальный Бан](/ru/guides/bots/department-oversight/global-ban) | Бан пользователя сразу на всех серверах сети | `/глобальный бан` |
+
+## С чего начать? Порядок первой настройки
+
+Мы рекомендуем настраивать бот в таком порядке:
+
+<Steps>
+  <Step title="Язык интерфейса">
+    Выберите язык сервера — [Русский или English](/ru/guides/bots/department-oversight/language).
+  </Step>
+  <Step title="Права Доступа">
+    Выдайте [роли настроек и роли управления](/ru/guides/bots/department-oversight/permissions), дальше всё смогут делать ваши руководители.
+  </Step>
+  <Step title="Система Звания">
+    Создайте [подразделения и звания](/ru/guides/bots/department-oversight/ranks) вашей фракции.
+  </Step>
+  <Step title="Наказания">
+    Настройте [типы выговоров и отстранений](/ru/guides/bots/department-oversight/punishments).
+  </Step>
+  <Step title="Каналы Логов">
+    Укажите, куда писать [логи действий администрации](/ru/guides/bots/department-oversight/logs).
+  </Step>
+  <Step title="Смены, Отпуска и ПА">
+    Настройте [учёт времени](/ru/guides/bots/department-oversight/shifts) и [заявки на отпуск/ПА](/ru/guides/bots/department-oversight/loa).
+  </Step>
+  <Step title="Остальные модули">
+    Включите то, что нужно вашему серверу: [тикеты](/ru/guides/bots/department-oversight/tickets), [формы](/ru/guides/bots/department-oversight/google-forms), [объявления](/ru/guides/bots/department-oversight/announcements), [модколлы](/ru/guides/bots/department-oversight/modcalls), [глобальный бан](/ru/guides/bots/department-oversight/global-ban).
+  </Step>
+</Steps>
+
+## Полезно знать
+
+- Почти каждый модуль можно просто **включить или выключить переключателем** — неиспользуемые функции не мешают.
+- Все действия администрации автоматически записываются в [каналы логов](/ru/guides/bots/department-oversight/logs).
+- Панель `/настроить` работает только у того, кто её вызвал, и закрывается сама после 15 минут бездействия.
+- Если что-то пошло не так — данные можно безопасно почистить через [`/server manage`](/ru/guides/bots/department-oversight/server-manage).
