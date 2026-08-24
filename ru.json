@@ -149,6 +149,7 @@
           "group": "Боты",
           "icon": "robot",
           "pages": [
+            "ru/guides/bots/migration-from-cluecontrol-m",
             {
               "group": "Управление Департаментами",
               "icon": "users-gear",
