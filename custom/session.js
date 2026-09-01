@@ -372,7 +372,7 @@
           e.preventDefault();
           e.stopPropagation();
           isOpen = false;
-          window.open(`${FRONTEND_URL}/my/account`, '_blank');
+          window.open(`${FRONTEND_URL}/my/account`, '_blank', 'noopener,noreferrer');
         };
       }
 
@@ -382,7 +382,7 @@
           e.preventDefault();
           e.stopPropagation();
           isOpen = false;
-          window.open(`${FRONTEND_URL}/my/notifications`, '_blank');
+          window.open(`${FRONTEND_URL}/my/notifications`, '_blank', 'noopener,noreferrer');
         };
       }
 
@@ -392,7 +392,7 @@
           e.preventDefault();
           e.stopPropagation();
           isOpen = false;
-          window.open(`${FRONTEND_URL}/dashboard/${firstAllowedPage}`, '_blank');
+          window.open(`${FRONTEND_URL}/dashboard/${firstAllowedPage}`, '_blank', 'noopener,noreferrer');
         };
       }
 
